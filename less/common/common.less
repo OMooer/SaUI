@@ -1,0 +1,60 @@
+@import "variables";
+@import "normalize";
+@import "keyframes";
+
+html {
+	// chrome 这个混蛋强制不能低于10，所以方便计算的只能用100
+	font-size: 100px;
+}
+
+// 6
+@media only screen and (min-width: 375px) {
+	html {
+		font-size: 117.19px;
+	}
+}
+
+// 6p
+@media only screen and (min-width: 414px) {
+	html {
+		font-size: 129.38px;
+	}
+}
+
+// pad
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	html {
+		font-size: 240px;
+	}
+}
+
+body {
+	font-family: "PingFang SC", "Microsoft Yahei", "Heiti SC", sans-serif;
+	font-size: @fontNormal;
+	font-weight: @regular;
+}
+
+// 栅格
+.gender-grid(@n, @i:1) when (@i=<@n) {
+	.col-@{i} {
+		width: (100%/12*@i);
+	}
+	.offset-@{i} {
+		margin-left: (100%/12*@i);
+	}
+	.gender-grid(@n, (@i+1));
+}
+
+// 边框配色
+.gender-border(@pre, @color) {
+	&.@{pre}-@{color} {
+		[class*="col-"] {
+			border: solid .01rem @@color;
+		}
+	}
+}
+
+// 背景配色
+.gender-bg(@color) {
+	background-color+: lighten(@@color, 40%);
+}

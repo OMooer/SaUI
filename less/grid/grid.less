@@ -1,0 +1,31 @@
+.sa-g {
+
+	&:after {
+		content: "";
+		.clearfix;
+	}
+
+	[class*="col-"] {
+		float: left;
+		display: block;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+
+	.row {
+		&:after {
+			content: "";
+			.clearfix;
+		}
+	}
+
+	.gender-grid(12);
+
+	.gender-border(g-border, default);
+	.gender-border(g-border, primary);
+	.gender-border(g-border, success);
+	.gender-border(g-border, info);
+	.gender-border(g-border, warn);
+	.gender-border(g-border, error);
+
+}

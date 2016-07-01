@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1em;
+}
+
+p {
+	line-height: 1.6em;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+	}
+}
+
+a {
+	&:link {
+		text-decoration: none;
+		color: @blue;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+	&:visited {
+		text-decoration: underline;
+		color: @blue;
+	}
+	&:active,
+	&:focus {
+		text-decoration: underline;
+		color: @yellow;
+	}
+}
+
+code {
+	padding: 0 .05rem;
+	background-color: @grayLighter;
+	border-radius: .03rem;
+	color: @codeRed;
+
+	pre & {
+		display: block;
+		padding: .05rem;
+	}
+}
