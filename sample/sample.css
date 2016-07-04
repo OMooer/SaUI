@@ -1,0 +1,36 @@
+.content {
+	margin: auto;
+	width: 60%;
+}
+@media only screen and (max-width: 1024px) {
+	.content {
+		width: 95%;
+	}
+}
+
+.content ul li {
+	margin-left: 1.5em;
+	list-style-type: disc;
+}
+
+.example:before {
+	content: "示例：";
+	display: block;
+	margin-bottom: 1em;
+}
+.example .sa-g .row {
+	margin: .10rem 0;
+	background-color: #f4f4f4;
+}
+
+.example .sa-g .row [class*="col-"] {
+	padding: .05rem;
+	background-color: #ddd;
+}
+
+.copyright {
+	margin: .10rem 0;
+	border-top: solid .01rem #ccc;
+	text-align: right;
+	font-size: .11rem;
+}

@@ -1,0 +1,91 @@
+@btnNormal: 2.5em;
+
+.btn {
+	display: inline-block;
+	margin-left: 1em;
+	border-radius: @btnNormal/2;
+	box-sizing: border-box;
+	transition: background-color .3s ease-out, color .3s ease-out;
+	cursor: pointer;
+	line-height: @btnNormal;
+	height: @btnNormal;
+
+	a& {
+		text-decoration: none;
+		color: @grayDark;
+	}
+
+}
+
+.btn-disabled {
+	opacity: .6;
+	cursor: no-drop !important;
+}
+
+// 普通按钮
+.btn-default {
+	.btn;
+	margin-left: 0;
+	padding: 0 @btnNormal/2;
+	background-color: @white;
+	border: solid 1px darken(@white, 20%);
+
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@white, 8%);
+	}
+}
+
+// 主要操作按钮
+.btn-primary {
+	.btn-default;
+	background-color: @primary;
+	border-color: transparent;
+	color: @white;
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@primary, 8%);
+	}
+}
+
+// 成功操作按钮
+.btn-success {
+	.btn-default;
+	background-color: @success;
+	border-color: transparent;
+	color: @white;
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@success, 8%);
+	}
+}
+
+// 信息操作按钮
+.btn-info {
+	.btn-default;
+	background-color: @info;
+	border-color: transparent;
+	color: @white;
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@info, 8%);
+	}
+}
+
+// 危险操作按钮
+.btn-danger {
+	.btn-default;
+	background-color: @error;
+	border-color: transparent;
+	color: @white;
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@error, 8%);
+	}
+}
+
+// 谨慎操作按钮
+.btn-warn {
+	.btn-default;
+	background-color: @warn;
+	border-color: transparent;
+	color: @white;
+	&:not(.btn-disabled):enabled:hover {
+		background-color: darken(@warn, 8%);
+	}
+}

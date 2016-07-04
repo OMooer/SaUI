@@ -1,8 +1,11 @@
 .clearfix {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	line-height: 0;
-	font-size: 0;
-	height: 0;
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+		overflow: hidden;
+		line-height: 0;
+		font-size: 0;
+		height: 0;
+	}
 }

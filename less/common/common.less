@@ -22,9 +22,16 @@ html {
 }
 
 // pad
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) {
 	html {
 		font-size: 240px;
+	}
+}
+
+// pc and bigger
+@media screen and (min-width: 1025px) {
+	html {
+		font-size: 100px;
 	}
 }
 
@@ -32,6 +39,7 @@ body {
 	font-family: "PingFang SC", "Microsoft Yahei", "Heiti SC", sans-serif;
 	font-size: @fontNormal;
 	font-weight: @regular;
+	color: @black;
 }
 
 // 栅格
@@ -39,7 +47,7 @@ body {
 	.col-@{i} {
 		width: (100%/12*@i);
 	}
-	.offset-@{i} {
+	.col-offset-@{i} {
 		margin-left: (100%/12*@i);
 	}
 	.gender-grid(@n, (@i+1));
@@ -57,4 +65,14 @@ body {
 // 背景配色
 .gender-bg(@color) {
 	background-color+: lighten(@@color, 40%);
+}
+
+// 表单input
+.gender-input(@input:input) {
+	@{input}[type="text" ],
+	@{input}[type="email" ],
+	@{input}[type="password" ],
+	@{input}[type="tel" ],
+	@{input}[type="number" ] {
+	}
 }
