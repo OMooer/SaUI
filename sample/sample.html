@@ -172,13 +172,13 @@
             <input type="password" id="password3" name="password" placeholder="Password">
           </div>
           <div class="form-group">
-            <label for="select">Gender:</label>
-            <div class="form-select">
-              <select id="select" name="select">
-                <option value="0">Female</option>
-                <option value="1">Male</option>
-              </select>
-            </div>
+            <label>Gender:</label>
+            <label class="form-radio">
+              <input type="radio" name="gender" value="0">Female
+            </label>
+            <label class="form-radio">
+              <input type="radio" name="gender" value="1">Male
+            </label>
           </div>
           <div class="form-group">
             <label>
@@ -199,13 +199,13 @@
         &lt;input type="password" id="password3" name="password" placeholder="Password"&gt;
     &lt;/div&gt;
     &lt;div class="form-group"&gt;
-        &lt;label for="select"&gt;Gender:&lt;/label&gt;
-        &lt;div class="form-select"&gt;
-            &lt;select id="select" name="select"&gt;
-                &lt;option value="0"&gt;Female&lt;/option&gt;
-                &lt;option value="1"&gt;Male&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
+        &lt;label&gt;Gender:&lt;/label&gt;
+        &lt;label class="form-radio"&gt;
+            &lt;input type="radio" name="gender" value="0"&gt; Female
+        &lt;/label&gt;
+        &lt;label class="form-radio"&gt;
+            &lt;input type="radio" name="gender" value="1"&gt; Male
+        &lt;/label&gt;
     &lt;/div&gt;
     &lt;div class="form-group"&gt;
         &lt;label&gt;
@@ -215,8 +215,8 @@
     &lt;button type="submit"&gt;Submit&lt;/button&gt;
     &lt;button type="reset"&gt;Reset&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-      <h3>水平排列表单</h3>
-      <p>给表单添加一个 class <code>.sa-form-horizontal</code>即可实现以下效果的水平排列表单：</p>
+      <h3>对齐排列表单</h3>
+      <p>给表单添加一个 class <code>.sa-form-horizontal</code>即可实现以下效果的对齐排列表单：</p>
       <div class="example">
         <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-horizontal">
           <div class="form-group">
