@@ -63,21 +63,36 @@ body {
 }
 
 // 背景配色
-.gender-bg(@color) {
-	background-color+: lighten(@@color, 40%);
-}
+.gender-bg(@bg, @color:@grayDarker) {
+	.bg-@{bg} {
+		background-color: lighten(@@bg, 32%);
+		border: solid 1px @@bg;
+		box-sizing: border-box;
+		color: @color;
 
-// 表单input
-.gender-input(@input:input) {
-	@{input}[type="text" ],
-	@{input}[type="email" ],
-	@{input}[type="password" ],
-	@{input}[type="tel" ],
-	@{input}[type="number" ] {
+		a {
+			&:hover {
+				//color: darken(@link, 20%);
+			}
+		}
 	}
 }
 
-.disabled(){
+// 文字配色
+.gender-text(@color) {
+	.text-@{color} {
+		color: darken(@@color, 10%);
+		a& {
+			&:link,
+			&:visited {
+				color: darken(@@color, 10%);
+			}
+		}
+	}
+}
+
+// 禁用
+.disabled() {
 	opacity: .65;
 	cursor: no-drop;
 }

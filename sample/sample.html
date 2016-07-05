@@ -370,8 +370,9 @@
                 </div>
               </div>
               <div class="form-group">
-                <div class="input-group"><span class="input-addon-left">@</span>
-                  <input type="email" placeholder="input email address">
+                <div class="input-group">
+                  <label for="email5" aria-label="email" class="input-addon"><span aria-hidden="true">@</span></label>
+                  <input type="email" id="email5" placeholder="input email address">
                   <button type="button">Submit</button>
                 </div>
               </div>
@@ -386,8 +387,10 @@
     &lt;/div&gt;
     &lt;div class="form-group"&gt;
         &lt;div class="input-group"&gt;
-            &lt;span class="input-addon-left"&gt;@&lt;/span&gt;
-            &lt;input type="email" placeholder="input email address"&gt;
+            &lt;label for="email5" aria-label="email" class="input-addon"&gt;
+                &lt;span aria-hidden="true"&gt;@&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;input type="email" id="email5" placeholder="input email address"&gt;
             &lt;button type="button"&gt;Submit&lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -512,6 +515,39 @@
           <pre><code>&lt;a href="#" class="btn btn-active btn-primary"&gt;这是 已激活 的按钮&lt;/a&gt;</code></pre>
         </li>
       </ul>
+      <h2>辅助类</h2>
+      <h3>情境文本颜色</h3>
+      <p>通过颜色来展示意图，这些类可以应用于链接。</p>
+      <div class="example">
+        <p class="text-primary">这是一段重要的文本</p>
+        <p class="text-success">这是一段成功的文本</p>
+        <p class="text-info">这是一段信息提示的文本</p>
+        <p class="text-error">这是一段错误提示的文本</p>
+        <p class="text-warn">这是一段警告提示的文本</p>
+      </div>
+      <pre><code>&lt;p class="text-primary"&gt;....&lt;/p&gt;
+&lt;p class="text-success"&gt;....&lt;/p&gt;
+&lt;p class="text-info"&gt;....&lt;/p&gt;
+&lt;p class="text-error"&gt;....&lt;/p&gt;
+&lt;p class="text-warn"&gt;....&lt;/p&gt;</code></pre>
+      <h3>情境背景色</h3>
+      <p>和情境文本颜色类一样，使用任意情境背景色类就可以设置元素的背景。</p>
+      <div class="example">
+        <p class="bg-primary">这是一段话里包含有一个<a href="#">链接</a></p>
+        <p class="bg-success">这是一段话里包含有一个<a href="#">链接</a></p>
+        <p class="bg-info">这是一段话里包含有一个<a href="#">链接</a></p>
+        <p class="bg-error">这是一段话里包含有一个<a href="#">链接</a></p>
+        <p class="bg-warn">这是一段话里包含有一个<a href="#">链接</a></p>
+      </div>
+      <pre><code>&lt;p class="bg-primary"&gt;....&lt;/p&gt;
+&lt;p class="bg-success"&gt;....&lt;/p&gt;
+&lt;p class="bg-info"&gt;....&lt;/p&gt;
+&lt;p class="bg-error"&gt;....&lt;/p&gt;
+&lt;p class="bg-warn"&gt;....&lt;/p&gt;</code></pre>
+      <h3>关闭按钮</h3>
+      <p>通过使用一个象征关闭的图标，可以让模态框和警告框消失。</p>
+      <div class="example"><a aria-label="Close" class="close"><span aria-hidden="true">&times;</span></a></div>
+      <pre><code>&lt;a aria-label="Close" class="close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/a&gt;</code></pre>
       <div class="copyright">
         <p>Copyright &copy; 2016 O'Mooer Works</p>
       </div>

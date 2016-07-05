@@ -28,6 +28,10 @@
 	background-color: #ddd;
 }
 
+.example p[class*="bg-"] {
+	padding: .5em;
+}
+
 .copyright {
 	margin: .10rem 0;
 	border-top: solid .01rem #ccc;

@@ -1,3 +1,4 @@
+// 清浮动
 .clearfix {
 	&:after {
 		content: "";
@@ -8,4 +9,32 @@
 		font-size: 0;
 		height: 0;
 	}
+}
+
+// 背景颜色
+.gender-bg(primary);
+.gender-bg(success);
+.gender-bg(info);
+.gender-bg(error);
+.gender-bg(warn);
+
+// 文本颜色
+.gender-text(primary);
+.gender-text(success);
+.gender-text(info);
+.gender-text(error);
+.gender-text(warn);
+
+// 关闭
+.close {
+	display: inline-block;
+	text-decoration: none !important;
+	text-align: center;
+	cursor: pointer;
+	line-height: 1em;
+	font-weight: @bold;
+	font-size: @fontLarge;
+	color: @grayDark;
+	width: 1em;
+	height: 1em;
 }
