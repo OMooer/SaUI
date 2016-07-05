@@ -25,7 +25,7 @@
 &lt;html lang="zh-CN"&gt;
 	...
 &lt;/html&gt;</code></pre>
-      <p>为了增强跨浏览器表现的一致性，SaUI使用了&nbsp;<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a> ，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个 CSS 重置样式库。</p>
+      <p>为了增强跨浏览器表现的一致性，SaUI 使用了&nbsp;<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a> ，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个 CSS 重置样式库。</p>
       <p><strong>SaUI 是优先移动设备的</strong>。为了确保适当的绘制和触屏缩放，需要在<code>&lt;head&gt;</code>之中<strong>添加 viewport 元数据标签</strong>。</p>
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
       <p>在移动设备浏览器上，通过为视界（viewport）设置 meta 属性为 <code>user-scalable=no</code> 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
@@ -66,34 +66,34 @@
         </div>
       </div>
       <pre><code>&lt;div class="sa-g g-border-default"&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-1"&gt;.col-1&lt;/div&gt;
-		&lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-2"&gt;.col-2&lt;/div&gt;
-		&lt;div class="col-8 col-offset-2"&gt;.col-8.col-offset-2&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-3"&gt;.col-3&lt;/div&gt;
-		&lt;div class="col-7 col-offset-2"&gt;.col-7.col-offset-2&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-4"&gt;.col-4&lt;/div&gt;
-		&lt;div class="col-6 col-offset-2"&gt;.col-6.col-offset-2&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-5"&gt;.col-5&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-10 col-offset-2"&gt;.col-10.col-offset-2&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-11 col-offset-1"&gt;.col-11.col-offset-1&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="row"&gt;
-		&lt;div class="col-12"&gt;.col-12&lt;/div&gt;
-	&lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
+        &lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-2"&gt;.col-2&lt;/div&gt;
+        &lt;div class="col-8 col-offset-2"&gt;.col-8.col-offset-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-3"&gt;.col-3&lt;/div&gt;
+        &lt;div class="col-7 col-offset-2"&gt;.col-7.col-offset-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-4"&gt;.col-4&lt;/div&gt;
+        &lt;div class="col-6 col-offset-2"&gt;.col-6.col-offset-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-5"&gt;.col-5&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-10 col-offset-2"&gt;.col-10.col-offset-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-11 col-offset-1"&gt;.col-11.col-offset-1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-12"&gt;.col-12&lt;/div&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       <h2>表单</h2>
       <p>将表单的每一项包含在 class 为<code>.form-group</code>的容器里可以实现以下不同特性的表单展现。这种做法可以理解为是 SaUI 的规范。</p>
@@ -112,6 +112,17 @@
           <button type="submit">Submit</button><a href="#" class="btn">Cancel</a>
         </form>
       </div>
+      <pre><code>&lt;form class="sa-form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;&lt;a href="#" class="btn"&gt;Cancel&lt;/a&gt;
+&lt;/form&gt;</code></pre>
       <h3>内联式表单</h3>
       <p>给表单添加一个 class <code>.sa-form-inline</code>即可实现以下效果的内联式表单：</p>
       <div class="example">
@@ -132,6 +143,22 @@
           <button type="submit">Submit</button>
         </form>
       </div>
+      <pre><code>&lt;form class="sa-form sa-form-inline"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="email2"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email2" name="email" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="password2"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password2" name="password" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="remember" value="yes"&gt;Remember me
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
       <h3>堆叠式表单</h3>
       <p>给表单添加一个 class <code>.sa-form-stacked</code>即可实现以下效果的堆叠式表单：</p>
       <div class="example">
@@ -162,6 +189,32 @@
           <button type="reset">Reset</button>
         </form>
       </div>
+      <pre><code>&lt;form class="sa-form sa-form-stacked"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="email3"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email3" name="email" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="password3"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password3" name="password" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="select"&gt;Gender:&lt;/label&gt;
+        &lt;div class="form-select"&gt;
+            &lt;select id="select" name="select"&gt;
+                &lt;option value="0"&gt;Female&lt;/option&gt;
+                &lt;option value="1"&gt;Male&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="remember" value="yes"&gt;Remember me
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;</code></pre>
       <h3>水平排列表单</h3>
       <p>给表单添加一个 class <code>.sa-form-horizontal</code>即可实现以下效果的水平排列表单：</p>
       <div class="example">
@@ -192,6 +245,32 @@
           <button type="reset">Reset</button>
         </form>
       </div>
+      <pre><code>&lt;form class="sa-form sa-form-horizontal"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="email4"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email4" name="email" placeholder="Email" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="password4"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password4" name="password" placeholder="Password" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="select2"&gt;Gender:&lt;/label&gt;
+        &lt;div class="form-select"&gt;
+            &lt;select id="select2" name="select"&gt;
+                &lt;option value="0"&gt;Female&lt;/option&gt;
+                &lt;option value="1"&gt;Male&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label class="form-checkbox"&gt;
+            &lt;input type="checkbox" name="remember" value="yes"&gt;Remember me
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;</code></pre>
       <h3>多列排列表单（配合栅格）</h3>
       <p>在表单上添加栅格的 class <code>.sa-g</code>即可在内部使用栅格列<code>.col-*</code>以此达到下面多列显示的效果：</p>
       <div class="example">
@@ -218,6 +297,28 @@
           </div>
         </form>
       </div>
+      <pre><code>&lt;form class="sa-form sa-form-stacked sa-g"&gt;
+    &lt;div class="form-group col-4"&gt;
+        &lt;label&gt;First Name&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-4"&gt;
+        &lt;label&gt;Last Name&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-4"&gt;
+        &lt;label&gt;City&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-6"&gt;
+        &lt;label&gt;Address&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-6"&gt;
+        &lt;label&gt;Email&lt;/label&gt;
+        &lt;input type="text" class="form-control"&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
       <h3>Input 组</h3>
       <p>将多个 input 放入同一个父级元素<code>&lt;fieldset&gt;</code>里或者添加 class <code>.input-group</code>即可以组合的形式展示。</p>
       <ul>
@@ -241,6 +342,22 @@
               </div>
             </form>
           </div>
+          <pre><code>&lt;form class="sa-form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;fieldset&gt;
+            &lt;input type="text" class="form-control"&gt;
+            &lt;input type="text" class="form-control"&gt;
+            &lt;input type="text" class="form-control"&gt;
+            &lt;input type="text" class="form-control"&gt;
+        &lt;/fieldset&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;fieldset&gt;
+            &lt;input type="text" class="form-control"&gt;
+            &lt;input type="text" class="form-control"&gt;
+        &lt;/fieldset&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
         </li>
         <li>
           <h4>单行组合</h4>
@@ -252,8 +369,6 @@
                   <button type="button">Search</button>
                 </div>
               </div>
-            </form>
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
               <div class="form-group">
                 <div class="input-group"><span class="input-addon-left">@</span>
                   <input type="email" placeholder="input email address">
@@ -262,6 +377,21 @@
               </div>
             </form>
           </div>
+          <pre><code>&lt;form class="sa-form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;div class="input-group"&gt;
+            &lt;input type="search" placeholder="Input search keyword"&gt;
+            &lt;button type="button"&gt;Search&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;div class="input-group"&gt;
+            &lt;span class="input-addon-left"&gt;@&lt;/span&gt;
+            &lt;input type="email" placeholder="input email address"&gt;
+            &lt;button type="button"&gt;Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
         </li>
       </ul>
       <h3>表单项状态</h3>
@@ -284,6 +414,19 @@
               <button type="button" disabled>Button 禁用</button>
             </form>
           </div>
+          <pre><code>&lt;form class="sa-form"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;input type="text" placeholder="Input 禁用" disabled&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;div class="form-select"&gt;
+            &lt;select disabled&gt;
+                &lt;option&gt;Select 禁用&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type="button" disabled&gt;Button 禁用&lt;/button&gt;
+&lt;/form&gt;</code></pre>
         </li>
         <li>
           <h4>只读状态</h4>
@@ -294,6 +437,79 @@
               </div>
             </form>
           </div>
+          <pre><code>&lt;input type="text" value="Input 只读" readonly&gt;</code></pre>
+        </li>
+      </ul>
+      <h2>按钮</h2>
+      <p>
+        给<code>&lt;a&gt;</code>或者<code>&lt;button&gt;</code>添加 class <code>.btn.btn-default</code>，可实现默认按钮样式。
+        <br>注意：如果需要无边框的<code>&lt;a&gt;</code>按钮，直接使用 class <code>.btn</code> 即可，不可直接用在<code>&lt;button&gt;</code>上。表单内的<code>&lt;button&gt;</code>无须添加 class 自动适配按钮样式。
+      </p>
+      <div class="example"><a href="#" class="btn btn-default">A Button</a>
+        <button type="button" class="btn btn-default">Button</button><a href="#" class="btn">A Button without border</a>
+      </div>
+      <pre><code>&lt;a href="#" class="btn btn-default"&gt;A Button&lt;/a&gt;
+&lt;button type="button" class="btn btn-default"&gt;Button&lt;/button&gt;
+&lt;a href="#" class="btn"&gt;A Button without border&lt;/a&gt;</code></pre>
+      <h3>按钮的样式</h3>
+      <p>按钮的样式分别有以下几种：</p>
+      <ul>
+        <li><code>.btn-default</code> 默认</li>
+        <li><code>.btn-primary</code> 首选</li>
+        <li><code>.btn-success</code> 成功</li>
+        <li><code>.btn-info</code> 信息</li>
+        <li><code>.btn-danger</code> 危险</li>
+        <li><code>.btn-warn</code> 警告</li>
+      </ul>
+      <div class="example"><a href="#" class="btn btn-primary">首选操作</a><a href="#" class="btn btn-success">成功操作</a><a href="#" class="btn btn-info">信息操作</a><a href="#" class="btn btn-danger">危险操作</a><a href="#" class="btn btn-warn">警告操作</a></div>
+      <pre><code>&lt;a href="#" class="btn btn-primary"&gt;首选操作&lt;/a&gt;
+&lt;a href="#" class="btn btn-success"&gt;成功操作&lt;/a&gt;
+&lt;a href="#" class="btn btn-info"&gt;信息操作&lt;/a&gt;
+&lt;a href="#" class="btn btn-danger"&gt;危险操作&lt;/a&gt;
+&lt;a href="#" class="btn btn-warn"&gt;警告操作&lt;/a&gt;</code></pre>
+      <h3>矩形按钮</h3>
+      <p>添加 class <code>.btn-rect</code></p>
+      <div class="example">
+        <button type="button" class="btn btn-rect btn-primary">首选操作</button>
+        <button type="button" class="btn btn-rect btn-success">成功操作</button>
+        <button type="button" class="btn btn-rect btn-info">信息操作</button>
+        <button type="button" class="btn btn-rect btn-danger">危险操作</button>
+        <button type="button" class="btn btn-rect btn-warn">警告操作</button>
+      </div>
+      <pre><code>&lt;button type="button" class="btn btn-rect btn-primary"&gt;首选操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-rect btn-success"&gt;成功操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-rect btn-info"&gt;信息操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-rect btn-danger"&gt;危险操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-rect btn-warn"&gt;警告操作&lt;/button&gt;</code></pre>
+      <h3>按钮大小</h3>
+      <p>添加 class <code>.btn-lg</code>，<code>.btn-sm</code>，<code>.btn-xs</code>定义按钮的大小，默认大小无须定义。</p>
+      <div class="example">
+        <p><a href="#" class="btn btn-lg btn-rect btn-primary">大按钮 .btn-lg</a><a href="#" class="btn btn-lg btn-default">大按钮 .btn-lg</a></p>
+        <p><a href="#" class="btn btn-rect btn-primary">默认按钮</a><a href="#" class="btn btn-default">默认按钮</a></p>
+        <p><a href="#" class="btn btn-sm btn-rect btn-primary">小按钮 .btn-sm</a><a href="#" class="btn btn-sm btn-default">小按钮 .btn-sm</a></p>
+        <p><a href="#" class="btn btn-xs btn-rect btn-primary">细小按钮 .btn-xs</a><a href="#" class="btn btn-xs btn-default">细小按钮 .btn-xs</a></p>
+      </div>
+      <pre><code>&lt;a href="#" class="btn btn-lg btn-default"&gt;大按钮 .btn-lg&lt;/a&gt;
+&lt;a href="#" class="btn btn-default"&gt;默认按钮&lt;/a&gt;
+&lt;a href="#" class="btn btn-sm btn-default"&gt;小按钮 .btn-sm&lt;/a&gt;
+&lt;a href="#" class="btn btn-xs btn-default"&gt;细小按钮 .btn-xs&lt;/a&gt;</code></pre>
+      <h3>按钮的状态</h3>
+      <ul>
+        <li>
+          <h4>禁用</h4>
+          <p>给按钮添加<code>.btn-disabled</code> class 或者给<code>&lt;button&gt;</code>添加<code>disabled</code>属性可以赋于禁用的样式。</p>
+          <p>注意：<code>&lt;a&gt;</code>按钮的禁用状态只是样式上的展现，如果需要行为上的禁用请通过 <abbr title="JavaScript">JS</abbr> 处理。</p>
+          <div class="example"><a href="#" class="btn btn-primary btn-disabled">A 按钮禁用</a>
+            <button type="button" disabled class="btn btn-default">Button 按钮禁用</button>
+          </div>
+          <pre><code>&lt;a href="#" class="btn btn-primary btn-disabled"&gt;A 按钮禁用&lt;/a&gt;
+&lt;button type="button" disabled class="btn btn-default"&gt;Button 按钮禁用&lt;/button&gt;</code></pre>
+        </li>
+        <li>
+          <h4>激活</h4>
+          <p>按钮的激活状态，一般用在识别当前操作进程的展示。比如选项卡切换的当前态。为按钮添加<code>.btn-active</code> class 即可达到此效果。</p>
+          <div class="example"><a href="#" class="btn btn-active btn-primary">这是 已激活 的按钮</a><a href="#" class="btn btn-primary">这是 未激活 的按钮</a></div>
+          <pre><code>&lt;a href="#" class="btn btn-active btn-primary"&gt;这是 已激活 的按钮&lt;/a&gt;</code></pre>
         </li>
       </ul>
       <div class="copyright">
