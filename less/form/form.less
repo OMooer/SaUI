@@ -3,9 +3,9 @@ form.sa-form {
 
 	.__item() {
 		background-color: @white;
-		border: solid 1px @grayLight;
+		border: solid .01rem @grayLight;
 		border-radius: .04rem;
-		box-shadow: inset 0 3px 8px -5px @grayLight;
+		box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
 		box-sizing: border-box;
 		transition: border-color .3s ease-out;
 		outline: none;
@@ -25,7 +25,7 @@ form.sa-form {
 		&[type="search"],
 		&[type="tel"],
 		&[type="number"] {
-			padding: .4em .5em;
+			padding: .05rem .07rem;
 
 			&:focus {
 				border-color: @blue;
@@ -40,7 +40,7 @@ form.sa-form {
 		&[type="radio"] {
 			//-webkit-appearance: none;
 			//-moz-appearance: none;
-			margin: 0 .3em;
+			margin: 0 .05rem;
 			width: 1em;
 			height: 1em;
 
@@ -49,8 +49,62 @@ form.sa-form {
 				border-color: transparent;
 			}
 		}
-		&[type="radio"]{
+		&[type="radio"] {
 			border-radius: 50%;
+		}
+
+		&[type="checkbox"] {
+			@switchWid: .50rem;
+			&.form-switch {
+				position: relative;
+				border-radius: .13rem;
+				width: @switchWid;
+				height: .26rem;
+
+				&:before {
+					content: "";
+					display: block;
+					background: @grayLighter;
+					border-radius: .13rem;
+					border: solid .01rem @grayLight;
+					transition: background .2s ease-out;
+					width: 100%;
+					height: 100%;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					display: block;
+					background: @white;
+					border-radius: 50%;
+					border: solid 1px @grayLighter;
+					box-shadow: 1px 2px 3px @gray;
+					cursor: pointer;
+					transition: left .2s ease-out;
+					top: 0;
+					left: 0;
+					width: .25rem;
+					height: .25rem;
+				}
+			}
+			&:checked.form-switch {
+				&:before {
+					background: @success;
+				}
+				&:after {
+					background: @white;
+					left: @switchWid - .25rem;
+				}
+			}
+		}
+
+		&[type="reset"],
+		&[type="button"],
+		&[type="submit"] {
+			&::-moz-focus-inner {
+				border: none;
+				padding: 0;
+			}
 		}
 	}
 
@@ -58,8 +112,7 @@ form.sa-form {
 		.__item;
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		padding: .4em .5em;
-		line-height: 1.4em;
+		padding: .05rem .07rem;
 		width: 100%;
 
 		&:focus {
@@ -78,6 +131,11 @@ form.sa-form {
 
 		&[type="reset"] {
 			.btn-warn;
+		}
+
+		&::-moz-focus-inner {
+			border: none;
+			padding: 0;
 		}
 	}
 
@@ -99,37 +157,113 @@ form.sa-form {
 
 	.form-group {
 		overflow: hidden;
-		margin-bottom: .8em;
+		margin-bottom: .10rem;
+
+		&.form-radio-group {
+			float: left;
+			margin-right: .10rem;
+			background: @grayLighter;
+			border: solid .01rem @grayLight;
+			border-radius: .03rem;
+			color: @grayDark;
+			box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
+
+			.form-radio {
+				position: relative;
+				float: left;
+				margin: 0;
+				cursor: pointer;
+				text-align: center;
+				width: 4em;
+
+				span {
+					position: relative;
+					display: block;
+					padding-top: .05rem;
+					padding-bottom: .05rem;
+					transition: color .2s ease;
+					z-index: 1;
+				}
+
+				input[type="radio"] {
+					position: absolute;
+					margin: 0;
+					top: -100%;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+					&:before {
+						@color: @default;
+						content: "";
+						position: relative;
+						display: block;
+						left: -100%;
+						border: solid .01rem;
+						background-color: @color;
+						border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+						border-radius: .03rem;
+						box-sizing: border-box;
+						transition: left .2s ease;
+						width: 100%;
+						height: 99%;
+					}
+
+					&:checked {
+						&:before {
+							left: .05% !important;
+							top: 101%;
+						}
+
+						& + span {
+							color: @white;
+						}
+					}
+				}
+
+				&:first-of-type {
+					input[type="radio"]:before {
+						left: 100%;
+					}
+				}
+			}
+
+			&.form-radio-primary .form-radio input[type="radio"]:before {
+				@color: @primary;
+				background-color: @color;
+				border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+			}
+
+			&.form-radio-success .form-radio input[type="radio"]:before {
+				@color: @success;
+				background-color: @color;
+				border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+			}
+		}
 	}
 
 	.form-select {
 		position: relative;
 		display: block;
-		padding-bottom: 1px;
 
 		&:after {
-			content: ">";
+			content: "\1433";
 			position: absolute;
-			line-height: 2.2em;
+			margin-top: .05rem;
 			color: @gray;
-			right: .5em;
+			right: .07rem;
 			top: 0;
 		}
 	}
 
 	.form-radio {
 		display: inline-block;
-		margin-right: 2em;
+		margin-right: .20rem;
 
 		&:last-child {
 			margin-right: 0;
 		}
 
-		&.form-radio-group {
-			input[type="radio"]{
-
-			}
-		}
 	}
 
 	.form-control {
@@ -149,14 +283,14 @@ form.sa-form {
 			&[type="tel"],
 			&[type="number"] {
 				position: relative;
-				margin-top: -1px;
+				margin-top: -.01rem;
 				border-radius: 0;
 				box-shadow: none;
 
 				&:first-child {
 					margin-top: 0;
 					border-radius: .04rem .04rem 0 0;
-					box-shadow: inset 0 3px 8px -5px @grayLight;
+					box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
 				}
 
 				&:last-child {
@@ -191,7 +325,7 @@ form.sa-form {
 
 		button {
 			float: left;
-			padding: .4em 1em;
+			padding: .05rem 1em;
 			border-left: 0;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
@@ -201,9 +335,9 @@ form.sa-form {
 
 		.input-addon {
 			float: left;
-			padding: .4em 1em;
+			padding: .05rem 1em;
 			background-color: @grayLighter;
-			border: solid 1px @grayLight;
+			border: solid .01rem @grayLight;
 			border-right: 0;
 			border-radius: .04rem 0 0 .04rem;
 		}
@@ -241,9 +375,8 @@ form.sa-form {
 	&-horizontal {
 		label {
 			float: left;
-			padding-right: .3em;
+			padding: .05rem .05rem .05rem 0;
 			text-align: right;
-			line-height: 2.4em;
 			width: 20%;
 		}
 

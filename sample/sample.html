@@ -319,11 +319,11 @@
         &lt;input type="text" class="form-control"&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
-      <h3>Input 组</h3>
+      <h3>不一样的 Input</h3>
       <p>将多个 input 放入同一个父级元素<code>&lt;fieldset&gt;</code>里或者添加 class <code>.input-group</code>即可以组合的形式展示。</p>
       <ul>
         <li>
-          <h4>简单 fieldset 组合</h4>
+          <h4>fieldset 组合</h4>
           <div class="example">
             <form name="example" method="get" action="/" target="_blank" class="sa-form">
               <div class="form-group">
@@ -361,6 +361,7 @@
         </li>
         <li>
           <h4>单行组合</h4>
+          <p><code>.input-addon</code>类可以使自身与<code>&lt;input&gt;</code>组合成一个整体，我们可以在里面输入文本或者使用<abbr title="将矢量图案制作成字体格式供前端在页面上使用文字来表示图案">字体图标</abbr>。</p>
           <div class="example">
             <form name="example" method="get" action="/" target="_blank" class="sa-form">
               <div class="form-group">
@@ -396,9 +397,61 @@
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
         </li>
+        <li>
+          <h4>特殊的 Radio 组合</h4>
+          <p class="bg-warn">注意：在三个及以上的 Radio 组里从第二到最后第二个之间，如果前一个选中项在右边的话动画效果存在方向错误的 BUG。因此不建议使用，在这仅是作为一个技术研究方案。</p>
+          <div class="example">
+            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+              <div class="form-group form-radio-group form-radio-primary">
+                <label class="form-radio">
+                  <input type="radio" name="switch" value="0"><span>Day</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="switch" value="1"><span>Week</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="switch" value="2"><span>Month</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="switch" value="2"><span>Year</span>
+                </label>
+              </div>
+              <div class="form-group form-radio-group">
+                <label class="form-radio">
+                  <input type="radio" name="switch2" value="0"><span>Day</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="switch2" value="1"><span>Week</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="switch2" value="2" checked><span>Month</span>
+                </label>
+              </div>
+              <div class="form-group form-radio-group form-radio-success">
+                <label class="form-radio">
+                  <input type="radio" name="date" value="0" checked><span>Day</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="date" value="2"><span>Month</span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li>
+          <h4>特殊的 Checkbox</h4>
+          <p>为<code>checkbox</code>类型的<code>&lt;input&gt;</code>添加 class <code>.form-switch</code>即可实现以下开关按钮的效果：</p>
+          <div class="example">
+            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+              <div class="form-group">
+                <input type="checkbox" value="1" class="form-switch">
+              </div>
+            </form>
+          </div>
+        </li>
       </ul>
       <h3>表单项状态</h3>
-      <p>通过设置表单<code>input</code>, <code>select</code>, <code>button</code>的属性，可以为表单项设置禁用（<code>disabled</code>），只读（<code>readonly</code>）等状态，并表现出来。</p>
+      <p>通过设置表单<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>的属性，可以为表单项设置禁用（<code>disabled</code>），只读（<code>readonly</code>）等状态，并表现出来。</p>
       <ul>
         <li>
           <h4>禁用状态</h4>
@@ -406,6 +459,12 @@
             <form name="example" method="get" action="/" target="_blank" class="sa-form">
               <div class="form-group">
                 <input type="text" placeholder="Input 禁用" disabled>
+              </div>
+              <div class="form-group">
+                <input type="radio" disabled>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" disabled>
               </div>
               <div class="form-group">
                 <div class="form-select">
