@@ -66,16 +66,10 @@ body {
 .gender-bg(@bg, @color:@grayDarker) {
 	.bg-@{bg} {
 		padding: .06rem;
-		background-color: lighten(@@bg, 32%);
+		background-color: screen(@@bg, #ccc);
 		border: solid 1px @@bg;
 		box-sizing: border-box;
 		color: @color;
-
-		a {
-			&:hover {
-				//color: darken(@link, 20%);
-			}
-		}
 	}
 }
 
