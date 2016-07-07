@@ -57,6 +57,9 @@
 	&[disabled],
 	&.btn-disabled {
 		.disabled;
+		&:active {
+			box-shadow: none;
+		}
 	}
 
 	.__btn(@color) {
@@ -85,7 +88,7 @@
 	// 普通按钮
 	&.btn-default {
 		.__btn(@white);
-		border-color: darken(@white, 20%);
+		border-color: @line;
 		color: @grayDark;
 		a& {
 			color: @grayDark;
