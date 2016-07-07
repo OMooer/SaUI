@@ -1,3 +1,50 @@
+/**********************
+ * HTML标签
+ **/
+
+@import "../common/common";
+
+// small
+html {
+	// chrome 这个混蛋强制不能低于10，所以方便计算的只能用100
+	font-size: 100px;
+}
+
+// 6
+@media only screen and (min-width: 375px) {
+	html {
+		font-size: 117.19px;
+	}
+}
+
+// 6p
+@media only screen and (min-width: 414px) {
+	html {
+		font-size: 129.38px;
+	}
+}
+
+// pad
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: 240px;
+	}
+}
+
+// pc and bigger
+@media screen and (min-width: 1025px) {
+	html {
+		font-size: 100px;
+	}
+}
+
+body {
+	font-family: "PingFang SC", "Microsoft Yahei", "Heiti SC", sans-serif;
+	font-size: @fontNormal;
+	font-weight: @regular;
+	color: @black;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1em;
 }

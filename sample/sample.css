@@ -2,6 +2,7 @@
 	margin: auto;
 	width: 60%;
 }
+
 @media only screen and (max-width: 1024px) {
 	.content {
 		width: 95%;
@@ -18,14 +19,19 @@
 	display: block;
 	margin-bottom: 1em;
 }
-.example .sa-g .row {
+
+.example .sa-grid .row {
 	margin: .10rem 0;
 	background-color: #f4f4f4;
 }
 
-.example .sa-g .row [class*="col-"] {
+.example .sa-grid .row [class*="col-"] {
 	padding: .05rem;
 	background-color: #ddd;
+}
+
+.example .sa-form.sa-grid [class*="col-"] {
+	padding: 0 1em;
 }
 
 .copyright {

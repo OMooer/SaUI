@@ -1,4 +1,9 @@
-// 按钮类
+/**********************
+ * 按钮类
+ **/
+
+@import "../common/common";
+
 .btn {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	display: inline-block;
@@ -53,67 +58,67 @@
 	&.btn-disabled {
 		.disabled;
 	}
-}
 
-.__btn(@color) {
-	background-color: @color;
-	border: solid .01rem transparent;
-
-	// 按钮hover后的背景色
-	&.btn-active,
-	&:hover {
-		background-color: darken(@color, 7%);
-	}
-	// 禁用按钮的hover背景色与原来一致
-	&.btn-disabled:hover,
-	&[disabled]:hover {
+	.__btn(@color) {
 		background-color: @color;
-	}
-}
+		border: solid .01rem transparent;
 
-.__white() {
-	color: @white;
-	a& {
+		// 按钮hover后的背景色
+		&.btn-active,
+		&:hover {
+			background-color: darken(@color, 7%);
+		}
+		// 禁用按钮的hover背景色与原来一致
+		&.btn-disabled:hover,
+		&[disabled]:hover {
+			background-color: @color;
+		}
+	}
+
+	.__white() {
 		color: @white;
+		a& {
+			color: @white;
+		}
 	}
-}
 
-// 普通按钮
-.btn-default {
-	.__btn(@white);
-	border-color: darken(@white, 20%);
-	color: @grayDark;
-	a& {
+	// 普通按钮
+	&.btn-default {
+		.__btn(@white);
+		border-color: darken(@white, 20%);
 		color: @grayDark;
+		a& {
+			color: @grayDark;
+		}
 	}
-}
 
-// 首选操作按钮
-.btn-primary {
-	.__btn(@primary);
-	.__white;
-}
+	// 首选操作按钮
+	&.btn-primary {
+		.__btn(@primary);
+		.__white;
+	}
 
-// 成功操作按钮
-.btn-success {
-	.__btn(@success);
-	.__white;
-}
+	// 成功操作按钮
+	&.btn-success {
+		.__btn(@success);
+		.__white;
+	}
 
-// 信息操作按钮
-.btn-info {
-	.__btn(@info);
-	.__white;
-}
+	// 信息操作按钮
+	&.btn-info {
+		.__btn(@info);
+		.__white;
+	}
 
-// 危险操作按钮
-.btn-danger {
-	.__btn(@error);
-	.__white;
-}
+	// 危险操作按钮
+	&.btn-danger {
+		.__btn(@error);
+		.__white;
+	}
 
-// 谨慎操作按钮
-.btn-warn {
-	.__btn(@warn);
-	.__white;
+	// 谨慎操作按钮
+	&.btn-warn {
+		.__btn(@warn);
+		.__white;
+	}
 }

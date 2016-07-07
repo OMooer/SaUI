@@ -32,9 +32,9 @@
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
       <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在上面（也）发现不可用也纯属正常。</p>
       <h2>栅格</h2>
-      <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.sa-g</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
+      <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.sa-grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
       <div class="example">
-        <div class="sa-g">
+        <div class="sa-grid">
           <div class="row">
             <div class="col-1">.col-1</div>
             <div class="col-9 col-offset-2">.col-9.col-offset-2</div>
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-      <pre><code>&lt;div class="sa-g g-border-default"&gt;
+      <pre><code>&lt;div class="sa-grid g-border-default"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
         &lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
@@ -272,9 +272,9 @@
     &lt;button type="reset"&gt;Reset&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       <h3>多列排列表单（配合栅格）</h3>
-      <p>在表单上添加栅格的 class <code>.sa-g</code>即可在内部使用栅格列<code>.col-*</code>以此达到下面多列显示的效果：</p>
+      <p>在表单上添加栅格的 class <code>.sa-grid</code>即可在内部使用栅格列<code>.col-*</code>以此达到下面多列显示的效果：</p>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-stacked sa-g">
+        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-stacked sa-grid">
           <div class="form-group col-4">
             <label>First Name</label>
             <input type="text" class="form-control">
@@ -297,7 +297,7 @@
           </div>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form sa-form-stacked sa-g"&gt;
+      <pre><code>&lt;form class="sa-form sa-form-stacked sa-grid"&gt;
     &lt;div class="form-group col-4"&gt;
         &lt;label&gt;First Name&lt;/label&gt;
         &lt;input type="text" class="form-control"&gt;
