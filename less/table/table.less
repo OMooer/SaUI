@@ -1,0 +1,74 @@
+/**********************
+ * 表单
+ **/
+@import "../common/common";
+
+table.sa-table {
+	border-collapse: collapse;
+	width: 100%;
+
+	tr {
+		line-height: .35rem;
+
+		th, td {
+			padding: 0 .15rem;
+			border-bottom: solid .01rem @line;
+			text-align: left;
+		}
+	}
+
+	thead tr {
+		background: @grayLighter;
+
+		& > th {
+			vertical-align: bottom;
+			border-bottom-width: .02rem;
+		}
+	}
+
+	tbody > tr {
+		&.table-success {
+			background-color: screen(@success, #ccc);
+		}
+		&.table-info {
+			background-color: screen(@info, #ccc);
+		}
+		&.table-warn {
+			background-color: screen(@warn, #ccc);
+		}
+		&.table-danger {
+			background-color: screen(@error, #ccc);
+		}
+	}
+
+	&.table-striped {
+		& > tbody > tr:nth-child(2n) {
+			background: lighten(@grayLighter, 3%);
+		}
+	}
+	&.table-bordered {
+		border: solid .01rem @line;
+
+		th, td {
+			&:extend(table.sa-table.table-border);
+		}
+	}
+	&.table-hover {
+		& > tbody > tr:nth-child(n) {
+			background: none;
+
+			&:hover {
+				&:extend(table.sa-table.table-striped>tbody>tr:nth-child(2n));
+			}
+		}
+	}
+	&.table-thin {
+		tr {
+			line-height: .25rem;
+
+			th, td {
+				padding: 0 .07rem;
+			}
+		}
+	}
+}

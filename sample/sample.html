@@ -95,10 +95,240 @@
         &lt;div class="col-12"&gt;.col-12&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      <h2>表格</h2>
+      <p>给<code>&lt;table&gt;</code>添加 class <code>.sa-table</code>可以添加默认的 padding、border，同时突出表头。</p>
+      <h3>常规表格</h3>
+      <div class="example">
+        <table class="sa-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Nickname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Angus</td>
+              <td>Young</td>
+              <td>AY</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Simon</td>
+              <td>Wang</td>
+              <td>Da C</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Jim</td>
+              <td>Zim</td>
+              <td>JimJim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>带边框的表格</h3>
+      <p>给表格添加 class <code>.table-border</code>就可以给表格及每个单元格增加边框。</p>
+      <div class="example">
+        <table class="sa-table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Nickname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Angus</td>
+              <td>Young</td>
+              <td>AY</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Simon</td>
+              <td>Wang</td>
+              <td>Da C</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Jim</td>
+              <td>Zim</td>
+              <td>JimJim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>斑马纹式的表格</h3>
+      <p>为了让比较大的表格看起来容易区分行，给<code>&lt;table&gt;</code>添加 class <code>.table-striped</code>就可以自动生成斑马纹效果。</p>
+      <div class="example">
+        <table class="sa-table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>One</th>
+              <th>Two</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>一</td>
+              <td>One</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>二</td>
+              <td>Two</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>三</td>
+              <td>Three</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>四</td>
+              <td>Four</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>五</td>
+              <td>Five</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>六</td>
+              <td>Six</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>鼠标悬停</h3>
+      <p>
+        通过添加<code>.table-hover</code>类可以让<code>&lt;tbody&gt;</code>中的每一行对鼠标悬停状态作出响应。
+        <br> 注意：使用鼠标悬停效果将会强制将表格行的背景颜色去除。
+      </p>
+      <div class="example">
+        <table class="sa-table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Nickname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Angus</td>
+              <td>Young</td>
+              <td>AY</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Simon</td>
+              <td>Wang</td>
+              <td>Da C</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Jim</td>
+              <td>Zim</td>
+              <td>JimJim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>紧凑表格</h3>
+      <p>添加<code>.table-thin</code>类可以让表格更加紧凑，行距和单元格的 padding 都会减少。</p>
+      <div class="example">
+        <table class="sa-table table-thin">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Nickname</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Angus</td>
+              <td>Young</td>
+              <td>AY</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Simon</td>
+              <td>Wang</td>
+              <td>Da C</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Jim</td>
+              <td>Zim</td>
+              <td>JimJim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>表格状态类</h3>
+      <p>在表格的<code>&lt;tr&gt;</code>添加下列的 class 可以表示不同的信息。</p>
+      <ul>
+        <li><code>.table-success</code> 标识成功或积极的动作</li>
+        <li><code>.table-info</code> 标识普通的提示信息或动作</li>
+        <li><code>.table-warn</code> 标识警告或需要用户注意</li>
+        <li><code>.table-danger</code> 标识危险或潜在的带来负面影响的动作</li>
+      </ul>
+      <div class="example">
+        <table class="sa-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-success">
+              <td>1</td>
+              <td>.table-success</td>
+            </tr>
+            <tr>
+              <td colspan="2">2</td>
+            </tr>
+            <tr class="table-info">
+              <td>3</td>
+              <td>.table-info</td>
+            </tr>
+            <tr>
+              <td colspan="2">4</td>
+            </tr>
+            <tr class="table-warn">
+              <td>5</td>
+              <td>.table-warn</td>
+            </tr>
+            <tr>
+              <td colspan="2">6</td>
+            </tr>
+            <tr class="table-danger">
+              <td>7</td>
+              <td>.table-danger</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2>表单</h2>
-      <p>将表单的每一项包含在 class 为<code>.form-group</code>的容器里可以实现以下不同特性的表单展现。这种做法可以理解为是 SaUI 的规范。</p>
-      <h3>常规表单</h3>
       <p>为表单<code>&lt;form&gt</code>添加 class <code>.sa-form</code>就可以作用表单的样式。</p>
+      <p>将表单里的每一个项包含在 class 为<code>.form-group</code>的容器里可以实现以下不同特性的表单展现。这种做法可以理解为 SaUI 的规范。</p>
+      <h3>常规表单</h3>
       <div class="example">
         <form name="example" method="get" action="/" target="_blank" class="sa-form">
           <div class="form-group">
