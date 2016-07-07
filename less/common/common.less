@@ -5,26 +5,6 @@
 @import "variables";
 @import "keyframes";
 
-// 栅格
-.gender-grid(@n, @i:1) when (@i=<@n) {
-	.col-@{i} {
-		width: (100%/12*@i);
-	}
-	.col-offset-@{i} {
-		margin-left: (100%/12*@i);
-	}
-	.gender-grid(@n, (@i+1));
-}
-
-// 边框配色
-.gender-border(@pre, @color) {
-	&.@{pre}-@{color} {
-		[class*="col-"] {
-			border: solid .01rem @@color;
-		}
-	}
-}
-
 // 背景配色
 .gender-bg(@bg, @color:@grayDarker) {
 	.bg-@{bg} {

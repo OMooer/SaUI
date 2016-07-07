@@ -4,6 +4,29 @@
 
 @import "../common/common";
 
+.__btn(@color) {
+	background-color: @color;
+	border: solid .01rem transparent;
+
+	// 按钮hover后的背景色
+	&.btn-active,
+	&:hover {
+		background-color: darken(@color, 7%);
+	}
+	// 禁用按钮的hover背景色与原来一致
+	&.btn-disabled:hover,
+	&[disabled]:hover {
+		background-color: @color;
+	}
+}
+
+.__white() {
+	color: @white;
+	a& {
+		color: @white;
+	}
+}
+
 .btn {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	display: inline-block;
@@ -56,32 +79,9 @@
 	// 禁用的按钮
 	&[disabled],
 	&.btn-disabled {
-		.disabled;
+		.disabled();
 		&:active {
 			box-shadow: none;
-		}
-	}
-
-	.__btn(@color) {
-		background-color: @color;
-		border: solid .01rem transparent;
-
-		// 按钮hover后的背景色
-		&.btn-active,
-		&:hover {
-			background-color: darken(@color, 7%);
-		}
-		// 禁用按钮的hover背景色与原来一致
-		&.btn-disabled:hover,
-		&[disabled]:hover {
-			background-color: @color;
-		}
-	}
-
-	.__white() {
-		color: @white;
-		a& {
-			color: @white;
 		}
 	}
 

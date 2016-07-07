@@ -4,6 +4,16 @@
 
 @import "../common/common";
 
+.__grid(@n, @i:1) when (@i=<@n) {
+	.col-@{i} {
+		width: (100%/12*@i);
+	}
+	.col-offset-@{i} {
+		margin-left: (100%/12*@i);
+	}
+	.__grid(@n, (@i+1));
+}
+
 .sa-grid {
 	.clearfix;
 
@@ -18,13 +28,5 @@
 		.clearfix;
 	}
 
-	.gender-grid(12);
-
-	.gender-border(g-border, default);
-	.gender-border(g-border, primary);
-	.gender-border(g-border, success);
-	.gender-border(g-border, info);
-	.gender-border(g-border, warn);
-	.gender-border(g-border, error);
-
+	.__grid(12);
 }

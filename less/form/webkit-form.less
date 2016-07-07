@@ -1,0 +1,137 @@
+/**********************
+ * 表单, 物殊的样式只 chrome 支持
+ **/
+
+@import "../common/common";
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	form.sa-form {
+
+		input[type="checkbox"] {
+			@switchWid: .50rem;
+			&.form-switch {
+				position: relative;
+				border-radius: .13rem;
+				width: @switchWid;
+				height: .26rem;
+
+				&:before {
+					content: "";
+					display: block;
+					background: @grayLighter;
+					border-radius: .13rem;
+					border: solid .01rem @line;
+					transition: background .2s ease-out;
+					width: 100%;
+					height: 100%;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					display: block;
+					background: @white;
+					border-radius: 50%;
+					border: solid 1px @line;
+					box-shadow: 1px 2px 3px @gray;
+					cursor: pointer;
+					transition: left .2s ease-out;
+					top: 0;
+					left: 0;
+					width: .25rem;
+					height: .25rem;
+				}
+			}
+			&:checked.form-switch {
+				&:before {
+					background: @success;
+				}
+				&:after {
+					background: @white;
+					left: @switchWid - .25rem;
+				}
+			}
+		}
+
+		.form-group.form-radio-group {
+			float: left;
+			margin-right: .10rem;
+			background: @grayLighter;
+			border: solid .01rem @line;
+			border-radius: .03rem;
+			color: @grayDark;
+			box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
+
+			.form-radio {
+				position: relative;
+				float: left;
+				margin: 0;
+				cursor: pointer;
+				text-align: center;
+				width: 4em;
+
+				span {
+					position: relative;
+					display: block;
+					padding-top: .05rem;
+					padding-bottom: .05rem;
+					transition: color .2s ease;
+					z-index: 1;
+				}
+
+				input[type="radio"] {
+					position: absolute;
+					margin: 0;
+					top: -100%;
+					left: 0;
+					width: 100%;
+					height: 100%;
+
+					&:before {
+						@color: @default;
+						content: "";
+						position: relative;
+						display: block;
+						left: -100%;
+						border: solid .01rem;
+						background-color: @color;
+						border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+						border-radius: .03rem;
+						box-sizing: border-box;
+						transition: left .2s ease;
+						width: 100%;
+						height: 99%;
+					}
+
+					&:checked {
+						&:before {
+							left: .05% !important;
+							top: 101%;
+						}
+
+						& + span {
+							color: @white;
+						}
+					}
+				}
+
+				&:first-of-type {
+					input[type="radio"]:before {
+						left: 100%;
+					}
+				}
+			}
+
+			&.form-radio-primary .form-radio input[type="radio"]:before {
+				@color: @primary;
+				background-color: @color;
+				border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+			}
+
+			&.form-radio-success .form-radio input[type="radio"]:before {
+				@color: @success;
+				background-color: @color;
+				border-color: darken(@color, 1%) darken(@color, 10%) darken(@color, 10%) darken(@color, 1%);
+			}
+		}
+	}
+}
