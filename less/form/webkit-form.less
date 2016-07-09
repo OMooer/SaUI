@@ -1,17 +1,18 @@
 /**********************
  * 表单, 物殊的样式只 chrome 支持
  **/
-
 @import "../common/common";
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 	form.sa-form {
 
 		input[type="checkbox"] {
-			@switchWid: .50rem;
+			@switchWid: .60rem;
 			&.form-switch {
+				-webkit-appearance: none;
 				position: relative;
 				border-radius: .13rem;
+				vertical-align: middle;
 				width: @switchWid;
 				height: .26rem;
 
@@ -20,8 +21,11 @@
 					display: block;
 					background: @grayLighter;
 					border-radius: .13rem;
-					border: solid .01rem @line;
-					transition: background .2s ease-out;
+					//border: solid .01rem @line;
+					box-sizing: border-box;
+					transition: all .2s;
+					line-height: .26rem;
+					color: @gray;
 					width: 100%;
 					height: 100%;
 				}
@@ -31,23 +35,82 @@
 					display: block;
 					background: @white;
 					border-radius: 50%;
-					border: solid 1px @line;
+					//border: solid 1px @line;
 					box-shadow: 1px 2px 3px @gray;
 					cursor: pointer;
-					transition: left .2s ease-out;
+					transition: left .28s;
 					top: 0;
 					left: 0;
-					width: .25rem;
-					height: .25rem;
+					width: .23rem;
+					height: .23rem;
 				}
-			}
-			&:checked.form-switch {
-				&:before {
+
+				&:checked {
 					background: @success;
+
+					&:before {
+						transform: scale(0);
+						background: none;
+						color: @white;
+					}
+					&:after {
+						background: @white;
+						left: @switchWid - .25rem;
+					}
 				}
-				&:after {
-					background: @white;
-					left: @switchWid - .25rem;
+
+				&[disabled] {
+					opacity: .45;
+
+					&:after {
+						cursor: no-drop;
+					}
+				}
+				// 镂空
+				&.switch-hollow {
+					border-width: .02rem;
+
+					&:before {
+						background: none;
+						line-height: .24rem;
+					}
+					&:after {
+						background: @grayLight;
+						box-shadow: none;
+						left: .02rem;
+						top: .02rem;
+						width: .18rem;
+						height: .18rem;
+					}
+					&:checked {
+						background: none;
+						border-color: @success;
+
+						&:before {
+							color: @success;
+						}
+						&:after {
+							background-color: @success;
+							left: @switchWid - .24rem;
+						}
+					}
+				}
+				// 带文字
+				&.switch-text {
+					&:before {
+						content: "OFF";
+						padding-right: .07rem;
+						text-align: right;
+						font-size: @fontMini;
+						transition: none;
+					}
+					&:checked:before {
+						content: "ON";
+						padding-left: .10rem;
+						padding-right: 0;
+						text-align: left;
+						transform: none;
+					}
 				}
 			}
 		}
@@ -110,6 +173,16 @@
 
 						& + span {
 							color: @white;
+						}
+					}
+					&[disabled] {
+						opacity: .45;
+
+						& + span {
+							text-shadow: 0 1px 0 @white;
+							cursor: no-drop;
+							color: @grayDarker;
+							opacity: .45;
 						}
 					}
 				}

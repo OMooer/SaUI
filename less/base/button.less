@@ -1,10 +1,9 @@
 /**********************
  * 按钮类
  **/
-
 @import "../common/common";
 
-.__btn(@color) {
+.__btn(@color, @hollow:true) {
 	background-color: @color;
 	border: solid .01rem transparent;
 
@@ -17,6 +16,30 @@
 	&.btn-disabled:hover,
 	&[disabled]:hover {
 		background-color: @color;
+	}
+
+	// 镂空
+	&.btn-hollow when (@hollow = true) {
+		padding-top: .09rem;
+		padding-bottom: .09rem;
+		background-color: transparent;
+		border: solid .02rem @color;
+		color: @color;
+
+		// 按钮hover后的背景色
+		&:hover {
+			background-color: screen(@color, #ccc);
+		}
+
+		// 禁用的镂空
+		&.btn-disabled,
+		&[disabled] {
+			opacity: .30;
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
 	}
 }
 
@@ -49,10 +72,15 @@
 		border-radius: 0;
 	}
 
+	// 超大尺寸
+	&.btn-xl {
+		padding: .16rem 1em;
+		font-size: @fontBigger;
+	}
 	// 大尺寸
 	&.btn-lg {
-		padding: .18rem 1em;
-		font-size: @fontBigger;
+		padding: .13rem 1em;
+		font-size: @fontBig;
 	}
 	// 小尺寸
 	&.btn-sm {
@@ -87,7 +115,7 @@
 
 	// 普通按钮
 	&.btn-default {
-		.__btn(@white);
+		.__btn(@white, false);
 		border-color: @line;
 		color: @grayDark;
 		a& {
@@ -98,30 +126,30 @@
 	// 首选操作按钮
 	&.btn-primary {
 		.__btn(@primary);
-		.__white;
+		.__white();
 	}
 
 	// 成功操作按钮
 	&.btn-success {
 		.__btn(@success);
-		.__white;
+		.__white();
 	}
 
 	// 信息操作按钮
 	&.btn-info {
 		.__btn(@info);
-		.__white;
+		.__white();
 	}
 
 	// 危险操作按钮
 	&.btn-danger {
 		.__btn(@error);
-		.__white;
+		.__white();
 	}
 
 	// 谨慎操作按钮
 	&.btn-warn {
 		.__btn(@warn);
-		.__white;
+		.__white();
 	}
 }

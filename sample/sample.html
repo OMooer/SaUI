@@ -131,7 +131,7 @@
         </table>
       </div>
       <h3>带边框的表格</h3>
-      <p>给表格添加 class <code>.table-border</code>就可以给表格及每个单元格增加边框。</p>
+      <p>给表格添加 class <code>.table-bordered</code>就可以给表格及每个单元格增加边框。</p>
       <div class="example">
         <table class="sa-table table-bordered">
           <thead>
@@ -628,7 +628,7 @@
 &lt;/form&gt;</code></pre>
         </li>
         <li>
-          <h4>特殊的 Radio 组合</h4>
+          <h4>特殊的 Radio 组合（仅 webkit 支持）</h4>
           <p class="bg-warn text-warn">注意：在三个及以上的 Radio 组里从第二到最后第二个之间，如果前一个选中项在右边的话动画效果存在方向错误的 BUG。因此不建议使用，在这仅是作为一个技术研究方案。</p>
           <div class="example">
             <form name="example" method="get" action="/" target="_blank" class="sa-form">
@@ -669,18 +669,28 @@
           </div>
         </li>
         <li>
-          <h4>特殊的 Checkbox</h4>
+          <h4>特殊的 Checkbox （仅 webkit 支持）</h4>
           <p>为<code>checkbox</code>类型的<code>&lt;input&gt;</code>添加 class <code>.form-switch</code>即可实现以下开关按钮的效果：</p>
           <div class="example">
             <form name="example" method="get" action="/" target="_blank" class="sa-form">
               <div class="form-group">
                 <input type="checkbox" value="1" class="form-switch">
+                <input type="checkbox" value="1" checked class="form-switch switch-text">
+              </div>
+              <div class="form-group">
+                <input type="checkbox" value="1" class="form-switch switch-hollow">
+                <input type="checkbox" value="1" checked class="form-switch switch-hollow switch-text">
               </div>
             </form>
           </div>
           <pre><code>&lt;form class="sa-form"&gt;
     &lt;div class="form-group"&gt;
         &lt;input type="checkbox" class="form-switch"&gt;
+        &lt;input type="checkbox" class="form-switch switch-text"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+        &lt;input type="checkbox" class="form-switch switch-hollow"&gt;
+        &lt;input type="checkbox" class="form-switch switch-hollow switch-text"&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
         </li>
@@ -764,8 +774,22 @@
 &lt;a href="#" class="btn btn-info"&gt;信息操作&lt;/a&gt;
 &lt;a href="#" class="btn btn-danger"&gt;危险操作&lt;/a&gt;
 &lt;a href="#" class="btn btn-warn"&gt;警告操作&lt;/a&gt;</code></pre>
+      <h3>镂空按钮</h3>
+      <p>添加 class <code>.btn-hollow</code>可以显示镂空样式。</p>
+      <div class="example">
+        <button type="button" class="btn btn-hollow btn-primary">首选操作</button>
+        <button type="button" class="btn btn-hollow btn-success">成功操作</button>
+        <button type="button" class="btn btn-hollow btn-info">信息操作</button>
+        <button type="button" class="btn btn-hollow btn-danger">危险操作</button>
+        <button type="button" class="btn btn-hollow btn-warn">警告操作</button>
+      </div>
+      <pre><code>&lt;button type="button" class="btn btn-hollow btn-primary"&gt;首选操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-hollow btn-success"&gt;成功操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-hollow btn-info"&gt;信息操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-hollow btn-danger"&gt;危险操作&lt;/button&gt;
+&lt;button type="button" class="btn btn-hollow btn-warn"&gt;警告操作&lt;/button&gt;</code></pre>
       <h3>矩形按钮</h3>
-      <p>添加 class <code>.btn-rect</code></p>
+      <p>添加 class <code>.btn-rect</code>可以将按钮显示为非圆角的矩形按钮。</p>
       <div class="example">
         <button type="button" class="btn btn-rect btn-primary">首选操作</button>
         <button type="button" class="btn btn-rect btn-success">成功操作</button>
@@ -779,17 +803,16 @@
 &lt;button type="button" class="btn btn-rect btn-danger"&gt;危险操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-rect btn-warn"&gt;警告操作&lt;/button&gt;</code></pre>
       <h3>按钮大小</h3>
-      <p>添加 class <code>.btn-lg</code>，<code>.btn-sm</code>，<code>.btn-xs</code>定义按钮的大小，默认大小无须定义。</p>
+      <p>添加 class <code>.btn-xl</code>，<code>.btn-lg</code>，<code>.btn-sm</code>，<code>.btn-xs</code>定义按钮的大小，默认大小无须定义。</p>
       <div class="example">
-        <p><a href="#" class="btn btn-lg btn-rect btn-primary">大按钮 .btn-lg</a><a href="#" class="btn btn-lg btn-default">大按钮 .btn-lg</a></p>
-        <p><a href="#" class="btn btn-rect btn-primary">默认按钮</a><a href="#" class="btn btn-default">默认按钮</a></p>
-        <p><a href="#" class="btn btn-sm btn-rect btn-primary">小按钮 .btn-sm</a><a href="#" class="btn btn-sm btn-default">小按钮 .btn-sm</a></p>
-        <p><a href="#" class="btn btn-xs btn-rect btn-primary">细小按钮 .btn-xs</a><a href="#" class="btn btn-xs btn-default">细小按钮 .btn-xs</a></p>
+        <p><a href="#" class="btn btn-xl btn-rect btn-primary">按钮 .btn-xl</a><a href="#" class="btn btn-lg btn-rect btn-primary">按钮 .btn-lg</a><a href="#" class="btn btn-rect btn-primary">默认按钮大小</a><a href="#" class="btn btn-sm btn-rect btn-primary">按钮 .btn-sm</a><a href="#" class="btn btn-xs btn-rect btn-primary">按钮 .btn-xs</a></p>
+        <p><a href="#" class="btn btn-xl btn-default">按钮 .btn-xl</a><a href="#" class="btn btn-lg btn-default">按钮 .btn-lg</a><a href="#" class="btn btn-default">默认按钮大小</a><a href="#" class="btn btn-sm btn-default">按钮 .btn-sm</a><a href="#" class="btn btn-xs btn-default">按钮 .btn-xs</a></p>
       </div>
-      <pre><code>&lt;a href="#" class="btn btn-lg btn-default"&gt;大按钮 .btn-lg&lt;/a&gt;
-&lt;a href="#" class="btn btn-default"&gt;默认按钮&lt;/a&gt;
-&lt;a href="#" class="btn btn-sm btn-default"&gt;小按钮 .btn-sm&lt;/a&gt;
-&lt;a href="#" class="btn btn-xs btn-default"&gt;细小按钮 .btn-xs&lt;/a&gt;</code></pre>
+      <pre><code>&lt;a href="#" class="btn btn-xl btn-default"&gt;按钮 .btn-xl&lt;/a&gt;
+&lt;a href="#" class="btn btn-lg btn-default"&gt;按钮 .btn-lg&lt;/a&gt;
+&lt;a href="#" class="btn btn-default"&gt;默认按钮大小&lt;/a&gt;
+&lt;a href="#" class="btn btn-sm btn-default"&gt;按钮 .btn-sm&lt;/a&gt;
+&lt;a href="#" class="btn btn-xs btn-default"&gt;按钮 .btn-xs&lt;/a&gt;</code></pre>
       <h3>按钮的状态</h3>
       <ul>
         <li>
