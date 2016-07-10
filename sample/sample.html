@@ -32,9 +32,9 @@
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
       <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在上面（也）发现不可用也纯属正常。</p>
       <h2>栅格</h2>
-      <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.sa-grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
+      <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
       <div class="example">
-        <div class="sa-grid">
+        <div class="grid">
           <div class="row">
             <div class="col-1">.col-1</div>
             <div class="col-9 col-offset-2">.col-9.col-offset-2</div>
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-      <pre><code>&lt;div class="sa-grid g-border-default"&gt;
+      <pre><code>&lt;div class="grid g-border-default"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
         &lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
@@ -96,10 +96,10 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       <h2>表格</h2>
-      <p>给<code>&lt;table&gt;</code>添加 class <code>.sa-table</code>可以添加默认的 padding、border，同时突出表头。</p>
+      <p>给<code>&lt;table&gt;</code>添加 class <code>.table</code>可以添加默认的 padding、border，同时突出表头。</p>
       <h3>常规表格</h3>
       <div class="example">
-        <table class="sa-table">
+        <table class="table">
           <thead>
             <tr>
               <th>#</th>
@@ -133,7 +133,7 @@
       <h3>带边框的表格</h3>
       <p>给表格添加 class <code>.table-bordered</code>就可以给表格及每个单元格增加边框。</p>
       <div class="example">
-        <table class="sa-table table-bordered">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>#</th>
@@ -167,7 +167,7 @@
       <h3>斑马纹式的表格</h3>
       <p>为了让比较大的表格看起来容易区分行，给<code>&lt;table&gt;</code>添加 class <code>.table-striped</code>就可以自动生成斑马纹效果。</p>
       <div class="example">
-        <table class="sa-table table-striped">
+        <table class="table table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -215,7 +215,7 @@
         <br> 注意：使用鼠标悬停效果将会强制将表格行的背景颜色去除。
       </p>
       <div class="example">
-        <table class="sa-table table-hover">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>#</th>
@@ -249,7 +249,7 @@
       <h3>紧凑表格</h3>
       <p>添加<code>.table-thin</code>类可以让表格更加紧凑，行距和单元格的 padding 都会减少。</p>
       <div class="example">
-        <table class="sa-table table-thin">
+        <table class="table table-thin">
           <thead>
             <tr>
               <th>#</th>
@@ -289,7 +289,7 @@
         <li><code>.table-danger</code> 标识危险或潜在的带来负面影响的动作</li>
       </ul>
       <div class="example">
-        <table class="sa-table">
+        <table class="table">
           <thead>
             <tr>
               <th>#</th>
@@ -326,11 +326,11 @@
         </table>
       </div>
       <h2>表单</h2>
-      <p>为表单<code>&lt;form&gt</code>添加 class <code>.sa-form</code>就可以作用表单的样式。</p>
+      <p>为表单<code>&lt;form&gt</code>添加 class <code>.form</code>就可以作用表单的样式。</p>
       <p>将表单里的每一个项包含在 class 为<code>.form-group</code>的容器里可以实现以下不同特性的表单展现。这种做法可以理解为 SaUI 的规范。</p>
       <h3>常规表单</h3>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form">
+        <form name="example" method="get" action="/" target="_blank" class="form">
           <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Email">
@@ -342,7 +342,7 @@
           <button type="submit">Submit</button><a href="#" class="btn">Cancel</a>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form"&gt;
+      <pre><code>&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email" name="email" placeholder="Email"&gt;
@@ -354,9 +354,9 @@
     &lt;button type="submit"&gt;Submit&lt;/button&gt;&lt;a href="#" class="btn"&gt;Cancel&lt;/a&gt;
 &lt;/form&gt;</code></pre>
       <h3>内联式表单</h3>
-      <p>给表单添加一个 class <code>.sa-form-inline</code>即可实现以下效果的内联式表单：</p>
+      <p>给表单添加一个 class <code>.form-inline</code>即可实现以下效果的内联式表单：</p>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-inline">
+        <form name="example" method="get" action="/" target="_blank" class="form form-inline">
           <div class="form-group">
             <label for="email2">Email:</label>
             <input type="email" id="email2" name="email" placeholder="Email">
@@ -373,7 +373,7 @@
           <button type="submit">Submit</button>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form sa-form-inline"&gt;
+      <pre><code>&lt;form class="form form-inline"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email2"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email2" name="email" placeholder="Email"&gt;
@@ -390,9 +390,9 @@
     &lt;button type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       <h3>堆叠式表单</h3>
-      <p>给表单添加一个 class <code>.sa-form-stacked</code>即可实现以下效果的堆叠式表单：</p>
+      <p>给表单添加一个 class <code>.form-stacked</code>即可实现以下效果的堆叠式表单：</p>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-stacked">
+        <form name="example" method="get" action="/" target="_blank" class="form form-stacked">
           <div class="form-group">
             <label for="email3">Email:</label>
             <input type="email" id="email3" name="email" placeholder="Email">
@@ -419,7 +419,7 @@
           <button type="reset">Reset</button>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form sa-form-stacked"&gt;
+      <pre><code>&lt;form class="form form-stacked"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email3"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email3" name="email" placeholder="Email"&gt;
@@ -446,9 +446,9 @@
     &lt;button type="reset"&gt;Reset&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       <h3>对齐排列表单</h3>
-      <p>给表单添加一个 class <code>.sa-form-horizontal</code>即可实现以下效果的对齐排列表单：</p>
+      <p>给表单添加一个 class <code>.form-horizontal</code>即可实现以下效果的对齐排列表单：</p>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-horizontal">
+        <form name="example" method="get" action="/" target="_blank" class="form form-horizontal">
           <div class="form-group">
             <label for="email4">Email:</label>
             <input type="email" id="email4" name="email" placeholder="Email" class="form-control">
@@ -475,7 +475,7 @@
           <button type="reset">Reset</button>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form sa-form-horizontal"&gt;
+      <pre><code>&lt;form class="form form-horizontal"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email4"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email4" name="email" placeholder="Email" class="form-control"&gt;
@@ -502,9 +502,9 @@
     &lt;button type="reset"&gt;Reset&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       <h3>多列排列表单（配合栅格）</h3>
-      <p>在表单上添加栅格的 class <code>.sa-grid</code>即可在内部使用栅格列<code>.col-*</code>以此达到下面多列显示的效果：</p>
+      <p>在表单上添加栅格的 class <code>.grid</code>即可在内部使用栅格列<code>.col-*</code>以此达到下面多列显示的效果：</p>
       <div class="example">
-        <form name="example" method="get" action="/" target="_blank" class="sa-form sa-form-stacked sa-grid">
+        <form name="example" method="get" action="/" target="_blank" class="form form-stacked grid">
           <div class="form-group col-4">
             <label>First Name</label>
             <input type="text" class="form-control">
@@ -527,7 +527,7 @@
           </div>
         </form>
       </div>
-      <pre><code>&lt;form class="sa-form sa-form-stacked sa-grid"&gt;
+      <pre><code>&lt;form class="form form-stacked grid"&gt;
     &lt;div class="form-group col-4"&gt;
         &lt;label&gt;First Name&lt;/label&gt;
         &lt;input type="text" class="form-control"&gt;
@@ -555,7 +555,7 @@
         <li>
           <h4>fieldset 组合</h4>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group">
                 <fieldset>
                   <input type="text" class="form-control">
@@ -572,7 +572,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="sa-form"&gt;
+          <pre><code>&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;fieldset&gt;
             &lt;input type="text" class="form-control"&gt;
@@ -593,7 +593,7 @@
           <h4>单行组合</h4>
           <p><code>.input-addon</code>类可以使自身与<code>&lt;input&gt;</code>组合成一个整体，我们可以在里面输入文本或者使用<abbr title="将矢量图案制作成字体格式供前端在页面上使用文字来表示图案">字体图标</abbr>。</p>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group">
                 <div class="input-group">
                   <input type="search" placeholder="Input search keyword">
@@ -609,7 +609,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="sa-form"&gt;
+          <pre><code>&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;div class="input-group"&gt;
             &lt;input type="search" placeholder="Input search keyword"&gt;
@@ -631,7 +631,7 @@
           <h4>特殊的 Radio 组合（仅 webkit 支持）</h4>
           <p class="bg-warn text-warn">注意：在三个及以上的 Radio 组里从第二到最后第二个之间，如果前一个选中项在右边的话动画效果存在方向错误的 BUG。因此不建议使用，在这仅是作为一个技术研究方案。</p>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group form-radio-group form-radio-primary">
                 <label class="form-radio">
                   <input type="radio" name="switch" value="0"><span>Day</span>
@@ -672,7 +672,7 @@
           <h4>特殊的 Checkbox （仅 webkit 支持）</h4>
           <p>为<code>checkbox</code>类型的<code>&lt;input&gt;</code>添加 class <code>.form-switch</code>即可实现以下开关按钮的效果：</p>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group">
                 <input type="checkbox" value="1" class="form-switch">
                 <input type="checkbox" value="1" checked class="form-switch switch-text">
@@ -683,7 +683,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="sa-form"&gt;
+          <pre><code>&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;input type="checkbox" class="form-switch"&gt;
         &lt;input type="checkbox" class="form-switch switch-text"&gt;
@@ -701,7 +701,7 @@
         <li>
           <h4>禁用状态</h4>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group">
                 <input type="text" placeholder="Input 禁用" disabled>
               </div>
@@ -721,7 +721,7 @@
               <button type="button" disabled>Button 禁用</button>
             </form>
           </div>
-          <pre><code>&lt;form class="sa-form"&gt;
+          <pre><code>&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;input type="text" placeholder="Input 禁用" disabled&gt;
     &lt;/div&gt;
@@ -738,7 +738,7 @@
         <li>
           <h4>只读状态</h4>
           <div class="example">
-            <form name="example" method="get" action="/" target="_blank" class="sa-form">
+            <form name="example" method="get" action="/" target="_blank" class="form">
               <div class="form-group">
                 <input type="text" value="Input 只读" readonly>
               </div>

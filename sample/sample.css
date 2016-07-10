@@ -20,17 +20,17 @@
 	margin-bottom: 1em;
 }
 
-.example .sa-grid .row {
+.example .grid .row {
 	margin: .10rem 0;
 	background-color: #f4f4f4;
 }
 
-.example .sa-grid .row [class*="col-"] {
+.example .grid .row [class*="col-"] {
 	padding: .05rem;
 	background-color: #ddd;
 }
 
-.example .sa-form.sa-grid [class*="col-"] {
+.example .form.grid [class*="col-"] {
 	padding: 0 1em;
 }
 

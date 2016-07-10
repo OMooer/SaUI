@@ -3,7 +3,7 @@
  **/
 @import "../common/common";
 
-table.sa-table {
+table.table {
 	border-collapse: collapse;
 	width: 100%;
 
@@ -50,7 +50,7 @@ table.sa-table {
 		border: solid .01rem @line;
 
 		th, td {
-			&:extend(table.sa-table.table-bordered);
+			&:extend(table.table.table-bordered);
 		}
 	}
 	&.table-hover {
@@ -58,7 +58,7 @@ table.sa-table {
 			background: none;
 
 			&:hover {
-				&:extend(table.sa-table.table-striped>tbody>tr:nth-child(2n));
+				&:extend(table.table.table-striped>tbody>tr:nth-child(2n));
 			}
 		}
 	}
