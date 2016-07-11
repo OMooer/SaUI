@@ -1,7 +1,6 @@
 /**********************
  * 全局作用类
  **/
-
 @import "../common/common";
 
 // 清浮动
@@ -42,13 +41,106 @@
 // 关闭
 .close {
 	display: inline-block;
+	overflow: hidden;
+	transition: color .3s;
+	border-radius: 50%;
+	cursor: pointer;
 	text-decoration: none !important;
 	text-align: center;
-	cursor: pointer;
+	vertical-align: middle;
 	line-height: .14rem;
 	font-weight: @bold;
-	font-size: @fontLarge;
-	color: @grayDark;
-	width: .14rem;
-	height: .14rem;
+	font-size: @fontBigger;
+	color: @gray;
+	width: .18rem;
+	height: .18rem;
+
+	i {
+		overflow: hidden;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:hover {
+		color: @grayDarker;
+	}
+
+	&.close-animate {
+		transition: transform .2s;
+
+		&:hover {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+// 三角
+.caret {
+	display: inline-block;
+	margin-left: .02rem;
+	vertical-align: middle;
+	border-top: .04rem dashed;
+	border-left: .04rem solid transparent;
+	border-right: .04rem solid transparent;
+	width: 0;
+	height: 0;
+}
+
+// 左浮动
+.pull-left {
+	float: left !important;
+}
+
+// 右浮动
+.pull-right {
+	float: right !important;
+}
+
+// 块居中
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// 显示
+.show {
+	display: block !important;
+}
+
+// 隐藏
+.hidden {
+	display: none !important;
+}
+
+// 隐藏文字
+.text-hide {
+	overflow: hidden;
+	text-indent: -1000%;
+	font-size: 0 !important;
+}
+
+// 文字居中
+.text-center {
+	text-align: center;
+}
+
+// 垂直对齐
+.v-align {
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	.align-middle {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.align-bottom {
+		display: inline-block;
+		vertical-align: bottom;
+	}
 }

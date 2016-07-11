@@ -76,8 +76,12 @@ a {
 	&:active,
 	&:focus {
 		text-decoration: underline;
-		color: @yellow;
+		color: @gold;
 	}
+}
+
+abbr, dfn {
+	cursor: help;
 }
 
 code {
@@ -91,6 +95,15 @@ code {
 		display: block;
 		padding: .05rem;
 	}
+}
+
+blockquote {
+	padding: .05rem .10rem;
+	border-left: solid .04rem @line;
+}
+
+mark {
+	background-color: @yellow;
 }
 
 // 图片
