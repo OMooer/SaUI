@@ -1,7 +1,6 @@
 /**********************
  * 变量和方法函数
  **/
-
 @import "variables";
 @import "keyframes";
 
@@ -26,6 +25,16 @@
 				color: darken(@@color, 10%);
 			}
 		}
+	}
+}
+
+// 边框配色
+.gender-border(@color) {
+	.border-@{color} when (@color=default) {
+		border: solid .01rem @line;
+	}
+	.border-@{color} when not (@color=default) {
+		border: solid .01rem @@color !important;
 	}
 }
 
