@@ -43,3 +43,49 @@
 	opacity: .65;
 	cursor: no-drop;
 }
+
+// 三角
+.gender-caret(@dir) {
+	display: inline-block;
+	margin-left: .05rem;
+	vertical-align: middle;
+	width: 0;
+	height: 0;
+
+	& when (@dir = top) {
+		border-bottom: .04rem dashed;
+		border-left: .04rem solid transparent;
+		border-right: .04rem solid transparent;
+	}
+	& when (@dir = bottom) {
+		border-top: .04rem dashed;
+		border-left: .04rem solid transparent;
+		border-right: .04rem solid transparent;
+	}
+	& when (@dir = left) {
+		border-right: .04rem dashed;
+		border-top: .04rem solid transparent;
+		border-bottom: .04rem solid transparent;
+	}
+	& when (@dir = right) {
+		border-left: .04rem dashed;
+		border-top: .04rem solid transparent;
+		border-bottom: .04rem solid transparent;
+	}
+}
+
+.gender-caret(@dir, @unicode) {
+	& when (@dir = top) {
+		content: "\25B4";
+	}
+	& when (@dir = bottom) {
+		content: "\25BE";
+	}
+	& when (@dir = left) {
+		content: "\25C2";
+	}
+	& when (@dir = right) {
+		content: "\25B8";
+	}
+	margin-left: .05rem;
+}

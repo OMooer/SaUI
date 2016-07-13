@@ -1,7 +1,6 @@
 /**********************
  * 表单
  **/
-
 @import "../common/common";
 
 .__item() {
@@ -112,7 +111,20 @@ form.form {
 		}
 	}
 
-	input, select, button {
+	input, select {
+		outline: none;
+
+		&[disabled] {
+			.disabled();
+		}
+		&[readonly] {
+			background-color: @grayLighter;
+			cursor: default;
+			color: @grayDark;
+		}
+	}
+
+	button {
 		outline: none;
 
 		&[disabled] {
@@ -120,11 +132,6 @@ form.form {
 			&:active {
 				box-shadow: none;
 			}
-		}
-		&[readonly] {
-			background-color: @grayLighter;
-			cursor: default;
-			color: @grayDark;
 		}
 	}
 
