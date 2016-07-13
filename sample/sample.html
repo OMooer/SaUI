@@ -19,7 +19,7 @@
         <br>SaUI 的设计理念是让 HTML 回归 HTML 。所有的样式实现以及代码结构都以保持 HTML 该有的语义为目标，只是在视觉上让它看起来更加的漂亮。但是在脱离样式的情况也能完整的展示 HTML 原本该有的功能与交互。
       </p>
       <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p>
-      <h2>前言</h2>
+      <h2><a name="intro"></a>前言</h2>
       <p>SaUI 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
       <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="zh-CN"&gt;
@@ -31,7 +31,7 @@
       <p>在移动设备浏览器上，通过为视界（viewport）设置 meta 属性为 <code>user-scalable=no</code> 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
       <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在上面（也）发现不可用也纯属正常。</p>
-      <h2>栅格</h2>
+      <h2><a name="grid"></a>栅格</h2>
       <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
       <div class="example">
         <div class="grid">
@@ -95,7 +95,7 @@
         &lt;div class="col-12"&gt;.col-12&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-      <h2>表格</h2>
+      <h2><a name="table"></a>表格</h2>
       <p>给<code>&lt;table&gt;</code>添加 class <code>.table</code>可以添加默认的 padding、border，同时突出表头。</p>
       <h3>常规表格</h3>
       <div class="example">
@@ -325,7 +325,7 @@
           </tbody>
         </table>
       </div>
-      <h2>表单</h2>
+      <h2><a name="form"></a>表单</h2>
       <p>为表单<code>&lt;form&gt</code>添加 class <code>.form</code>就可以作用表单的样式。</p>
       <p>将表单里的每一个项包含在 class 为<code>.form-group</code>的容器里可以实现以下不同特性的表单展现。这种做法可以理解为 SaUI 的规范。</p>
       <h3>常规表单</h3>
@@ -551,7 +551,7 @@
 &lt;/form&gt;</code></pre>
       <h3>不一样的 Input</h3>
       <p>将多个 input 放入同一个父级元素<code>&lt;fieldset&gt;</code>里或者添加 class <code>.input-group</code>即可以组合的形式展示。</p>
-      <ul>
+      <ol>
         <li>
           <h4>fieldset 组合</h4>
           <div class="example">
@@ -694,10 +694,10 @@
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
         </li>
-      </ul>
+      </ol>
       <h3>表单项状态</h3>
       <p>通过设置表单<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>的属性，可以为表单项设置禁用（<code>disabled</code>），只读（<code>readonly</code>）等状态，并表现出来。</p>
-      <ul>
+      <ol>
         <li>
           <h4>禁用状态</h4>
           <div class="example">
@@ -746,8 +746,8 @@
           </div>
           <pre><code>&lt;input type="text" value="Input 只读" readonly&gt;</code></pre>
         </li>
-      </ul>
-      <h2>按钮</h2>
+      </ol>
+      <h2><a name="button"></a>按钮</h2>
       <p>
         给<code>&lt;a&gt;</code>或者<code>&lt;button&gt;</code>添加 class <code>.btn.btn-default</code>，可实现默认按钮样式。
         <br>注意：如果需要无边框的<code>&lt;a&gt;</code>按钮，直接使用 class <code>.btn</code> 即可，不可直接用在<code>&lt;button&gt;</code>上。表单内的<code>&lt;button&gt;</code>无须添加 class 自动适配按钮样式。
@@ -814,7 +814,7 @@
 &lt;a href="#" class="btn btn-sm btn-default"&gt;按钮 .btn-sm&lt;/a&gt;
 &lt;a href="#" class="btn btn-xs btn-default"&gt;按钮 .btn-xs&lt;/a&gt;</code></pre>
       <h3>按钮的状态</h3>
-      <ul>
+      <ol>
         <li>
           <h4>禁用</h4>
           <p>给按钮添加<code>.btn-disabled</code> class 或者给<code>&lt;button&gt;</code>添加<code>disabled</code>属性可以赋于禁用的样式。</p>
@@ -831,8 +831,8 @@
           <div class="example"><a href="#" class="btn btn-active btn-primary">这是 已激活 的按钮</a><a href="#" class="btn btn-primary">这是 未激活 的按钮</a></div>
           <pre><code>&lt;a href="#" class="btn btn-active btn-primary"&gt;这是 已激活 的按钮&lt;/a&gt;</code></pre>
         </li>
-      </ul>
-      <h2>图片</h2>
+      </ol>
+      <h2><a name="image"></a>图片</h2>
       <h3>响应式图片</h3>
       <p>通过为图片添加<code>.img-responsive</code>类可以让图片支持响应式布局，从而让图片在其父元素中更好的缩放。</p>
       <div class="example">
@@ -866,7 +866,7 @@
         </div>
       </div>
       <pre><code>&lt;img src="..." class="img-circle border-warn"&gt;</code></pre>
-      <h2>辅助类</h2>
+      <h2><a name="helper"></a>辅助类</h2>
       <h3>情境文本颜色</h3>
       <p>通过颜色来展示意图，这些类可以应用于链接。</p>
       <div class="example">
@@ -911,13 +911,281 @@
 &lt;p class="border-info"&gt;...&lt;/p&gt;
 &lt;p class="border-error"&gt;...&lt;/p&gt;
 &lt;p class="border-warn"&gt;...&lt;/p&gt;</code></pre>
+      <h3>三角符号</h3>
+      <p>我们使用 HTML 标签<code>&lt;i&gt;</code>来表示图标。同样这个只是 SaUI 的一个规范。</p>
+      <div class="example"><i class="caret"></i></div>
+      <pre><code>&lt;i class="caret"&gt;&lt;/i&gt;</code></pre>
       <h3>关闭按钮</h3>
-      <p>通过使用一个象征关闭的图标，可以让模态框和警告框消失。</p>
-      <div class="example"><a aria-label="Close" class="close"><span aria-hidden="true">&times;</span></a></div>
-      <pre><code>&lt;a aria-label="Close" class="close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/a&gt;</code></pre>
+      <p>通过使用一个象征关闭的图标，可以让模态框和警告框消失。配合<code>.border-*</code>可以给关闭按钮添加一个边框，我们默认了关闭按钮的圆角程度为圆形。也可以给它添加一个<code>.close-animate</code> class 让关闭按钮拥有旋转动画效果。</p>
+      <div class="example"><a aria-label="Close" class="close"><i aria-hidden="true">&times;</i></a><a aria-label="Close" class="close border-default"><i aria-hidden="true">&times;</i></a><a aria-label="Close" class="close close-animate"><i aria-hidden="true">&times;</i></a></div>
+      <pre><code>&lt;a aria-label="Close" class="close"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;
+&lt;a aria-label="Close" class="close border-default"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;
+&lt;a aria-label="Close" class="close close-animate"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;</code></pre>
+      <h3>快速浮动</h3>
+      <p><code>.pull-left</code>左浮动，<code>.pull-right</code>右浮动。这两个样式使用了<code>!important</code>来确定 CSS 优先级。</p>
+      <pre><code>&lt;div class="pull-left"&gt;...&lt;/div&gt;
+&lt;div class="pull-right"&gt;...&lt;/div&gt;</code></pre>
+      <h3>块元素居中</h3>
+      <p>添加 class <code>.center-block</code>可以让具备宽度的子元素水平居中于父元素。</p>
+      <pre><code>&lt;div class="center-block"&gt;...&lt;/div&gt;</code></pre>
+      <h3>清除浮动</h3>
+      <p>通过为父元素添加<code>.clearfix</code>类可以很容易地清除浮动（<code>float</code>）。</p>
+      <pre><code>&lt;div class="clearfix"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+      <h3>显示或隐藏内容</h3>
+      <p>添加 class <code>.show</code>，<code>.hidden</code>用来对任意元素显示或隐藏。同样使用了<code>!important</code>来确定 CSS 优先级。</p>
+      <pre><code>&lt;div class="show"&gt;...&lt;/div&gt;
+&lt;div class="hidden"&gt;...&lt;/div&gt;</code></pre>
+      <h3>消失的文字</h3>
+      <p>通过添加<code>.text-hide</code>可以将元素的文字隐藏。一般用在通过背景图片表示信息的地方，比如一个 LOGO 的链接。</p>
+      <pre><code>&lt;a href="#" class="logo text-hide"&gt;SaUI Logo&lt;/a&gt;</code></pre>
+      <h3>居中文字</h3>
+      <p>添加<code>.text-center</code>可以为内容设置水平居中。</p>
+      <pre><code>&lt;div class="text-center"&gt;...&lt;/div&gt;</code></pre>
+      <h3>垂直对齐</h3>
+      <p>
+        通过对父元素设置 class <code>.v-align</code>并且指定高度即可对子元素进行垂直居中对齐或底部对齐。
+        <br>原理是利用父元素的伪元素来做对子元素进行<code>vertical-align</code>属性的对齐。
+      </p>
+      <ul>
+        <li><code>align-middle</code>垂直居中对齐</li>
+        <li><code>align-bottom</code>底部对齐</li>
+      </ul>
+      <div class="example">
+        <div style="height: 200px;" class="v-align border-default text-center">
+          <div class="align-middle">这是居中对齐的子元素</div>
+        </div>
+        <div style="height: 200px;" class="v-align border-default">
+          <div class="align-bottom">这是底部对齐的子元素</div>
+        </div>
+      </div>
+      <h2>组件</h2>
+      <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果的实现依赖于<code>sa.ui.js</code>，这是由 SaUI 开发的用于实现组件布局交互的 js 。</p>
+      <p>
+        我们为<code>sa.ui.js</code>提供了两套版本，一套依赖于 <abbr title="一个成熟的JavaScript方法类库">jQuery</abbr> ，自文件身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。但如果您的网站并未使用 jQuery 的话也可以使用不依赖任何类库的版本，但是体积较大。
+        <br>在取名的区分上我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 组件的命名规则。
+      </p>
+      <h3><a name="nav"></a>导航</h3>
+      <p>
+        导航是一个很特别的东西，几乎应用在所有的网站上，并且在每一个网站上也有多处应用。比如常见的导航，菜单，选项卡，面包屑等等。
+        <br>在这里我们统称为导航，使用 class <code>.nav</code>即可将一个容器定义为导航，内部则按照<code>&lt;ul&gt;</code>标签结构定义。
+      </p>
+      <ol>
+        <li>
+          <h4>竖排导航</h4>
+          <div class="example">
+            <div class="nav">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系我们</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;关于&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>横排导航</h4>
+          <p>添加 class <code>.nav-horizontal</code>即可将导航横排。</p>
+          <div class="example">
+            <div class="nav nav-horizontal">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;关于&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>标签式导航</h4>
+          <p>添加 class <code>.nav-tabs</code>可以将导航更改为标签选项卡样式。</p>
+          <div class="example">
+            <div class="nav nav-tabs">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav nav-tabs"&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;关于&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>带右对齐的导航</h4>
+          <p>在横排导航内的菜单项<code>&lt;li&gt;</code>添加 class <code>.nav-right</code>将使用右浮动作用该菜单项，使其右对齐。</p>
+          <div class="example">
+            <div class="nav nav-horizontal">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+                <li class="nav-right"><a href="#">联系我们</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-right"&gt;&lt;a href="#"&gt;...&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>两端对齐的导航</h4>
+          <p>添加 class <code>.nav-justify</code>可以让导航等宽两端对齐。</p>
+          <div class="example">
+            <div class="nav nav-justify">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系我们</a></li>
+              </ul>
+            </div><br>
+            <div class="nav nav-justify nav-tabs">
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav nav-justify"&gt;
+    &lt;ul&gt;
+        ...
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>带头部的导航</h4>
+          <p>添加<code>.nav-header</code>可以声明导航的头部，配合其他类的使用可以实现不同的效果。</p>
+          <div class="example">
+            <div class="nav nav-horizontal">
+              <div class="nav-header">SaUI</div>
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+                <li class="nav-right"><a href="#">联系我们</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+    &lt;a class="nav-header"&gt;SaUI&lt;/a&gt;
+    &lt;ul&gt;
+        ...
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>带多级菜单的导航</h4>
+          <p>
+            多级菜单的实现是由在上级<code>&lt;li&gt;</code>里添加<code>&lt;ul&gt;</code>实现的，并不需要多余的东西。
+            <br>注意：只支持三级的菜单。
+          </p>
+          <div class="example">
+            <div class="nav nav-horizontal">
+              <div class="nav-header">SaUI</div>
+              <ul>
+                <li class="nav-active"><a href="#">首页</a></li>
+                <li><a href="#">产品</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系我们</a>
+                  <ul>
+                    <li><a href="#">通过邮件</a></li>
+                    <li><a href="#">通过电话</a></li>
+                    <li><a href="#">上门拜访</a>
+                      <ul>
+                        <li><a href="#">北京门店</a></li>
+                        <li><a href="#">广州门店</a></li>
+                        <li><a href="#">上海门店</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <pre><code>&lt;div class="nav nav-horizontal"&gt;
+    &lt;div class="nav-header"&gt;SaUI&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;关于&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;通过邮件&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;通过电话&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;上门拜访&lt;/a&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;北京门店&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;广州门店&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;上海门店&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </li>
+      </ol>
+      <h3><a name="nav-bar"></a>导航条</h3>
+      <p>导航条是一个物殊的导航类，可以用来应用各种工具栏之类的布局。使用非常简单，只需要原来的导航上面加上 class <code>.nav-bar</code>就可以应用导航条的样式。导航条的一些基本样式与横排导航几乎一致而且它还具备完整的栅格系统，您可以在里面使用<code>.col-*</code>这样的栅格列。</p>
+      <div class="example">
+        <div class="nav nav-bar">
+          <div class="nav-header">SaUI</div>
+          <ul>
+            <li class="nav-active"><a href="#">首页</a></li>
+            <li><a href="#">产品</a></li>
+            <li><a href="#">关于</a></li>
+            <li class="nav-right"><a href="#">联系我们</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="copyright">
         <p>Copyright &copy; 2016 O'Mooer Works</p>
       </div>
     </div>
+    <nav class="nav"><a href="http://saui.omooer.com" title="SaUI" class="nav-header">SaUI</a>
+      <ul>
+        <li class="nav-active"><a href="#intro">前言</a></li>
+        <li><a href="#grid">栅格</a></li>
+        <li><a href="#table">表格</a></li>
+        <li><a href="#form">表单</a></li>
+        <li><a href="#button">按钮</a></li>
+        <li><a href="#image">图片</a></li>
+        <li><a href="#helper">辅助类</a></li>
+        <li class="nav-open"><a class="nav-title">组件</a>
+          <ul>
+            <li><a href="#nav">导航</a></li>
+            <li><a href="#nav-bar">导航条</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </body>
 </html>

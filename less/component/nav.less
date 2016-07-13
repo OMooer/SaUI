@@ -1,0 +1,205 @@
+/**********************
+ * 菜单导航
+ **/
+@import "../common/common";
+
+.nav {
+	a {
+		display: block;
+		padding: .08rem .10rem;
+		text-decoration: none;
+
+		&:hover {
+			background-color: @grayLighter;
+		}
+	}
+
+	.nav-header {
+		display: block;
+		padding: .08rem .10rem;
+		text-align: center;
+		font-weight: @bold;
+		cursor: default;
+		min-width: .50rem;
+	}
+
+	& > ul {
+		.clearfix();
+		// 所有 li
+		& li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			&.nav-active a {
+				background-color: @primary;
+				color: @white;
+			}
+		}
+		// 子 li
+		& > li {
+
+			a {
+				&:after {
+					.gender-caret(right, true);
+					float: right;
+				}
+
+				&:only-child {
+					&:after {
+						content: "";
+						display: none;
+					}
+				}
+			}
+
+			// 导航标题项
+			.nav-title {
+				cursor: pointer;
+				color: @gray;
+			}
+
+			// 二级导航内容
+			a ~ ul {
+				display: none;
+
+				& > li a {
+					padding-left: .25rem;
+				}
+			}
+
+			&.nav-open {
+				& > a {
+					&:after {
+						.gender-caret(bottom, true);
+					}
+				}
+
+				& > a ~ ul {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&.nav-horizontal {
+		.nav-header {
+			float: left;
+		}
+
+		& > ul {
+
+			li {
+				// 带下级导航的
+				& > a ~ ul {
+					position: absolute;
+					background-color: @white;
+					border: solid .01rem @line;
+					box-shadow: 0 .02rem .05rem 0 @grayLight;
+
+					& > li a {
+						padding-left: .10rem;
+						text-align: left !important;
+					}
+				}
+
+				&:hover {
+					&:not(.nav-active) > a {
+						background-color: @grayLighter;
+					}
+
+					& > a ~ ul {
+						display: block;
+					}
+				}
+			}
+
+			& > li {
+				display: inline-block;
+
+				& > a:after {
+					.gender-caret(bottom, true);
+				}
+
+				a:link {
+					text-align: center;
+					min-width: .50rem;
+				}
+
+				&.nav-right {
+					float: right;
+				}
+
+				// 三级
+				& > ul > li > ul {
+					margin: -2.5em 0 0 100%;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+
+	&.nav-tabs {
+		& > ul {
+			border-bottom: solid .01rem @line;
+
+			& > li {
+				float: left;
+				margin-left: .10rem;
+				position: relative;
+				top: .01rem;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				& > a {
+					border-radius: .04rem .04rem 0 0;
+					text-align: center;
+					min-width: .50rem;
+				}
+
+				&.nav-active {
+					top: .01rem;
+
+					& > a {
+						//padding-bottom: .09rem;
+						background-color: @white;
+						border: solid .01rem @line;
+						border-bottom: none;
+						color: @black;
+					}
+				}
+			}
+		}
+	}
+
+	&.nav-justify {
+		& > ul > li {
+			float: none;
+			display: table-cell;
+			text-align: center;
+			width: 1%;
+			top: auto;
+		}
+	}
+
+	&.nav-bar {
+		&:extend(.grid all);
+		&:extend(.nav.nav-horizontal all);
+		padding: 0 .05rem;
+		background-color: @snow;
+		border: solid .01rem @line;
+		border-radius: .04rem;
+		line-height: 2em;
+
+		.nav-header {
+			line-height: 2;
+		}
+
+		& > ul > li:not(.nav-active) > a:hover {
+			background-color: transparent;
+			color: darken(@link, 10%);
+		}
+	}
+}

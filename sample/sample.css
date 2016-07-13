@@ -1,17 +1,17 @@
 .content {
-	margin: auto;
-	width: 60%;
+	float: right;
+	padding: 0 .20rem;
+	box-sizing: border-box;
+	width: 80%;
 }
 
-@media only screen and (max-width: 1024px) {
-	.content {
-		width: 95%;
-	}
-}
-
-.content ul li {
+.content > ul > li {
 	margin-left: 1.5em;
 	list-style-type: disc;
+}
+
+.content > ol {
+	padding-left: 1.5em;
 }
 
 .example:before {
@@ -34,9 +34,31 @@
 	padding: 0 1em;
 }
 
+.example .nav {
+	/*border: solid .01rem #ccc;*/
+}
+
 .copyright {
 	margin: .10rem 0;
 	border-top: solid .01rem #ccc;
 	text-align: right;
 	font-size: .11rem;
+}
+
+nav {
+	position: fixed;
+	background: #222;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+}
+
+@media only screen and (max-width: 1024px) {
+	.content {
+		width: 100%;
+	}
+
+	.menu {
+	}
 }
