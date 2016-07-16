@@ -17,6 +17,7 @@
 	.nav-header {
 		display: block;
 		padding: .08rem .10rem;
+		line-height: .20rem;
 		text-align: center;
 		font-weight: @bold;
 		cursor: default;
@@ -40,6 +41,8 @@
 		& > li {
 
 			a {
+				line-height: .20rem;
+
 				&:after {
 					.gender-caret(right, true);
 					float: right;
@@ -154,7 +157,7 @@
 				}
 
 				& > a {
-					border-radius: .04rem .04rem 0 0;
+					border-radius: @radius @radius 0 0;
 					text-align: center;
 					min-width: .50rem;
 				}
@@ -190,8 +193,7 @@
 		padding: 0 .05rem;
 		background-color: @snow;
 		border: solid .01rem @line;
-		border-radius: .04rem;
-		line-height: 2em;
+		border-radius: @radius;
 
 		.nav-header {
 			line-height: 2;
@@ -200,6 +202,48 @@
 		& > ul > li:not(.nav-active) > a:hover {
 			background-color: transparent;
 			color: darken(@link, 10%);
+		}
+		& > ul > li {
+			float: left;
+
+			&.nav-active {
+				position: relative;
+				top: -.01rem;
+
+				& > a {
+					margin-bottom: -.02rem;
+					border-bottom: solid .02rem @primary;
+				}
+			}
+
+			& > a {
+				line-height: 2;
+			}
+		}
+
+		.nav-form form.form {
+			margin: .06rem 0;
+
+			button {
+				padding-top: .08rem;
+				padding-bottom: .08rem;
+				vertical-align: middle;
+			}
+
+			.input-group > button {
+				padding-top: .05rem;
+				padding-bottom: .05rem;
+			}
+
+			.form-group {
+				display: inline-block;
+				margin-bottom: 0;
+				vertical-align: middle;
+			}
+		}
+
+		.dropdown {
+			margin: .03rem 0;
 		}
 	}
 }
