@@ -76,16 +76,21 @@
 
 .gender-caret(@dir, @unicode) {
 	& when (@dir = top) {
-		content: "\25B4";
+		content: "\276E"; //\25B4
+		margin-left: .07rem;
+		transform: rotate(90deg);
 	}
 	& when (@dir = bottom) {
-		content: "\25BE";
+		content: "\276F"; //\25BE
+		transform: rotate(90deg);
+		margin-left: .07rem;
 	}
 	& when (@dir = left) {
-		content: "\25C2";
+		content: "\276E"; //\25C2
+		margin-left: .05rem;
 	}
 	& when (@dir = right) {
-		content: "\25B8";
+		content: "\276F"; //\25B8
+		margin-left: .05rem;
 	}
-	margin-left: .05rem;
 }

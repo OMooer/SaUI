@@ -6,7 +6,7 @@
 .__item() {
 	background-color: @white;
 	border: solid .01rem @line;
-	border-radius: .04rem;
+	border-radius: @radius;
 	box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
 	box-sizing: border-box;
 	transition: border-color .3s ease-out;
@@ -30,6 +30,7 @@ form.form {
 		&[type="tel"],
 		&[type="number"] {
 			padding: .05rem .07rem;
+			line-height: .20rem;
 
 			&:focus {
 				border-color: @blue;
@@ -67,11 +68,20 @@ form.form {
 		}
 	}
 
+	textarea {
+		.__item();
+		padding: .05rem .07rem;
+		vertical-align: top;
+		min-width: 2rem;
+		min-height: .60rem;
+	}
+
 	select {
 		.__item();
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		padding: .05rem .07rem;
+		line-height: .20rem;
 		width: 100%;
 
 		&::-ms-expand {
@@ -111,7 +121,7 @@ form.form {
 		}
 	}
 
-	input, select {
+	input, textarea, select {
 		outline: none;
 
 		&[disabled] {
@@ -194,12 +204,12 @@ form.form {
 
 				&:first-child {
 					margin-top: 0;
-					border-radius: .04rem .04rem 0 0;
+					border-radius: @radius @radius 0 0;
 					box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
 				}
 
 				&:last-child {
-					border-radius: 0 0 .04rem .04rem;
+					border-radius: 0 0 @radius @radius;
 				}
 
 				&:focus {
@@ -210,6 +220,8 @@ form.form {
 	}
 
 	.input-group {
+		line-height: .20rem;
+
 		input {
 			&[type="text"],
 			&[type="email"],
@@ -234,7 +246,7 @@ form.form {
 			border-left: 0;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
-			line-height: normal;
+			line-height: .20rem;
 			height: auto;
 		}
 
@@ -244,7 +256,7 @@ form.form {
 			background-color: @grayLighter;
 			border: solid .01rem @line;
 			border-right: 0;
-			border-radius: .04rem 0 0 .04rem;
+			border-radius: @radius 0 0 @radius;
 		}
 	}
 
@@ -274,6 +286,9 @@ form.form {
 			&[type="number"] {
 				display: block;
 			}
+		}
+		textarea {
+			display: block;
 		}
 	}
 
