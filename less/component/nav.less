@@ -85,6 +85,7 @@
 		}
 	}
 
+	// 水平式
 	&.nav-horizontal {
 		.nav-header {
 			float: left;
@@ -93,12 +94,13 @@
 		& > ul {
 
 			li {
-				// 带下级导航的
+				// 横向导航的下级菜单
 				& > a ~ ul {
 					position: absolute;
 					background-color: @white;
 					border: solid .01rem @line;
-					box-shadow: 0 .02rem .05rem 0 @grayLight;
+					border-radius: @radius;
+					.pop-shadow();
 
 					& > li a {
 						padding-left: .10rem;
@@ -142,6 +144,7 @@
 		}
 	}
 
+	// 标签式
 	&.nav-tabs {
 		& > ul {
 			border-bottom: solid .01rem @line;
@@ -177,6 +180,7 @@
 		}
 	}
 
+	// 两端对齐
 	&.nav-justify {
 		& > ul > li {
 			float: none;
@@ -187,6 +191,7 @@
 		}
 	}
 
+	// 导航条
 	&.nav-bar {
 		&:extend(.grid all);
 		&:extend(.nav.nav-horizontal all);
@@ -218,6 +223,11 @@
 
 			& > a {
 				line-height: 2;
+			}
+
+			// 导航条的二级菜单
+			& > a ~ ul {
+				margin-top: -.05rem;
 			}
 		}
 
