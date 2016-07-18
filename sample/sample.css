@@ -30,10 +30,6 @@
 	background-color: #ddd;
 }
 
-.example .form.grid [class*="col-"] {
-	padding: 0 1em;
-}
-
 .example .nav {
 	/*border: solid .01rem #ccc;*/
 }

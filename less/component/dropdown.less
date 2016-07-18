@@ -1,0 +1,97 @@
+/**********************
+ * 菜单导航
+ **/
+@import "../common/common";
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	padding: 0 .08rem;
+	background-color: @white;
+	border: solid .01rem @line;
+	border-radius: @radius;
+	line-height: .25rem;
+	transition: box-shadow .2s;
+	font-size: @fontNormal;
+
+	.dropdown-text {
+		display: inline-block;
+		padding: .05rem 0;
+		cursor: default;
+		color: @grayDark;
+	}
+	.dropdown-icon {
+		.gender-caret(bottom);
+	}
+	.dropdown-menu {
+		display: none;
+		position: absolute;
+		overflow: hidden;
+		padding: .04rem 0;
+		background-color: @white;
+		border: solid .01rem @line;
+		border-radius: @radius;
+		line-height: 1.2em;
+		top: .38rem;
+		left: -.01rem;
+		min-width: 100%;
+		z-index: 10;
+
+		.dropdown-head {
+			&:extend(.nav a);
+			cursor: default;
+			line-height: 1em;
+			letter-spacing: .02rem;
+			font-size: 85%;
+			color: @gray;
+		}
+
+		.dropdown-divider {
+			border-top: solid .01rem @line;
+		}
+
+		.dropdown-item a {
+			&:extend(.nav a all);
+			padding: .06rem .10rem;
+			line-height: 1.2em;
+			white-space: nowrap;
+			color: @grayDark;
+		}
+
+		.dropdown-item a:link {
+			text-align: left;
+		}
+
+		.dropdown-disabled > a {
+			.disabled();
+			color: @grayLight;
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.dropdown-open {
+		background-color: @grayLighter;
+		box-shadow: inset 0 3px 10px -6px @black;
+
+		.dropdown-menu {
+			display: block;
+			box-shadow: 0 0 10px -4px @black;
+			-webkit-animation: dropDown .3s ease-out backwards;
+			-moz-animation: dropDown .3s ease-out backwards;
+		}
+	}
+
+	&.dropdown-hover:hover {
+		&:extend(.dropdown.dropdown-open all);
+	}
+
+	&.dropdown-right {
+		.dropdown-menu {
+			left: auto;
+			right: -.01rem;
+		}
+	}
+}
