@@ -987,19 +987,21 @@
       </p>
       <h3><a name="dropdown"></a>下拉菜单</h3>
       <p>下拉菜单的展开可由点击事件触发，具体实现是通过 js 为 dropdown 添加/移除<code>.dorpdown-open</code> class，您也可以直接使用 hover 状态展开的方式。</p>
-      <h4>常规的下拉菜单</h4>
-      <div class="example">
-        <div class="dropdown">
-          <div class="dropdown-text">常规的下拉菜单</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><a href="#">这是第一个</a></div>
-            <div class="dropdown-item"><a href="#">这是第二个</a></div>
-            <div class="dropdown-item"><a href="#">这是第三个</a></div>
+      <ol>
+        <li>
+          <h4>常规的下拉菜单</h4>
+          <div class="example">
+            <div class="dropdown">
+              <div class="dropdown-text">常规的下拉菜单</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item"><a href="#">这是第一个</a></div>
+                <div class="dropdown-item"><a href="#">这是第二个</a></div>
+                <div class="dropdown-item"><a href="#">这是第三个</a></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <pre><code>&lt;div class="dropdown"&gt;
+          <pre><code>&lt;div class="dropdown"&gt;
     &lt;div class="dropdown-text"&gt;常规的下拉菜单&lt;/div&gt;
     &lt;div class="dropdown-icon"&gt;&lt;/div&gt;
     &lt;div class="dropdown-menu"&gt;
@@ -1008,101 +1010,109 @@
         &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第三个&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-      <h4>左右对齐的下拉菜单</h4>
-      <p>
-        在 dropdown 上添加 class <code>.dropdown-right</code>即可实现下面的效果。
-        <br>注意：下面的示例为了表现更为直观一些，对整个dropdown 使用了<code>.pull-*</code>，实际上右对齐并不会使 dropdown 产生右浮动。
-      </p>
-      <div class="example">
-        <div class="dropdown dropdown-open pull-left">
-          <div class="dropdown-text">左对齐的</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><a href="#">这是第一个菜单项</a></div>
-            <div class="dropdown-item"><a href="#">默认是左对齐的</a></div>
-            <div class="dropdown-item"><a href="#">这是第三个</a></div>
+        </li>
+        <li>
+          <h4>左右对齐的下拉菜单</h4>
+          <p>
+            在 dropdown 上添加 class <code>.dropdown-right</code>即可实现下面的效果。
+            <br>注意：下面的示例为了表现更为直观一些，对整个dropdown 使用了<code>.pull-*</code>，实际上右对齐并不会使 dropdown 产生右浮动。
+          </p>
+          <div class="example">
+            <div class="dropdown dropdown-open pull-left">
+              <div class="dropdown-text">左对齐的</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item"><a href="#">这是第一个菜单项</a></div>
+                <div class="dropdown-item"><a href="#">默认是左对齐的</a></div>
+                <div class="dropdown-item"><a href="#">这是第三个</a></div>
+              </div>
+            </div>
+            <div class="dropdown dropdown-open dropdown-right pull-right">
+              <div class="dropdown-text">右对齐的</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item"><a href="#">这是第一个菜单项</a></div>
+                <div class="dropdown-item"><a href="#">右对齐指的是 menu 的对齐方式</a></div>
+                <div class="dropdown-item"><a href="#">这里还使用了.pull-right</a></div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
           </div>
-        </div>
-        <div class="dropdown dropdown-open dropdown-right pull-right">
-          <div class="dropdown-text">右对齐的</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><a href="#">这是第一个菜单项</a></div>
-            <div class="dropdown-item"><a href="#">右对齐指的是 menu 的对齐方式</a></div>
-            <div class="dropdown-item"><a href="#">这里还使用了.pull-right</a></div>
-          </div>
-        </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-      </div>
-      <pre><code>&lt;div class="dropdown dropdown-right"&gt;
+          <pre><code>&lt;div class="dropdown dropdown-right"&gt;
     ...
 &lt;/div&gt;</code></pre>
-      <h4>默认展开的下拉菜单</h4>
-      <p>在 dropdown 上添加 class <code>.dropdown-open</code>即可实现下面的效果。</p>
-      <div class="example">
-        <div class="dropdown dropdown-open">
-          <div class="dropdown-text">这是默认展开的</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><a href="#">这是第一个</a></div>
-            <div class="dropdown-item"><a href="#">这是第二个</a></div>
-            <div class="dropdown-item"><a href="#">这是第三个</a></div>
+        </li>
+        <li>
+          <h4>默认展开的下拉菜单</h4>
+          <p>在 dropdown 上添加 class <code>.dropdown-open</code>即可实现下面的效果。</p>
+          <div class="example">
+            <div class="dropdown dropdown-open">
+              <div class="dropdown-text">这是默认展开的</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item"><a href="#">这是第一个</a></div>
+                <div class="dropdown-item"><a href="#">这是第二个</a></div>
+                <div class="dropdown-item"><a href="#">这是第三个</a></div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
           </div>
-        </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-      </div>
-      <pre><code>&lt;div class="dropdown dropdown-open"&gt;
+          <pre><code>&lt;div class="dropdown dropdown-open"&gt;
     ...
 &lt;/div&gt;</code></pre>
-      <h4>鼠标悬停展开</h4>
-      <p>在 dropdown 上添加 class <code>.dropdown-hover</code>即可实现以下的效果。</p>
-      <div class="example">
-        <div class="dropdown dropdown-hover">
-          <div class="dropdown-text">鼠标放上来就会展开</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-item"><a href="#">这是第一个</a></div>
-            <div class="dropdown-item"><a href="#">这是第二个</a></div>
-            <div class="dropdown-item"><a href="#">这是第三个</a></div>
+        </li>
+        <li>
+          <h4>鼠标悬停展开</h4>
+          <p>在 dropdown 上添加 class <code>.dropdown-hover</code>即可实现以下的效果。</p>
+          <div class="example">
+            <div class="dropdown dropdown-hover">
+              <div class="dropdown-text">鼠标放上来就会展开</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-item"><a href="#">这是第一个</a></div>
+                <div class="dropdown-item"><a href="#">这是第二个</a></div>
+                <div class="dropdown-item"><a href="#">这是第三个</a></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <pre><code>&lt;div class="dropdown dropdown-hover"&gt;
+          <pre><code>&lt;div class="dropdown dropdown-hover"&gt;
     ...
 &lt;/div&gt;</code></pre>
-      <h4>下拉菜单的各种子项</h4>
-      <p>在<code>&lt;.dropdown-menu&gt;</code>里添加以下 class 的子节点可以展示对应的样式。</p>
-      <ul>
-        <li><code>.dropdonw-head</code> 标题行</li>
-        <li><code>.dropdonw-disabled</code> 禁用项</li>
-        <li><code>.dropdonw-divider</code> 分隔线</li>
-      </ul>
-      <div class="example">
-        <div class="dropdown dropdown-open">
-          <div class="dropdown-text">默认展开下拉菜单</div>
-          <div class="dropdown-icon"></div>
-          <div class="dropdown-menu">
-            <div class="dropdown-head">标题</div>
-            <div class="dropdown-item"><a href="#">这是第一个</a></div>
-            <div class="dropdown-item"><a href="#">这是第二个</a></div>
-            <div class="dropdown-item dropdown-disabled"><a href="#">这是第三个</a></div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item"><a href="#">这是第四个</a></div>
+        </li>
+        <li>
+          <h4>下拉菜单的各种子项</h4>
+          <p>在<code>&lt;.dropdown-menu&gt;</code>里添加以下 class 的子节点可以展示对应的样式。</p>
+          <ul>
+            <li><code>.dropdonw-head</code> 标题行</li>
+            <li><code>.dropdonw-disabled</code> 禁用项</li>
+            <li><code>.dropdonw-divider</code> 分隔线</li>
+          </ul>
+          <div class="example">
+            <div class="dropdown dropdown-open">
+              <div class="dropdown-text">默认展开下拉菜单</div>
+              <div class="dropdown-icon"></div>
+              <div class="dropdown-menu">
+                <div class="dropdown-head">标题</div>
+                <div class="dropdown-item"><a href="#">这是第一个</a></div>
+                <div class="dropdown-item"><a href="#">这是第二个</a></div>
+                <div class="dropdown-item dropdown-disabled"><a href="#">这是第三个</a></div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item"><a href="#">这是第四个</a></div>
+              </div>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
           </div>
-        </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-      </div>
-      <pre><code>&lt;div class="dropdown dropdown-open"&gt;
+          <pre><code>&lt;div class="dropdown dropdown-open"&gt;
     &lt;div class="dropdown-text"&gt;默认展开下拉菜单&lt;/div&gt;
     &lt;div class="dropdown-icon"&gt;&lt;/div&gt;
     &lt;div class="dropdown-menu"&gt;
@@ -1114,6 +1124,79 @@
         &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第四个&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+        </li>
+      </ol>
+      <h3><a name="badge"></a>徽章</h3>
+      <p>添加 class <code>.badge</code>到对应的元素上。比如<code>&lt;span&gt;</code>等。</p>
+      <ol>
+        <li>
+          <h4>默认样式</h4>
+          <div class="example"><span class="badge">1</span><span class="badge badge-primary">2</span><span class="badge badge-success">3</span><span class="badge badge-info">4</span><span class="badge badge-danger">5</span><span class="badge badge-warn">6</span><br><span class="badge">Default</span><span class="badge badge-primary">Primary</span><span class="badge badge-success">Success</span><span class="badge badge-info">Info</span><span class="badge badge-danger">Danger</span><span class="badge badge-warn">Warning</span></div>
+          <pre><code>&lt;span class="badge"&gt;1&lt;/span&gt;
+&lt;span class="badge badge-primary"&gt;2&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;3&lt;/span&gt;
+&lt;span class="badge badge-info"&gt;4&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;5&lt;/span&gt;
+&lt;span class="badge badge-warn"&gt;6&lt;/span&gt;
+&lt;br&gt;
+&lt;span class="badge"&gt;Default&lt;/span&gt;
+&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-warn"&gt;Warning&lt;/span&gt;</code></pre>
+        </li>
+        <li>
+          <h4>圆角样式</h4>
+          <p>添加<code>.badge-radius</code> class 可以将徽章呈现圆角样式。</p>
+          <div class="example"><span class="badge badge-radius">1</span><span class="badge badge-radius badge-primary">2</span><span class="badge badge-radius badge-success">3</span><span class="badge badge-radius badge-info">4</span><span class="badge badge-radius badge-danger">5</span><span class="badge badge-radius badge-warn">6</span><br><span class="badge badge-radius">Default</span><span class="badge badge-radius badge-primary">Primary</span><span class="badge badge-radius badge-success">Success</span><span class="badge badge-radius badge-info">Info</span><span class="badge badge-radius badge-danger">Danger</span><span class="badge badge-radius badge-warn">Warning</span></div>
+          <pre><code>&lt;span class="badge badge-radius"&gt;1&lt;/span&gt;
+&lt;span class="badge badge-radius badge-primary"&gt;2&lt;/span&gt;
+&lt;span class="badge badge-radius badge-success"&gt;3&lt;/span&gt;
+&lt;span class="badge badge-radius badge-info"&gt;4&lt;/span&gt;
+&lt;span class="badge badge-radius badge-danger"&gt;5&lt;/span&gt;
+&lt;span class="badge badge-radius badge-warn"&gt;6&lt;/span&gt;
+&lt;br&gt;
+&lt;span class="badge badge-radius"&gt;Default&lt;/span&gt;
+&lt;span class="badge badge-radius badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-radius badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-radius badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-radius badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-radius badge-warn"&gt;Warning&lt;/span&gt;</code></pre>
+        </li>
+        <li>
+          <h4>椭圆样式</h4>
+          <p>添加<code>.badge-round</code> class 可以呈现椭圆样式。椭圆样式默认在内容较少的情况下显示为正圆，这是因为椭圆的圆度与默认的徽章大小匹配导致。</p>
+          <div class="example"><span class="badge badge-round">1</span><span class="badge badge-round badge-primary">2</span><span class="badge badge-round badge-success">3</span><span class="badge badge-round badge-info">4</span><span class="badge badge-round badge-danger">5</span><span class="badge badge-round badge-warn">6</span><br><span class="badge badge-round">Default</span><span class="badge badge-round badge-primary">Primary</span><span class="badge badge-round badge-success">Success</span><span class="badge badge-round badge-info">Info</span><span class="badge badge-round badge-danger">Danger</span><span class="badge badge-round badge-warn">Warning</span></div>
+          <pre><code>&lt;span class="badge badge-round"&gt;1&lt;/span&gt;
+&lt;span class="badge badge-round badge-primary"&gt;2&lt;/span&gt;
+&lt;span class="badge badge-round badge-success"&gt;3&lt;/span&gt;
+&lt;span class="badge badge-round badge-info"&gt;4&lt;/span&gt;
+&lt;span class="badge badge-round badge-danger"&gt;5&lt;/span&gt;
+&lt;span class="badge badge-round badge-warn"&gt;6&lt;/span&gt;
+&lt;br&gt;
+&lt;span class="badge badge-round"&gt;Default&lt;/span&gt;
+&lt;span class="badge badge-round badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-round badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-round badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-round badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-round badge-warn"&gt;Warning&lt;/span&gt;</code></pre>
+        </li>
+        <li>
+          <h4>与按钮的组合</h4>
+          <p>使用<code>.badge-tips</code> class 可以将徽章显示在父元素的右上角。</p>
+          <div class="example">
+            <button type="button" class="btn btn-primary">Button<span class="badge badge-round badge-danger">12</span></button>
+            <button type="button" class="btn btn-rect btn-info">Button<span class="badge badge-round badge-tips">99+</span></button>
+          </div>
+          <pre><code>&lt;button type="button" class="btn btn-primary"&gt;Button
+    &lt;span class="badge badge-round badge-danger"&gt;12&lt;/span&gt;
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-rect btn-default"&gt;Button
+    &lt;span class="badge badge-round badge-tips"&gt;99+&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </li>
+      </ol>
       <h3><a name="nav"></a>导航</h3>
       <p>
         导航是一个很特别的东西，几乎应用在所有的网站上，并且在每一个网站上也有多处应用。比如常见的导航，菜单，选项卡，面包屑等等。
@@ -1369,6 +1452,7 @@
         <li class="nav-open"><a class="nav-title">组件</a>
           <ul>
             <li><a href="#dropdown">下拉菜单</a></li>
+            <li><a href="#badge">徽章</a></li>
             <li><a href="#nav">导航</a></li>
             <li><a href="#nav-bar">导航条</a></li>
           </ul>
