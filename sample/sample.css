@@ -22,6 +22,10 @@
 	margin-top: .40rem;
 }
 
+.content ul ~ .example {
+	margin-top: 1em;
+}
+
 .example:before {
 	content: "示例：";
 	display: block;

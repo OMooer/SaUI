@@ -60,7 +60,7 @@
 				}
 
 				&[disabled] {
-					opacity: .45;
+					.disabled(.45);
 
 					&:after {
 						cursor: no-drop;
@@ -176,13 +176,12 @@
 						}
 					}
 					&[disabled] {
-						opacity: .45;
+						.disabled(.45);
 
 						& + span {
+							.disabled(.45);
 							text-shadow: 0 1px 0 @white;
-							cursor: no-drop;
 							color: @grayDarker;
-							opacity: .45;
 						}
 					}
 				}

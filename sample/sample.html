@@ -1197,6 +1197,176 @@
 &lt;/button&gt;</code></pre>
         </li>
       </ol>
+      <h3><a name="paging"></a>分页</h3>
+      <p>带有展示页码的分页组件，可以很方便的用在应用或搜索结果中。</p>
+      <ol>
+        <li>
+          <h4>默认分页</h4>
+          <p>为<code>&lt;ul&gt;</code>元素添加 class <code>.paging</code>就可以实现分页样式。分页组件包含以下子项装饰类：</p>
+          <ul>
+            <li><code>.paging-prev</code> 上一页按钮样式</li>
+            <li><code>.paging-next</code> 下一页按钮样式</li>
+            <li><code>.paging-active</code> 当前页按钮样式</li>
+            <li><code>.paging-disabled</code> 禁用按钮样式</li>
+          </ul>
+          <div class="example">
+            <ul class="paging">
+              <li class="paging-prev paging-disabled"><a>Previous</a></li>
+              <li class="paging-active"><a>1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li>...</li>
+              <li><a href="#">11</a></li>
+              <li><a href="#">12</a></li>
+              <li class="paging-next"><a href="#">Next</a></li>
+            </ul>
+          </div>
+          <pre><code>&lt;ul class="paging"&gt;
+    &lt;li class="paging-prev paging-disabled"&gt;&lt;a&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="paging-active"&gt;&lt;a&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;11&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;12&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="paging-next"&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </li>
+        <li>
+          <h4>带边框的分页</h4>
+          <p>添加<code>.paging-bordered</code> class 可以让每个分页按钮都带上边框。</p>
+          <div class="example">
+            <ul class="paging paging-bordered">
+              <li class="paging-prev"><a href="#">Previous</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li>...</li>
+              <li><a href="#">11</a></li>
+              <li class="paging-active"><a href="#">12</a></li>
+              <li class="paging-next paging-disabled"><a>Next</a></li>
+            </ul>
+          </div>
+          <pre><code>&lt;ul class="paging paging-bordered"&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+        </li>
+        <li>
+          <h4>组合的分页</h4>
+          <p>添加<code>.paging-group</code> class 可以让分页看起来更像一个整体，并带有边框样式。</p>
+          <div class="example">
+            <ul class="paging paging-group">
+              <li class="paging-prev"><a href="#">Previous</a></li>
+              <li class="paging-active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="paging-next"><a href="#">Next</a></li>
+            </ul>
+            <ul class="paging paging-group">
+              <li class="paging-prev"><a href="#"></a></li>
+              <li class="paging-active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="paging-next"><a href="#"></a></li>
+            </ul>
+          </div>
+          <pre><code>&lt;ul class="paging paging-group"&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+        </li>
+        <li>
+          <h4>对齐的分页</h4>
+          <p>分页组件默认是左对齐的，添加 class <code>.paging-center</code>可以将分页按钮居中对齐，需要右对齐的分页直使使用右浮动<code>.pull-right</code>实现。</p>
+          <div class="example">
+            <ul class="paging paging-group pull-right">
+              <li class="paging-prev"><a href="#"></a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li class="paging-active"><a href="#">4</a></li>
+              <li class="paging-next"><a href="#"></a></li>
+            </ul>
+            <ul class="paging paging-group paging-center">
+              <li class="paging-prev"><a href="#"></a></li>
+              <li class="paging-active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="paging-next"><a href="#"></a></li>
+            </ul>
+            <ul class="paging paging-center">
+              <li class="paging-prev"><a href="#">Previous</a></li>
+              <li><a href="#">1</a></li>
+              <li class="paging-active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="paging-next"><a href="#">Next</a></li>
+            </ul>
+            <ul class="paging paging-bordered paging-center">
+              <li class="paging-prev"><a href="#">Previous</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li class="paging-active"><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="paging-next"><a href="#">Next</a></li>
+            </ul>
+          </div>
+          <pre><code>&lt;ul class="paging paging-group pull-right"&gt;
+    ...
+&lt;/ul&gt;
+&lt;ul class="paging paging-group paging-center"&gt;
+    ...
+&lt;/ul&gt;
+&lt;ul class="paging paging-center"&gt;
+    ...
+&lt;/ul&gt;
+&lt;ul class="paging paging-bordered paging-center"&gt;
+    ...
+&lt;/ul&gt;</code></pre>
+        </li>
+        <li>
+          <h4>翻页</h4>
+          <p><code>.paging-pager</code>可以显示一个只有 Previous 和 Next 的翻页组件。默认是居中对齐，如果为子项加上各自的装饰类就可将两个按钮各居左右。</p>
+          <p>注意：翻页类会将分页组件里除去 Previous 和 Next 之外的其他子项隐藏。</p>
+          <div class="example">
+            <ul class="paging paging-pager">
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+            <ul class="paging paging-pager">
+              <li class="paging-prev"><a href="#">Previous</a></li>
+              <li class="paging-next"><a href="#">Next</a></li>
+            </ul>
+            <ul class="paging paging-pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </div>
+          <pre><code>&lt;ul class="paging paging-pager"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="paging paging-pager"&gt;
+    &lt;li class="paging-prev"&gt;&lt;a href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="paging-next"&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="paging paging-pager"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </li>
+      </ol>
       <h3><a name="nav"></a>导航</h3>
       <p>
         导航是一个很特别的东西，几乎应用在所有的网站上，并且在每一个网站上也有多处应用。比如常见的导航，菜单，选项卡，面包屑等等。
@@ -1399,7 +1569,7 @@
               </ul>
             </li>
             <li>
-              <div class="dropdown dropdown-hover dropdown-right">
+              <div class="dropdown dropdown-hover">
                 <div class="dropdown-text">这是一个下拉项</div>
                 <div class="dropdown-icon"></div>
                 <div class="dropdown-menu">
@@ -1453,6 +1623,7 @@
           <ul>
             <li><a href="#dropdown">下拉菜单</a></li>
             <li><a href="#badge">徽章</a></li>
+            <li><a href="#paging">分页</a></li>
             <li><a href="#nav">导航</a></li>
             <li><a href="#nav-bar">导航条</a></li>
           </ul>

@@ -39,8 +39,8 @@
 }
 
 // 禁用
-.disabled() {
-	opacity: .65;
+.disabled(@alpha:.65) {
+	opacity: @alpha;
 	cursor: no-drop;
 }
 
@@ -87,7 +87,7 @@
 	}
 	& when (@dir = left) {
 		content: "\276E"; //\25C2
-		margin-left: .05rem;
+		margin-right: .05rem;
 	}
 	& when (@dir = right) {
 		content: "\276F"; //\25B8

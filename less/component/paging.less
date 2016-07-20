@@ -1,0 +1,165 @@
+/**********************
+ * 菜单导航
+ **/
+@import "../common/common";
+
+ul.paging {
+	.clearfix();
+	margin: .10rem 0;
+	line-height: .20rem;
+	font-size: @fontMini;
+
+	li {
+		float: left;
+		cursor: default;
+		text-align: center;
+		min-width: .24rem;
+
+		a {
+			display: block;
+			padding: .05rem .12rem;
+			text-decoration: none;
+
+			&:link,
+			&:visited {
+				background-color: @white;
+				color: @grayDarker;
+
+				&:hover {
+					background-color: @grayLighter;
+				}
+			}
+		}
+
+		&.paging-prev {
+			a:before {
+				.gender-caret(left, true);
+			}
+		}
+
+		&.paging-next {
+			a:after {
+				.gender-caret(right, true);
+			}
+		}
+
+		&.paging-active {
+			a {
+				background-color: @blue !important;
+				color: @white;
+			}
+		}
+
+		&.paging-disabled {
+			.disabled(.3);
+			a {
+				background-color: @white !important;
+			}
+		}
+
+	}
+
+	&.paging-bordered {
+		li {
+			margin: 0 .05rem;
+
+			a {
+				border-radius: .20rem;
+				border: solid .02rem @blue;
+				&:hover {
+					background-color: @snow;
+				}
+			}
+		}
+	}
+
+	&.paging-group {
+		li {
+			margin-left: -.01rem;
+
+			a {
+				border: solid .01rem @line;
+			}
+
+			&:first-child {
+				margin-left: 0;
+				a {
+					border-radius: .20rem 0 0 .20rem;
+				}
+			}
+			&:last-child {
+				a {
+					border-radius: 0 .20rem .20rem 0;
+				}
+			}
+
+			&.paging-active a {
+				border-color: @blue;
+			}
+		}
+	}
+
+	&.paging-center {
+		display: table;
+		text-align: center;
+		word-spacing: -1em;
+		width: 100%;
+
+		li {
+			float: none;
+			display: inline-block;
+			word-spacing: normal;
+		}
+	}
+
+	&.paging-pager {
+		display: table;
+		text-align: center;
+		word-spacing: -1em;
+		width: 100%;
+
+		li {
+			float: none;
+			display: none;
+			word-spacing: normal;
+
+			&:first-child,
+			&:last-child {
+				display: inline-block;
+
+				a {
+					border: solid .01rem @line;
+				}
+
+			}
+
+			&:first-child:extend(ul.paging li.paging-prev all) {
+				a {
+					//border-right: 0;
+					border-radius: .20rem 0 0 .20rem;
+				}
+			}
+			&:last-child:extend(ul.paging li.paging-next all) {
+				a {
+					border-left: 0;
+					border-radius: 0 .20rem .20rem 0;
+				}
+			}
+
+			&.paging-prev {
+				float: left;
+				a {
+					border-radius: .20rem;
+				}
+			}
+
+			&.paging-next {
+				float: right;
+				a {
+					border: solid .01rem @line;
+					border-radius: .20rem;
+				}
+			}
+		}
+	}
+}
