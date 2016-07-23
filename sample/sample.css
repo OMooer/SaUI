@@ -67,6 +67,7 @@ nav {
 		width: 100%;
 	}
 
-	.menu {
+	.nav > ul {
+		display: none;
 	}
 }

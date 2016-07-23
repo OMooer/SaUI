@@ -1367,6 +1367,117 @@
 &lt;/ul&gt;</code></pre>
         </li>
       </ol>
+      <h3><a name="progress"></a>进度条</h3>
+      <p>直接使用<code>&lt;progress&gt;</code>元素可以实现基本的进度条效果。</p>
+      <p>也可以通过命名class 为<code>.progress</code>的<code>&lt;div&gt;</code>来实现，只需为其添加子元素<code>.progress-bar</code>即可。</p>
+      <ol>
+        <li>
+          <h4>默认样式</h4>
+          <div class="example">
+            <progress max="100" value="25"></progress>
+            <div class="progress">
+              <div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"></div>
+            </div>
+          </div>
+          <pre><code>&lt;progress max="100" value="25"&gt;&lt;/progress&gt;
+&lt;div class="progress"&gt;
+    &lt;div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>带进度文字的进度条 <code>.progress-text</code></h4>
+          <div class="example">
+            <progress max="100" value="34" class="progress-text"></progress>
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"></div>
+            </div>
+          </div>
+          <pre><code>&lt;progress class="progress-text" max="100" value="34"&gt;&lt;/progress&gt;
+&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>超小进度条 <code>.progress-small</code></h4>
+          <div class="example">
+            <progress max="100" value="24" class="progress-small"></progress>
+            <div class="progress progress-small">
+              <div role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%;" class="progress-bar progress-success"></div>
+            </div>
+          </div>
+          <pre><code>&lt;progress class="progress-small" max="100" value="24"&gt;&lt;/progress&gt;
+&lt;div class="progress progress-small"&gt;
+    &lt;div role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%;" class="progress-bar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>情境色的进度条</h4>
+          <p>注意：这个类型的进度条不支持直接使用 <code>&lt;progress&gt;</code>元素的进度条。</p>
+          <div class="example">
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-success"></div>
+            </div>
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;" class="progress-bar progress-danger"></div>
+            </div>
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-warn"></div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-success"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;" class="progress-bar progress-danger"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-warn"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>条纹效果</h4>
+          <p>
+            添加 class <code>.progress-striped</code>可实现进度条的条纹效果。
+            <br>注意：这个类型的进度条不支持直接使用 <code>&lt;progress&gt;</code>元素的进度条。
+          </p>
+          <div class="example">
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-striped progress-success"></div>
+            </div>
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;" class="progress-bar progress-striped progress-danger"></div>
+            </div>
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-striped progress-warn"></div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-striped progress-success"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;" class="progress-bar progress-striped progress-danger"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-striped progress-warn"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>堆叠进度条</h4>
+          <p>注意：这个类型的进度条不支持直接使用 <code>&lt;progress&gt;</code>元素的进度条。</p>
+          <div class="example">
+            <div class="progress progress-text">
+              <div role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%;" class="progress-bar progress-success"></div>
+              <div role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100" style="width: 16%;" class="progress-bar progress-danger"></div>
+              <div role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%;" class="progress-bar progress-warn"></div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="progress progress-text"&gt;
+    &lt;div role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%;" class="progress-bar progress-success"&gt;&lt;/div&gt;
+    &lt;div role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100" style="width: 16%;" class="progress-bar progress-danger"&gt;&lt;/div&gt;
+    &lt;div role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%;" class="progress-bar progress-warn"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+      </ol>
       <h3><a name="nav"></a>导航</h3>
       <p>
         导航是一个很特别的东西，几乎应用在所有的网站上，并且在每一个网站上也有多处应用。比如常见的导航，菜单，选项卡，面包屑等等。
@@ -1624,6 +1735,10 @@
             <li><a href="#dropdown">下拉菜单</a></li>
             <li><a href="#badge">徽章</a></li>
             <li><a href="#paging">分页</a></li>
+            <li><a href="#progress">进度条</a></li>
+            <li><a href="#card">卡片</a></li>
+            <li><a href="#dialog">弹框</a></li>
+            <li><a href="#tooltip">信息提示</a></li>
             <li><a href="#nav">导航</a></li>
             <li><a href="#nav-bar">导航条</a></li>
           </ul>
