@@ -22,6 +22,15 @@
 	margin-top: .40rem;
 }
 
+sup {
+	margin-left: .03rem;
+	padding: .01rem .03rem;
+	background-color: #666;
+	border-radius: .02rem;
+	font-weight: normal;
+	color: #fff;
+}
+
 .content ul ~ .example {
 	margin-top: 1em;
 }

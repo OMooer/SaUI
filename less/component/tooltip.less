@@ -1,0 +1,67 @@
+/**********************
+ * 信息提示
+ **/
+@import "../common/common";
+
+.tooltip {
+	display: none;
+	position: absolute;
+	padding: .05rem .10rem;
+	background: @bgColor;
+	box-shadow: 0 0 .10rem -.02rem @white;
+	border-radius: @radius;
+	color: @white;
+	z-index: 100;
+
+	&:after {
+		content: "";
+		position: absolute;
+		color: @bgColor;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	[data-active] + & {
+		display: block;
+		-webkit-animation: fadeIn .5s;
+		-moz-animation: fadeIn .5s;
+	}
+	[data-placement="top"] + & {
+		margin-bottom: .04rem;
+		&:after {
+			.gender-caret(bottom);
+			margin-left: -.04rem;
+			bottom: -.04rem;
+			left: 50%;
+		}
+	}
+	[data-placement="bottom"] + & {
+		margin-top: .04rem;
+		&:after {
+			.gender-caret(top);
+			margin-left: -.04rem;
+			top: -.04rem;
+			left: 50%;
+		}
+	}
+	[data-placement="left"] + & {
+		margin-right: .04rem;
+		&:after {
+			.gender-caret(right);
+			margin-top: -.04rem;
+			top: 50%;
+			right: -.04rem;
+		}
+	}
+	[data-placement="right"] + & {
+		margin-left: .04rem;
+		&:after {
+			.gender-caret(left);
+			margin-top: -.04rem;
+			top: 50%;
+			left: -.09rem;
+		}
+	}
+}

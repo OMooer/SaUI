@@ -979,13 +979,13 @@
 &lt;div class="v-align border-default"&gt;
     &lt;div class="align-bottom"&gt;这是底部对齐的子元素&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-      <h2>组件</h2>
+      <h2><a name="component"></a>组件</h2>
       <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果的实现依赖于<code>sa.ui.js</code>，这是由 SaUI 开发的用于实现组件布局交互的 js 。</p>
       <p>
         我们为<code>sa.ui.js</code>提供了两套版本，一套依赖于 <abbr title="一个成熟的JavaScript方法类库">jQuery</abbr> ，自文件身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。但如果您的网站并未使用 jQuery 的话也可以使用不依赖任何类库的版本，但是体积较大。
         <br>在取名的区分上我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 组件的命名规则。
       </p>
-      <h3><a name="dropdown"></a>下拉菜单</h3>
+      <h3><a name="dropdown"></a>下拉菜单<sup>JS</sup></h3>
       <p>下拉菜单的展开可由点击事件触发，具体实现是通过 js 为 dropdown 添加/移除<code>.dorpdown-open</code> class，您也可以直接使用 hover 状态展开的方式。</p>
       <ol>
         <li>
@@ -1478,6 +1478,30 @@
 &lt;/div&gt;</code></pre>
         </li>
       </ol>
+      <h3><a name="tooltip"></a>信息提示<sup>JS</sup></h3>
+      <p>信息提示可以方便的在一些地方展示详情的提示浮层。支持上下左右四个方向的展示。</p>
+      <p>提示的内容在触发对象的后面添加 class 为<code>.tooltip</code>的元素。</p>
+      <p>
+        触发对象声明属性<code>role="tooltip"</code>、<code>data-placement="*"</code>可以由<code>sa.ui.js</code>触发，也可自行通过 JS 去触发，只需为触发对象添加<code>data-active</code>的属性即可。
+        <code>data-placement</code>的值表示四个方向的指令：<code>top</code>, <code>left</code>, <code>bottom</code>, <code>right</code>。
+      </p>
+      <div class="example"><a role="tooltip" data-placement="left" class="btn btn-default">向左</a>
+        <div class="tooltip">Tooltip on the left</div><a role="tooltip" data-placement="top" class="btn btn-default">向上</a>
+        <div class="tooltip">Tooltip on the top</div><a role="tooltip" data-placement="bottom" class="btn btn-default">向下</a>
+        <div class="tooltip">Tooltip on the bottom</div><a role="tooltip" data-placement="right" class="btn btn-default">向右</a>
+        <div class="tooltip">
+          <p>Tooltip on the right,</p>
+          <p>And this is a multi-line text.</p>
+        </div>
+      </div>
+      <pre><code>&lt;a role="tooltip" data-placement="left" class="btn btn-default"&gt;向左&lt;/a&gt;
+&lt;div class="tooltip"&gt;Tooltip on the left&lt;/div&gt;
+&lt;a role="tooltip" data-placement="top" class="btn btn-default"&gt;向上&lt;/a&gt;
+&lt;div class="tooltip"&gt;Tooltip on the top&lt;/div&gt;
+&lt;a role="tooltip" data-placement="bottom" class="btn btn-default"&gt;向下&lt;/a&gt;
+&lt;div class="tooltip"&gt;Tooltip on the bottom&lt;/div&gt;
+&lt;a role="tooltip" data-placement="right" class="btn btn-default"&gt;向右&lt;/a&gt;
+&lt;div class="tooltip"&gt;Tooltip on the right&lt;/div&gt;</code></pre>
       <h3><a name="nav"></a>导航</h3>
       <p>
         导航是一个很特别的东西，几乎应用在所有的网站上，并且在每一个网站上也有多处应用。比如常见的导航，菜单，选项卡，面包屑等等。
@@ -1730,20 +1754,22 @@
         <li><a href="#button">按钮</a></li>
         <li><a href="#image">图片</a></li>
         <li><a href="#helper">辅助类</a></li>
-        <li class="nav-open"><a class="nav-title">组件</a>
+        <li class="nav-open"><a href="#component" class="nav-title">组件</a>
           <ul>
-            <li><a href="#dropdown">下拉菜单</a></li>
+            <li><a href="#dropdown">下拉菜单<sup>JS</sup></a></li>
             <li><a href="#badge">徽章</a></li>
             <li><a href="#paging">分页</a></li>
             <li><a href="#progress">进度条</a></li>
             <li><a href="#card">卡片</a></li>
-            <li><a href="#dialog">弹框</a></li>
-            <li><a href="#tooltip">信息提示</a></li>
+            <li><a href="#dialog">弹框<sup>JS</sup></a></li>
+            <li><a href="#tooltip">信息提示<sup>JS</sup></a></li>
             <li><a href="#nav">导航</a></li>
             <li><a href="#nav-bar">导航条</a></li>
           </ul>
         </li>
       </ul>
     </nav>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="../js/jquery.sa.ui.js"></script>
   </body>
 </html>
