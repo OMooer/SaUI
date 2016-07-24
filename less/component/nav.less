@@ -63,7 +63,7 @@
 			}
 
 			// 二级导航内容
-			a ~ ul {
+			a + ul {
 				display: none;
 
 				& > li a {
@@ -78,7 +78,7 @@
 					}
 				}
 
-				& > a ~ ul {
+				& > a + ul {
 					display: block;
 				}
 			}
@@ -95,7 +95,7 @@
 
 			li {
 				// 横向导航的下级菜单
-				& > a ~ ul {
+				& > a + ul {
 					position: absolute;
 					background-color: @white;
 					border: solid .01rem @line;
@@ -113,7 +113,7 @@
 						background-color: @grayLighter;
 					}
 
-					& > a ~ ul {
+					& > a + ul {
 						display: block;
 					}
 				}
@@ -226,7 +226,7 @@
 			}
 
 			// 导航条的二级菜单
-			& > a ~ ul {
+			& > a + ul {
 				margin-top: -.05rem;
 			}
 		}
