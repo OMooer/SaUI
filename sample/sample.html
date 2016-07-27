@@ -1478,6 +1478,43 @@
 &lt;/div&gt;</code></pre>
         </li>
       </ol>
+      <h3><a name="dialog"></a>弹框<sup>JS</sup></h3>
+      <p>
+        创建一个交互的弹框，可使用模态或非模态的类型。使用 <code>.dialog</code> class 可以呈现弹框的样式，但是不建议直接使用，为了完整的交互效果请通过 JS 调用的方式来使用。
+        <br>借助<code>sa.ui.js</code>可以将指定的元素内容包载进弹框里。
+      </p>
+      <div class="example">
+        <div class="dialog">
+          <div class="dialog-head"><a aria-label="Close" class="close"><i aria-hidden="true">&times;</i></a>
+            <h3>这是弹框的标题</h3>
+          </div>
+          <div class="dialog-content">
+            <p>这是内容，在这里可以使用几乎所有的 HTML 元素。</p>
+            <p>比如：</p>
+            <p><img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/100/h/100/q/80"></p>
+            <p>又比如：</p>
+            <form class="form">
+              <div class="form-control">
+                <input type="text">
+              </div>
+            </form>
+          </div>
+          <div class="dialog-foot"><a class="btn btn-primary">确定</a><a class="btn btn-default">取消</a></div>
+        </div>
+        <div class="test-dialog">
+          <h4>Hello world!</h4>
+          <p>这块内容将会出现在自定义的模态窗里，通过<code>$(selector).dialog()</code>调用。</p>
+        </div><a role="dialog" data-type="alert" data-content="您看到了一个弹框了" class="btn btn-default">弹出一个 Alert</a><a role="dialog" data-type="confirm" data-content="您确定您看到了一个弹框了吗？" data-event="fYes" class="btn btn-default">弹出一个 Confirm</a><a role="dialog" data-custom=".test-dialog" data-title="自定义模态弹框" data-size="640,480" class="btn btn-default">弹出一个自定义的模态弹框</a>
+        <script>
+          function fYes(sTrigger) {
+          	if(sTrigger==='done') alert('你点了确定了');
+          }
+        </script>
+      </div>
+      <pre><code>&lt;a role="dialog" data-type="alert" data-content="您看到了一个弹框了" class="btn btn-default"&gt;弹出一个 Alert&lt;/a&gt;
+&lt;a role="dialog" data-type="confirm" data-content="您确定您看到了一个弹框了吗？" data-event="fYes" class="btn btn-default"&gt;弹出一个 Confirm&lt;/a&gt;
+&lt;a role="dialog" data-custom=".test-dialog" class="btn btn-default" data-title="自定义模态窗" data-size="640,480"&gt;弹出一个自定义的模态窗&lt;/a&gt;</code></pre>
+      <p>将触发对象设置<code>rold="dialog"</code>属性可以使其拥有触发弹框的功能。设置<code>data-type</code>可以使用默认的两种弹框类型<code>alert</code>、<code>confirm</code>，并显示<code>data-content</code>里的内容。使用自定义的<code>data-custom</code>则可指定一个选择器，Dialog 会将选择器的对象填充至弹框的内容区。<code>data-title</code>定义标题，<code>data-size</code>定义大小，定义<code>data-event</code>则可以在弹框关闭时触发对应的事件。</p>
       <h3><a name="tooltip"></a>信息提示<sup>JS</sup></h3>
       <p>信息提示可以方便的在一些地方展示详情的提示浮层。支持上下左右四个方向的展示。</p>
       <p>提示的内容在触发对象的后面添加 class 为<code>.tooltip</code>的元素。</p>

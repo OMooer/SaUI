@@ -1,0 +1,81 @@
+/**********************
+ * 弹框
+ **/
+@import "../common/common";
+
+.dialog {
+	//overflow: hidden;
+	margin: auto;
+	background: @white;
+	border: solid .01rem @line;
+	border-radius: @radius;
+	box-shadow: 0 0 10px -2px @grayLight;
+	z-index: 200;
+
+	.dialog-head {
+		padding: .10rem;
+		background-color: @snow;
+		border-bottom: solid .01rem @line;
+		cursor: default;
+
+		.close {
+			float: right;
+		}
+
+		h3 {
+			margin: 0;
+			font-size: @fontLarge;
+		}
+	}
+
+	.dialog-content,
+	.dialog-foot {
+		padding: .10rem .20rem;
+	}
+
+	.dialog-content {
+		overflow: auto;
+		//min-width: 3rem;
+		//min-height: 1rem;
+	}
+
+	.dialog-foot {
+		background-color: @grayLighter;
+		border-top: solid .01rem @line;
+		text-align: right;
+	}
+
+	&.dialog-animate {
+		-webkit-animation: dropDown .4s backwards, fadeIn .6s backwards;
+		-moz-animation: dropDown .4s backwards, fadeIn .6s backwards;
+		transition: top .4s, opacity .3s;
+
+		&.dialog-close {
+			top: -10% !important;
+			opacity: 0 !important;
+		}
+	}
+
+	&.dialog-untitled {
+		.dialog-head {
+			padding: 0;
+			background: none;
+			border: 0;
+
+			.close {
+				position: relative;
+				top: -1em;
+			}
+		}
+	}
+}
+
+.dialog-mask {
+	position: fixed;
+	background: rgba(255, 255, 255, .15);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 199;
+}
