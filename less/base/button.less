@@ -84,12 +84,12 @@
 	}
 	// 小尺寸
 	&.btn-sm {
-		padding: .07rem 1em;
+		padding: .07rem .7em;
 		font-size: @fontSmall;
 	}
 	// 细小尺寸
 	&.btn-xs {
-		padding: .04rem 1em;
+		padding: .04rem .6em;
 		font-size: @fontMini;
 	}
 
@@ -120,6 +120,15 @@
 		color: @grayDark;
 		a& {
 			color: @grayDark;
+		}
+	}
+
+	// 反相普通按钮
+	&.btn-default-o {
+		.__btn(@grayLighter);
+		color: @grayDarker;
+		a& {
+			color: @grayDarker;
 		}
 	}
 

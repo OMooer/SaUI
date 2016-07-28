@@ -18,7 +18,7 @@
         SaUI 是一个非常轻小的 CSS 框架，它适用于 Desktop & Mobile 上面。在移动端，它的响应式自适应可以让你在构建 WebApp 时得到非常方便的视觉统一。
         <br>SaUI 的设计理念是让 HTML 回归 HTML 。所有的样式实现以及代码结构都以保持 HTML 该有的语义为目标，只是在视觉上让它看起来更加的漂亮。但是在脱离样式的情况也能完整的展示 HTML 原本该有的功能与交互。
       </p>
-      <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p>
+      <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p><iframe src="https://ghbtns.com/github-btn.html?user=omooer&repo=saui&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
       <h2><a name="intro"></a>前言</h2>
       <p>SaUI 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
       <pre><code>&lt;!DOCTYPE html&gt;
@@ -26,11 +26,11 @@
 	...
 &lt;/html&gt;</code></pre>
       <p>为了增强跨浏览器表现的一致性，SaUI 使用了&nbsp;<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a> ，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个 CSS 重置样式库。</p>
-      <p><strong>SaUI 是优先移动设备的</strong>。为了确保适当的绘制和触屏缩放，需要在<code>&lt;head&gt;</code>之中<strong>添加 viewport 元数据标签</strong>。</p>
+      <p><strong> SaUI 是优先移动设备的</strong>。为了确保适当的绘制和触屏缩放，需要在<code>&lt;head&gt;</code>之中<strong>添加 viewport 元数据标签</strong>。</p>
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
       <p>在移动设备浏览器上，通过为视界（viewport）设置 meta 属性为 <code>user-scalable=no</code> 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
       <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
-      <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在上面（也）发现不可用也纯属正常。</p>
+      <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在 Edge 上面（也）发现不可用也纯属正常。</p>
       <h2><a name="grid"></a>栅格</h2>
       <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
       <div class="example">
@@ -765,10 +765,10 @@
         <br>注意：如果需要无边框的<code>&lt;a&gt;</code>按钮，直接使用 class <code>.btn</code> 即可，不可直接用在<code>&lt;button&gt;</code>上。表单内的<code>&lt;button&gt;</code>无须添加 class 自动适配按钮样式。
       </p>
       <div class="example"><a href="#" class="btn btn-default">A Button</a>
-        <button type="button" class="btn btn-default">Button</button><a href="#" class="btn">A Button without border</a>
+        <button type="button" class="btn btn-default-o">Button</button><a href="#" class="btn">A Button without border</a>
       </div>
       <pre><code>&lt;a href="#" class="btn btn-default"&gt;A Button&lt;/a&gt;
-&lt;button type="button" class="btn btn-default"&gt;Button&lt;/button&gt;
+&lt;button type="button" class="btn btn-default-o"&gt;Button&lt;/button&gt;
 &lt;a href="#" class="btn"&gt;A Button without border&lt;/a&gt;</code></pre>
       <h3>按钮的样式</h3>
       <p>按钮的样式分别有以下几种：</p>
@@ -985,8 +985,8 @@
       <ol>
         <li>
           <h3>图标尺寸</h3>
-          <p>图标拥有5种大小尺寸，添加 class <code>sa-icon-2x</code>、<code>sa-icon-3x</code>、<code>sa-icon-4x</code>、<code>sa-icon-5x</code>就可以，默认大小不需要添加。</p>
-          <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
+          <p>图标拥有6种大小尺寸，添加 class <code>sa-icon-lg</code>、<code>sa-icon-2x</code>、<code>sa-icon-3x</code>、<code>sa-icon-4x</code>、<code>sa-icon-5x</code>就可以，默认大小不需要添加。</p>
+          <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-lg"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
         </li>
         <li>
           <h3>图标颜色</h3>
@@ -995,7 +995,7 @@
         </li>
         <li>
           <h3>动画图标</h3>
-          <p>Font Awesome 提供了几个 class 来实现不同的动画动作允许对任何图标使用。分别是：</p>
+          <p>Font Awesome 提供了几个 class 来实现不同的动画动作，允许对任何图标使用。分别是：</p>
           <ul>
             <li><code>.sa-icon-spin</code> 匀速旋转</li>
             <li><code>.sa-icon-pulse</code> 8帧旋转</li>
@@ -1021,6 +1021,18 @@
               <li><i class="sa-icon sa-icon-fw sa-icon-cc-visa"></i>&nbsp;Visa</li>
               <li><i class="sa-icon sa-icon-fw sa-icon-long-arrow-up"></i>&nbsp;Long Arrow Up</li>
             </ul>
+          </div>
+        </li>
+        <li>
+          <h3>图标按钮</h3>
+          <div class="example">
+            <p><a class="btn btn-primary"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-qq"></i></a><a class="btn btn-success"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-wechat"></i></a><a class="btn btn-danger"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-weibo"></i></a><a class="btn btn-primary"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-facebook"></i></a><a class="btn btn-info"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-twitter"></i></a></p>
+            <p>
+              <button class="btn btn-default-o"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-cog"></i>设置</button>
+              <button class="btn btn-danger"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-trash-o"></i>删除</button>
+              <button class="btn btn-info"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-save"></i>保存</button>
+              <button class="btn btn-success"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-check"></i>完成</button>
+            </p>
           </div>
         </li>
       </ol>
@@ -1553,7 +1565,7 @@
         </div><a role="dialog" data-type="alert" data-content="您看到了一个弹框了" class="btn btn-default">弹出一个 Alert</a><a role="dialog" data-type="confirm" data-content="您确定您看到了一个弹框了吗？" data-event="fYes" class="btn btn-default">弹出一个 Confirm</a><a role="dialog" data-custom=".test-dialog" data-title="自定义模态弹框" data-size="640,480" class="btn btn-default">弹出一个自定义的模态弹框</a>
         <script>
           function fYes(sTrigger) {
-          	if(sTrigger==='done') alert('你点了确定了');
+          	if (sTrigger === 'done') alert('你点了确定了');
           }
         </script>
       </div>
@@ -1830,7 +1842,7 @@
     </div>
     <nav class="nav"><a href="http://saui.omooer.com" title="SaUI" class="nav-header">SaUI</a>
       <ul>
-        <li class="nav-active"><a href="#intro">前言</a></li>
+        <li><a href="#intro">前言</a></li>
         <li><a href="#grid">栅格</a></li>
         <li><a href="#table">表格</a></li>
         <li><a href="#form">表单</a></li>
@@ -1855,5 +1867,41 @@
     </nav>
     <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
     <script src="../js/jquery.sa.ui.js"></script>
+    <script>$(function () {
+	function fHashChange(sHash) {
+		$('nav.nav li.nav-active').removeClass('nav-active');
+		$('nav.nav li a[href="' + sHash + '"]:only-child').parent().addClass('nav-active');
+	}
+
+	$(window).on('hashchange', function (oHash) {
+		if (location.hash) {
+			fHashChange(location.hash);
+		}
+	});
+	fHashChange(location.hash);
+
+	var xTimer;
+	$(window).on('scroll', function () {
+		xTimer && clearTimeout(xTimer);
+		xTimer = setTimeout(function () {
+			var aOver = [];
+			$('.content a[name]').each(function () {
+				var $This = $(this);
+				//console.log($This.offset().top, $This.attr('name'))
+				if ($This.offset().top <= 100) {
+					aOver.unshift($This);
+				}
+				else {
+					return this;
+				}
+			});
+			if (location.hash !== '#' + aOver[0].attr('name')) {
+				history.replaceState(null, null, '#' + aOver[0].attr('name'));
+				fHashChange('#' + aOver[0].attr('name'));
+			}
+		}, 20);
+	});
+});
+    </script>
   </body>
 </html>
