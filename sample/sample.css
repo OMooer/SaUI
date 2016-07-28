@@ -5,7 +5,8 @@
 	width: 80%;
 }
 
-.content ul > li {
+.content > ul > li,
+.content > ol > li > ul > li {
 	margin-left: 1.5em;
 	list-style-type: disc;
 }
