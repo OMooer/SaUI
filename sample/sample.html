@@ -979,6 +979,52 @@
 &lt;div class="v-align border-default"&gt;
     &lt;div class="align-bottom"&gt;这是底部对齐的子元素&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      <h2><a name="icon"></a>图标</h2>
+      <p>SaUI 的图标目前使用 <a href="http://fontawesome.io/" target="_blank">Font Awesome <sub>v4.6.3</sub></a>，涵盖除部分国内社交网站图标以外的其他常见图标。</p>
+      <p>在使用上只需将前缀更改为<code>sa-icon</code>，图标原有的命名保持不变。在元素上（我们建议使用<code>&lt;i&gt;</code>）添加上<code>sa-icon sa-icon-*</code>就可以显示图标。</p>
+      <ol>
+        <li>
+          <h3>图标尺寸</h3>
+          <p>图标拥有5种大小尺寸，添加 class <code>sa-icon-2x</code>、<code>sa-icon-3x</code>、<code>sa-icon-4x</code>、<code>sa-icon-5x</code>就可以，默认大小不需要添加。</p>
+          <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
+        </li>
+        <li>
+          <h3>图标颜色</h3>
+          <p>图标的颜色受元素字体颜色作用，使用不同颜色的图标直接另外定义即可。</p>
+          <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"></i><i aria-hidden="true" class="sa-icon sa-icon-warning sa-icon-3x text-error"></i></div>
+        </li>
+        <li>
+          <h3>动画图标</h3>
+          <p>Font Awesome 提供了几个 class 来实现不同的动画动作允许对任何图标使用。分别是：</p>
+          <ul>
+            <li><code>.sa-icon-spin</code> 匀速旋转</li>
+            <li><code>.sa-icon-pulse</code> 8帧旋转</li>
+          </ul>
+          <p>在这几个图标上使用<code>.sa-icon-spinner</code>、<code>.sa-icon-refresh</code>、<code>.sa-icon-cog</code>可以获得最佳表现效果。</p>
+          <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-cog sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-circle-o-notch sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-pulse sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-pulse sa-icon-3x"></i></div>
+        </li>
+        <li>
+          <h3>固定宽度</h3>
+          <p>Font Awesome 在绘制图标的时候不同图标宽度有差异，添加<code>.sa-icon-fw</code>将图标设置为固定的宽度，解决宽度不一致的对称问题。</p>
+          <div class="example">
+            <ul>
+              <li><i class="sa-icon sa-icon-qq"></i>&nbsp;QQ</li>
+              <li><i class="sa-icon sa-icon-skype"></i>&nbsp;Skype</li>
+              <li><i class="sa-icon sa-icon-weixin"></i>&nbsp;WeChat</li>
+              <li><i class="sa-icon sa-icon-cc-visa"></i>&nbsp;Visa</li>
+              <li><i class="sa-icon sa-icon-long-arrow-up"></i>&nbsp;Long Arrow Up</li>
+            </ul><br>
+            <ul>
+              <li><i class="sa-icon sa-icon-fw sa-icon-qq"></i>&nbsp;QQ</li>
+              <li><i class="sa-icon sa-icon-fw sa-icon-skype"></i>&nbsp;Skype</li>
+              <li><i class="sa-icon sa-icon-fw sa-icon-weixin"></i>&nbsp;WeChat</li>
+              <li><i class="sa-icon sa-icon-fw sa-icon-cc-visa"></i>&nbsp;Visa</li>
+              <li><i class="sa-icon sa-icon-fw sa-icon-long-arrow-up"></i>&nbsp;Long Arrow Up</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+      <p>查看所有图标的 class 命名可以在<a href="http://fontawesome.io/icons/" target="_blank">这里</a>查阅。</p>
       <h2><a name="component"></a>组件</h2>
       <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果的实现依赖于<code>sa.ui.js</code>，这是由 SaUI 开发的用于实现组件布局交互的 js 。</p>
       <p>
@@ -1791,6 +1837,7 @@
         <li><a href="#button">按钮</a></li>
         <li><a href="#image">图片</a></li>
         <li><a href="#helper">辅助类</a></li>
+        <li><a href="#icon">图标</a></li>
         <li class="nav-open"><a href="#component" class="nav-title">组件</a>
           <ul>
             <li><a href="#dropdown">下拉菜单<sup>JS</sup></a></li>
