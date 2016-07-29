@@ -987,11 +987,13 @@
           <h3>图标尺寸</h3>
           <p>图标拥有6种大小尺寸，添加 class <code>sa-icon-lg</code>、<code>sa-icon-2x</code>、<code>sa-icon-3x</code>、<code>sa-icon-4x</code>、<code>sa-icon-5x</code>就可以，默认大小不需要添加。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-lg"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
+          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
           <h3>图标颜色</h3>
           <p>图标的颜色受元素字体颜色作用，使用不同颜色的图标直接另外定义即可。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"></i><i aria-hidden="true" class="sa-icon sa-icon-warning sa-icon-3x text-error"></i></div>
+          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
           <h3>动画图标</h3>
@@ -1002,6 +1004,8 @@
           </ul>
           <p>在这几个图标上使用<code>.sa-icon-spinner</code>、<code>.sa-icon-refresh</code>、<code>.sa-icon-cog</code>可以获得最佳表现效果。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-cog sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-circle-o-notch sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-pulse sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-pulse sa-icon-3x"></i></div>
+          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"&gt;&lt;/i&gt;
+&lt;i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-pulse sa-icon-3x"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
           <h3>固定宽度</h3>
@@ -1022,6 +1026,13 @@
               <li><i class="sa-icon sa-icon-fw sa-icon-long-arrow-up"></i>&nbsp;Long Arrow Up</li>
             </ul>
           </div>
+          <pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-qq"&gt;&lt;/i&gt;&nbsp;QQ&lt;/li&gt;
+    &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-skype"&gt;&lt;/i&gt;&nbsp;Skype&lt;/li&gt;
+    &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-weixin"&gt;&lt;/i&gt;&nbsp;WeChat&lt;/li&gt;
+    &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-cc-visa"&gt;&lt;/i&gt;&nbsp;Visa&lt;/li&gt;
+    &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-long-arrow-up"&gt;&lt;/i&gt;&nbsp;Long Arrow Up&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
         </li>
         <li>
           <h3>图标按钮</h3>
@@ -1034,6 +1045,16 @@
               <button class="btn btn-success"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-check"></i>完成</button>
             </p>
           </div>
+          <pre><code>&lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-qq"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a class="btn btn-success"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-wechat"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a class="btn btn-danger"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-weibo"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-facebook"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a class="btn btn-info"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-twitter"&gt;&lt;/i&gt;&lt;/a&gt;
+
+&lt;button class="btn btn-default-o"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-cog"&gt;&lt;/i&gt;设置&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-trash-o"&gt;&lt;/i&gt;删除&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-save"&gt;&lt;/i&gt;保存&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-check"&gt;&lt;/i&gt;完成&lt;/button&gt;</code></pre>
         </li>
       </ol>
       <p>查看所有图标的 class 命名可以在<a href="http://fontawesome.io/icons/" target="_blank">这里</a>查阅。</p>
