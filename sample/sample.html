@@ -19,6 +19,22 @@
         <br>SaUI 的设计理念是让 HTML 回归 HTML 。所有的样式实现以及代码结构都以保持 HTML 该有的语义为目标，只是在视觉上让它看起来更加的漂亮。但是在脱离样式的情况也能完整的展示 HTML 原本该有的功能与交互。
       </p>
       <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p><iframe src="https://ghbtns.com/github-btn.html?user=omooer&repo=saui&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <div class="grid">
+        <div class="col-12">
+          <h4>外部引用</h4>
+          <pre><code>&lt;link rel="stylesheet" href="http://saui.omooer.com/build/sa.min.css"&gt;</code></pre>
+        </div>
+        <div class="col-4">
+          <h4>下载本地</h4><a href="http://saui.omooer.com/build/saui.zip" class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-download"></i>立即下载 .zip</a>
+          <p>
+            版本：
+            <br>大小：
+          </p>
+        </div>
+        <div class="col-4">
+          <h4>源码下载</h4><a href="https://github.com/OMooer/SaUI/archive/master.zip" class="btn btn-default-o"><i class="sa-icon sa-icon-fw sa-icon-file-zip-o"></i>Github 源码 .zip</a>
+        </div>
+      </div>
       <h2><a name="intro"></a>前言</h2>
       <p>SaUI 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
       <pre><code>&lt;!DOCTYPE html&gt;
@@ -1916,9 +1932,11 @@
 					return this;
 				}
 			});
-			if (location.hash !== '#' + aOver[0].attr('name')) {
-				history.replaceState(null, null, '#' + aOver[0].attr('name'));
-				fHashChange('#' + aOver[0].attr('name'));
+			if (aOver.length) {
+				if (location.hash !== '#' + aOver[0].attr('name')) {
+					history.replaceState(null, null, '#' + aOver[0].attr('name'));
+					fHashChange('#' + aOver[0].attr('name'));
+				}
 			}
 		}, 20);
 	});
