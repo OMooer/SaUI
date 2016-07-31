@@ -1,0 +1,151 @@
+/**********************
+ * 卡片
+ **/
+@import "../common/common";
+
+.card {
+	position: relative;
+	overflow: hidden;
+	background-color: @white;
+	border: solid .01rem @line;
+	border-radius: @radius;
+
+	&.bg- {
+		&primary,
+		&success,
+		&info,
+		&error,
+		&warn {
+			border: 0;
+			color: @white;
+		}
+		&primary {
+			background-color: lighten(@primary, 5%);
+		}
+		&success {
+			background-color: screen(@success, #444);
+		}
+		&info {
+			background-color: lighten(@info, 8%);
+		}
+		&error {
+			background-color: lighten(@error, 10%);
+		}
+		&warn {
+			background-color: lighten(@warn, 10%);
+		}
+	}
+
+	.card-head {
+		overflow: hidden;
+		padding: 0 .10rem;
+		background-color: @separateBg;
+		border-bottom: solid .01rem @line;
+		border-radius: @radius @radius 0 0;
+		line-height: .35rem;
+		font-size: 1.1em;
+		font-weight: @bold;
+	}
+
+	.card-body {
+		padding: .10rem .20rem;
+
+		.card-title {
+			line-height: 2em;
+			font-size: 1.3em;
+			font-weight: @bold;
+			color: @black;
+		}
+		.card-subtitle {
+			font-size: .9em;
+			font-weight: @regular;
+			color: @grayDark;
+		}
+
+		p {
+			margin: 0 0 1em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.card-title,
+		.card-subtitle {
+			& + p {
+				margin-top: 1em;
+			}
+		}
+	}
+
+	.card-foot {
+		overflow: hidden;
+		padding: .05rem .10rem;
+		background-color: @separateBg;
+		border-top: solid .01rem @line;
+		border-radius: 0 0 @radius @radius;
+	}
+
+	ul.card-list {
+		li {
+			padding-left: .10rem;
+			border-top: solid .01rem @line;
+			line-height: .40rem;
+
+			&:first-child {
+				border-top: 0;
+			}
+		}
+
+		& + .card-body {
+			&:extend(.card .card-body + ul.card-list li:first-child);
+		}
+	}
+	.card-body + ul.card-list {
+		li:first-child {
+			border-top: solid .01rem @line;
+		}
+	}
+
+	.card-image {
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		&-overlay {
+			img {
+				display: block;
+				position: absolute;
+				border-radius: @radius;
+				width: 100% !important;
+				height: 100% !important;
+			}
+
+			& + .card-body {
+				position: relative;
+				background-color: rgba(0, 0, 0, .5);
+				text-align: center;
+				color: @white;
+				z-index: 1;
+			}
+		}
+		&-top {
+			img {
+				display: block;
+				width: 100% !important;
+			}
+			&:first-child img {
+				border-radius: @radius @radius 0 0;
+			}
+		}
+		&-bottom {
+			img {
+				display: block;
+				width: 100% !important;
+			}
+			&:first-child img {
+				border-radius: 0 0 @radius @radius;
+			}
+		}
+	}
+}
