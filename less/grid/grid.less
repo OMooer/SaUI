@@ -1,7 +1,6 @@
 /**********************
  * 栅格
  **/
-
 @import "../common/common";
 
 .__grid(@n, @i:1) when (@i=<@n) {
@@ -29,4 +28,15 @@
 	}
 
 	.__grid(12);
+
+	&.grid-pad {
+		.row {
+			margin-left: -.08rem;
+			padding: .08rem 0;
+		}
+
+		[class*="col-"] {
+			padding: 0 .08rem;
+		}
+	}
 }
