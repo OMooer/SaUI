@@ -1271,6 +1271,9 @@ form.form textarea {
   min-width: 2rem;
   min-height: .60rem;
 }
+form.form textarea:focus {
+  border-color: #3B99FC;
+}
 form.form select {
   box-sizing: border-box;
   background-color: #fff;
@@ -1693,7 +1696,7 @@ table.table tbody > tr.table-danger {
 }
 table.table.table-striped > tbody > tr:nth-child(2n),
 table.table.table-hover > tbody > tr:nth-child(n):hover {
-  background: #ffffff;
+  background: #fafafa;
 }
 table.table.table-bordered,
 table.table.table-bordered th,
