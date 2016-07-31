@@ -44,7 +44,6 @@
 .close {
 	display: inline-block;
 	overflow: hidden;
-	transition: color .3s;
 	border-radius: 50%;
 	cursor: pointer;
 	text-decoration: none !important;
@@ -56,6 +55,7 @@
 	color: @gray;
 	width: .18rem;
 	height: .18rem;
+	transition: color .3s;
 
 	i {
 		overflow: hidden;
@@ -65,7 +65,7 @@
 	}
 
 	&:hover {
-		color: @grayDarker;
+		color: @default;
 	}
 
 	&.close-animate {
@@ -119,6 +119,11 @@
 // 文字居中
 .text-center {
 	text-align: center;
+}
+
+// 文字居右
+.text-right {
+	text-align: right;
 }
 
 // 垂直对齐

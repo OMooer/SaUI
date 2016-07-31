@@ -5,12 +5,12 @@
 @import "keyframes";
 
 // 背景配色
-.gender-bg(@bg, @color:@grayDarker) {
+.gender-bg(@bg, @color:@default) {
 	&-@{bg} {
 		padding: .06rem;
+		box-sizing: border-box;
 		background-color: screen(@@bg, #ccc);
 		border: solid .01rem @@bg;
-		box-sizing: border-box;
 		color: @color;
 	}
 }
@@ -95,7 +95,27 @@
 	}
 }
 
+// 外部阴影
+.out-shadow() {
+	box-shadow: .01rem .02rem .03rem @gray;
+}
+
 // 浮层的阴影
-.pop-shadow() {
-	box-shadow: 0 0 .08rem -.03rem @black;
+.pop-shadow(@reverse:false) {
+	& when (@reverse = false) {
+		box-shadow: 0 0 .08rem -.03rem @grayDark;
+	}
+	& when (@reverse = true) {
+		box-shadow: 0 0 .08rem -.03rem @white;
+	}
+}
+
+// 阴影
+.groove-shadow(@strong:false) {
+	& when (@strong = false) {
+		box-shadow: inset 0 .03rem .08rem -.05rem @grayLight;
+	}
+	& when (@strong = true) {
+		box-shadow: inset 0 .06rem .20rem -.09rem @grayDarker;
+	}
 }

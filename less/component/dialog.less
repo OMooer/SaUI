@@ -9,13 +9,14 @@
 	background: @white;
 	border: solid .01rem @line;
 	border-radius: @radius;
-	box-shadow: 0 0 10px -2px @grayLight;
+	.pop-shadow();
 	z-index: 200;
 
 	.dialog-head {
 		padding: .10rem;
-		background-color: @snow;
+		background-color: @separateBg;
 		border-bottom: solid .01rem @line;
+		border-radius: @radius @radius 0 0;
 		cursor: default;
 
 		.close {
@@ -40,8 +41,9 @@
 	}
 
 	.dialog-foot {
-		background-color: @grayLighter;
+		background-color: @separateBg;
 		border-top: solid .01rem @line;
+		border-radius: 0 0 @radius @radius;
 		text-align: right;
 	}
 

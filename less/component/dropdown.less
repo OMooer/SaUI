@@ -55,7 +55,7 @@
 			padding: .06rem .10rem;
 			line-height: 1.2em;
 			white-space: nowrap;
-			color: @grayDark;
+			color: @default;
 		}
 
 		.dropdown-item a:link {
@@ -73,8 +73,8 @@
 	}
 
 	&.dropdown-open {
-		background-color: @grayLighter;
-		box-shadow: inset 0 .03rem .10rem -.06rem @black;
+		background-color: @separateBg;
+		.groove-shadow();
 
 		.dropdown-menu {
 			display: block;

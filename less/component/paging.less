@@ -19,14 +19,15 @@ ul.paging {
 			display: block;
 			padding: .05rem .12rem;
 			text-decoration: none;
+			color: @default;
 
 			&:link,
 			&:visited {
 				background-color: @white;
-				color: @grayDarker;
+				color: @default;
 
 				&:hover {
-					background-color: @grayLighter;
+					background-color: @separateBg;
 				}
 			}
 		}
@@ -52,8 +53,9 @@ ul.paging {
 
 		&.paging-disabled {
 			.disabled(.3);
-			a {
+			a, a:active {
 				background-color: @white !important;
+				color: @default;
 			}
 		}
 
@@ -67,7 +69,7 @@ ul.paging {
 				border-radius: .20rem;
 				border: solid .02rem @blue;
 				&:hover {
-					background-color: @snow;
+					background-color: @separateBg;
 				}
 			}
 		}

@@ -18,7 +18,7 @@ table.table {
 	}
 
 	thead tr {
-		background: @grayLighter;
+		background: @separateBg;
 
 		& > th {
 			vertical-align: bottom;
@@ -43,7 +43,7 @@ table.table {
 
 	&.table-striped {
 		& > tbody > tr:nth-child(2n) {
-			background: lighten(@grayLighter, 3%);
+			background: lighten(@separateBg, 3%);
 		}
 	}
 	&.table-bordered {
