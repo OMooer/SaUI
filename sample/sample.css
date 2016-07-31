@@ -22,11 +22,11 @@
 	padding-left: 1.5em;
 }
 
-.content h2 {
+.content > h2 {
 	margin-top: 1rem;
 }
 
-.content h3 {
+.content > h3 {
 	margin-top: .40rem;
 }
 
@@ -49,18 +49,14 @@ sup {
 	margin-bottom: 1em;
 }
 
-.example .grid .row {
+.demo.grid .row {
 	margin: .10rem 0;
 	background-color: #f4f4f4;
 }
 
-.example .grid .row [class*="col-"] {
+.demo.grid .row [class*="col-"] {
 	padding: .05rem;
 	background-color: #ddd;
-}
-
-.example .nav {
-	/*border: solid .01rem #ccc;*/
 }
 
 .copyright {
