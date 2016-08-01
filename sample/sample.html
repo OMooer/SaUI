@@ -8,27 +8,30 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
     <title>SaUI - 一个适用 Desktop & Mobile 的 CSS 框架</title>
-    <link rel="styleSheet" type="text/css" href="../build/sa.min.css">
+    <link rel="styleSheet" type="text/css" href="../css/sa.css">
     <link rel="styleSheet" type="text/css" href="sample.css">
   </head>
   <body>
     <div class="content">
       <h1>Hello SaUI!</h1>
       <p>
-        SaUI 是一个非常轻小的 CSS 框架，它适用于 Desktop & Mobile 上面。在移动端，它的响应式自适应可以让你在构建 WebApp 时得到非常方便的视觉统一。
+        SaUI 是一个非常轻小的 CSS 框架（所有 CSS 和 JS 经 gzip 后大小 22 KB 左右），它适用于 Desktop & Mobile 上面。在移动端，它的响应式自适应可以让你在构建 WebApp 时得到非常方便的视觉统一。
         <br>SaUI 的设计理念是让 HTML 回归 HTML 。所有的样式实现以及代码结构都以保持 HTML 该有的语义为目标，只是在视觉上让它看起来更加的漂亮。但是在脱离样式的情况也能完整的展示 HTML 原本该有的功能与交互。
       </p>
-      <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p><iframe src="https://ghbtns.com/github-btn.html?user=omooer&repo=saui&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p><iframe src="https://ghbtns.com/github-btn.html?user=OMooer&type=follow&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=omooer&repo=saui&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=omooer&repo=saui&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
       <div class="grid">
         <div class="col-12">
           <h4>外部引用</h4>
-          <pre><code>&lt;link rel="stylesheet" href="http://saui.omooer.com/build/sa.min.css"&gt;</code></pre>
+          <p>直接引用我们网站的地址可以第一时间得到更新的版本，但是也存在网站性能资源可能造成的影响。实际使用上建议还是下载本地版本到项目里。</p>
+          <pre><code>&lt;link rel="stylesheet" href="http://saui.omooer.com/css/sa.min.css"&gt;</code></pre>
         </div>
         <div class="col-4">
-          <h4>下载本地</h4><a href="http://saui.omooer.com/build/saui.zip" class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-download"></i>立即下载 .zip</a>
+          <h4>下载本地</h4><a href="http://saui.omooer.com/download/saui.zip" class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-download"></i>立即下载 .zip</a>
           <p>
-            版本：
-            <br>大小：
+            版本：v0.1.0
+            <br>大小：587.5 KB
           </p>
         </div>
         <div class="col-4">
@@ -50,7 +53,7 @@
       <h2><a name="grid"></a>栅格</h2>
       <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
       <div class="example">
-        <div class="grid">
+        <div class="grid demo">
           <div class="row">
             <div class="col-1">.col-1</div>
             <div class="col-9 col-offset-2">.col-9.col-offset-2</div>
@@ -865,7 +868,7 @@
       <p>通过为图片添加<code>.img-responsive</code>类可以让图片支持响应式布局，从而让图片在其父元素中更好的缩放。</p>
       <div class="example">
         <div class="grid">
-          <div style="border-width:.08rem;" class="col-6 col-offset-3 border-default"><img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" class="img-responsive"></div>
+          <div style="border-width:.08rem;" class="col-6 col-offset-3 border-default"><img src="http://img.zcool.cn/sucaiori/350D7DF4-E1B4-2BF7-2F96-4A42DA8C7DD6.jpg@400w_400h.jpg" class="img-responsive"></div>
         </div>
       </div>
       <pre><code>&lt;img src="..." class="img-responsive"&gt;</code></pre>
@@ -1001,7 +1004,7 @@
       <ol>
         <li>
           <h3>图标尺寸</h3>
-          <p>图标拥有6种大小尺寸，添加 class <code>sa-icon-lg</code>、<code>sa-icon-2x</code>、<code>sa-icon-3x</code>、<code>sa-icon-4x</code>、<code>sa-icon-5x</code>就可以，默认大小不需要添加。</p>
+          <p>图标拥有6种大小尺寸，添加 class <code>.sa-icon-lg</code>、<code>.sa-icon-2x</code>、<code>.sa-icon-3x</code>、<code>.sa-icon-4x</code>、<code>.sa-icon-5x</code>就可以，默认大小不需要添加。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-lg"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
           <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"&gt;&lt;/i&gt;</code></pre>
         </li>
@@ -1075,10 +1078,10 @@
       </ol>
       <p>查看所有图标的 class 命名可以在<a href="http://fontawesome.io/icons/" target="_blank">这里</a>查阅。</p>
       <h2><a name="component"></a>组件</h2>
-      <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果的实现依赖于<code>sa.ui.js</code>，这是由 SaUI 开发的用于实现组件布局交互的 js 。</p>
+      <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果由<code>sa.ui.js</code>来实现，这是由 SaUI 开发的用于实现组件布局交互的 JS 插件，如果您的网站上并没有使用带有<sup>JS</sup>标识的 UI 组件就无须引入此 JS 文件。</p>
       <p>
-        我们为<code>sa.ui.js</code>提供了两套版本，一套依赖于 <abbr title="一个成熟的JavaScript方法类库">jQuery</abbr> ，自文件身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。但如果您的网站并未使用 jQuery 的话也可以使用不依赖任何类库的版本，但是体积较大。
-        <br>在取名的区分上我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 组件的命名规则。
+        <code>sa.ui.js</code>依赖于 <abbr title="jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。">jQuery</abbr> ，自文件身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。
+        <br>在命名的上为了将来可能出现的另外一些依赖版本，我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 插件的命名规则，当然由于 <abbr title="Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 它与jQuery有着类似的API。">Zepto</abbr> 与 jQuery 保持了一致的 API 所以在移动端使用 Zepto 的情况下也可以正常使用。
       </p>
       <h3><a name="dropdown"></a>下拉菜单<sup>JS</sup></h3>
       <p>下拉菜单的展开可由点击事件触发，具体实现是通过 js 为 dropdown 添加/移除<code>.dorpdown-open</code> class，您也可以直接使用 hover 状态展开的方式。</p>
@@ -1480,7 +1483,8 @@
 &lt;/div&gt;</code></pre>
         </li>
         <li>
-          <h4>带进度文字的进度条 <code>.progress-text</code></h4>
+          <h4>带进度文字的进度条</h4>
+          <p>添加 class <code>.progress-text</code></p>
           <div class="example">
             <progress max="100" value="34" class="progress-text"></progress>
             <div class="progress progress-text">
@@ -1493,7 +1497,8 @@
 &lt;/div&gt;</code></pre>
         </li>
         <li>
-          <h4>超小进度条 <code>.progress-small</code></h4>
+          <h4>超小进度条</h4>
+          <p>添加 class <code>.progress-small</code></p>
           <div class="example">
             <progress max="100" value="24" class="progress-small"></progress>
             <div class="progress progress-small">
@@ -1573,6 +1578,435 @@
 &lt;/div&gt;</code></pre>
         </li>
       </ol>
+      <h3><a name="card"></a>卡片</h3>
+      <p>卡片是一个灵活可扩展的内容区域。它包含有卡片头、卡片脚和卡片图等可选的元素。可以组成很多常用的页面布局。</p>
+      <ol>
+        <li>
+          <h4>普通的卡片</h4>
+          <div class="example">
+            <div class="card">
+              <div class="card-head">迷途</div>
+              <div class="card-body">
+                <p>沿着鸽子的哨音</p>
+                <p>我寻找着你</p>
+                <p>高高的森林挡住了天空</p>
+                <p>小路上</p>
+                <p>一颗迷途的蒲公英</p>
+                <p>把我引向蓝灰色的湖泊</p>
+                <p>在微微摇晃的倒影中</p>
+                <p>我找到了你</p>
+                <p>那深不可测的眼睛</p>
+              </div>
+              <div class="card-foot">
+                <p class="text-right">——北岛</p>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-head"&gt;迷途&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;p&gt;沿着鸽子的哨音&lt;/p&gt;
+        &lt;p&gt;我寻找着你&lt;/p&gt;
+        &lt;p&gt;高高的森林挡住了天空&lt;/p&gt;
+        &lt;p&gt;小路上&lt;/p&gt;
+        &lt;p&gt;一颗迷途的蒲公英&lt;/p&gt;
+        &lt;p&gt;把我引向蓝灰色的湖泊&lt;/p&gt;
+        &lt;p&gt;在微微摇晃的倒影中&lt;/p&gt;
+        &lt;p&gt;我找到了你&lt;/p&gt;
+        &lt;p&gt;那深不可测的眼睛&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-foot"&gt;
+        &lt;p class="text-right"&gt;——北岛&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>图文混合卡片</h4>
+          <p>卡片内的图片有三种情形式展现，分别是：</p>
+          <ul>
+            <li><code>.card-image-top</code> 顶部图</li>
+            <li><code>.card-image-bottom</code> 底部图</li>
+            <li><code>.card-image-overlay</code> 垫底图</li>
+          </ul>
+          <div class="example">
+            <div class="grid">
+              <div class="col-3">
+                <div class="card">
+                  <div class="card-image-top"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
+                  <div class="card-body">
+                    <p>和所有以梦为马的诗人一样</p>
+                    <p>我也愿将自己埋葬在四周高高的山上 守望平静的家园</p>
+                    <p>面对大河我无限惭愧</p>
+                    <p>我年华虚度 空有一身疲倦</p><a class="btn btn-primary">以梦为马</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-offset-5">
+                <div class="card">
+                  <div class="card-image-overlay"><img src="http://img.zcool.cn/sucaiori/4A6829A8-E7A4-A51A-5BDE-307A30E075F3.png@700w_0e_1l.png"></div>
+                  <div class="card-body">
+                    <h3>SaUI Live</h3>
+                    <p>2016.08.20</p><a class="btn btn-success">Sign up</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-offset-1">
+                <div class="card">
+                  <div class="card-body">
+                    <p>从明天起，做一个幸福的人</p>
+                    <p>喂马、劈柴，周游世界</p>
+                    <p>从明天起，关心粮食和蔬菜</p>
+                    <p>我有一所房子，面朝大海，春暖花开</p>
+                    <p>从明天起，和每一个亲人通信</p>
+                    <p>告诉他们我的幸福</p>
+                    <p>那幸福的闪电告诉我的</p>
+                    <p>我将告诉每一个人</p>
+                    <p>给每一条河每一座山取一个温暖的名字</p>
+                  </div>
+                  <div class="card-image-bottom"><img src="http://img.zcool.cn/sucaiori/2D828E75-298E-1F0F-B3E5-3FCAC8FA74B6.jpg@700w_0e_1l.jpg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-image-top"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="card-image-bottom"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card"&gt;
+    &lt;div class="card-image-overlay"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>列表混合卡片</h4>
+          <p>卡片内的列表在<code>&lt;ul&gt;</code>元素上添加 class <code>.card-list</code>将会应用卡片列表样式。</p>
+          <div class="example">
+            <div class="grid">
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title">卡片的内容标题要够粗</div>
+                    <div class="card-subtitle">这是小标题颜色就要不一样些</div>
+                    <p>内容块和列表的组合</p>
+                  </div>
+                  <ul class="card-list">
+                    <li><i class="sa-icon sa-icon-fw sa-icon-map-marker"></i>Canton China</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-phone"></i>13800138000</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-calendar-o"></i>1986.06.22</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-link"></i><a href="#">链接</a></li>
+                  </ul>
+                  <div class="card-image-bottom"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
+                </div>
+              </div>
+              <div class="col-3 col-offset-1">
+                <div class="card">
+                  <div class="card-head">列表</div>
+                  <ul class="card-list">
+                    <li><i class="sa-icon sa-icon-fw sa-icon-map-marker"></i>Canton China</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-phone"></i>13800138000</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-calendar-o"></i>1986.06.22</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-link"></i><a href="#">链接</a></li>
+                  </ul>
+                  <div class="card-body">
+                    <p>
+                      别管以后将如何结束，至少我们曾经相聚过。不必费心地彼此约束，更不需要言语的承诺。
+                      <br>只要我们曾经拥有过，对你我来讲已经足够。人的一生有许多回忆，只愿你的追亿有个我。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 col-offset-1">
+                <div class="card">
+                  <div class="card-image-top"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
+                  <ul class="card-list">
+                    <li><i class="sa-icon sa-icon-fw sa-icon-map-marker"></i>Canton China</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-phone"></i>13800138000</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-calendar-o"></i>1986.06.22</li>
+                    <li><i class="sa-icon sa-icon-fw sa-icon-link"></i><a href="#">链接</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;ul class="card-list"&gt;
+        &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-map-marker"&gt;&lt;/i&gt;Canton China&lt;/li&gt;
+        &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-phone"&gt;&lt;/i&gt;13800138000&lt;/li&gt;
+        &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-calendar-o"&gt;&lt;/i&gt;1986.06.22&lt;/li&gt;
+        &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-link"&gt;&lt;/i&gt;&lt;a href="#"&gt;链接&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="card-image-bottom"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>背景色</h4>
+          <p>为卡片添加<code>.bg-*</code>的 class 就可以应用主题色了。</p>
+          <div class="example">
+            <div class="grid grid-pad">
+              <div class="row">
+                <div class="col-4">
+                  <div class="card bg-primary">
+                    <div class="card-body">
+                      <p>
+                        头顶的太阳 燃烧着青春的余热
+                        <br>它从来不会放弃 照耀着我们行进
+                        <br>寒冬不经过这里 那只是迷雾的山林
+                        <br>走完苍老的石桥 感到潮湿的味道
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card bg-success">
+                    <div class="card-body">
+                      <p>
+                        翻过那青山 你说你看头顶斗笠的人们
+                        <br>海风拂过椰树吹散一路的风尘
+                        <br>这里就像与闹市隔绝的又一个世界
+                        <br>让我们疲倦的身体在这里 长久地停歇
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card bg-info">
+                    <div class="card-body">
+                      <p>
+                        我们的时光 是无忧的时光
+                        <br>精彩的年月 不会被什么改写
+                        <br>放纵的笑语 时常回荡在我们耳旁
+                        <br>那些路上的脚印 永远不会被掩藏
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="card bg-error">
+                    <div class="card-body">
+                      <p>
+                        这年代 季节快 许多花儿开
+                        <br>风徘徊 云发呆 美景关在大门外
+                        <br>等谁摘 不自在 慢慢才明白
+                        <br>花已开 没人来 其实根本不奇怪
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card bg-warn">
+                    <div class="card-body">
+                      <p>
+                        我是好美好美的红蔷薇
+                        <br>不枉春天来一回
+                        <br>绽放到天黑 惹得路人醉
+                        <br>平淡看待自己枯萎
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="card bg-primary"&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>文本对齐</h4>
+          <p>直接使用文本对齐 class <code>.text-center</code> <code>.text-right</code>，默认左对齐。</p>
+          <div class="example">
+            <div class="grid grid-pad">
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title">安和桥</div>
+                    <p>
+                      让我再看你一遍
+                      <br>从南到北
+                      <br>像是被五环路蒙住的双眼
+                    </p><a class="btn btn-primary">点击这里</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <div class="card-title">安和桥</div>
+                    <p>
+                      让我再看你一遍
+                      <br>从南到北
+                      <br>像是被五环路蒙住的双眼
+                    </p><a class="btn btn-primary">点击这里</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card text-right">
+                  <div class="card-body">
+                    <div class="card-title">安和桥</div>
+                    <p>
+                      让我再看你一遍
+                      <br>从南到北
+                      <br>像是被五环路蒙住的双眼
+                    </p><a class="btn btn-primary">点击这里</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="card text-center"&gt;
+    &lt;div class="card-body"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+        <li>
+          <h4>布局</h4>
+          <p>结合栅格系统<code>.grid</code> <code>.grid-pad</code>可以实现多样化的布局。</p>
+          <div class="example">
+            <div class="grid">
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-up"></i>赞</a></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-heart"></i>喜欢</a></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-down"></i>踩</a></div>
+                </div>
+              </div>
+            </div><br>
+            <div class="grid grid-pad">
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-up"></i>赞</a></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-heart"></i>喜欢</a></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
+                  <div class="card-body">
+                    <div class="card-title">南方姑娘</div>
+                    <div class="card-subtitle">赵雷</div>
+                    <p>北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。</p>
+                  </div>
+                  <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-down"></i>踩</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <pre><code>&lt;div class="grid"&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            &lt;div class="card-image-top"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+            &lt;div class="card-body"&gt;
+                &lt;div class="card-title"&gt;南方姑娘&lt;/div&gt;
+                &lt;div class="card-subtitle"&gt;赵雷&lt;/div&gt;
+                &lt;p&gt;北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="card-foot text-right"&gt;
+                &lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-thumbs-up"&gt;&lt;/i&gt;赞&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid grid-pad"&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            &lt;div class="card-image-top"&gt;&lt;img src="..."&gt;&lt;/div&gt;
+            &lt;div class="card-body"&gt;
+                &lt;div class="card-title"&gt;南方姑娘&lt;/div&gt;
+                &lt;div class="card-subtitle"&gt;赵雷&lt;/div&gt;
+                &lt;p&gt;北方的村庄住着一个南方姑娘，她总是喜欢穿着带花的裙子站在路旁边，她的话不多但笑起来是那么平静悠扬。&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="card-foot text-right"&gt;
+                &lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-thumbs-up"&gt;&lt;/i&gt;赞&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="card"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </li>
+      </ol>
       <h3><a name="dialog"></a>弹框<sup>JS</sup></h3>
       <p>
         创建一个交互的弹框，可使用模态或非模态的类型。使用 <code>.dialog</code> class 可以呈现弹框的样式，但是不建议直接使用，为了完整的交互效果请通过 JS 调用的方式来使用。
@@ -1586,7 +2020,7 @@
           <div class="dialog-content">
             <p>这是内容，在这里可以使用几乎所有的 HTML 元素。</p>
             <p>比如：</p>
-            <p><img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/100/h/100/q/80"></p>
+            <p><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@400w.jpg"></p>
             <p>又比如：</p>
             <form class="form">
               <div class="form-control">
@@ -1861,10 +2295,42 @@
           </ul>
         </div>
       </div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
+      <pre><code>&lt;div class="nav nav-bar"&gt;
+    &lt;div class="nav-header"&gt;SaUI&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;关于&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;加入我们&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;div class="dropdown dropdown-hover"&gt;
+                &lt;div class="dropdown-text"&gt;这是一个下拉项&lt;/div&gt;
+                &lt;div class="dropdown-icon"&gt;&lt;/div&gt;
+                &lt;div class="dropdown-menu"&gt;
+                    &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第一个很长很长很长的菜单&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第二个&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第三个&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="dropdown-item"&gt;&lt;a href="#"&gt;这是第四个&lt;/a&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-form nav-right"&gt;
+            &lt;form class="form"&gt;
+                &lt;button type="button"&gt;OPEN&lt;/button&gt;
+                &lt;div class="form-group"&gt;
+                    &lt;div class="input-group"&gt;
+                        &lt;input type="search" placeholder="搜索"&gt;
+                        &lt;button type="button"&gt;搜索&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
@@ -1902,7 +2368,7 @@
         </li>
       </ul>
     </nav>
-    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
     <script src="../js/jquery.sa.ui.js"></script>
     <script>$(function () {
 	function fHashChange(sHash) {
