@@ -1,17 +1,20 @@
 .content {
-	float: right;
+	margin-left: 20%;
 	padding: 0 .20rem;
 	box-sizing: border-box;
 	width: 80%;
+	max-width: 960px;
 }
 
 .content dl dt {
 	margin: .10rem 0;
 	font-weight: bold;
 }
+
 .content dl dd {
 	margin: 0;
 }
+
 .content > ul > li,
 .content > ol > li > ul > li {
 	margin-left: 1.5em;
@@ -75,12 +78,29 @@ nav {
 	width: 20%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1000px) {
 	.content {
+		margin: 0;
+		padding: 0 .15rem;
 		width: 100%;
 	}
 
-	.nav > ul {
+	.content > ol {
+		padding-left: 1em;
+	}
+
+	nav.nav {
+		top: 10%;
+		bottom: auto;
+		width: 10%;
+		transition: all .2s;
+	}
+
+	nav.nav > .nav-header {
+		min-width: 0;
+	}
+
+	nav.nav > ul {
 		display: none;
 	}
 }

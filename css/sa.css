@@ -2824,12 +2824,9 @@ table.table {
   border-collapse: collapse;
   width: 100%;
 }
-table.table tr {
-  line-height: .35rem;
-}
 table.table tr th,
 table.table tr td {
-  padding: 0 .15rem;
+  padding: .08rem .15rem;
   border-bottom: solid 0.01rem #ccc;
   text-align: left;
 }
@@ -2837,8 +2834,10 @@ table.table thead tr {
   background: #f7f7f7;
 }
 table.table thead tr > th {
-  vertical-align: bottom;
+  padding-top: .12rem;
+  padding-bottom: .04rem;
   border-bottom-width: .02rem;
+  vertical-align: bottom;
 }
 table.table tbody > tr.table-success {
   background-color: #cdf2cc;
@@ -2861,15 +2860,15 @@ table.table.table-bordered th,
 table.table.table-bordered td {
   border: solid 0.01rem #ccc;
 }
+table.table.table-bordered thead th {
+  border-bottom-width: .02rem;
+}
 table.table.table-hover > tbody > tr:nth-child(n) {
   background: none;
 }
-table.table.table-thin tr {
-  line-height: .25rem;
-}
 table.table.table-thin tr th,
 table.table.table-thin tr td {
-  padding: 0 .07rem;
+  padding: .04rem .07rem;
 }
 /**********************
  * HTML标签
@@ -3047,6 +3046,7 @@ img.img-thumbnail {
 .card .card-image-overlay + .card-body {
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.04rem;
   text-align: center;
   color: #fff;
   z-index: 1;

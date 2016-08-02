@@ -15,7 +15,7 @@
     <div class="content">
       <h1>Hello SaUI!</h1>
       <p>
-        SaUI 是一个非常轻小的 CSS 框架（所有 CSS 和 JS 经 gzip 后大小 22 KB 左右），它适用于 Desktop & Mobile 上面。在移动端，它的响应式自适应可以让你在构建 WebApp 时得到非常方便的视觉统一。
+        SaUI 是一个非常轻小的 CSS 框架（所有 CSS 和 JS 经 gzip 后大小 20 KB 左右），它适用于 Desktop & Mobile 上面。在移动端，它的响应式自适应可以让你在构建 WebApp 时得到非常方便的视觉统一。
         <br>SaUI 的设计理念是让 HTML 回归 HTML 。所有的样式实现以及代码结构都以保持 HTML 该有的语义为目标，只是在视觉上让它看起来更加的漂亮。但是在脱离样式的情况也能完整的展示 HTML 原本该有的功能与交互。
       </p>
       <p>Ok，接下来就让我们一起了解一下 SaUI 有什么过人之处吧。</p><iframe src="https://ghbtns.com/github-btn.html?user=OMooer&type=follow&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
@@ -27,14 +27,14 @@
           <p>直接引用我们网站的地址可以第一时间得到更新的版本，但是也存在网站性能资源可能造成的影响。实际使用上建议还是下载本地版本到项目里。</p>
           <pre><code>&lt;link rel="stylesheet" href="http://saui.omooer.com/css/sa.min.css"&gt;</code></pre>
         </div>
-        <div class="col-4">
+        <div class="col-4 col-xs-12 col-sm-12">
           <h4>下载本地</h4><a href="http://saui.omooer.com/download/saui.zip" class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-download"></i>立即下载 .zip</a>
           <p>
             版本：v0.1.0
-            <br>大小：587.5 KB
+            <br>大小：594.36 KB
           </p>
         </div>
-        <div class="col-4">
+        <div class="col-4 col-xs-12 col-sm-12">
           <h4>源码下载</h4><a href="https://github.com/OMooer/SaUI/archive/master.zip" class="btn btn-default-o"><i class="sa-icon sa-icon-fw sa-icon-file-zip-o"></i>Github 源码 .zip</a>
         </div>
       </div>
@@ -84,7 +84,7 @@
           </div>
         </div>
       </div>
-      <pre><code>&lt;div class="grid g-border-default"&gt;
+      <pre><code>&lt;div class="grid"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
         &lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
@@ -114,6 +114,135 @@
         &lt;div class="col-12"&gt;.col-12&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      <h3>带间距的栅格</h3>
+      <p>添加上 class <code>.grid-pad</code>可以使每一列栅格之间存在一个 8px 左右的间距，如果栅格列包含在<code>.row</code>里，那么将会在左边设置一个 -8px 的间距，使得列的最左边正常对齐。</p>
+      <div class="example">
+        <div class="grid grid-pad">
+          <div class="col-6">
+            <div class="bg-warn">.col-6</div>
+          </div>
+          <div class="col-6">
+            <div class="bg-warn">.col-6</div>
+          </div>
+          <div class="col-1">
+            <div class="bg-warn">.col-1</div>
+          </div>
+          <div class="col-11">
+            <div class="bg-warn">.col-11</div>
+          </div>
+          <div class="col-2">
+            <div class="bg-warn">.col-2</div>
+          </div>
+          <div class="col-10">
+            <div class="bg-warn">.col-10</div>
+          </div>
+          <div class="col-3">
+            <div class="bg-warn">.col-3</div>
+          </div>
+          <div class="col-9">
+            <div class="bg-warn">.col-9</div>
+          </div>
+          <div class="col-4">
+            <div class="bg-warn">.col-4</div>
+          </div>
+          <div class="col-8">
+            <div class="bg-warn">.col-8</div>
+          </div>
+          <div class="col-5">
+            <div class="bg-warn">.col-5</div>
+          </div>
+          <div class="col-7">
+            <div class="bg-warn">.col-7</div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="bg-error">.col-12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre><code>&lt;div class="grid grid-pad"&gt;
+    &lt;div class="col-6"&gt;
+        &lt;div class="bg-warn"&gt;.col-6&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-6"&gt;
+        &lt;div class="bg-warn"&gt;.col-6&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-1"&gt;
+        &lt;div class="bg-warn"&gt;.col-1&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-11"&gt;
+        &lt;div class="bg-warn"&gt;.col-11&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-2"&gt;
+        &lt;div class="bg-warn"&gt;.col-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-10"&gt;
+        &lt;div class="bg-warn"&gt;.col-10&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-3"&gt;
+        &lt;div class="bg-warn"&gt;.col-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-9"&gt;
+        &lt;div class="bg-warn"&gt;.col-9&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+        &lt;div class="bg-warn"&gt;.col-4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-8"&gt;
+        &lt;div class="bg-warn"&gt;.col-8&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-5"&gt;
+        &lt;div class="bg-warn"&gt;.col-5&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-7"&gt;
+        &lt;div class="bg-warn"&gt;.col-7&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-12"&gt;
+            &lt;div class="bg-error"&gt;.col-12&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <h3>响应式的栅格</h3>
+      <p>响应式的栅格在原有的栅格命名上加上了对应各自屏幕尺寸的前缀，具体参照下表。</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>作用屏幕尺寸</th>
+            <th>说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.col-xs-*</code></td>
+            <td>超小屏幕</td>
+            <td>只在视窗界面大小&lt;768px的情况下生效</td>
+          </tr>
+          <tr>
+            <td><code>.col-sm-*</code></td>
+            <td>小屏幕</td>
+            <td>只在视窗界面大小&#8805;768px和&lt;1024px的情况下生效</td>
+          </tr>
+          <tr>
+            <td><code>.col-md-*</code></td>
+            <td>中等屏幕</td>
+            <td>只在视窗界面大小&#8805;1024px和&lt;1440px的情况下生效</td>
+          </tr>
+          <tr>
+            <td><code>.col-lg-*</code></td>
+            <td>大屏幕</td>
+            <td>只在视窗界面大小&#8805;1440px和&lt;1900px的情况下生效</td>
+          </tr>
+          <tr>
+            <td><code>.col-xl-*</code></td>
+            <td>超大屏幕</td>
+            <td>只在视窗界面大小&#8805;1900px的情况下生效</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>同样，每个不同尺寸里也有偏移 class 。只需加上不同的前缀即可，比如：<code>.col-xs-offset-*</code>。</p>
       <h2><a name="table"></a>表格</h2>
       <p>给<code>&lt;table&gt;</code>添加 class <code>.table</code>可以添加默认的 padding、border，同时突出表头。</p>
       <h3>常规表格</h3>
@@ -377,7 +506,7 @@
     &lt;button type="submit"&gt;Submit&lt;/button&gt;&lt;a href="#" class="btn"&gt;Cancel&lt;/a&gt;
 &lt;/form&gt;</code></pre>
       <h3>内联式表单</h3>
-      <p>给表单添加一个 class <code>.form-inline</code>即可实现以下效果的内联式表单：</p>
+      <p>给表单添加一个 class <code>.form-inline</code>即可实现以下效果的内联式表单（无法作用在小屏幕下）：</p>
       <div class="example">
         <form name="example" method="get" action="/" target="_blank" class="form form-inline">
           <div class="form-group">
@@ -868,7 +997,7 @@
       <p>通过为图片添加<code>.img-responsive</code>类可以让图片支持响应式布局，从而让图片在其父元素中更好的缩放。</p>
       <div class="example">
         <div class="grid">
-          <div style="border-width:.08rem;" class="col-6 col-offset-3 border-default"><img src="http://img.zcool.cn/sucaiori/350D7DF4-E1B4-2BF7-2F96-4A42DA8C7DD6.jpg@400w_400h.jpg" class="img-responsive"></div>
+          <div style="border-width:.08rem;" class="col-6 col-offset-3 border-default"><img src="http://img.zcool.cn/sucaiori/350D7DF4-E1B4-2BF7-2F96-4A42DA8C7DD6.jpg@1000w_1000h.jpg" class="img-responsive"></div>
         </div>
       </div>
       <pre><code>&lt;img src="..." class="img-responsive"&gt;</code></pre>
@@ -880,10 +1009,10 @@
         <li><code>.img-thumbnail</code> 缩略图</li>
       </ul>
       <div class="example">
-        <div class="grid">
-          <div class="col-3"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-radius"></div>
-          <div class="col-3 col-offset-1"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-circle"></div>
-          <div class="col-3 col-offset-1"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail"></div>
+        <div class="grid grid-pad">
+          <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-radius"></div>
+          <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-circle"></div>
+          <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail"></div>
         </div>
       </div>
       <pre><code>&lt;img src="..." class="img-radius"&gt;
@@ -891,13 +1020,159 @@
 &lt;img src="..." class="img-thumbnail"&gt;</code></pre>
       <p>配合边框样式<code>.border-*</code>使用可以给图片加上边框，甚至可以重新定义缩略图的边框颜色。</p>
       <div class="example">
-        <div class="grid">
-          <div class="col-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-circle border-warn"></div>
-          <div class="col-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail border-success"></div>
+        <div class="grid grid-pad">
+          <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-circle border-warn"></div>
+          <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail border-success"></div>
         </div>
       </div>
       <pre><code>&lt;img src="..." class="img-circle border-warn"&gt;</code></pre>
       <h2><a name="helper"></a>辅助类</h2>
+      <h3>响应式可见类</h3>
+      <p>通过设置以下 class ，可以让内容在对应的屏幕尺寸下不可见。具体参照下表：</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>超小屏幕<small>&lt;768px</small></th>
+            <th>小屏幕<small>&#8805;768px</small></th>
+            <th>中等屏幕<small>&#8805;1024px</small></th>
+            <th>大屏幕<small>&#8805;1440px</small></th>
+            <th>超大屏幕<small>&#8805;1920px</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--tr-->
+          <!--	td <code>.hidden-xs-down</code>-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <tr>
+            <td><code>.hidden-sm-down</code></td>
+            <td>隐藏</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-md-down</code></td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-lg-down</code></td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-xl-down</code></td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td class="text-success">可见</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-xs-up</code></td>
+            <td class="text-success">可见</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-sm-up</code></td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-md-up</code></td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td>隐藏</td>
+            <td>隐藏</td>
+          </tr>
+          <tr>
+            <td><code>.hidden-lg-up</code></td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td class="text-success">可见</td>
+            <td>隐藏</td>
+          </tr>
+          <!--tr-->
+          <!--	td <code>.hidden-xl-up</code>-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+          <!--	td 可见-->
+        </tbody>
+      </table>
+      <p>您可以试着调整窗口的大小，体验一下下面示例的变化。</p>
+      <div class="example">
+        <div class="grid grid-pad text-center">
+          <div class="col-4 col-xs-12 col-sm-6 col-md-6">
+            <div class="card">
+              <div class="card-body bg-success">
+                <p>超小屏幕可见</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-xs-12 col-sm-6 col-md-6">
+            <div class="card">
+              <div class="card-body hidden-xs-up">
+                <p>小屏幕</p>
+              </div>
+              <div class="card-body hidden-sm-down bg-success">
+                <p>小屏幕可见</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-xs-12 col-sm-6 col-md-6">
+            <div class="card">
+              <div class="card-body hidden-sm-up">
+                <p>中等屏幕</p>
+              </div>
+              <div class="card-body hidden-md-down bg-success">
+                <p>中等屏幕可见</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-xs-12">
+            <div class="card">
+              <div class="card-body hidden-md-up">
+                <p>大屏幕</p>
+              </div>
+              <div class="card-body hidden-lg-down bg-success">
+                <p>大屏幕可见</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-xs-12 col-md-12">
+            <div class="card">
+              <div class="card-body hidden-lg-up">
+                <p>超大屏幕</p>
+              </div>
+              <div class="card-body hidden-xl-down bg-success">
+                <p>超大屏幕可见</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h3>情境文本颜色</h3>
       <p>通过颜色来展示意图，这些类可以应用于链接。</p>
       <div class="example">
@@ -1629,8 +1904,8 @@
             <li><code>.card-image-overlay</code> 垫底图</li>
           </ul>
           <div class="example">
-            <div class="grid">
-              <div class="col-3">
+            <div class="grid grid-pad">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
                   <div class="card-body">
@@ -1641,7 +1916,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-4 col-offset-5">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-overlay"><img src="http://img.zcool.cn/sucaiori/4A6829A8-E7A4-A51A-5BDE-307A30E075F3.png@700w_0e_1l.png"></div>
                   <div class="card-body">
@@ -1650,7 +1925,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-4 col-offset-1">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-body">
                     <p>从明天起，做一个幸福的人</p>
@@ -1693,8 +1968,8 @@
           <h4>列表混合卡片</h4>
           <p>卡片内的列表在<code>&lt;ul&gt;</code>元素上添加 class <code>.card-list</code>将会应用卡片列表样式。</p>
           <div class="example">
-            <div class="grid">
-              <div class="col-4">
+            <div class="grid grid-pad">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-body">
                     <div class="card-title">卡片的内容标题要够粗</div>
@@ -1710,7 +1985,7 @@
                   <div class="card-image-bottom"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
                 </div>
               </div>
-              <div class="col-3 col-offset-1">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-head">列表</div>
                   <ul class="card-list">
@@ -1727,7 +2002,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3 col-offset-1">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="http://img.zcool.cn/sucaiori/F09ECFF1-DD16-0DC9-C3DE-092A29CFBC86.jpg@700w_0e_1l.jpg"></div>
                   <ul class="card-list">
@@ -1758,67 +2033,63 @@
           <p>为卡片添加<code>.bg-*</code>的 class 就可以应用主题色了。</p>
           <div class="example">
             <div class="grid grid-pad">
-              <div class="row">
-                <div class="col-4">
-                  <div class="card bg-primary">
-                    <div class="card-body">
-                      <p>
-                        头顶的太阳 燃烧着青春的余热
-                        <br>它从来不会放弃 照耀着我们行进
-                        <br>寒冬不经过这里 那只是迷雾的山林
-                        <br>走完苍老的石桥 感到潮湿的味道
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="card bg-success">
-                    <div class="card-body">
-                      <p>
-                        翻过那青山 你说你看头顶斗笠的人们
-                        <br>海风拂过椰树吹散一路的风尘
-                        <br>这里就像与闹市隔绝的又一个世界
-                        <br>让我们疲倦的身体在这里 长久地停歇
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="card bg-info">
-                    <div class="card-body">
-                      <p>
-                        我们的时光 是无忧的时光
-                        <br>精彩的年月 不会被什么改写
-                        <br>放纵的笑语 时常回荡在我们耳旁
-                        <br>那些路上的脚印 永远不会被掩藏
-                      </p>
-                    </div>
+              <div class="col-4 col-sm-12 col-xs-12">
+                <div class="card bg-primary">
+                  <div class="card-body">
+                    <p>
+                      头顶的太阳 燃烧着青春的余热
+                      <br>它从来不会放弃 照耀着我们行进
+                      <br>寒冬不经过这里 那只是迷雾的山林
+                      <br>走完苍老的石桥 感到潮湿的味道
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-4">
-                  <div class="card bg-error">
-                    <div class="card-body">
-                      <p>
-                        这年代 季节快 许多花儿开
-                        <br>风徘徊 云发呆 美景关在大门外
-                        <br>等谁摘 不自在 慢慢才明白
-                        <br>花已开 没人来 其实根本不奇怪
-                      </p>
-                    </div>
+              <div class="col-4 col-sm-12 col-xs-12">
+                <div class="card bg-success">
+                  <div class="card-body">
+                    <p>
+                      翻过那青山 你说你看头顶斗笠的人们
+                      <br>海风拂过椰树吹散一路的风尘
+                      <br>这里就像与闹市隔绝的又一个世界
+                      <br>让我们疲倦的身体在这里 长久地停歇
+                    </p>
                   </div>
                 </div>
-                <div class="col-4">
-                  <div class="card bg-warn">
-                    <div class="card-body">
-                      <p>
-                        我是好美好美的红蔷薇
-                        <br>不枉春天来一回
-                        <br>绽放到天黑 惹得路人醉
-                        <br>平淡看待自己枯萎
-                      </p>
-                    </div>
+              </div>
+              <div class="col-4 col-sm-12 col-xs-12">
+                <div class="card bg-info">
+                  <div class="card-body">
+                    <p>
+                      我们的时光 是无忧的时光
+                      <br>精彩的年月 不会被什么改写
+                      <br>放纵的笑语 时常回荡在我们耳旁
+                      <br>那些路上的脚印 永远不会被掩藏
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-sm-12 col-xs-12">
+                <div class="card bg-error">
+                  <div class="card-body">
+                    <p>
+                      这年代 季节快 许多花儿开
+                      <br>风徘徊 云发呆 美景关在大门外
+                      <br>等谁摘 不自在 慢慢才明白
+                      <br>花已开 没人来 其实根本不奇怪
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-sm-12 col-xs-12">
+                <div class="card bg-warn">
+                  <div class="card-body">
+                    <p>
+                      我是好美好美的红蔷薇
+                      <br>不枉春天来一回
+                      <br>绽放到天黑 惹得路人醉
+                      <br>平淡看待自己枯萎
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1835,7 +2106,7 @@
           <p>直接使用文本对齐 class <code>.text-center</code> <code>.text-right</code>，默认左对齐。</p>
           <div class="example">
             <div class="grid grid-pad">
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-body">
                     <div class="card-title">安和桥</div>
@@ -1847,7 +2118,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card text-center">
                   <div class="card-body">
                     <div class="card-title">安和桥</div>
@@ -1859,7 +2130,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card text-right">
                   <div class="card-body">
                     <div class="card-title">安和桥</div>
@@ -1884,7 +2155,7 @@
           <p>结合栅格系统<code>.grid</code> <code>.grid-pad</code>可以实现多样化的布局。</p>
           <div class="example">
             <div class="grid">
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -1895,7 +2166,7 @@
                   <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-up"></i>赞</a></div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -1906,7 +2177,7 @@
                   <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-heart"></i>喜欢</a></div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -1919,7 +2190,7 @@
               </div>
             </div><br>
             <div class="grid grid-pad">
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -1930,7 +2201,7 @@
                   <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-thumbs-up"></i>赞</a></div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -1941,7 +2212,7 @@
                   <div class="card-foot text-right"><a class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-heart"></i>喜欢</a></div>
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-sm-12 col-xs-12">
                 <div class="card">
                   <div class="card-image-top"><img src="https://img3.doubanio.com/lpic/s6873340.jpg"></div>
                   <div class="card-body">
@@ -2340,10 +2611,10 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <div class="copyright">
-        <p>Copyright &copy; 2016 O'Mooer Works</p>
+        <p>Powered by <a href="http://saui.omooer.com">SaUI</a> Copyright &copy; 2016 O'Mooer Works</p>
       </div>
     </div>
-    <nav class="nav"><a href="http://saui.omooer.com" title="SaUI" class="nav-header">SaUI</a>
+    <nav class="nav"><a href="http://saui.omooer.com" title="SaUI" class="nav-header"><span class="hidden-md-down">SaUI</span><i class="hidden-sm-up sa-icon sa-icon-bars"></i></a>
       <ul>
         <li><a href="#intro">前言</a></li>
         <li><a href="#grid">栅格</a></li>
