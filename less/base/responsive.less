@@ -1,0 +1,115 @@
+/****
+ * 响应式
+ **/
+@import "../common/common";
+
+@media screen and (max-width: (@smSize - 1)) {
+	//xs
+	.hidden- {
+		&sm,
+		&md,
+		&lg,
+		&xl {
+			&-down {
+				display: none !important;
+			}
+		}
+	}
+
+	.grid {
+		.gender-grid(12, xs-);
+	}
+}
+
+@media screen and (min-width: @smSize) and (max-width: (@mdSize - 1)) {
+	//sm
+	.hidden- {
+		&md,
+		&lg,
+		&xl {
+			&-down {
+				display: none !important;
+			}
+		}
+	}
+
+	.hidden- {
+		&xs {
+			&-up {
+				display: none !important;
+			}
+		}
+	}
+
+	.grid {
+		.gender-grid(12, sm-);
+	}
+}
+
+@media screen and (min-width: @mdSize) and (max-width: (@lgSize - 1)) {
+	//md
+	.hidden- {
+		&lg,
+		&xl {
+			&-down {
+				display: none !important;
+			}
+		}
+	}
+
+	.hidden- {
+		&xs,
+		&sm {
+			&-up {
+				display: none !important;
+			}
+		}
+	}
+
+	.grid {
+		.gender-grid(12, md-);
+	}
+}
+
+@media screen and (min-width: @lgSize) and (max-width: (@xlSize - 1)) {
+	//lg
+	.hidden- {
+		&xl {
+			&-down {
+				display: none !important;
+			}
+		}
+	}
+
+	.hidden- {
+		&xs,
+		&sm,
+		&md {
+			&-up {
+				display: none !important;
+			}
+		}
+	}
+
+	.grid {
+		.gender-grid(12, lg-);
+	}
+}
+
+@media screen and (min-width: @xlSize) {
+	//xl
+	.hidden- {
+		&xs,
+		&sm,
+		&md,
+		&lg {
+			&-up {
+				display: none !important;
+			}
+		}
+	}
+
+	.grid {
+		.gender-grid(12, xl-);
+	}
+}

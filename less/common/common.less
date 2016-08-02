@@ -4,6 +4,27 @@
 @import "variables";
 @import "keyframes";
 
+// 栅格生成
+.gender-grid(@count, @i:1) when (@i=<@count) {
+	.col-@{i} {
+		width: (100%/12*@i);
+	}
+	.col-offset-@{i} {
+		margin-left: (100%/12*@i);
+	}
+	.gender-grid(@count, (@i+1));
+}
+
+.gender-grid(@count,@pre, @i:1) when (@i=<@count) {
+	.col-@{pre}@{i} {
+		width: (100%/12*@i);
+	}
+	.col-@{pre}offset-@{i} {
+		margin-left: (100%/12*@i);
+	}
+	.gender-grid(@count, @pre, (@i+1));
+}
+
 // 背景配色
 .gender-bg(@bg, @color:@default) {
 	&-@{bg} {

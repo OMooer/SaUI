@@ -24,14 +24,14 @@ html {
 }
 
 // pad
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: @smSize) and (max-width: (@mdSize - 1)) {
 	html {
 		font-size: 240px;
 	}
 }
 
 // pc and bigger
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: @mdSize) {
 	html {
 		font-size: 100px;
 	}

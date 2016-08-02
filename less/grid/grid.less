@@ -3,16 +3,6 @@
  **/
 @import "../common/common";
 
-.__grid(@n, @i:1) when (@i=<@n) {
-	.col-@{i} {
-		width: (100%/12*@i);
-	}
-	.col-offset-@{i} {
-		margin-left: (100%/12*@i);
-	}
-	.__grid(@n, (@i+1));
-}
-
 .grid {
 	.clearfix;
 
@@ -27,16 +17,24 @@
 		.clearfix;
 	}
 
-	.__grid(12);
+	.gender-grid(12);
 
 	&.grid-pad {
+		//TODO
+		[class*="col-"] {
+			margin: .08rem 0;
+			padding: 0 .08rem;
+		}
+
 		.row {
 			margin-left: -.08rem;
 			padding: .08rem 0;
+
+			[class*="col-"] {
+				margin: 0;
+				padding: 0 .08rem;
+			}
 		}
 
-		[class*="col-"] {
-			padding: 0 .08rem;
-		}
 	}
 }
