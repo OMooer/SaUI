@@ -8,10 +8,8 @@ table.table {
 	width: 100%;
 
 	tr {
-		line-height: .35rem;
-
 		th, td {
-			padding: 0 .15rem;
+			padding: .08rem .15rem;
 			border-bottom: solid .01rem @line;
 			text-align: left;
 		}
@@ -21,8 +19,10 @@ table.table {
 		background: @separateBg;
 
 		& > th {
-			vertical-align: bottom;
+			padding-top: .12rem;
+			padding-bottom: .04rem;
 			border-bottom-width: .02rem;
+			vertical-align: bottom;
 		}
 	}
 
@@ -64,10 +64,8 @@ table.table {
 	}
 	&.table-thin {
 		tr {
-			line-height: .25rem;
-
 			th, td {
-				padding: 0 .07rem;
+				padding: .04rem .07rem;
 			}
 		}
 	}
