@@ -2681,17 +2681,6 @@
 		document.title = $('.content a[name="' + sHash.replace('#', '') + '"]')[0].nextSibling.nodeValue + ' - ' + sOldTitle;
 	}
 
-	function fHideNav() {
-	}
-
-	$('nav .nav-header .sa-icon-bars').on('click', function () {
-		$('nav.nav').addClass('open-menu').selfScroll();
-		return false;
-	});
-
-	$('body').on('click touchend', '.content', fHideNav)
-		.on('click', 'nav a', fHideNav);
-
 	$(window).on('hashchange', function (oHash) {
 		if (location.hash) {
 			fHashChange(location.hash);

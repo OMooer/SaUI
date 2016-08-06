@@ -110,7 +110,7 @@ else {
 			})
 
 			/* 左侧菜单 */
-			.on('click', '.nav-menu.nav-mini-menu [role="menu-toggle"]', function () {
+			.on('click touchend', '.nav-menu.nav-mini-menu [role="menu-toggle"]', function () {
 				var $Menu = $(this).closest('.nav-menu[role="menu"]');
 				if ($Menu.length) {
 					$Menu.addClass('open-menu').selfScroll();
