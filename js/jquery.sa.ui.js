@@ -18,63 +18,63 @@ else {
 		┗━━━┛┗┛┗┛┗━━━┛┗━━┛');
 
 		$('body')
-			.on('click', function () {
-				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
-			})
+
 			/* 下拉菜单 */
-			.on('click', '.dropdown:not(.dropdown-open)', function () {
+			.on('click touchend', '.dropdown:not(.dropdown-open)', function () {
 				$('.dropdown[open]').removeClass('dropdown-open');
 				$(this).attr('open', true).addClass('dropdown-open');
 				return false;
 			})
-			.on('click', '.dropdown.dropdown-open', function () {
+			.on('click touchend', '.dropdown.dropdown-open', function () {
 				$(this).removeClass('dropdown-open');
-			});
+			})
+			.on('click touchend', function () {
+				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
+			})
 
-		/* 弹框 */
-		$('[role="dialog"]').on('click', function () {
-			var $This = $(this);
-			var sType = $This.data('type') || '';
-			var sTitle = $This.data('title') || '';
-			var sContent = $This.data('content') || '';
-			var sEvent = $This.data('event') || '';
-			var aSize = ($This.data('size') || ',').split(',');
-			switch (sType.toLowerCase()) {
-				case 'alert':
-					$('<div>' + sContent + '</div>').dialog({
-						type: 'alert',
-						onClose: sEvent ? window[sEvent] : null,
-						closeType: 'dismiss',
-						width: aSize[0] || 300,
-						height: aSize[1] || 100
-					});
-					break;
-				case 'confirm':
-					$('<div>' + sContent + '</div>').dialog({
-						type: 'confirm',
-						onClose: sEvent ? window[sEvent] : null,
-						closeType: 'dismiss',
-						width: aSize[0],
-						height: aSize[1] || 100
-					});
-					break;
-				default:
-					var sCustom = $This.data('custom');
-					$(sCustom).dialog({
-						close: true,
-						animate: true,
-						maskClose: true,
-						onClose: sEvent ? window[sEvent] : null,
-						title: sTitle,
-						width: aSize[0],
-						height: aSize[1]
-					});
-			}
-		});
+			/* 弹框 */
+			.on('click', '[role="dialog"]', function () {
+				var $This = $(this);
+				var sType = $This.data('type') || '';
+				var sTitle = $This.data('title') || '';
+				var sContent = $This.data('content') || '';
+				var sEvent = $This.data('event') || '';
+				var aSize = ($This.data('size') || ',').split(',');
+				switch (sType.toLowerCase()) {
+					case 'alert':
+						$('<div>' + sContent + '</div>').dialog({
+							type: 'alert',
+							onClose: sEvent ? window[sEvent] : null,
+							closeType: 'dismiss',
+							width: aSize[0] || 300,
+							height: aSize[1] || 100
+						});
+						break;
+					case 'confirm':
+						$('<div>' + sContent + '</div>').dialog({
+							type: 'confirm',
+							onClose: sEvent ? window[sEvent] : null,
+							closeType: 'dismiss',
+							width: aSize[0],
+							height: aSize[1] || 100
+						});
+						break;
+					default:
+						var sCustom = $This.data('custom');
+						$(sCustom).dialog({
+							close: true,
+							animate: true,
+							maskClose: true,
+							onClose: sEvent ? window[sEvent] : null,
+							title: sTitle,
+							width: aSize[0],
+							height: aSize[1]
+						});
+				}
+			})
 
-		/* 信息提示 */
-		$('[role="tooltip"]')
-			.on('mouseenter', function () {
+			/* 信息提示 */
+			.on('mouseenter', '[role="tooltip"]', function () {
 				var $This = $(this);
 				$This.attr('data-active', true);
 				var $Next = $This.next('.tooltip');
@@ -105,13 +105,74 @@ else {
 						break;
 				}
 			})
-			.on('mouseleave', function () {
+			.on('mouseleave', '[role="tooltip"]', function () {
 				$(this).removeAttr('data-active');
+			})
+
+			/* 左侧菜单 */
+			.on('click', '.nav-menu.nav-mini-menu [role="menu-toggle"]', function () {
+				var $Menu = $(this).closest('.nav-menu[role="menu"]');
+				if ($Menu.length) {
+					$Menu.addClass('open-menu').selfScroll();
+				}
+				return false;
+			})
+			.on('click touchend', function (e) {
+				var $Menu = $(e.target).closest('.nav-menu.open-menu[role="menu"]');
+				if (!$Menu.length) {
+					$('.nav-menu.open-menu[role="menu"]').removeClass('open-menu');
+				}
+			})
+			.on('click', '.nav-menu.open-menu[role="menu"] a', function () {
+				$('.nav-menu.open-menu[role="menu"]').removeClass('open-menu');
 			});
+
+		/* 左侧菜单 */
+		function fResponsiveMenu() {
+			var $Menu = $('.nav[role="menu"]').eq(0);
+			var nMaxWidth = $Menu.data('width');
+			var nClientWidth = document.documentElement.clientWidth;
+
+			if (nClientWidth < nMaxWidth) {
+				$Menu.addClass('nav-mini-menu');
+			}
+			$(window).off('resize.menu').on('resize.menu', fResponsiveMenu);
+		}
+
+		fResponsiveMenu();
 	});
 
 	/* jQuery 插件 */
 	(function ($) {
+		$.fn.selfScroll = function () {
+			// console.log(this)
+			var $This = this;
+			var nX, nY;
+			$This.off('touchstart touchend touchmove')
+				.on('touchstart touchend', function (ev) {
+					if (ev.touches.length) {
+						nX = ev.touches[0].clientX;
+						nY = ev.touches[0].clientY;
+					}
+				})
+				.on('touchmove', function (ev) {
+					var oTouch = ev.touches[0];
+					// 往上
+					if (oTouch.clientY - nY > 0) {
+						if (this.scrollTop === 0) {
+							ev.preventDefault();
+						}
+					}
+					//	往下
+					else {
+						if (this.scrollTop + this.offsetHeight === this.scrollHeight) {
+							ev.preventDefault();
+						}
+					}
+				});
+
+			return $This;
+		};
 		$.fn.dialog = function (jConfig) {
 			var $Source = this;
 			if (!$Source.length) {
