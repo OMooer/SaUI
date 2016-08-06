@@ -33,6 +33,11 @@
 	margin-top: .40rem;
 }
 
+.content pre code {
+	background-color: transparent;
+	tab-size: 2;
+}
+
 sup {
 	margin-left: .03rem;
 	padding: .01rem .03rem;
@@ -50,6 +55,10 @@ sup {
 	content: "示例：";
 	display: block;
 	margin-bottom: 1em;
+}
+
+.example .nav-menu {
+	position: relative;
 }
 
 .demo.grid .row {
@@ -70,11 +79,7 @@ sup {
 }
 
 nav {
-	position: fixed;
 	background: #222;
-	left: 0;
-	top: 0;
-	bottom: 0;
 	width: 20%;
 }
 
@@ -89,18 +94,13 @@ nav {
 		padding-left: 1em;
 	}
 
-	nav.nav {
-		top: 10%;
-		bottom: auto;
-		width: 10%;
-		transition: all .2s;
+	.content .grid [class*="col-"] {
+		overflow: hidden;
+		white-space: nowrap;
 	}
 
-	nav.nav > .nav-header {
-		min-width: 0;
-	}
-
-	nav.nav > ul {
-		display: none;
+	nav {
+		overflow: hidden;
+		width: 0;
 	}
 }

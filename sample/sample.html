@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
     <title>SaUI - 一个适用 Desktop & Mobile 的 CSS 框架</title>
+    <link rel="styleSheet" type="text/css" href="//cdn.bootcss.com/prism/9000.0.1/themes/prism.min.css">
     <link rel="styleSheet" type="text/css" href="../css/sa.css">
     <link rel="styleSheet" type="text/css" href="sample.css">
   </head>
@@ -25,13 +26,13 @@
         <div class="col-12">
           <h4>外部引用</h4>
           <p>直接引用我们网站的地址可以第一时间得到更新的版本，但是也存在网站性能资源可能造成的影响。实际使用上建议还是下载本地版本到项目里。</p>
-          <pre><code>&lt;link rel="stylesheet" href="http://saui.omooer.com/css/sa.min.css"&gt;</code></pre>
+          <pre><code class="language-markup">&lt;link rel="stylesheet" href="http://saui.omooer.com/css/sa.min.css"&gt;</code></pre>
         </div>
         <div class="col-4 col-xs-12 col-sm-12">
           <h4>下载本地</h4><a href="http://saui.omooer.com/download/saui.zip" class="btn btn-primary"><i class="sa-icon sa-icon-fw sa-icon-download"></i>立即下载 .zip</a>
           <p>
-            版本：v0.1.0
-            <br>大小：594.36 KB
+            版本：v0.1.1
+            <br>大小：595.32 KB
           </p>
         </div>
         <div class="col-4 col-xs-12 col-sm-12">
@@ -40,15 +41,15 @@
       </div>
       <h2><a name="intro"></a>前言</h2>
       <p>SaUI 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。</p>
-      <pre><code>&lt;!DOCTYPE html&gt;
+      <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="zh-CN"&gt;
 	...
 &lt;/html&gt;</code></pre>
       <p>为了增强跨浏览器表现的一致性，SaUI 使用了&nbsp;<a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a> ，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个 CSS 重置样式库。</p>
       <p><strong> SaUI 是优先移动设备的</strong>。为了确保适当的绘制和触屏缩放，需要在<code>&lt;head&gt;</code>之中<strong>添加 viewport 元数据标签</strong>。</p>
-      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+      <pre><code class="language-markup">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
       <p>在移动设备浏览器上，通过为视界（viewport）设置 meta 属性为 <code>user-scalable=no</code> 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
-      <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
+      <pre><code class="language-markup">&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"&gt;</code></pre>
       <p>注意：SaUI 并没有针对 IE 等低版本浏览器进行优化或兼容。但并不表示不支持如 Edge 这样的比较高级点的 MS 系。不过如果你在 Edge 上面（也）发现不可用也纯属正常。</p>
       <h2><a name="grid"></a>栅格</h2>
       <p>SaUI 将栅格设计为了12列，每列的宽度为父级的百分比。父级元素定义<code>.grid</code>样式作用栅格系统。栅格列使用了左浮动定位，类名为<code>.col-*</code>，<code>*</code>的范围从1-12的整数，每个数字各表示占用的列数。如果一行内的列数超过了12列，其余的将会在另一行展现。<br>将“列”嵌套进“行”<code>.row</code>里可以达到强制换行的效果。<br>使用<code>.col-offset-*</code>可以使列左偏移对应<code>*</code>的列数宽度。<br>注意：栅格列使用了左浮动，在使用时必须理解相应会发生的特性。</p>
@@ -84,7 +85,7 @@
           </div>
         </div>
       </div>
-      <pre><code>&lt;div class="grid"&gt;
+      <pre><code class="language-markup">&lt;div class="grid"&gt;
     &lt;div class="row"&gt;
         &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
         &lt;div class="col-9 col-offset-2"&gt;.col-9.col-offset-2&lt;/div&gt;
@@ -161,7 +162,7 @@
           </div>
         </div>
       </div>
-      <pre><code>&lt;div class="grid grid-pad"&gt;
+      <pre><code class="language-markup">&lt;div class="grid grid-pad"&gt;
     &lt;div class="col-6"&gt;
         &lt;div class="bg-warn"&gt;.col-6&lt;/div&gt;
     &lt;/div&gt;
@@ -494,7 +495,7 @@
           <button type="submit">Submit</button><a href="#" class="btn">Cancel</a>
         </form>
       </div>
-      <pre><code>&lt;form class="form"&gt;
+      <pre><code class="language-markup">&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email" name="email" placeholder="Email"&gt;
@@ -525,7 +526,7 @@
           <button type="submit">Submit</button>
         </form>
       </div>
-      <pre><code>&lt;form class="form form-inline"&gt;
+      <pre><code class="language-markup">&lt;form class="form form-inline"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email2"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email2" name="email" placeholder="Email"&gt;
@@ -575,7 +576,7 @@
           <button type="reset">Reset</button>
         </form>
       </div>
-      <pre><code>&lt;form class="form form-stacked"&gt;
+      <pre><code class="language-markup">&lt;form class="form form-stacked"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email3"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email3" name="email" placeholder="Email"&gt;
@@ -635,7 +636,7 @@
           <button type="reset">Reset</button>
         </form>
       </div>
-      <pre><code>&lt;form class="form form-horizontal"&gt;
+      <pre><code class="language-markup">&lt;form class="form form-horizontal"&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="email4"&gt;Email:&lt;/label&gt;
         &lt;input type="email" id="email4" name="email" placeholder="Email" class="form-control"&gt;
@@ -687,7 +688,7 @@
           </div>
         </form>
       </div>
-      <pre><code>&lt;form class="form form-stacked grid"&gt;
+      <pre><code class="language-markup">&lt;form class="form form-stacked grid"&gt;
     &lt;div class="form-group col-4"&gt;
         &lt;label&gt;First Name&lt;/label&gt;
         &lt;input type="text" class="form-control"&gt;
@@ -732,7 +733,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="form"&gt;
+          <pre><code class="language-markup">&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;fieldset&gt;
             &lt;input type="text" class="form-control"&gt;
@@ -769,7 +770,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="form"&gt;
+          <pre><code class="language-markup">&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;div class="input-group"&gt;
             &lt;input type="search" placeholder="Input search keyword"&gt;
@@ -843,7 +844,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;form class="form"&gt;
+          <pre><code class="language-markup">&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;input type="checkbox" class="form-switch"&gt;
         &lt;input type="checkbox" class="form-switch switch-text"&gt;
@@ -881,7 +882,7 @@
               <button type="button" disabled>Button 禁用</button>
             </form>
           </div>
-          <pre><code>&lt;form class="form"&gt;
+          <pre><code class="language-markup">&lt;form class="form"&gt;
     &lt;div class="form-group"&gt;
         &lt;input type="text" placeholder="Input 禁用" disabled&gt;
     &lt;/div&gt;
@@ -904,7 +905,7 @@
               </div>
             </form>
           </div>
-          <pre><code>&lt;input type="text" value="Input 只读" readonly&gt;</code></pre>
+          <pre><code class="language-markup">&lt;input type="text" value="Input 只读" readonly&gt;</code></pre>
         </li>
       </ol>
       <h2><a name="button"></a>按钮</h2>
@@ -915,7 +916,7 @@
       <div class="example"><a href="#" class="btn btn-default">A Button</a>
         <button type="button" class="btn btn-default-o">Button</button><a href="#" class="btn">A Button without border</a>
       </div>
-      <pre><code>&lt;a href="#" class="btn btn-default"&gt;A Button&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a href="#" class="btn btn-default"&gt;A Button&lt;/a&gt;
 &lt;button type="button" class="btn btn-default-o"&gt;Button&lt;/button&gt;
 &lt;a href="#" class="btn"&gt;A Button without border&lt;/a&gt;</code></pre>
       <h3>按钮的样式</h3>
@@ -929,7 +930,7 @@
         <li><code>.btn-warn</code> 警告</li>
       </ul>
       <div class="example"><a href="#" class="btn btn-primary">首选操作</a><a href="#" class="btn btn-success">成功操作</a><a href="#" class="btn btn-info">信息操作</a><a href="#" class="btn btn-danger">危险操作</a><a href="#" class="btn btn-warn">警告操作</a></div>
-      <pre><code>&lt;a href="#" class="btn btn-primary"&gt;首选操作&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a href="#" class="btn btn-primary"&gt;首选操作&lt;/a&gt;
 &lt;a href="#" class="btn btn-success"&gt;成功操作&lt;/a&gt;
 &lt;a href="#" class="btn btn-info"&gt;信息操作&lt;/a&gt;
 &lt;a href="#" class="btn btn-danger"&gt;危险操作&lt;/a&gt;
@@ -943,7 +944,7 @@
         <button type="button" class="btn btn-hollow btn-danger">危险操作</button>
         <button type="button" class="btn btn-hollow btn-warn">警告操作</button>
       </div>
-      <pre><code>&lt;button type="button" class="btn btn-hollow btn-primary"&gt;首选操作&lt;/button&gt;
+      <pre><code class="language-markup">&lt;button type="button" class="btn btn-hollow btn-primary"&gt;首选操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-hollow btn-success"&gt;成功操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-hollow btn-info"&gt;信息操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-hollow btn-danger"&gt;危险操作&lt;/button&gt;
@@ -957,7 +958,7 @@
         <button type="button" class="btn btn-rect btn-danger">危险操作</button>
         <button type="button" class="btn btn-rect btn-warn">警告操作</button>
       </div>
-      <pre><code>&lt;button type="button" class="btn btn-rect btn-primary"&gt;首选操作&lt;/button&gt;
+      <pre><code class="language-markup">&lt;button type="button" class="btn btn-rect btn-primary"&gt;首选操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-rect btn-success"&gt;成功操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-rect btn-info"&gt;信息操作&lt;/button&gt;
 &lt;button type="button" class="btn btn-rect btn-danger"&gt;危险操作&lt;/button&gt;
@@ -968,7 +969,7 @@
         <p><a href="#" class="btn btn-xl btn-rect btn-primary">按钮 .btn-xl</a><a href="#" class="btn btn-lg btn-rect btn-primary">按钮 .btn-lg</a><a href="#" class="btn btn-rect btn-primary">默认按钮大小</a><a href="#" class="btn btn-sm btn-rect btn-primary">按钮 .btn-sm</a><a href="#" class="btn btn-xs btn-rect btn-primary">按钮 .btn-xs</a></p>
         <p><a href="#" class="btn btn-xl btn-default">按钮 .btn-xl</a><a href="#" class="btn btn-lg btn-default">按钮 .btn-lg</a><a href="#" class="btn btn-default">默认按钮大小</a><a href="#" class="btn btn-sm btn-default">按钮 .btn-sm</a><a href="#" class="btn btn-xs btn-default">按钮 .btn-xs</a></p>
       </div>
-      <pre><code>&lt;a href="#" class="btn btn-xl btn-default"&gt;按钮 .btn-xl&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a href="#" class="btn btn-xl btn-default"&gt;按钮 .btn-xl&lt;/a&gt;
 &lt;a href="#" class="btn btn-lg btn-default"&gt;按钮 .btn-lg&lt;/a&gt;
 &lt;a href="#" class="btn btn-default"&gt;默认按钮大小&lt;/a&gt;
 &lt;a href="#" class="btn btn-sm btn-default"&gt;按钮 .btn-sm&lt;/a&gt;
@@ -982,14 +983,14 @@
           <div class="example"><a href="#" class="btn btn-primary btn-disabled">A 按钮禁用</a>
             <button type="button" disabled class="btn btn-default">Button 按钮禁用</button>
           </div>
-          <pre><code>&lt;a href="#" class="btn btn-primary btn-disabled"&gt;A 按钮禁用&lt;/a&gt;
+          <pre><code class="language-markup">&lt;a href="#" class="btn btn-primary btn-disabled"&gt;A 按钮禁用&lt;/a&gt;
 &lt;button type="button" disabled class="btn btn-default"&gt;Button 按钮禁用&lt;/button&gt;</code></pre>
         </li>
         <li>
           <h4>激活</h4>
           <p>按钮的激活状态，一般用在识别当前操作进程的展示。比如选项卡切换的当前态。为按钮添加<code>.btn-active</code> class 即可达到此效果。</p>
           <div class="example"><a href="#" class="btn btn-active btn-primary">这是 已激活 的按钮</a><a href="#" class="btn btn-primary">这是 未激活 的按钮</a></div>
-          <pre><code>&lt;a href="#" class="btn btn-active btn-primary"&gt;这是 已激活 的按钮&lt;/a&gt;</code></pre>
+          <pre><code class="language-markup">&lt;a href="#" class="btn btn-active btn-primary"&gt;这是 已激活 的按钮&lt;/a&gt;</code></pre>
         </li>
       </ol>
       <h2><a name="image"></a>图片</h2>
@@ -1000,7 +1001,7 @@
           <div style="border-width:.08rem;" class="col-6 col-offset-3 border-default"><img src="http://img.zcool.cn/sucaiori/350D7DF4-E1B4-2BF7-2F96-4A42DA8C7DD6.jpg@1000w_1000h.jpg" class="img-responsive"></div>
         </div>
       </div>
-      <pre><code>&lt;img src="..." class="img-responsive"&gt;</code></pre>
+      <pre><code class="language-markup">&lt;img src="..." class="img-responsive"&gt;</code></pre>
       <h3>图片形状</h3>
       <p>通过添加以下相应 class ，可以让图片呈现不同的形状。</p>
       <ul>
@@ -1015,7 +1016,7 @@
           <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail"></div>
         </div>
       </div>
-      <pre><code>&lt;img src="..." class="img-radius"&gt;
+      <pre><code class="language-markup">&lt;img src="..." class="img-radius"&gt;
 &lt;img src="..." class="img-circle"&gt;
 &lt;img src="..." class="img-thumbnail"&gt;</code></pre>
       <p>配合边框样式<code>.border-*</code>使用可以给图片加上边框，甚至可以重新定义缩略图的边框颜色。</p>
@@ -1025,7 +1026,7 @@
           <div class="col-xs-6"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTVjNDZmZjM2NiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NWM0NmZmMzY2Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" class="img-thumbnail border-success"></div>
         </div>
       </div>
-      <pre><code>&lt;img src="..." class="img-circle border-warn"&gt;</code></pre>
+      <pre><code class="language-markup">&lt;img src="..." class="img-circle border-warn"&gt;</code></pre>
       <h2><a name="helper"></a>辅助类</h2>
       <h3>响应式可见类</h3>
       <p>通过设置以下 class ，可以让内容在对应的屏幕尺寸下不可见。具体参照下表：</p>
@@ -1182,7 +1183,7 @@
         <p class="text-error">这是一段错误提示的文本</p>
         <p class="text-warn">这是一段警告提示的文本</p>
       </div>
-      <pre><code>&lt;p class="text-primary"&gt;....&lt;/p&gt;
+      <pre><code class="language-markup">&lt;p class="text-primary"&gt;....&lt;/p&gt;
 &lt;p class="text-success"&gt;....&lt;/p&gt;
 &lt;p class="text-info"&gt;....&lt;/p&gt;
 &lt;p class="text-error"&gt;....&lt;/p&gt;
@@ -1196,7 +1197,7 @@
         <p class="bg-error">这是一段话里包含有一个<a href="#">链接</a></p>
         <p class="bg-warn">这是一段话里包含有一个<a href="#">链接</a></p>
       </div>
-      <pre><code>&lt;p class="bg-primary"&gt;....&lt;/p&gt;
+      <pre><code class="language-markup">&lt;p class="bg-primary"&gt;....&lt;/p&gt;
 &lt;p class="bg-success"&gt;....&lt;/p&gt;
 &lt;p class="bg-info"&gt;....&lt;/p&gt;
 &lt;p class="bg-error"&gt;....&lt;/p&gt;
@@ -1211,7 +1212,7 @@
         <p class="border-error">给这段文字添加了边框 error</p>
         <p class="border-warn">给这段文字添加了边框 warn</p>
       </div>
-      <pre><code>&lt;p class="border-default"&gt;...&lt;/p&gt;
+      <pre><code class="language-markup">&lt;p class="border-default"&gt;...&lt;/p&gt;
 &lt;p class="border-primary"&gt;...&lt;/p&gt;
 &lt;p class="border-success"&gt;...&lt;/p&gt;
 &lt;p class="border-info"&gt;...&lt;/p&gt;
@@ -1220,35 +1221,35 @@
       <h3>三角符号</h3>
       <p>我们使用 HTML 标签<code>&lt;i&gt;</code>来表示图标。同样这个只是 SaUI 的一个规范。</p>
       <div class="example"><i class="caret"></i></div>
-      <pre><code>&lt;i class="caret"&gt;&lt;/i&gt;</code></pre>
+      <pre><code class="language-markup">&lt;i class="caret"&gt;&lt;/i&gt;</code></pre>
       <h3>关闭按钮</h3>
       <p>通过使用一个象征关闭的图标，可以让模态框和警告框消失。配合<code>.border-*</code>可以给关闭按钮添加一个边框，我们默认了关闭按钮的圆角程度为圆形。也可以给它添加一个<code>.close-animate</code> class 让关闭按钮拥有旋转动画效果。</p>
       <div class="example"><a aria-label="Close" class="close"><i aria-hidden="true">&times;</i></a><a aria-label="Close" class="close border-default"><i aria-hidden="true">&times;</i></a><a aria-label="Close" class="close close-animate"><i aria-hidden="true">&times;</i></a></div>
-      <pre><code>&lt;a aria-label="Close" class="close"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a aria-label="Close" class="close"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;
 &lt;a aria-label="Close" class="close border-default"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;
 &lt;a aria-label="Close" class="close close-animate"&gt;&lt;i aria-hidden="true"&gt;&amp;times;&lt;/i&gt;&lt;/a&gt;</code></pre>
       <h3>快速浮动</h3>
       <p><code>.pull-left</code>左浮动，<code>.pull-right</code>右浮动。这两个样式使用了<code>!important</code>来确定 CSS 优先级。</p>
-      <pre><code>&lt;div class="pull-left"&gt;...&lt;/div&gt;
+      <pre><code class="language-markup">&lt;div class="pull-left"&gt;...&lt;/div&gt;
 &lt;div class="pull-right"&gt;...&lt;/div&gt;</code></pre>
       <h3>块元素居中</h3>
       <p>添加 class <code>.center-block</code>可以让具备宽度的子元素水平居中于父元素。</p>
-      <pre><code>&lt;div class="center-block"&gt;...&lt;/div&gt;</code></pre>
+      <pre><code class="language-markup">&lt;div class="center-block"&gt;...&lt;/div&gt;</code></pre>
       <h3>清除浮动</h3>
       <p>通过为父元素添加<code>.clearfix</code>类可以很容易地清除浮动（<code>float</code>）。</p>
-      <pre><code>&lt;div class="clearfix"&gt;
+      <pre><code class="language-markup">&lt;div class="clearfix"&gt;
     ...
 &lt;/div&gt;</code></pre>
       <h3>显示或隐藏内容</h3>
       <p>添加 class <code>.show</code>，<code>.hidden</code>用来对任意元素显示或隐藏。同样使用了<code>!important</code>来确定 CSS 优先级。</p>
-      <pre><code>&lt;div class="show"&gt;...&lt;/div&gt;
+      <pre><code class="language-markup">&lt;div class="show"&gt;...&lt;/div&gt;
 &lt;div class="hidden"&gt;...&lt;/div&gt;</code></pre>
       <h3>消失的文字</h3>
       <p>通过添加<code>.text-hide</code>可以将元素的文字隐藏。一般用在通过背景图片表示信息的地方，比如一个 LOGO 的链接。</p>
-      <pre><code>&lt;a href="#" class="logo text-hide"&gt;SaUI Logo&lt;/a&gt;</code></pre>
+      <pre><code class="language-markup">&lt;a href="#" class="logo text-hide"&gt;SaUI Logo&lt;/a&gt;</code></pre>
       <h3>居中文字</h3>
       <p>添加<code>.text-center</code>可以为内容设置水平居中。</p>
-      <pre><code>&lt;div class="text-center"&gt;...&lt;/div&gt;</code></pre>
+      <pre><code class="language-markup">&lt;div class="text-center"&gt;...&lt;/div&gt;</code></pre>
       <h3>垂直对齐</h3>
       <p>
         通过对父元素设置 class <code>.v-align</code>并且指定高度即可对子元素进行垂直居中对齐或底部对齐。
@@ -1266,7 +1267,7 @@
           <div class="align-bottom">这是底部对齐的子元素</div>
         </div>
       </div>
-      <pre><code>&lt;div class="v-align border-default text-center"&gt;
+      <pre><code class="language-markup">&lt;div class="v-align border-default text-center"&gt;
     &lt;div class="align-middle"&gt;这是居中对齐的子元素&lt;/div&gt;
 &lt;/div&gt;
 
@@ -1281,13 +1282,13 @@
           <h3>图标尺寸</h3>
           <p>图标拥有6种大小尺寸，添加 class <code>.sa-icon-lg</code>、<code>.sa-icon-2x</code>、<code>.sa-icon-3x</code>、<code>.sa-icon-4x</code>、<code>.sa-icon-5x</code>就可以，默认大小不需要添加。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-lg"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-4x"></i><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-5x"></i></div>
-          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"&gt;&lt;/i&gt;</code></pre>
+          <pre><code class="language-markup">&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-2x"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
           <h3>图标颜色</h3>
           <p>图标的颜色受元素字体颜色作用，使用不同颜色的图标直接另外定义即可。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"></i><i aria-hidden="true" class="sa-icon sa-icon-warning sa-icon-3x text-error"></i></div>
-          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"&gt;&lt;/i&gt;</code></pre>
+          <pre><code class="language-markup">&lt;i aria-hidden="true" class="sa-icon sa-icon-weixin sa-icon-3x text-success"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
           <h3>动画图标</h3>
@@ -1298,7 +1299,7 @@
           </ul>
           <p>在这几个图标上使用<code>.sa-icon-spinner</code>、<code>.sa-icon-refresh</code>、<code>.sa-icon-cog</code>可以获得最佳表现效果。</p>
           <div class="example"><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-cog sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-circle-o-notch sa-icon-spin sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-pulse sa-icon-3x"></i><i aria-hidden="true" class="sa-icon sa-icon-refresh sa-icon-pulse sa-icon-3x"></i></div>
-          <pre><code>&lt;i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"&gt;&lt;/i&gt;
+          <pre><code class="language-markup">&lt;i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-spin sa-icon-3x"&gt;&lt;/i&gt;
 &lt;i aria-hidden="true" class="sa-icon sa-icon-spinner sa-icon-pulse sa-icon-3x"&gt;&lt;/i&gt;</code></pre>
         </li>
         <li>
@@ -1320,7 +1321,7 @@
               <li><i class="sa-icon sa-icon-fw sa-icon-long-arrow-up"></i>&nbsp;Long Arrow Up</li>
             </ul>
           </div>
-          <pre><code>&lt;ul&gt;
+          <pre><code class="language-markup">&lt;ul&gt;
     &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-qq"&gt;&lt;/i&gt;&nbsp;QQ&lt;/li&gt;
     &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-skype"&gt;&lt;/i&gt;&nbsp;Skype&lt;/li&gt;
     &lt;li&gt;&lt;i class="sa-icon sa-icon-fw sa-icon-weixin"&gt;&lt;/i&gt;&nbsp;WeChat&lt;/li&gt;
@@ -1339,7 +1340,7 @@
               <button class="btn btn-success"><i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-check"></i>完成</button>
             </p>
           </div>
-          <pre><code>&lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-qq"&gt;&lt;/i&gt;&lt;/a&gt;
+          <pre><code class="language-markup">&lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-qq"&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;a class="btn btn-success"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-wechat"&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;a class="btn btn-danger"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-weibo"&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;a class="btn btn-primary"&gt;&lt;i class="sa-icon sa-icon-lg sa-icon-fw sa-icon-facebook"&gt;&lt;/i&gt;&lt;/a&gt;
@@ -1355,8 +1356,8 @@
       <h2><a name="component"></a>组件</h2>
       <p>SaUI 提供了一系列 UI 组件，方便快速的实现页面布局及交互效果。交互效果由<code>sa.ui.js</code>来实现，这是由 SaUI 开发的用于实现组件布局交互的 JS 插件，如果您的网站上并没有使用带有<sup>JS</sup>标识的 UI 组件就无须引入此 JS 文件。</p>
       <p>
-        <code>sa.ui.js</code>依赖于 <abbr title="jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。">jQuery</abbr> ，自文件身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。
-        <br>在命名的上为了将来可能出现的另外一些依赖版本，我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 插件的命名规则，当然由于 <abbr title="Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 它与jQuery有着类似的API。">Zepto</abbr> 与 jQuery 保持了一致的 API 所以在移动端使用 Zepto 的情况下也可以正常使用。
+        <code>sa.ui.js</code>依赖于 <abbr title="jQuery是一套跨浏览器的JavaScript库，简化HTML与JavaScript之间的操作。">jQuery</abbr> ，文件自身体积较小，在当前广泛应用 jQuery 的情况下使用此版本是比较好的选择。
+        <br>在命名上为了将来可能出现的另外一些依赖版本，我们将依赖 jQuery 的版本命名为<code>jquery.sa.ui.js</code>使其更符合 jQuery 插件的命名规则，当然由于 <abbr title="Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 它与jQuery有着类似的API。">Zepto</abbr> 与 jQuery 保持了一致的 API 所以在移动端使用 Zepto 的情况下也可以正常使用。
       </p>
       <h3><a name="dropdown"></a>下拉菜单<sup>JS</sup></h3>
       <p>下拉菜单的展开可由点击事件触发，具体实现是通过 js 为 dropdown 添加/移除<code>.dorpdown-open</code> class，您也可以直接使用 hover 状态展开的方式。</p>
@@ -1374,7 +1375,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="dropdown"&gt;
+          <pre><code class="language-markup">&lt;div class="dropdown"&gt;
     &lt;div class="dropdown-text"&gt;常规的下拉菜单&lt;/div&gt;
     &lt;div class="dropdown-icon"&gt;&lt;/div&gt;
     &lt;div class="dropdown-menu"&gt;
@@ -1415,7 +1416,7 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
           </div>
-          <pre><code>&lt;div class="dropdown dropdown-right"&gt;
+          <pre><code class="language-markup">&lt;div class="dropdown dropdown-right"&gt;
     ...
 &lt;/div&gt;</code></pre>
         </li>
@@ -1436,7 +1437,7 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
           </div>
-          <pre><code>&lt;div class="dropdown dropdown-open"&gt;
+          <pre><code class="language-markup">&lt;div class="dropdown dropdown-open"&gt;
     ...
 &lt;/div&gt;</code></pre>
         </li>
@@ -1454,7 +1455,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="dropdown dropdown-hover"&gt;
+          <pre><code class="language-markup">&lt;div class="dropdown dropdown-hover"&gt;
     ...
 &lt;/div&gt;</code></pre>
         </li>
@@ -1485,7 +1486,7 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
           </div>
-          <pre><code>&lt;div class="dropdown dropdown-open"&gt;
+          <pre><code class="language-markup">&lt;div class="dropdown dropdown-open"&gt;
     &lt;div class="dropdown-text"&gt;默认展开下拉菜单&lt;/div&gt;
     &lt;div class="dropdown-icon"&gt;&lt;/div&gt;
     &lt;div class="dropdown-menu"&gt;
@@ -1505,7 +1506,7 @@
         <li>
           <h4>默认样式</h4>
           <div class="example"><span class="badge">1</span><span class="badge badge-primary">2</span><span class="badge badge-success">3</span><span class="badge badge-info">4</span><span class="badge badge-danger">5</span><span class="badge badge-warn">6</span><br><span class="badge">Default</span><span class="badge badge-primary">Primary</span><span class="badge badge-success">Success</span><span class="badge badge-info">Info</span><span class="badge badge-danger">Danger</span><span class="badge badge-warn">Warning</span></div>
-          <pre><code>&lt;span class="badge"&gt;1&lt;/span&gt;
+          <pre><code class="language-markup">&lt;span class="badge"&gt;1&lt;/span&gt;
 &lt;span class="badge badge-primary"&gt;2&lt;/span&gt;
 &lt;span class="badge badge-success"&gt;3&lt;/span&gt;
 &lt;span class="badge badge-info"&gt;4&lt;/span&gt;
@@ -1523,7 +1524,7 @@
           <h4>圆角样式</h4>
           <p>添加<code>.badge-radius</code> class 可以将徽章呈现圆角样式。</p>
           <div class="example"><span class="badge badge-radius">1</span><span class="badge badge-radius badge-primary">2</span><span class="badge badge-radius badge-success">3</span><span class="badge badge-radius badge-info">4</span><span class="badge badge-radius badge-danger">5</span><span class="badge badge-radius badge-warn">6</span><br><span class="badge badge-radius">Default</span><span class="badge badge-radius badge-primary">Primary</span><span class="badge badge-radius badge-success">Success</span><span class="badge badge-radius badge-info">Info</span><span class="badge badge-radius badge-danger">Danger</span><span class="badge badge-radius badge-warn">Warning</span></div>
-          <pre><code>&lt;span class="badge badge-radius"&gt;1&lt;/span&gt;
+          <pre><code class="language-markup">&lt;span class="badge badge-radius"&gt;1&lt;/span&gt;
 &lt;span class="badge badge-radius badge-primary"&gt;2&lt;/span&gt;
 &lt;span class="badge badge-radius badge-success"&gt;3&lt;/span&gt;
 &lt;span class="badge badge-radius badge-info"&gt;4&lt;/span&gt;
@@ -1541,7 +1542,7 @@
           <h4>椭圆样式</h4>
           <p>添加<code>.badge-round</code> class 可以呈现椭圆样式。椭圆样式默认在内容较少的情况下显示为正圆，这是因为椭圆的圆度与默认的徽章大小匹配导致。</p>
           <div class="example"><span class="badge badge-round">1</span><span class="badge badge-round badge-primary">2</span><span class="badge badge-round badge-success">3</span><span class="badge badge-round badge-info">4</span><span class="badge badge-round badge-danger">5</span><span class="badge badge-round badge-warn">6</span><br><span class="badge badge-round">Default</span><span class="badge badge-round badge-primary">Primary</span><span class="badge badge-round badge-success">Success</span><span class="badge badge-round badge-info">Info</span><span class="badge badge-round badge-danger">Danger</span><span class="badge badge-round badge-warn">Warning</span></div>
-          <pre><code>&lt;span class="badge badge-round"&gt;1&lt;/span&gt;
+          <pre><code class="language-markup">&lt;span class="badge badge-round"&gt;1&lt;/span&gt;
 &lt;span class="badge badge-round badge-primary"&gt;2&lt;/span&gt;
 &lt;span class="badge badge-round badge-success"&gt;3&lt;/span&gt;
 &lt;span class="badge badge-round badge-info"&gt;4&lt;/span&gt;
@@ -1562,7 +1563,7 @@
             <button type="button" class="btn btn-primary">Button<span class="badge badge-round badge-danger">12</span></button>
             <button type="button" class="btn btn-rect btn-info">Button<span class="badge badge-round badge-tips">99+</span></button>
           </div>
-          <pre><code>&lt;button type="button" class="btn btn-primary"&gt;Button
+          <pre><code class="language-markup">&lt;button type="button" class="btn btn-primary"&gt;Button
     &lt;span class="badge badge-round badge-danger"&gt;12&lt;/span&gt;
 &lt;/button&gt;
 &lt;button type="button" class="btn btn-rect btn-default"&gt;Button
@@ -1595,7 +1596,7 @@
               <li class="paging-next"><a href="#">Next</a></li>
             </ul>
           </div>
-          <pre><code>&lt;ul class="paging"&gt;
+          <pre><code class="language-markup">&lt;ul class="paging"&gt;
     &lt;li class="paging-prev paging-disabled"&gt;&lt;a&gt;Previous&lt;/a&gt;&lt;/li&gt;
     &lt;li class="paging-active"&gt;&lt;a&gt;1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
@@ -1623,7 +1624,7 @@
               <li class="paging-next paging-disabled"><a>Next</a></li>
             </ul>
           </div>
-          <pre><code>&lt;ul class="paging paging-bordered"&gt;
+          <pre><code class="language-markup">&lt;ul class="paging paging-bordered"&gt;
     ...
 &lt;/ul&gt;</code></pre>
         </li>
@@ -1648,7 +1649,7 @@
               <li class="paging-next"><a href="#"></a></li>
             </ul>
           </div>
-          <pre><code>&lt;ul class="paging paging-group"&gt;
+          <pre><code class="language-markup">&lt;ul class="paging paging-group"&gt;
     ...
 &lt;/ul&gt;</code></pre>
         </li>
@@ -1689,7 +1690,7 @@
               <li class="paging-next"><a href="#">Next</a></li>
             </ul>
           </div>
-          <pre><code>&lt;ul class="paging paging-group pull-right"&gt;
+          <pre><code class="language-markup">&lt;ul class="paging paging-group pull-right"&gt;
     ...
 &lt;/ul&gt;
 &lt;ul class="paging paging-group paging-center"&gt;
@@ -1723,7 +1724,7 @@
               <li><a href="#">Next</a></li>
             </ul>
           </div>
-          <pre><code>&lt;ul class="paging paging-pager"&gt;
+          <pre><code class="language-markup">&lt;ul class="paging paging-pager"&gt;
     &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1752,7 +1753,7 @@
               <div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"></div>
             </div>
           </div>
-          <pre><code>&lt;progress max="100" value="25"&gt;&lt;/progress&gt;
+          <pre><code class="language-markup">&lt;progress max="100" value="25"&gt;&lt;/progress&gt;
 &lt;div class="progress"&gt;
     &lt;div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -1766,7 +1767,7 @@
               <div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"></div>
             </div>
           </div>
-          <pre><code>&lt;progress class="progress-text" max="100" value="34"&gt;&lt;/progress&gt;
+          <pre><code class="language-markup">&lt;progress class="progress-text" max="100" value="34"&gt;&lt;/progress&gt;
 &lt;div class="progress progress-text"&gt;
     &lt;div role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100" style="width: 44%;" class="progress-bar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -1780,7 +1781,7 @@
               <div role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%;" class="progress-bar progress-success"></div>
             </div>
           </div>
-          <pre><code>&lt;progress class="progress-small" max="100" value="24"&gt;&lt;/progress&gt;
+          <pre><code class="language-markup">&lt;progress class="progress-small" max="100" value="24"&gt;&lt;/progress&gt;
 &lt;div class="progress progress-small"&gt;
     &lt;div role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%;" class="progress-bar"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -1799,7 +1800,7 @@
               <div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-warn"></div>
             </div>
           </div>
-          <pre><code>&lt;div class="progress progress-text"&gt;
+          <pre><code class="language-markup">&lt;div class="progress progress-text"&gt;
     &lt;div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-success"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="progress progress-text"&gt;
@@ -1826,7 +1827,7 @@
               <div role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;" class="progress-bar progress-striped progress-warn"></div>
             </div>
           </div>
-          <pre><code>&lt;div class="progress progress-text"&gt;
+          <pre><code class="language-markup">&lt;div class="progress progress-text"&gt;
     &lt;div role="progressbar" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100" style="width: 54%;" class="progress-bar progress-striped progress-success"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="progress progress-text"&gt;
@@ -1846,7 +1847,7 @@
               <div role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%;" class="progress-bar progress-warn"></div>
             </div>
           </div>
-          <pre><code>&lt;div class="progress progress-text"&gt;
+          <pre><code class="language-markup">&lt;div class="progress progress-text"&gt;
     &lt;div role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width: 23%;" class="progress-bar progress-success"&gt;&lt;/div&gt;
     &lt;div role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100" style="width: 16%;" class="progress-bar progress-danger"&gt;&lt;/div&gt;
     &lt;div role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%;" class="progress-bar progress-warn"&gt;&lt;/div&gt;
@@ -1877,7 +1878,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="card"&gt;
+          <pre><code class="language-markup">&lt;div class="card"&gt;
     &lt;div class="card-head"&gt;迷途&lt;/div&gt;
     &lt;div class="card-body"&gt;
         &lt;p&gt;沿着鸽子的哨音&lt;/p&gt;
@@ -1943,7 +1944,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="card"&gt;
+          <pre><code class="language-markup">&lt;div class="card"&gt;
     &lt;div class="card-image-top"&gt;&lt;img src="..."&gt;&lt;/div&gt;
     &lt;div class="card-body"&gt;
         ...
@@ -2015,7 +2016,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="card"&gt;
+          <pre><code class="language-markup">&lt;div class="card"&gt;
     &lt;div class="card-body"&gt;
         ...
     &lt;/div&gt;
@@ -2095,7 +2096,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="card bg-primary"&gt;
+          <pre><code class="language-markup">&lt;div class="card bg-primary"&gt;
     &lt;div class="card-body"&gt;
         ...
     &lt;/div&gt;
@@ -2144,7 +2145,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="card text-center"&gt;
+          <pre><code class="language-markup">&lt;div class="card text-center"&gt;
     &lt;div class="card-body"&gt;
         ...
     &lt;/div&gt;
@@ -2225,7 +2226,7 @@
               </div>
             </div>
           </div>
-          <pre><code>&lt;div class="grid"&gt;
+          <pre><code class="language-markup">&lt;div class="grid"&gt;
     &lt;div class="col-4"&gt;
         &lt;div class="card"&gt;
             &lt;div class="card-image-top"&gt;&lt;img src="..."&gt;&lt;/div&gt;
@@ -2311,7 +2312,7 @@
           }
         </script>
       </div>
-      <pre><code>&lt;a role="dialog" data-type="alert" data-content="您看到了一个弹框了" class="btn btn-default"&gt;弹出一个 Alert&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a role="dialog" data-type="alert" data-content="您看到了一个弹框了" class="btn btn-default"&gt;弹出一个 Alert&lt;/a&gt;
 &lt;a role="dialog" data-type="confirm" data-content="您确定您看到了一个弹框了吗？" data-event="fYes" class="btn btn-default"&gt;弹出一个 Confirm&lt;/a&gt;
 &lt;a role="dialog" data-custom=".test-dialog" class="btn btn-default" data-title="自定义模态窗" data-size="640,480"&gt;弹出一个自定义的模态窗&lt;/a&gt;</code></pre>
       <p>将触发对象设置<code>rold="dialog"</code>属性可以使其拥有触发弹框的功能。设置<code>data-type</code>可以使用默认的两种弹框类型<code>alert</code>、<code>confirm</code>，并显示<code>data-content</code>里的内容。使用自定义的<code>data-custom</code>则可指定一个选择器，Dialog 会将选择器的对象填充至弹框的内容区。<code>data-title</code>定义标题，<code>data-size</code>定义大小，定义<code>data-event</code>则可以在弹框关闭时触发对应的事件。</p>
@@ -2331,7 +2332,7 @@
           <p>And this is a multi-line text.</p>
         </div>
       </div>
-      <pre><code>&lt;a role="tooltip" data-placement="left" class="btn btn-default"&gt;向左&lt;/a&gt;
+      <pre><code class="language-markup">&lt;a role="tooltip" data-placement="left" class="btn btn-default"&gt;向左&lt;/a&gt;
 &lt;div class="tooltip"&gt;Tooltip on the left&lt;/div&gt;
 &lt;a role="tooltip" data-placement="top" class="btn btn-default"&gt;向上&lt;/a&gt;
 &lt;div class="tooltip"&gt;Tooltip on the top&lt;/div&gt;
@@ -2357,7 +2358,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav"&gt;
+          <pre><code class="language-markup">&lt;div class="nav"&gt;
     &lt;ul&gt;
         &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
@@ -2378,7 +2379,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+          <pre><code class="language-markup">&lt;div class="nav nav-horizontal"&gt;
     &lt;ul&gt;
         &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
@@ -2399,7 +2400,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav nav-tabs"&gt;
+          <pre><code class="language-markup">&lt;div class="nav nav-tabs"&gt;
     &lt;ul&gt;
         &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#"&gt;产品&lt;/a&gt;&lt;/li&gt;
@@ -2421,7 +2422,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+          <pre><code class="language-markup">&lt;div class="nav nav-horizontal"&gt;
     &lt;ul&gt;
         &lt;li class="nav-right"&gt;&lt;a href="#"&gt;联系我们&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -2447,7 +2448,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav nav-justify"&gt;
+          <pre><code class="language-markup">&lt;div class="nav nav-justify"&gt;
     &lt;ul&gt;
         ...
     &lt;/ul&gt;
@@ -2467,7 +2468,7 @@
               </ul>
             </div>
           </div>
-          <pre><code>&lt;div class="nav nav-horizontal"&gt;
+          <pre><code class="language-markup">&lt;div class="nav nav-horizontal"&gt;
     &lt;a class="nav-header"&gt;SaUI&lt;/a&gt;
     &lt;ul&gt;
         ...
@@ -2502,7 +2503,7 @@
                 </li>
               </ul>
             </div>
-            <pre><code>&lt;div class="nav nav-horizontal"&gt;
+            <pre><code class="language-markup">&lt;div class="nav nav-horizontal"&gt;
     &lt;div class="nav-header"&gt;SaUI&lt;/div&gt;
     &lt;ul&gt;
         &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
@@ -2526,6 +2527,32 @@
           </div>
         </li>
       </ol>
+      <h3><a name="menu"></a>左侧菜单导航<sup>JS</sup></h3>
+      <p>左侧菜单导航是一个响应式导航，主要是针对在移动端屏幕小而适配的。它能在屏幕空间不足的情况下自动收缩，而在足够的情况下默认展开。通过<code>sa.ui.js</code>它还优化了在移动端的滚动效果。</p>
+      <p>
+        添加<code>.nav-menu</code> class 则可以使用左侧菜单导航，表现上与一般的常规竖排导航并无区别。
+        <br> 但要作用特性还需为这个导航定义属性<code>role="menu"</code> <code>data-width="*"</code>，还要为其的触发对象添加<code>role="menu-toggle"</code>，剩下的就交由<code>sa.ui.js</code>来完成。
+      </p>
+      <div class="example">
+        <div class="bg-warn">示例效果参照本页的左侧菜单，请在移动端查看最终效果</div>
+      </div>
+      <pre><code class="language-markup">&lt;div role="menu" data-width="1000" class="nav nav-menu menu-open"&gt;
+		&lt;!--
+				添加 .hidden-md-down 使其在小屏幕下隐藏，避免出现两个 .nav-header
+				当然也可以只写一个，本例里使用了两个不同的 .nav-header 用于表现不同的效果
+		--&gt;
+		&lt;a href="http://saui.omooer.com" title="SaUI" class="nav-header hidden-md-down"&gt;&lt;span&gt;SaUI&lt;/span&gt;&lt;/a&gt;
+		&lt;!-- 添加菜单图标作为菜单展开的触发对象 .hidden-sm-up 使其在大屏幕下隐藏 --&gt;
+		&lt;div class="nav-header hidden-sm-up" role="menu-toggle"&gt;&lt;i class="sa-icon sa-icon-bars text-primary"&gt;&lt;/i&gt;&lt;/div&gt;
+		&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;前言&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;栅格&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;表格&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;表单&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;按钮&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;图片&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
       <h3><a name="nav-bar"></a>导航条</h3>
       <p>导航条是一个物殊的导航类，可以用来应用各种工具栏之类的布局。使用非常简单，只需要原来的导航上面加上 class <code>.nav-bar</code>就可以应用导航条的样式。导航条的一些基本样式与横排导航几乎一致而且它还具备完整的栅格系统，您可以在里面使用<code>.col-*</code>这样的栅格列。</p>
       <div class="example">
@@ -2566,7 +2593,7 @@
           </ul>
         </div>
       </div>
-      <pre><code>&lt;div class="nav nav-bar"&gt;
+      <pre><code class="language-markup">&lt;div class="nav nav-bar"&gt;
     &lt;div class="nav-header"&gt;SaUI&lt;/div&gt;
     &lt;ul&gt;
         &lt;li class="nav-active"&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
@@ -2610,11 +2637,13 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
+      <p>本页面示例代码使用了 <a href="http://prismjs.com/" target="_blank">Prism.js</a> 进行语法高亮。</p>
       <div class="copyright">
         <p>Powered by <a href="http://saui.omooer.com">SaUI</a> Copyright &copy; 2016 O'Mooer Works</p>
       </div>
     </div>
-    <nav class="nav"><a href="http://saui.omooer.com" title="SaUI" class="nav-header"><span class="hidden-md-down">SaUI</span><i class="hidden-sm-up sa-icon sa-icon-bars"></i></a>
+    <nav role="menu" data-width="1000" class="nav nav-menu"><a href="http://saui.omooer.com" title="SaUI" class="nav-header hidden-md-down"><span>SaUI</span></a>
+      <div role="menu-toggle" class="nav-header hidden-sm-up"><i class="sa-icon sa-icon-bars text-primary"></i></div>
       <ul>
         <li><a href="#intro">前言</a></li>
         <li><a href="#grid">栅格</a></li>
@@ -2634,18 +2663,34 @@
             <li><a href="#dialog">弹框<sup>JS</sup></a></li>
             <li><a href="#tooltip">信息提示<sup>JS</sup></a></li>
             <li><a href="#nav">导航</a></li>
+            <li><a href="#menu">左侧菜单导航<sup>JS</sup></a></li>
             <li><a href="#nav-bar">导航条</a></li>
           </ul>
         </li>
       </ul>
     </nav>
     <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/prism/9000.0.1/prism.min.js"></script>
     <script src="../js/jquery.sa.ui.js"></script>
     <script>$(function () {
+	var sOldTitle = document.title;
+
 	function fHashChange(sHash) {
 		$('nav.nav li.nav-active').removeClass('nav-active');
 		$('nav.nav li a[href="' + sHash + '"]:only-child').parent().addClass('nav-active');
+		document.title = $('.content a[name="' + sHash.replace('#', '') + '"]')[0].nextSibling.nodeValue + ' - ' + sOldTitle;
 	}
+
+	function fHideNav() {
+	}
+
+	$('nav .nav-header .sa-icon-bars').on('click', function () {
+		$('nav.nav').addClass('open-menu').selfScroll();
+		return false;
+	});
+
+	$('body').on('click touchend', '.content', fHideNav)
+		.on('click', 'nav a', fHideNav);
 
 	$(window).on('hashchange', function (oHash) {
 		if (location.hash) {
