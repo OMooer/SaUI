@@ -2951,6 +2951,7 @@ img.img-thumbnail {
  **/
 .card {
   position: relative;
+  display: block;
   overflow: hidden;
   background-color: #fff;
   border: solid 0.01rem #ccc;
@@ -3049,6 +3050,7 @@ img.img-thumbnail {
   border-radius: 0.04rem;
   text-align: center;
   color: #fff;
+  height: 100%;
   z-index: 1;
 }
 .card .card-image-top img {
@@ -3064,6 +3066,9 @@ img.img-thumbnail {
 }
 .card .card-image-bottom:first-child img {
   border-radius: 0 0 0.04rem 0.04rem;
+}
+a.card {
+  text-decoration: none;
 }
 /**********************
  * 弹框
@@ -3219,6 +3224,54 @@ img.img-thumbnail {
 .dropdown.dropdown-right .dropdown-menu {
   left: auto;
   right: -0.01rem;
+}
+/****
+ * 列表
+ **/
+.time-line {
+  margin-left: .10rem;
+  padding-left: .20rem;
+  border-left: solid 0.04rem #3B99FC;
+}
+.time-line > li {
+  position: relative;
+  padding-bottom: .30rem;
+}
+.time-line > li:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
+}
+.time-line > li:nth-child(2n) {
+  background-color: #f7f7f7;
+}
+.time-line > li:last-child:before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: #3B99FC;
+  border-radius: 50%;
+  left: -0.27rem;
+  bottom: 0;
+  width: .10rem;
+  height: .10rem;
+}
+.time-line > li .line-date {
+  position: relative;
+  float: left;
+  padding: .03rem .05rem;
+  background-color: #3B99FC;
+  border-radius: 0.04rem;
+  color: #fff;
+  left: -0.34rem;
+}
+.time-line > li .line-content {
+  float: left;
+  margin-left: -0.14rem;
 }
 /**********************
  * 菜单导航
@@ -3458,6 +3511,17 @@ img.img-thumbnail {
 }
 .nav.nav-bar .dropdown {
   margin: .03rem 0;
+}
+.nav.nav-bar.top-bar {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-bottom: solid 0.01rem rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1024;
 }
 /**********************
  * 菜单导航

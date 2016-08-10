@@ -5,6 +5,7 @@
 
 .card {
 	position: relative;
+	display: block;
 	overflow: hidden;
 	background-color: @white;
 	border: solid .01rem @line;
@@ -127,6 +128,7 @@
 				border-radius: @radius;
 				text-align: center;
 				color: @white;
+				height: 100%;
 				z-index: 1;
 			}
 		}
@@ -148,5 +150,9 @@
 				border-radius: 0 0 @radius @radius;
 			}
 		}
+	}
+
+	a& {
+		text-decoration: none;
 	}
 }

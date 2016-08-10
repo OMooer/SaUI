@@ -1,0 +1,47 @@
+/****
+ * 列表
+ **/
+@import "../common/common";
+
+.time-line {
+	margin-left: .10rem;
+	padding-left: .20rem;
+	border-left: solid .04rem @primary;
+
+	& > li {
+		.clearfix();
+		position: relative;
+		padding-bottom: .30rem;
+
+		&:nth-child(2n) {
+			background-color: @snow;
+		}
+
+		&:last-child:before {
+			content: "";
+			position: absolute;
+			display: block;
+			background: @primary;
+			border-radius: 50%;
+			left: -.27rem;
+			bottom: 0;
+			width: .10rem;
+			height: .10rem;
+		}
+
+		.line-date {
+			position: relative;
+			float: left;
+			padding: .03rem .05rem;
+			background-color: @primary;
+			border-radius: @radius;
+			color: @white;
+			left: -.34rem;
+		}
+
+		.line-content {
+			float: left;
+			margin-left: -.14rem;
+		}
+	}
+}
