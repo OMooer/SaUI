@@ -473,19 +473,9 @@ textarea {
 html {
   font-size: 100px;
 }
-@media only screen and (min-width: 375px) {
-  html {
-    font-size: 117.19px;
-  }
-}
-@media only screen and (min-width: 414px) {
-  html {
-    font-size: 129.38px;
-  }
-}
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   html {
-    font-size: 240px;
+    font-size: 200px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -2649,6 +2639,7 @@ form.form-horizontal .form-control {
  **/
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   form.form input[type="checkbox"].form-switch {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-appearance: none;
     position: relative;
     border-radius: .13rem;
@@ -2821,6 +2812,7 @@ form.form-horizontal .form-control {
  * 表单
  **/
 table.table {
+  table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
 }
@@ -2829,6 +2821,7 @@ table.table tr td {
   padding: .08rem .15rem;
   border-bottom: solid 0.01rem #ccc;
   text-align: left;
+  word-break: break-all;
 }
 table.table thead tr {
   background: #f7f7f7;
@@ -2889,6 +2882,7 @@ img.img-thumbnail {
   background-color: #fff;
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
+  box-sizing: border-box;
 }
 /**********************
  * 组件库

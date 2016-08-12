@@ -19,7 +19,7 @@ else {
 
 		$('body')
 
-			/* 下拉菜单 */
+		/* 下拉菜单 */
 			.on('click touchend', '.dropdown:not(.dropdown-open)', function () {
 				$('.dropdown[open]').removeClass('dropdown-open');
 				$(this).attr('open', true).addClass('dropdown-open');
@@ -135,6 +135,9 @@ else {
 
 			if (nClientWidth < nMaxWidth) {
 				$Menu.addClass('nav-mini-menu');
+			}
+			else {
+				$Menu.removeClass('nav-mini-menu');
 			}
 			$(window).off('resize.menu').on('resize.menu', fResponsiveMenu);
 		}
