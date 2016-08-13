@@ -29,16 +29,13 @@ form.form {
 		&[type="search"],
 		&[type="tel"],
 		&[type="number"] {
+			-webkit-appearance: none;
 			padding: .05rem .07rem;
 			line-height: .20rem;
 
 			&:focus {
 				border-color: @blue;
 			}
-		}
-
-		&[type="search"] {
-			-webkit-appearance: none;
 		}
 
 		&[type="checkbox"],
@@ -69,6 +66,7 @@ form.form {
 	}
 
 	textarea {
+		-webkit-appearance: none;
 		.__item();
 		padding: .05rem .07rem;
 		vertical-align: top;
@@ -81,9 +79,9 @@ form.form {
 	}
 
 	select {
-		.__item();
 		-webkit-appearance: none;
 		-moz-appearance: none;
+		.__item();
 		padding: .05rem .07rem;
 		line-height: .20rem;
 		width: 100%;

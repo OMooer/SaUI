@@ -2372,6 +2372,7 @@ form.form input[type="url"],
 form.form input[type="search"],
 form.form input[type="tel"],
 form.form input[type="number"] {
+  -webkit-appearance: none;
   padding: .05rem .07rem;
   line-height: .20rem;
 }
@@ -2383,9 +2384,6 @@ form.form input[type="search"]:focus,
 form.form input[type="tel"]:focus,
 form.form input[type="number"]:focus {
   border-color: #3B99FC;
-}
-form.form input[type="search"] {
-  -webkit-appearance: none;
 }
 form.form input[type="checkbox"],
 form.form input[type="radio"] {
@@ -2408,6 +2406,7 @@ form.form input[type="submit"]::-moz-focus-inner {
   padding: 0;
 }
 form.form textarea {
+  -webkit-appearance: none;
   box-sizing: border-box;
   background-color: #fff;
   border: solid 0.01rem #ccc;
@@ -2423,14 +2422,14 @@ form.form textarea:focus {
   border-color: #3B99FC;
 }
 form.form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   box-sizing: border-box;
   background-color: #fff;
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
   transition: border-color 0.3s ease-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   padding: .05rem .07rem;
   line-height: .20rem;
   width: 100%;
@@ -3257,15 +3256,18 @@ a.card {
 .time-line > li .line-date {
   position: relative;
   float: left;
+  margin-left: -0.34rem;
   padding: .03rem .05rem;
   background-color: #3B99FC;
   border-radius: 0.04rem;
   color: #fff;
-  left: -0.34rem;
 }
 .time-line > li .line-content {
+  clear: both;
   float: left;
-  margin-left: -0.14rem;
+  padding: 0 .10rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 /**********************
  * 菜单导航
@@ -3442,7 +3444,7 @@ a.card {
 .nav.nav-menu.nav-mini-menu.open-menu {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
-  box-shadow: 0 1px 5px #000;
+  box-shadow: 0 .01rem .05rem #000;
   top: 0;
   bottom: 0;
   width: 80%;
