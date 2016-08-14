@@ -744,6 +744,7 @@ form.form button {
   display: inline-block;
   margin-right: .10rem;
   padding: .10rem 1em;
+  background-clip: padding-box;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -2375,6 +2376,7 @@ form.form input[type="number"] {
   -webkit-appearance: none;
   padding: .05rem .07rem;
   line-height: .20rem;
+  max-width: 100%;
 }
 form.form input[type="text"]:focus,
 form.form input[type="email"]:focus,
@@ -2561,6 +2563,7 @@ form.form .input-group input[type="tel"],
 form.form .input-group input[type="number"] {
   float: left;
   border-radius: 0;
+  width: 1.6rem;
 }
 form.form .input-group input[type="text"]:first-child,
 form.form .input-group input[type="email"]:first-child,
@@ -3249,7 +3252,7 @@ a.card {
   background: #3B99FC;
   border-radius: 50%;
   left: -0.27rem;
-  bottom: 0;
+  bottom: -0.01rem;
   width: .10rem;
   height: .10rem;
 }
