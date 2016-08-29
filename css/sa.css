@@ -502,13 +502,6 @@ p {
   margin-bottom: .5em;
   line-height: 1.6em;
 }
-ul {
-  margin: 0;
-  padding: 0;
-}
-ul li {
-  list-style: none;
-}
 a:link {
   text-decoration: none;
   color: #3B99FC;
@@ -539,6 +532,7 @@ code {
 pre code {
   display: block;
   padding: .05rem;
+  tab-size: 4;
 }
 blockquote {
   padding: .05rem .10rem;
@@ -552,6 +546,10 @@ img {
   border: 0;
   vertical-align: middle;
 }
+select option {
+  margin: .01rem 0;
+  padding-bottom: 0;
+}
 /**********************
  * 全局作用类
  **/
@@ -563,6 +561,13 @@ img {
   line-height: 0;
   font-size: 0;
   height: 0;
+}
+.bg-default {
+  padding: .06rem;
+  box-sizing: border-box;
+  background-color: #dddddd;
+  border: solid 0.01rem #555;
+  color: #333;
 }
 .bg-primary {
   padding: .06rem;
@@ -2330,7 +2335,8 @@ aform.form button[type="reset"] {
 }
 .grid.grid-pad [class*="col-"],
 .nav.nav-bar.grid-pad [class*="col-"] {
-  margin: .08rem 0;
+  margin-top: .08rem;
+  margin-bottom: .08rem;
   padding: 0 .08rem;
 }
 .grid.grid-pad .row,
@@ -2340,7 +2346,8 @@ aform.form button[type="reset"] {
 }
 .grid.grid-pad .row [class*="col-"],
 .nav.nav-bar.grid-pad .row [class*="col-"] {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0 .08rem;
 }
 /**********************
@@ -2953,6 +2960,7 @@ img.img-thumbnail {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
 }
+.card.bg-default,
 .card.bg-primary,
 .card.bg-success,
 .card.bg-info,
@@ -2960,6 +2968,10 @@ img.img-thumbnail {
 .card.bg-warn {
   border: 0;
   color: #fff;
+}
+.card.bg-default {
+  background-color: #e1e1e1;
+  color: #333;
 }
 .card.bg-primary {
   background-color: #54a6fc;
@@ -3017,16 +3029,8 @@ img.img-thumbnail {
   border-top: solid 0.01rem #ccc;
   border-radius: 0 0 0.04rem 0.04rem;
 }
-.card ul.card-list li {
-  padding-left: .10rem;
-  border-top: solid 0.01rem #ccc;
-  line-height: .40rem;
-}
-.card ul.card-list li:first-child {
-  border-top: 0;
-}
-.card .card-body + ul.card-list li:first-child,
-.card ul.card-list + .card-body {
+.card .card-body + ul.listing li:first-child,
+.card ul.listing + .card-body {
   border-top: solid 0.01rem #ccc;
 }
 .card .card-image img {
@@ -3224,16 +3228,41 @@ a.card {
 /****
  * 列表
  **/
-.time-line {
+ul.list {
+  margin: 0;
+  padding: 0;
+}
+ul.list.listing li {
+  padding-left: .10rem;
+  border-top: solid 0.01rem #ccc;
+  list-style: none;
+  line-height: .40rem;
+}
+ul.list.listing li:first-child {
+  border-top: 0;
+}
+ul.list.listing li > ul {
+  padding-left: 1.5em;
+}
+ul.list.listing li > ul > li {
+  padding-left: 0;
+  border: 0;
+  list-style: disc;
+  line-height: 2;
+}
+ul.list.listing li > ul > li > ul > li {
+  list-style: circle;
+}
+ul.list.time-line {
   margin-left: .10rem;
   padding-left: .20rem;
   border-left: solid 0.04rem #3B99FC;
 }
-.time-line > li {
+ul.list.time-line > li {
   position: relative;
   padding-bottom: .30rem;
 }
-.time-line > li:after {
+ul.list.time-line > li:after {
   content: "";
   clear: both;
   display: block;
@@ -3242,10 +3271,10 @@ a.card {
   font-size: 0;
   height: 0;
 }
-.time-line > li:nth-child(2n) {
+ul.list.time-line > li:nth-child(2n) {
   background-color: #f7f7f7;
 }
-.time-line > li:last-child:before {
+ul.list.time-line > li:last-child:before {
   content: "";
   position: absolute;
   display: block;
@@ -3256,7 +3285,7 @@ a.card {
   width: .10rem;
   height: .10rem;
 }
-.time-line > li .line-date {
+ul.list.time-line > li .line-date {
   position: relative;
   float: left;
   margin-left: -0.34rem;
@@ -3265,7 +3294,7 @@ a.card {
   border-radius: 0.04rem;
   color: #fff;
 }
-.time-line > li .line-content {
+ul.list.time-line > li .line-content {
   clear: both;
   float: left;
   padding: 0 .10rem;
@@ -3275,6 +3304,13 @@ a.card {
 /**********************
  * 菜单导航
  **/
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+.nav ul li {
+  list-style: none;
+}
 .nav a,
 .dropdown .dropdown-menu .dropdown-head,
 .dropdown .dropdown-menu .dropdown-item a {
@@ -3522,11 +3558,27 @@ a.card {
   right: 0;
   z-index: 1024;
 }
+/****
+ * 页面
+ **/
+.page-header {
+  margin-bottom: .10rem;
+  border-bottom: solid 0.01rem #ccc;
+}
+.page-header h1 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+.page-header h1 small {
+  font-size: 60%;
+  color: #777;
+}
 /**********************
  * 菜单导航
  **/
 ul.paging {
   margin: .10rem 0;
+  padding: 0;
   line-height: .20rem;
   font-size: 0.12rem;
 }
@@ -3541,6 +3593,7 @@ ul.paging:after {
 }
 ul.paging li {
   float: left;
+  list-style: none;
   cursor: default;
   text-align: center;
   min-width: .24rem;

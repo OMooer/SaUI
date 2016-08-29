@@ -12,6 +12,7 @@
 	border-radius: @radius;
 
 	&.bg- {
+		&default,
 		&primary,
 		&success,
 		&info,
@@ -19,6 +20,10 @@
 		&warn {
 			border: 0;
 			color: @white;
+		}
+		&default {
+			background-color: lighten(@default, 55%);
+			color: @black;
 		}
 		&primary {
 			background-color: lighten(@primary, 5%);
@@ -86,22 +91,12 @@
 		border-radius: 0 0 @radius @radius;
 	}
 
-	ul.card-list {
-		li {
-			padding-left: .10rem;
-			border-top: solid .01rem @line;
-			line-height: .40rem;
-
-			&:first-child {
-				border-top: 0;
-			}
-		}
-
+	ul.listing {
 		& + .card-body {
-			&:extend(.card .card-body + ul.card-list li:first-child);
+			&:extend(.card .card-body + ul.listing li:first-child);
 		}
 	}
-	.card-body + ul.card-list {
+	.card-body + ul.listing {
 		li:first-child {
 			border-top: solid .01rem @line;
 		}

@@ -3,48 +3,81 @@
  **/
 @import "../common/common";
 
-.time-line {
-	margin-left: .10rem;
-	padding-left: .20rem;
-	border-left: solid .04rem @primary;
+ul.list {
+	margin: 0;
+	padding: 0;
 
-	& > li {
-		.clearfix();
-		position: relative;
-		padding-bottom: .30rem;
+	&.listing {
+		li {
+			padding-left: .10rem;
+			border-top: solid .01rem @line;
+			list-style: none;
+			line-height: .40rem;
 
-		&:nth-child(2n) {
-			background-color: @snow;
+			&:first-child {
+				border-top: 0;
+			}
+
+			& > ul {
+				//margin-left: -.10rem;
+				padding-left: 1.5em;
+				//border-top: solid .01rem @line;
+				& > li {
+					padding-left: 0;
+					border: 0;
+					list-style: disc;
+					line-height: 2;
+					& > ul > li {
+						list-style: circle;
+					}
+				}
+			}
 		}
+	}
 
-		&:last-child:before {
-			content: "";
-			position: absolute;
-			display: block;
-			background: @primary;
-			border-radius: 50%;
-			left: -.27rem;
-			bottom: -.01rem;
-			width: .10rem;
-			height: .10rem;
-		}
+	&.time-line {
+		margin-left: .10rem;
+		padding-left: .20rem;
+		border-left: solid .04rem @primary;
 
-		.line-date {
+		& > li {
+			.clearfix();
 			position: relative;
-			float: left;
-			margin-left: -.34rem;
-			padding: .03rem .05rem;
-			background-color: @primary;
-			border-radius: @radius;
-			color: @white;
-		}
+			padding-bottom: .30rem;
 
-		.line-content {
-			clear: both;
-			float: left;
-			padding: 0 .10rem;
-			box-sizing: border-box;
-			width: 100%;
+			&:nth-child(2n) {
+				background-color: @snow;
+			}
+
+			&:last-child:before {
+				content: "";
+				position: absolute;
+				display: block;
+				background: @primary;
+				border-radius: 50%;
+				left: -.27rem;
+				bottom: -.01rem;
+				width: .10rem;
+				height: .10rem;
+			}
+
+			.line-date {
+				position: relative;
+				float: left;
+				margin-left: -.34rem;
+				padding: .03rem .05rem;
+				background-color: @primary;
+				border-radius: @radius;
+				color: @white;
+			}
+
+			.line-content {
+				clear: both;
+				float: left;
+				padding: 0 .10rem;
+				box-sizing: border-box;
+				width: 100%;
+			}
 		}
 	}
 }

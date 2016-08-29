@@ -54,15 +54,6 @@ p {
 	line-height: 1.6em;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-
-	li {
-		list-style: none;
-	}
-}
-
 a {
 	&:link {
 		text-decoration: none;
@@ -96,6 +87,7 @@ code {
 	pre & {
 		display: block;
 		padding: .05rem;
+		tab-size: 4;
 	}
 }
 
@@ -113,4 +105,11 @@ img {
 	display: inline-block;
 	border: 0;
 	vertical-align: middle;
+}
+
+select {
+	option {
+		margin: .01rem 0;
+		padding-bottom: 0;
+	}
 }
