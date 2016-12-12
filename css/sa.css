@@ -857,6 +857,7 @@ a.btn.btn-default-o {
   color: #555;
 }
 .btn.btn-primary,
+form.form button[type="button"].btn-primary,
 form.form button[type="submit"] {
   background-color: #3B99FC;
   border: solid .01rem transparent;
@@ -864,17 +865,22 @@ form.form button[type="submit"] {
 }
 .btn.btn-primary.btn-active,
 .btn.btn-primary:hover,
+form.form button[type="button"].btn-primary.btn-active,
+form.form button[type="button"].btn-primary:hover,
 form.form button[type="submit"].btn-active,
 form.form button[type="submit"]:hover {
   background-color: #1887fb;
 }
 .btn.btn-primary.btn-disabled:hover,
 .btn.btn-primary[disabled]:hover,
+form.form button[type="button"].btn-primary.btn-disabled:hover,
+form.form button[type="button"].btn-primary[disabled]:hover,
 form.form button[type="submit"].btn-disabled:hover,
 form.form button[type="submit"][disabled]:hover {
   background-color: #3B99FC;
 }
 .btn.btn-primary.btn-hollow,
+form.form button[type="button"].btn-primary.btn-hollow,
 form.form button[type="submit"].btn-hollow {
   padding-top: .09rem;
   padding-bottom: .09rem;
@@ -883,11 +889,14 @@ form.form button[type="submit"].btn-hollow {
   color: #3B99FC;
 }
 .btn.btn-primary.btn-hollow:hover,
+form.form button[type="button"].btn-primary.btn-hollow:hover,
 form.form button[type="submit"].btn-hollow:hover {
   background-color: #d8ebfe;
 }
 .btn.btn-primary.btn-hollow.btn-disabled,
 .btn.btn-primary.btn-hollow[disabled],
+form.form button[type="button"].btn-primary.btn-hollow.btn-disabled,
+form.form button[type="button"].btn-primary.btn-hollow[disabled],
 form.form button[type="submit"].btn-hollow.btn-disabled,
 form.form button[type="submit"].btn-hollow[disabled] {
   opacity: 0.3;
@@ -895,120 +904,160 @@ form.form button[type="submit"].btn-hollow[disabled] {
 }
 .btn.btn-primary.btn-hollow.btn-disabled:hover,
 .btn.btn-primary.btn-hollow[disabled]:hover,
+form.form button[type="button"].btn-primary.btn-hollow.btn-disabled:hover,
+form.form button[type="button"].btn-primary.btn-hollow[disabled]:hover,
 form.form button[type="submit"].btn-hollow.btn-disabled:hover,
 form.form button[type="submit"].btn-hollow[disabled]:hover {
   background-color: transparent;
 }
 a.btn.btn-primary,
+aform.form button[type="button"].btn-primary,
 aform.form button[type="submit"] {
   color: #fff;
 }
-.btn.btn-success {
+.btn.btn-success,
+form.form button[type="button"].btn-success {
   background-color: #04BE02;
   border: solid .01rem transparent;
   color: #fff;
 }
 .btn.btn-success.btn-active,
-.btn.btn-success:hover {
+.btn.btn-success:hover,
+form.form button[type="button"].btn-success.btn-active,
+form.form button[type="button"].btn-success:hover {
   background-color: #039b02;
 }
 .btn.btn-success.btn-disabled:hover,
-.btn.btn-success[disabled]:hover {
+.btn.btn-success[disabled]:hover,
+form.form button[type="button"].btn-success.btn-disabled:hover,
+form.form button[type="button"].btn-success[disabled]:hover {
   background-color: #04BE02;
 }
-.btn.btn-success.btn-hollow {
+.btn.btn-success.btn-hollow,
+form.form button[type="button"].btn-success.btn-hollow {
   padding-top: .09rem;
   padding-bottom: .09rem;
   background-color: transparent;
   border: solid 0.02rem #04BE02;
   color: #04BE02;
 }
-.btn.btn-success.btn-hollow:hover {
+.btn.btn-success.btn-hollow:hover,
+form.form button[type="button"].btn-success.btn-hollow:hover {
   background-color: #cdf2cc;
 }
 .btn.btn-success.btn-hollow.btn-disabled,
-.btn.btn-success.btn-hollow[disabled] {
+.btn.btn-success.btn-hollow[disabled],
+form.form button[type="button"].btn-success.btn-hollow.btn-disabled,
+form.form button[type="button"].btn-success.btn-hollow[disabled] {
   opacity: 0.3;
   cursor: no-drop;
 }
 .btn.btn-success.btn-hollow.btn-disabled:hover,
-.btn.btn-success.btn-hollow[disabled]:hover {
+.btn.btn-success.btn-hollow[disabled]:hover,
+form.form button[type="button"].btn-success.btn-hollow.btn-disabled:hover,
+form.form button[type="button"].btn-success.btn-hollow[disabled]:hover {
   background-color: transparent;
 }
-a.btn.btn-success {
+a.btn.btn-success,
+aform.form button[type="button"].btn-success {
   color: #fff;
 }
-.btn.btn-info {
+.btn.btn-info,
+form.form button[type="button"].btn-info {
   background-color: #5bc0de;
   border: solid .01rem transparent;
   color: #fff;
 }
 .btn.btn-info.btn-active,
-.btn.btn-info:hover {
+.btn.btn-info:hover,
+form.form button[type="button"].btn-info.btn-active,
+form.form button[type="button"].btn-info:hover {
   background-color: #3db5d8;
 }
 .btn.btn-info.btn-disabled:hover,
-.btn.btn-info[disabled]:hover {
+.btn.btn-info[disabled]:hover,
+form.form button[type="button"].btn-info.btn-disabled:hover,
+form.form button[type="button"].btn-info[disabled]:hover {
   background-color: #5bc0de;
 }
-.btn.btn-info.btn-hollow {
+.btn.btn-info.btn-hollow,
+form.form button[type="button"].btn-info.btn-hollow {
   padding-top: .09rem;
   padding-bottom: .09rem;
   background-color: transparent;
   border: solid 0.02rem #5bc0de;
   color: #5bc0de;
 }
-.btn.btn-info.btn-hollow:hover {
+.btn.btn-info.btn-hollow:hover,
+form.form button[type="button"].btn-info.btn-hollow:hover {
   background-color: #def2f8;
 }
 .btn.btn-info.btn-hollow.btn-disabled,
-.btn.btn-info.btn-hollow[disabled] {
+.btn.btn-info.btn-hollow[disabled],
+form.form button[type="button"].btn-info.btn-hollow.btn-disabled,
+form.form button[type="button"].btn-info.btn-hollow[disabled] {
   opacity: 0.3;
   cursor: no-drop;
 }
 .btn.btn-info.btn-hollow.btn-disabled:hover,
-.btn.btn-info.btn-hollow[disabled]:hover {
+.btn.btn-info.btn-hollow[disabled]:hover,
+form.form button[type="button"].btn-info.btn-hollow.btn-disabled:hover,
+form.form button[type="button"].btn-info.btn-hollow[disabled]:hover {
   background-color: transparent;
 }
-a.btn.btn-info {
+a.btn.btn-info,
+aform.form button[type="button"].btn-info {
   color: #fff;
 }
-.btn.btn-danger {
+.btn.btn-danger,
+form.form button[type="button"].btn-danger {
   background-color: #e93c20;
   border: solid .01rem transparent;
   color: #fff;
 }
 .btn.btn-danger.btn-active,
-.btn.btn-danger:hover {
+.btn.btn-danger:hover,
+form.form button[type="button"].btn-danger.btn-active,
+form.form button[type="button"].btn-danger:hover {
   background-color: #d12f15;
 }
 .btn.btn-danger.btn-disabled:hover,
-.btn.btn-danger[disabled]:hover {
+.btn.btn-danger[disabled]:hover,
+form.form button[type="button"].btn-danger.btn-disabled:hover,
+form.form button[type="button"].btn-danger[disabled]:hover {
   background-color: #e93c20;
 }
-.btn.btn-danger.btn-hollow {
+.btn.btn-danger.btn-hollow,
+form.form button[type="button"].btn-danger.btn-hollow {
   padding-top: .09rem;
   padding-bottom: .09rem;
   background-color: transparent;
   border: solid 0.02rem #e93c20;
   color: #e93c20;
 }
-.btn.btn-danger.btn-hollow:hover {
+.btn.btn-danger.btn-hollow:hover,
+form.form button[type="button"].btn-danger.btn-hollow:hover {
   background-color: #fbd8d2;
 }
 .btn.btn-danger.btn-hollow.btn-disabled,
-.btn.btn-danger.btn-hollow[disabled] {
+.btn.btn-danger.btn-hollow[disabled],
+form.form button[type="button"].btn-danger.btn-hollow.btn-disabled,
+form.form button[type="button"].btn-danger.btn-hollow[disabled] {
   opacity: 0.3;
   cursor: no-drop;
 }
 .btn.btn-danger.btn-hollow.btn-disabled:hover,
-.btn.btn-danger.btn-hollow[disabled]:hover {
+.btn.btn-danger.btn-hollow[disabled]:hover,
+form.form button[type="button"].btn-danger.btn-hollow.btn-disabled:hover,
+form.form button[type="button"].btn-danger.btn-hollow[disabled]:hover {
   background-color: transparent;
 }
-a.btn.btn-danger {
+a.btn.btn-danger,
+aform.form button[type="button"].btn-danger {
   color: #fff;
 }
 .btn.btn-warn,
+form.form button[type="button"].btn-warn,
 form.form button[type="reset"] {
   background-color: #ffae00;
   border: solid .01rem transparent;
@@ -1016,17 +1065,22 @@ form.form button[type="reset"] {
 }
 .btn.btn-warn.btn-active,
 .btn.btn-warn:hover,
+form.form button[type="button"].btn-warn.btn-active,
+form.form button[type="button"].btn-warn:hover,
 form.form button[type="reset"].btn-active,
 form.form button[type="reset"]:hover {
   background-color: #db9600;
 }
 .btn.btn-warn.btn-disabled:hover,
 .btn.btn-warn[disabled]:hover,
+form.form button[type="button"].btn-warn.btn-disabled:hover,
+form.form button[type="button"].btn-warn[disabled]:hover,
 form.form button[type="reset"].btn-disabled:hover,
 form.form button[type="reset"][disabled]:hover {
   background-color: #ffae00;
 }
 .btn.btn-warn.btn-hollow,
+form.form button[type="button"].btn-warn.btn-hollow,
 form.form button[type="reset"].btn-hollow {
   padding-top: .09rem;
   padding-bottom: .09rem;
@@ -1035,11 +1089,14 @@ form.form button[type="reset"].btn-hollow {
   color: #ffae00;
 }
 .btn.btn-warn.btn-hollow:hover,
+form.form button[type="button"].btn-warn.btn-hollow:hover,
 form.form button[type="reset"].btn-hollow:hover {
   background-color: #ffefcc;
 }
 .btn.btn-warn.btn-hollow.btn-disabled,
 .btn.btn-warn.btn-hollow[disabled],
+form.form button[type="button"].btn-warn.btn-hollow.btn-disabled,
+form.form button[type="button"].btn-warn.btn-hollow[disabled],
 form.form button[type="reset"].btn-hollow.btn-disabled,
 form.form button[type="reset"].btn-hollow[disabled] {
   opacity: 0.3;
@@ -1047,11 +1104,14 @@ form.form button[type="reset"].btn-hollow[disabled] {
 }
 .btn.btn-warn.btn-hollow.btn-disabled:hover,
 .btn.btn-warn.btn-hollow[disabled]:hover,
+form.form button[type="button"].btn-warn.btn-hollow.btn-disabled:hover,
+form.form button[type="button"].btn-warn.btn-hollow[disabled]:hover,
 form.form button[type="reset"].btn-hollow.btn-disabled:hover,
 form.form button[type="reset"].btn-hollow[disabled]:hover {
   background-color: transparent;
 }
 a.btn.btn-warn,
+aform.form button[type="button"].btn-warn,
 aform.form button[type="reset"] {
   color: #fff;
 }
