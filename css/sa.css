@@ -764,7 +764,7 @@ form.form button {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  border-radius: .04rem;
+  border-radius: 0.04rem;
   line-height: 1;
   font-size: 0.14rem;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
@@ -2658,8 +2658,8 @@ form.form .input-group input[type="url"]:first-child,
 form.form .input-group input[type="search"]:first-child,
 form.form .input-group input[type="tel"]:first-child,
 form.form .input-group input[type="number"]:first-child {
-  border-top-left-radius: .04rem;
-  border-bottom-left-radius: .04rem;
+  border-top-left-radius: 0.04rem;
+  border-bottom-left-radius: 0.04rem;
 }
 form.form .input-group button {
   float: left;
@@ -2685,6 +2685,10 @@ form.form .input-group .input-addon.dropdown {
 form.form-inline .form-group {
   display: inline-block;
   vertical-align: middle;
+}
+form.form-inline .form-group input {
+  margin-left: .5em;
+  margin-right: .5em;
 }
 form.form-inline button {
   vertical-align: top;
@@ -3474,6 +3478,7 @@ ul.list.time-line > li .line-content {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   box-shadow: 0 0 0.08rem -0.03rem #777;
+  z-index: 10;
 }
 .nav.nav-horizontal > ul li > a + ul > li a,
 .nav.nav-bar > ul li > a + ul > li a {
