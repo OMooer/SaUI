@@ -85,10 +85,23 @@ code {
 	color: @codeRed;
 
 	pre & {
+		position: relative;
 		display: block;
 		padding: .05rem;
 		tab-size: 4;
+
+		&:after {
+			content: attr(lang);
+			position: absolute;
+			font-family: Arial;
+			font-size: .10rem;
+			color: #bcbcbc;
+			transform: scale(.85);
+			top: .05rem;
+			right: .05rem;
+		}
 	}
+
 }
 
 blockquote {

@@ -169,7 +169,7 @@ form.form {
 	}
 
 	.form-group {
-		overflow: hidden;
+		.clearfix;
 		margin-bottom: .10rem;
 	}
 
@@ -276,6 +276,11 @@ form.form {
 			border: solid .01rem @line;
 			border-right: 0;
 			border-radius: @radius 0 0 @radius;
+			line-height: .20rem;
+
+			&.dropdown {
+				padding: 0 .08rem 0 .15rem;
+			}
 		}
 	}
 

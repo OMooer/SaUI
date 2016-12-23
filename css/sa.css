@@ -530,9 +530,20 @@ code {
   color: #c7254e;
 }
 pre code {
+  position: relative;
   display: block;
   padding: .05rem;
   tab-size: 4;
+}
+pre code:after {
+  content: attr(lang);
+  position: absolute;
+  font-family: Arial;
+  font-size: .10rem;
+  color: #bcbcbc;
+  transform: scale(0.85);
+  top: .05rem;
+  right: .05rem;
 }
 blockquote {
   padding: .05rem .10rem;
@@ -753,7 +764,7 @@ form.form button {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  border-radius: .30rem;
+  border-radius: .04rem;
   line-height: 1;
   font-size: 0.14rem;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
@@ -762,8 +773,8 @@ form.form button {
 form.form button:last-child {
   margin-right: 0;
 }
-.btn.btn-rect {
-  border-radius: 0;
+.btn.btn-ellipse {
+  border-radius: .30rem;
 }
 .btn.btn-xl {
   padding: .16rem 1em;
@@ -2546,8 +2557,16 @@ form.form label {
   box-sizing: border-box;
 }
 form.form .form-group {
-  overflow: hidden;
   margin-bottom: .10rem;
+}
+form.form .form-group:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
 }
 form.form .form-select {
   position: relative;
@@ -2658,6 +2677,10 @@ form.form .input-group .input-addon {
   border: solid 0.01rem #ccc;
   border-right: 0;
   border-radius: 0.04rem 0 0 0.04rem;
+  line-height: .20rem;
+}
+form.form .input-group .input-addon.dropdown {
+  padding: 0 .08rem 0 .15rem;
 }
 form.form-inline .form-group {
   display: inline-block;
@@ -2803,6 +2826,7 @@ form.form-horizontal .form-control {
   }
   form.form .form-group.form-radio-group {
     float: left;
+    overflow: hidden;
     margin-right: .10rem;
     background: #f7f7f7;
     border: solid 0.01rem #ccc;
