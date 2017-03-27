@@ -529,13 +529,10 @@ code {
   border-radius: 0.04rem;
   color: #c7254e;
 }
-pre code {
+pre {
   position: relative;
-  display: block;
-  padding: .05rem;
-  tab-size: 4;
 }
-pre code:after {
+pre[lang]:after {
   content: attr(lang);
   position: absolute;
   font-family: Arial;
@@ -544,6 +541,11 @@ pre code:after {
   transform: scale(0.85);
   top: .05rem;
   right: .05rem;
+}
+pre > code {
+  display: block;
+  padding: .05rem;
+  tab-size: 4;
 }
 blockquote {
   padding: .05rem .10rem;
@@ -2857,6 +2859,7 @@ form.form-horizontal .form-control {
   form.form .form-group.form-radio-group .form-radio input[type="radio"] {
     position: absolute;
     margin: 0;
+    border: 0;
     top: -100%;
     left: 0;
     width: 100%;
