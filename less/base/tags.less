@@ -80,7 +80,7 @@ abbr, dfn {
 code {
 	overflow: auto;
 	padding: 0 .05rem;
-	background-color: @grayLighter;
+	background-color: @smoke;
 	border-radius: @radius;
 	color: @codeRed;
 }
@@ -88,21 +88,34 @@ code {
 pre {
 	position: relative;
 
-	&[lang]:after {
-		content: attr(lang);
-		position: absolute;
-		font-family: Arial;
-		font-size: .10rem;
-		color: #bcbcbc;
-		transform: scale(.85);
-		top: .05rem;
-		right: .05rem;
+	code {
+		display: inline-block;
 	}
 
-	& > code {
-		display: block;
-		padding: .05rem;
-		tab-size: 4;
+	&[lang] {
+		margin: .5em auto;
+		padding: 1.1em 1em;
+		background-color: @smoke;
+		border: solid 1px @grayLighten;
+		border-radius: @radius;
+		box-shadow: 0 0 .10rem -.03rem @grayLight inset;
+
+		&:after {
+			content: attr(lang);
+			position: absolute;
+			font-family: Arial;
+			font-size: .10rem;
+			color: #bcbcbc;
+			transform: scale(.85);
+			top: .05rem;
+			right: .05rem;
+		}
+
+		& > code {
+			display: block;
+			padding: .05rem;
+			tab-size: 4;
+		}
 	}
 }
 

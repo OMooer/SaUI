@@ -7,20 +7,20 @@
 // 栅格生成
 .gender-grid(@count, @i:1) when (@i=<@count) {
 	.col-@{i} {
-		width: (100%/12*@i);
+		width: round(100%/12*@i, 3);
 	}
 	.col-offset-@{i} {
-		margin-left: (100%/12*@i);
+		margin-left: round(100%/12*@i, 3);
 	}
 	.gender-grid(@count, (@i+1));
 }
 
 .gender-grid(@count,@pre, @i:1) when (@i=<@count) {
 	.col-@{pre}@{i} {
-		width: (100%/12*@i);
+		width: round(100%/12*@i, 3);
 	}
 	.col-@{pre}offset-@{i} {
-		margin-left: (100%/12*@i);
+		margin-left: round(100%/12*@i, 3);
 	}
 	.gender-grid(@count, @pre, (@i+1));
 }
@@ -96,22 +96,26 @@
 }
 
 .gender-caret(@dir, @unicode) {
+	line-height: .7;
+	font-family: Arial, "Times New Roman", sans-serif;
+	font-size: 1.8em;
+
 	& when (@dir = top) {
-		content: "\276E"; //\25B4
+		content: "\2039"; // ‹
 		margin-left: .07rem;
 		transform: rotate(90deg);
 	}
 	& when (@dir = bottom) {
-		content: "\276F"; //\25BE
+		content: "\203A"; // ›
+		margin: .03rem 0 0 .10rem;
 		transform: rotate(90deg);
-		margin-left: .07rem;
 	}
 	& when (@dir = left) {
-		content: "\276E"; //\25C2
+		content: "\2039"; // ‹
 		margin-right: .05rem;
 	}
 	& when (@dir = right) {
-		content: "\276F"; //\25B8
+		content: "\203A"; // ›
 		margin-left: .05rem;
 	}
 }

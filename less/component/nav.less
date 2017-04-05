@@ -53,8 +53,8 @@
 				line-height: .20rem;
 
 				&:after {
-					.gender-caret(right, true);
 					float: right;
+					.gender-caret(right, true);
 				}
 
 				&:only-child {
@@ -280,6 +280,10 @@
 
 			& > a {
 				line-height: 2;
+
+				&:after {
+					line-height: 1;
+				}
 			}
 
 			// 导航条的二级菜单

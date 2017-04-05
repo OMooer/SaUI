@@ -24,8 +24,7 @@ progress,
 }
 
 progress {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+	appearance: none;
 	border: 0;
 
 	&::-webkit-progress-bar {
@@ -88,6 +87,10 @@ progress {
 		&.progress-striped {
 			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 			background-size: .40rem .40rem;
+
+			&.progress-animate {
+				animation: progress-bar-stripes 1s linear infinite;
+			}
 		}
 	}
 }

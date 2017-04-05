@@ -1,4 +1,19 @@
 # SaUI
-SaUI，一个适用于Desktop &amp; Mobile 的CSS框架
+SaUI，一个适用于 Desktop &amp; Mobile 的CSS框架
 
-[访问官方网站](http://saui.omooer.com)
+## Usage
+#### NPM
+```bash
+npm install saui
+```
+#### Bower
+```bash
+bower install saui
+```
+#### HTML
+```html
+<link rel="stylesheet" type="text/css" href="[PATH]/css/sa.min.css">
+<script src="[PATH]/js/jquery.sa.ui.min.js"></script>
+```
+---
+[访问官方网站](https://saui.omooer.com)
