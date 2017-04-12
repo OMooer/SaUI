@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.2.0 (https://saui.omooer.com)
+ * SaUI v0.2.1 (https://saui.omooer.com)
  * Copyright 2016-2017 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -519,35 +519,52 @@ code {
 }
 pre {
   position: relative;
+  margin: .5em auto;
 }
 pre code {
-  display: inline-block;
-}
-pre[lang] {
-  margin: .5em auto;
-  padding: 1.1em 1em;
-  background-color: #f3f3f3;
-  border: solid 1px #ddd;
-  border-radius: 0.04rem;
-  box-shadow: 0 0 0.1rem -0.03rem #ccc inset;
-}
-pre[lang]:after {
-  content: attr(lang);
-  position: absolute;
-  font-family: Arial;
-  font-size: .10rem;
-  color: #bcbcbc;
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
-  top: .05rem;
-  right: .05rem;
-}
-pre[lang] > code {
   display: block;
-  padding: .05rem;
+}
+pre code[lang] {
+  padding: 1.5em 0 1em;
+  background-color: transparent;
+  border: solid transparent;
+  border-width: 0 1em;
+  border-radius: 0.04rem;
+  box-shadow: 0 0 0 1px #ddd;
   -moz-tab-size: 4;
     -o-tab-size: 4;
        tab-size: 4;
+}
+pre code[lang]:before {
+  content: "";
+  position: absolute;
+  background-color: #f3f3f3;
+  box-shadow: inset 0 0 0.1rem -0.03rem #ccc;
+  cursor: text;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+pre code[lang]:after {
+  content: attr(lang);
+  position: absolute;
+  font-family: Arial, sans-serif;
+  font-size: .10rem;
+  text-shadow: 0 0.01rem #fff;
+  color: #bcbcbc;
+  top: .02rem;
+  right: .04rem;
+}
+@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  pre > code[lang]:after {
+    font-size: .12rem;
+    -webkit-transform: scale(0.834);
+            transform: scale(0.834);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
 }
 blockquote {
   padding: .05rem .10rem;
@@ -692,6 +709,7 @@ a.text-warn:visited {
 .close i {
   overflow: hidden;
   display: block;
+  font-style: normal;
   width: 100%;
   height: 100%;
 }
@@ -746,6 +764,9 @@ a.text-warn:visited {
 .text-right {
   text-align: right;
 }
+.v-align {
+  font-size: 0;
+}
 .v-align:before {
   content: "";
   display: inline-block;
@@ -755,10 +776,12 @@ a.text-warn:visited {
 .v-align .align-middle {
   display: inline-block;
   vertical-align: middle;
+  font-size: 0.14rem;
 }
 .v-align .align-bottom {
   display: inline-block;
   vertical-align: bottom;
+  font-size: 0.14rem;
 }
 /**********************
  * 按钮类

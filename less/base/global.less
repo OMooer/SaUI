@@ -61,6 +61,7 @@
 	i {
 		overflow: hidden;
 		display: block;
+		font-style: normal;
 		width: 100%;
 		height: 100%;
 	}
@@ -129,6 +130,10 @@
 
 // 垂直对齐
 .v-align {
+	// 有字体大小的情况下，此种垂直对齐会导致 :before 伪类占用了空间
+	// 间接导致水平对齐出现问题，同时为了兼容 Firefox 所以使用此 hack
+	font-size: 0;
+
 	&:before {
 		content: "";
 		display: inline-block;
@@ -138,10 +143,12 @@
 	.align-middle {
 		display: inline-block;
 		vertical-align: middle;
+		font-size: @fontNormal;
 	}
 
 	.align-bottom {
 		display: inline-block;
 		vertical-align: bottom;
+		font-size: @fontNormal;
 	}
 }

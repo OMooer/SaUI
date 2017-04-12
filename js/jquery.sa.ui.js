@@ -17,24 +17,42 @@ else {
 		┃┗━┛┃┃┏┓┃┃┗━┛┃┏┫┣┓\n\
 		┗━━━┛┗┛┗┛┗━━━┛┗━━┛');
 
-		$('.dropdown.dropdown-open').on('click touchend',
-			'.dropdown-head,.dropdown-disabled,.dropdown-divider',
-			function () {
-				return false;
-			});
+		/* 下拉菜单 */
+		$('.dropdown').on('tap', function (e, isOpen) {
+			if (isOpen) {
+				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
+				$(this).attr('open', true).addClass('dropdown-open');
+			}
+			else {
+				$(this).removeClass('dropdown-open');
+			}
+		});
 
 		$('body')
 			.off('ready')
 
 			/* 下拉菜单 */
-			.on('click touchend', '.dropdown:not(.dropdown-open)', function () {
-				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
-				$(this).attr('open', true).addClass('dropdown-open');
+			.on('touchstart', '.dropdown:not(.dropdown-open)', function () {
+				$(this).data('touchTime', new Date().getTime());
+			})
+			.on('touchend', '.dropdown:not(.dropdown-open)', function () {
+				if (new Date().getTime() - $(this).data('touchTime') < 300) {
+					$(this).trigger('tap', [true]);
+					return false;
+				}
+			})
+			.on('click', '.dropdown:not(.dropdown-open)', function () {
+				$(this).trigger('tap', [true]);
 				return false;
 			})
 			.on('click touchend', '.dropdown.dropdown-open', function () {
-				$(this).removeClass('dropdown-open');
+				$(this).trigger('tap');
 			})
+			.on('click touchend',
+				'.dropdown.dropdown-open .dropdown-head,.dropdown.dropdown-open .dropdown-disabled,.dropdown.dropdown-open .dropdown-divider',
+				function () {
+					return false;
+				})
 			.on('click touchend', function () {
 				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
 			})
@@ -117,14 +135,14 @@ else {
 			})
 
 			/* 左侧菜单 */
-			.on('click touchend', '.nav-menu.nav-mini-menu [role="menu-toggle"]', function () {
+			.on('touchend', '.nav-menu.nav-mini-menu [role="menu-toggle"]', function () {
 				var $Menu = $(this).closest('.nav-menu[role="menu"]');
 				if ($Menu.length) {
 					$Menu.addClass('open-menu').selfScroll();
 				}
 				return false;
 			})
-			.on('click touchend', function (e) {
+			.on('touchstart', function (e) {
 				var $Menu = $(e.target).closest('.nav-menu.open-menu[role="menu"]');
 				if (!$Menu.length) {
 					$('.nav-menu.open-menu[role="menu"]').removeClass('open-menu');
