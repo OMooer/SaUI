@@ -22,6 +22,7 @@
 	}
 	.dropdown-icon {
 		.gender-caret(bottom);
+		transition: transform .3s ease-out;
 	}
 	.dropdown-menu {
 		display: none;
@@ -89,6 +90,10 @@
 	&.dropdown-open {
 		background-color: @separateBg;
 		.groove-shadow();
+
+		.dropdown-icon {
+			transform: rotate(180deg);
+		}
 
 		.dropdown-menu {
 			display: block;

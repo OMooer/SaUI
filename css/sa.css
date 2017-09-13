@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.2.1 (https://saui.omooer.com)
+ * SaUI v0.2.2 (https://saui.omooer.com)
  * Copyright 2016-2017 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -703,7 +703,6 @@ a.text-warn:visited {
   color: #aaa;
   width: .18rem;
   height: .18rem;
-  -webkit-transition: color .3s;
   transition: color .3s;
 }
 .close i {
@@ -717,7 +716,6 @@ a.text-warn:visited {
   color: #555;
 }
 .close.close-animate {
-  -webkit-transition: -webkit-transform .2s;
   transition: -webkit-transform .2s;
   transition: transform .2s;
   transition: transform .2s, -webkit-transform .2s;
@@ -791,7 +789,7 @@ form.form button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: inline-block;
   margin-right: .10rem;
-  padding: .10rem 1em;
+  padding: .08rem 1em;
   background-clip: padding-box;
   box-sizing: border-box;
   cursor: pointer;
@@ -799,8 +797,7 @@ form.form button {
   border-radius: 0.04rem;
   line-height: 1;
   font-size: 0.14rem;
-  -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
-  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  transition: background-color 0.3s ease-out, border 0.3s ease-out, color 0.3s ease-out;
 }
 .btn:last-child,
 form.form button:last-child {
@@ -845,7 +842,7 @@ form.form button:active {
 .btn.btn-default,
 form.form button[type="button"] {
   background-color: #fff;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #fff;
   border-color: #ccc;
   color: #777;
 }
@@ -854,12 +851,22 @@ form.form button[type="button"] {
 form.form button[type="button"].btn-active,
 form.form button[type="button"]:hover {
   background-color: #ededed;
+  border-color: #ededed;
 }
 .btn.btn-default.btn-disabled:hover,
 .btn.btn-default[disabled]:hover,
 form.form button[type="button"].btn-disabled:hover,
 form.form button[type="button"][disabled]:hover {
   background-color: #fff;
+  border-color: #ededed;
+}
+.btn.btn-default:hover,
+.btn.btn-default.btn-disabled:hover,
+.btn.btn-default[disabled]:hover,
+form.form button[type="button"]:hover,
+form.form button[type="button"].btn-disabled:hover,
+form.form button[type="button"][disabled]:hover {
+  border-color: #ccc;
 }
 a.btn.btn-default,
 aform.form button[type="button"] {
@@ -867,16 +874,18 @@ aform.form button[type="button"] {
 }
 .btn.btn-default-o {
   background-color: #eee;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #eee;
   color: #555;
 }
 .btn.btn-default-o.btn-active,
 .btn.btn-default-o:hover {
   background-color: #dcdcdc;
+  border-color: #dcdcdc;
 }
 .btn.btn-default-o.btn-disabled:hover,
 .btn.btn-default-o[disabled]:hover {
   background-color: #eee;
+  border-color: #dcdcdc;
 }
 .btn.btn-default-o.btn-hollow {
   padding-top: .09rem;
@@ -904,7 +913,7 @@ a.btn.btn-default-o {
 form.form button[type="button"].btn-primary,
 form.form button[type="submit"] {
   background-color: #3B99FC;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #3B99FC;
   color: #fff;
 }
 .btn.btn-primary.btn-active,
@@ -914,6 +923,7 @@ form.form button[type="button"].btn-primary:hover,
 form.form button[type="submit"].btn-active,
 form.form button[type="submit"]:hover {
   background-color: #1887fb;
+  border-color: #1887fb;
 }
 .btn.btn-primary.btn-disabled:hover,
 .btn.btn-primary[disabled]:hover,
@@ -922,6 +932,7 @@ form.form button[type="button"].btn-primary[disabled]:hover,
 form.form button[type="submit"].btn-disabled:hover,
 form.form button[type="submit"][disabled]:hover {
   background-color: #3B99FC;
+  border-color: #1887fb;
 }
 .btn.btn-primary.btn-hollow,
 form.form button[type="button"].btn-primary.btn-hollow,
@@ -962,7 +973,7 @@ aform.form button[type="submit"] {
 .btn.btn-success,
 form.form button[type="button"].btn-success {
   background-color: #04BE02;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #04BE02;
   color: #fff;
 }
 .btn.btn-success.btn-active,
@@ -970,12 +981,14 @@ form.form button[type="button"].btn-success {
 form.form button[type="button"].btn-success.btn-active,
 form.form button[type="button"].btn-success:hover {
   background-color: #039b02;
+  border-color: #039b02;
 }
 .btn.btn-success.btn-disabled:hover,
 .btn.btn-success[disabled]:hover,
 form.form button[type="button"].btn-success.btn-disabled:hover,
 form.form button[type="button"].btn-success[disabled]:hover {
   background-color: #04BE02;
+  border-color: #039b02;
 }
 .btn.btn-success.btn-hollow,
 form.form button[type="button"].btn-success.btn-hollow {
@@ -1009,7 +1022,7 @@ aform.form button[type="button"].btn-success {
 .btn.btn-info,
 form.form button[type="button"].btn-info {
   background-color: #5bc0de;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #5bc0de;
   color: #fff;
 }
 .btn.btn-info.btn-active,
@@ -1017,12 +1030,14 @@ form.form button[type="button"].btn-info {
 form.form button[type="button"].btn-info.btn-active,
 form.form button[type="button"].btn-info:hover {
   background-color: #3db5d8;
+  border-color: #3db5d8;
 }
 .btn.btn-info.btn-disabled:hover,
 .btn.btn-info[disabled]:hover,
 form.form button[type="button"].btn-info.btn-disabled:hover,
 form.form button[type="button"].btn-info[disabled]:hover {
   background-color: #5bc0de;
+  border-color: #3db5d8;
 }
 .btn.btn-info.btn-hollow,
 form.form button[type="button"].btn-info.btn-hollow {
@@ -1056,7 +1071,7 @@ aform.form button[type="button"].btn-info {
 .btn.btn-danger,
 form.form button[type="button"].btn-danger {
   background-color: #e93c20;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #e93c20;
   color: #fff;
 }
 .btn.btn-danger.btn-active,
@@ -1064,12 +1079,14 @@ form.form button[type="button"].btn-danger {
 form.form button[type="button"].btn-danger.btn-active,
 form.form button[type="button"].btn-danger:hover {
   background-color: #d12f15;
+  border-color: #d12f15;
 }
 .btn.btn-danger.btn-disabled:hover,
 .btn.btn-danger[disabled]:hover,
 form.form button[type="button"].btn-danger.btn-disabled:hover,
 form.form button[type="button"].btn-danger[disabled]:hover {
   background-color: #e93c20;
+  border-color: #d12f15;
 }
 .btn.btn-danger.btn-hollow,
 form.form button[type="button"].btn-danger.btn-hollow {
@@ -1104,7 +1121,7 @@ aform.form button[type="button"].btn-danger {
 form.form button[type="button"].btn-warn,
 form.form button[type="reset"] {
   background-color: #ffae00;
-  border: solid .01rem transparent;
+  border: solid 0.01rem #ffae00;
   color: #fff;
 }
 .btn.btn-warn.btn-active,
@@ -1114,6 +1131,7 @@ form.form button[type="button"].btn-warn:hover,
 form.form button[type="reset"].btn-active,
 form.form button[type="reset"]:hover {
   background-color: #db9600;
+  border-color: #db9600;
 }
 .btn.btn-warn.btn-disabled:hover,
 .btn.btn-warn[disabled]:hover,
@@ -1122,6 +1140,7 @@ form.form button[type="button"].btn-warn[disabled]:hover,
 form.form button[type="reset"].btn-disabled:hover,
 form.form button[type="reset"][disabled]:hover {
   background-color: #ffae00;
+  border-color: #db9600;
 }
 .btn.btn-warn.btn-hollow,
 form.form button[type="button"].btn-warn.btn-hollow,
@@ -2472,7 +2491,6 @@ form.form input {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
-  -webkit-transition: border-color 0.3s ease-out;
   transition: border-color 0.3s ease-out;
 }
 form.form input:invalid {
@@ -2530,7 +2548,6 @@ form.form textarea {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
-  -webkit-transition: border-color 0.3s ease-out;
   transition: border-color 0.3s ease-out;
   padding: .05rem .07rem;
   vertical-align: top;
@@ -2549,7 +2566,6 @@ form.form select {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
-  -webkit-transition: border-color 0.3s ease-out;
   transition: border-color 0.3s ease-out;
   padding: .05rem .07rem;
   line-height: .20rem;
@@ -2612,6 +2628,7 @@ form.form .form-group:after {
 form.form .form-select {
   position: relative;
   display: block;
+  background-color: #fff;
 }
 form.form .form-select:after {
   content: "\1433";
@@ -2622,6 +2639,13 @@ form.form .form-select:after {
   color: #aaa;
   right: .07rem;
   top: 50%;
+  z-index: 1;
+}
+form.form .form-select select {
+  position: relative;
+  padding-right: 1.5em;
+  background-color: transparent;
+  z-index: 2;
 }
 form.form .form-radio {
   display: inline-block;
@@ -2689,8 +2713,8 @@ form.form .input-group input[type="search"],
 form.form .input-group input[type="tel"],
 form.form .input-group input[type="number"] {
   float: left;
+  margin: 0;
   border-radius: 0;
-  width: 1.6rem;
 }
 form.form .input-group input[type="text"]:first-child,
 form.form .input-group input[type="email"]:first-child,
@@ -2796,7 +2820,6 @@ form.form-horizontal .form-control {
     color: #aaa;
     width: 100%;
     height: 100%;
-    -webkit-transition: all .2s;
     transition: all .2s;
   }
   form.form input[type="checkbox"].form-switch:after {
@@ -2811,7 +2834,6 @@ form.form-horizontal .form-control {
     left: 0;
     width: .23rem;
     height: .23rem;
-    -webkit-transition: left .28s;
     transition: left .28s;
   }
   form.form input[type="checkbox"].form-switch:checked {
@@ -2865,7 +2887,6 @@ form.form-horizontal .form-control {
     padding-right: .07rem;
     text-align: right;
     font-size: 0.12rem;
-    -webkit-transition: none;
     transition: none;
   }
   form.form input[type="checkbox"].form-switch.switch-text:checked:before {
@@ -2900,7 +2921,6 @@ form.form-horizontal .form-control {
     padding-top: .05rem;
     padding-bottom: .05rem;
     z-index: 1;
-    -webkit-transition: color .2s ease;
     transition: color .2s ease;
   }
   form.form .form-group.form-radio-group .form-radio input[type="radio"] {
@@ -2924,7 +2944,6 @@ form.form-horizontal .form-control {
     border-radius: 0.04rem;
     width: 100%;
     height: 99%;
-    -webkit-transition: left .2s ease;
     transition: left .2s ease;
   }
   form.form .form-group.form-radio-group .form-radio input[type="radio"]:checked:before {
@@ -3217,6 +3236,7 @@ a.card {
   background: #fff;
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 0.08rem -0.03rem #777;
   z-index: 200;
 }
@@ -3253,7 +3273,6 @@ a.card {
 .dialog.dialog-animate {
   -webkit-animation: dropDown .4s backwards, fadeIn .6s backwards;
           animation: dropDown .4s backwards, fadeIn .6s backwards;
-  -webkit-transition: top .4s, opacity .3s;
   transition: top .4s, opacity .3s;
 }
 .dialog.dialog-animate.dialog-close {
@@ -3272,6 +3291,7 @@ a.card {
 .dialog-mask {
   position: fixed;
   background: rgba(255, 255, 255, 0.15);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   left: 0;
   right: 0;
   top: 0;
@@ -3289,7 +3309,6 @@ a.card {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   line-height: .25rem;
-  -webkit-transition: box-shadow 0.2s;
   transition: box-shadow 0.2s;
   font-size: 0.14rem;
 }
@@ -3308,6 +3327,9 @@ a.card {
   border-top: .04rem dashed;
   border-left: .04rem solid transparent;
   border-right: .04rem solid transparent;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .dropdown .dropdown-menu {
   display: none;
@@ -3364,6 +3386,11 @@ a.card {
 .dropdown.dropdown-hover:hover {
   background-color: #f7f7f7;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
+}
+.dropdown.dropdown-open .dropdown-icon,
+.dropdown.dropdown-hover:hover .dropdown-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .dropdown.dropdown-open .dropdown-menu,
 .dropdown.dropdown-hover:hover .dropdown-menu {
@@ -3635,7 +3662,6 @@ ul.list.time-line > li .line-content {
   width: 10%;
   bottom: auto;
   z-index: 10;
-  -webkit-transition: width .2s;
   transition: width .2s;
 }
 .nav.nav-menu.nav-mini-menu > .nav-header {
@@ -3806,6 +3832,9 @@ ul.paging li.paging-disabled {
   opacity: 0.3;
   cursor: no-drop;
 }
+ul.paging li.paging-disabled a {
+  cursor: no-drop;
+}
 ul.paging li.paging-disabled a,
 ul.paging li.paging-disabled a:active {
   background-color: #fff !important;
@@ -3943,7 +3972,6 @@ progress.progress-text:before {
   background-color: #3B99FC;
   text-align: center;
   height: 100%;
-  -webkit-transition: width 0.3s ease-out;
   transition: width 0.3s ease-out;
 }
 .progress .progress-bar:last-child {
@@ -3964,7 +3992,6 @@ progress.progress-text:before {
   background-color: #ffb311;
 }
 .progress .progress-bar.progress-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: .40rem .40rem;
 }

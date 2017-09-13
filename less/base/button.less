@@ -5,17 +5,19 @@
 
 .__btn(@color, @hollow:true) {
 	background-color: @color;
-	border: solid .01rem transparent;
+	border: solid .01rem @color;
 
 	// 按钮hover后的背景色
 	&.btn-active,
 	&:hover {
 		background-color: darken(@color, 7%);
+		border-color: darken(@color, 7%);
 	}
 	// 禁用按钮的hover背景色与原来一致
 	&.btn-disabled:hover,
 	&[disabled]:hover {
 		background-color: @color;
+		border-color: darken(@color, 7%);
 	}
 
 	// 镂空
@@ -54,7 +56,7 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	display: inline-block;
 	margin-right: .10rem;
-	padding: .10rem 1em;
+	padding: .08rem 1em;
 	background-clip: padding-box;
 	box-sizing: border-box;
 	cursor: pointer;
@@ -62,7 +64,7 @@
 	border-radius: @radius;
 	line-height: 1;
 	font-size: @fontNormal;
-	transition: background-color .3s ease-out, color .3s ease-out;
+	transition: background-color .3s ease-out, border .3s ease-out, color .3s ease-out;
 
 	&:last-child {
 		margin-right: 0;
@@ -119,6 +121,12 @@
 		.__btn(@white, false);
 		border-color: @line;
 		color: @grayDark;
+		// 普通按钮的 Hover
+		&:hover,
+		&.btn-disabled:hover,
+		&[disabled]:hover {
+			border-color: @line;
+		}
 		a& {
 			color: @grayDark;
 		}

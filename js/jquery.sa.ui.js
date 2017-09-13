@@ -17,21 +17,19 @@ else {
 		┃┗━┛┃┃┏┓┃┃┗━┛┃┏┫┣┓\n\
 		┗━━━┛┗┛┗┛┗━━━┛┗━━┛');
 
-		/* 下拉菜单 */
-		$('.dropdown').on('tap', function (e, isOpen) {
-			if (isOpen) {
-				$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
-				$(this).attr('open', true).addClass('dropdown-open');
-			}
-			else {
-				$(this).removeClass('dropdown-open');
-			}
-		});
-
 		$('body')
 			.off('ready')
 
 			/* 下拉菜单 */
+			.on('tap', '.dropdown', function (e, isOpen) {
+				if (isOpen) {
+					$('.dropdown[open]').removeClass('dropdown-open').removeAttr('open');
+					$(this).attr('open', true).addClass('dropdown-open');
+				}
+				else {
+					$(this).removeClass('dropdown-open');
+				}
+			})
 			.on('touchstart', '.dropdown:not(.dropdown-open)', function () {
 				$(this).data('touchTime', new Date().getTime());
 			})
