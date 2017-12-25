@@ -39,12 +39,22 @@ ul.paging {
 				.gender-caret(left, true);
 				font-size: 1.3em;
 			}
+			> a:empty {
+				&:before {
+					margin: 0;
+				}
+			}
 		}
 
 		&.paging-next {
 			a:after {
 				.gender-caret(right, true);
 				font-size: 1.3em;
+			}
+			> a:empty {
+				&:after {
+					margin: 0;
+				}
 			}
 		}
 
@@ -109,6 +119,9 @@ ul.paging {
 
 				a {
 					border-color: @blue;
+					border-left: 0;
+					border-right: 0;
+					//box-shadow: 0 0 .15rem -.05rem darken(@blue, 20%) inset;
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.2.2 (https://saui.omooer.com)
+ * SaUI v0.2.3 (https://saui.omooer.com)
  * Copyright 2016-2017 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -3815,6 +3815,10 @@ ul.paging.paging-pager li:first-child a:before {
   margin-right: .05rem;
   font-size: 1.3em;
 }
+ul.paging li.paging-prev > a:empty:before,
+ul.paging.paging-pager li:first-child > a:empty:before {
+  margin: 0;
+}
 ul.paging li.paging-next a:after,
 ul.paging.paging-pager li:last-child a:after {
   line-height: .7;
@@ -3823,6 +3827,10 @@ ul.paging.paging-pager li:last-child a:after {
   content: "\203A";
   margin-left: .05rem;
   font-size: 1.3em;
+}
+ul.paging li.paging-next > a:empty:after,
+ul.paging.paging-pager li:last-child > a:empty:after {
+  margin: 0;
 }
 ul.paging li.paging-active a {
   background-color: #3B99FC !important;
@@ -3870,6 +3878,8 @@ ul.paging.paging-group li.paging-active {
 }
 ul.paging.paging-group li.paging-active a {
   border-color: #3B99FC;
+  border-left: 0;
+  border-right: 0;
 }
 ul.paging.paging-center {
   display: table;
@@ -4090,15 +4100,15 @@ progress.progress-text:before {
   left: -0.09rem;
 }
 /*!
- *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -4129,12 +4139,8 @@ progress.progress-text:before {
   font-size: 5em;
 }
 .sa-icon-fw {
-  margin-right: .2em;
   width: 1.28571429em;
   text-align: center;
-}
-.sa-icon-fw:only-child {
-  margin-right: 0;
 }
 .sa-icon-ul {
   padding-left: 0;
@@ -5923,6 +5929,7 @@ progress.progress-text:before {
   content: "\f23e";
 }
 .sa-icon-battery-4:before,
+.sa-icon-battery:before,
 .sa-icon-battery-full:before {
   content: "\f240";
 }
@@ -6268,6 +6275,143 @@ progress.progress-text:before {
 .sa-icon-fa:before,
 .sa-icon-font-awesome:before {
   content: "\f2b4";
+}
+.sa-icon-handshake-o:before {
+  content: "\f2b5";
+}
+.sa-icon-envelope-open:before {
+  content: "\f2b6";
+}
+.sa-icon-envelope-open-o:before {
+  content: "\f2b7";
+}
+.sa-icon-linode:before {
+  content: "\f2b8";
+}
+.sa-icon-address-book:before {
+  content: "\f2b9";
+}
+.sa-icon-address-book-o:before {
+  content: "\f2ba";
+}
+.sa-icon-vcard:before,
+.sa-icon-address-card:before {
+  content: "\f2bb";
+}
+.sa-icon-vcard-o:before,
+.sa-icon-address-card-o:before {
+  content: "\f2bc";
+}
+.sa-icon-user-circle:before {
+  content: "\f2bd";
+}
+.sa-icon-user-circle-o:before {
+  content: "\f2be";
+}
+.sa-icon-user-o:before {
+  content: "\f2c0";
+}
+.sa-icon-id-badge:before {
+  content: "\f2c1";
+}
+.sa-icon-drivers-license:before,
+.sa-icon-id-card:before {
+  content: "\f2c2";
+}
+.sa-icon-drivers-license-o:before,
+.sa-icon-id-card-o:before {
+  content: "\f2c3";
+}
+.sa-icon-quora:before {
+  content: "\f2c4";
+}
+.sa-icon-free-code-camp:before {
+  content: "\f2c5";
+}
+.sa-icon-telegram:before {
+  content: "\f2c6";
+}
+.sa-icon-thermometer-4:before,
+.sa-icon-thermometer:before,
+.sa-icon-thermometer-full:before {
+  content: "\f2c7";
+}
+.sa-icon-thermometer-3:before,
+.sa-icon-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.sa-icon-thermometer-2:before,
+.sa-icon-thermometer-half:before {
+  content: "\f2c9";
+}
+.sa-icon-thermometer-1:before,
+.sa-icon-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.sa-icon-thermometer-0:before,
+.sa-icon-thermometer-empty:before {
+  content: "\f2cb";
+}
+.sa-icon-shower:before {
+  content: "\f2cc";
+}
+.sa-icon-bathtub:before,
+.sa-icon-s15:before,
+.sa-icon-bath:before {
+  content: "\f2cd";
+}
+.sa-icon-podcast:before {
+  content: "\f2ce";
+}
+.sa-icon-window-maximize:before {
+  content: "\f2d0";
+}
+.sa-icon-window-minimize:before {
+  content: "\f2d1";
+}
+.sa-icon-window-restore:before {
+  content: "\f2d2";
+}
+.sa-icon-times-rectangle:before,
+.sa-icon-window-close:before {
+  content: "\f2d3";
+}
+.sa-icon-times-rectangle-o:before,
+.sa-icon-window-close-o:before {
+  content: "\f2d4";
+}
+.sa-icon-bandcamp:before {
+  content: "\f2d5";
+}
+.sa-icon-grav:before {
+  content: "\f2d6";
+}
+.sa-icon-etsy:before {
+  content: "\f2d7";
+}
+.sa-icon-imdb:before {
+  content: "\f2d8";
+}
+.sa-icon-ravelry:before {
+  content: "\f2d9";
+}
+.sa-icon-eercast:before {
+  content: "\f2da";
+}
+.sa-icon-microchip:before {
+  content: "\f2db";
+}
+.sa-icon-snowflake-o:before {
+  content: "\f2dc";
+}
+.sa-icon-superpowers:before {
+  content: "\f2dd";
+}
+.sa-icon-wpexplorer:before {
+  content: "\f2de";
+}
+.sa-icon-meetup:before {
+  content: "\f2e0";
 }
 .sr-only {
   position: absolute;
