@@ -1,6 +1,6 @@
 /*!**
- * SaUI v0.2.3 (https://saui.omooer.com)
- * Copyright 2016-2017 O'Mooer Works (www.omooer.com)
+ * SaUI v0.2.4 (https://saui.omooer.com)
+ * Copyright 2016-2018 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -785,10 +785,10 @@ a.text-warn:visited {
  * 按钮类
  **/
 .btn,
+.btn-text,
 form.form button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: inline-block;
-  margin-right: .10rem;
   padding: .08rem 1em;
   background-clip: padding-box;
   box-sizing: border-box;
@@ -799,9 +799,12 @@ form.form button {
   font-size: 0.14rem;
   transition: background-color 0.3s ease-out, border 0.3s ease-out, color 0.3s ease-out;
 }
-.btn:last-child,
-form.form button:last-child {
-  margin-right: 0;
+.btn + .btn,
+.btn-text + .btn-text,
+button + .btn-text,
+.btn + .btn-text,
+form.form button + button {
+  margin-left: .10rem;
 }
 .btn.btn-ellipse {
   border-radius: .30rem;
@@ -1177,6 +1180,14 @@ a.btn.btn-warn,
 aform.form button[type="button"].btn-warn,
 aform.form button[type="reset"] {
   color: #fff;
+}
+.btn-text {
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn-text:hover,
+.btn-text:active {
+  text-decoration: none;
 }
 /**********************
  * 栅格
@@ -2501,6 +2512,9 @@ form.form input[type="email"],
 form.form input[type="password"],
 form.form input[type="url"],
 form.form input[type="search"],
+form.form input[type="datetime-local"],
+form.form input[type="date"],
+form.form input[type="time"],
 form.form input[type="tel"],
 form.form input[type="number"] {
   -webkit-appearance: none;
@@ -2515,9 +2529,17 @@ form.form input[type="email"]:focus,
 form.form input[type="password"]:focus,
 form.form input[type="url"]:focus,
 form.form input[type="search"]:focus,
+form.form input[type="datetime-local"]:focus,
+form.form input[type="date"]:focus,
+form.form input[type="time"]:focus,
 form.form input[type="tel"]:focus,
 form.form input[type="number"]:focus {
   border-color: #3B99FC;
+}
+form.form input[type="datetime-local"],
+form.form input[type="date"],
+form.form input[type="time"] {
+  padding: .04rem .07rem;
 }
 form.form input[type="checkbox"],
 form.form input[type="radio"] {
@@ -3340,7 +3362,7 @@ a.card {
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   line-height: 1.2em;
-  top: .38rem;
+  top: .37rem;
   left: -0.01rem;
   min-width: 100%;
   z-index: 10;
@@ -3479,6 +3501,33 @@ ul.list.time-line > li .line-content {
   box-sizing: border-box;
   width: 100%;
 }
+ul.list.crumbs:after {
+  content: "";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
+}
+ul.list.crumbs li {
+  float: left;
+  list-style: none;
+}
+ul.list.crumbs li:before {
+  content: ">";
+  margin: .5em;
+}
+ul.list.crumbs li:first-of-type:before {
+  display: none;
+}
+ul.list.crumbs li a {
+  display: inline-block;
+}
+ul.list.crumbs.italic li:before {
+  content: "/";
+  font-style: italic;
+}
 /**********************
  * 菜单导航
  **/
@@ -3568,6 +3617,10 @@ ul.list.time-line > li .line-content {
 .nav.nav-bar .nav-header {
   float: left;
 }
+.nav.nav-horizontal .nav-right,
+.nav.nav-bar .nav-right {
+  float: right;
+}
 .nav.nav-horizontal > ul li > a + ul,
 .nav.nav-bar > ul li > a + ul {
   position: absolute;
@@ -3604,14 +3657,14 @@ ul.list.time-line > li .line-content {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
+.nav.nav-horizontal > ul > li > a:last-child:after,
+.nav.nav-bar > ul > li > a:last-child:after {
+  display: none;
+}
 .nav.nav-horizontal > ul > li a:link,
 .nav.nav-bar > ul > li a:link {
   text-align: center;
   min-width: .50rem;
-}
-.nav.nav-horizontal > ul > li.nav-right,
-.nav.nav-bar > ul > li.nav-right {
-  float: right;
 }
 .nav.nav-horizontal > ul > li > ul > li > ul,
 .nav.nav-bar > ul > li > ul > li > ul {
@@ -3737,8 +3790,17 @@ ul.list.time-line > li .line-content {
   margin-bottom: 0;
   vertical-align: middle;
 }
+.nav.nav-bar .nav-text {
+  padding: .08rem .10rem;
+  line-height: 2;
+}
+.nav.nav-bar .nav-text a {
+  display: inline;
+  padding: 0;
+}
 .nav.nav-bar .dropdown {
-  margin: .03rem 0;
+  margin: .02rem 0;
+  line-height: 2;
 }
 .nav.nav-bar.top-bar {
   position: fixed;

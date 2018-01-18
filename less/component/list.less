@@ -80,4 +80,34 @@ ul.list {
 			}
 		}
 	}
+
+	&.crumbs {
+		.clearfix;
+
+		li {
+			float: left;
+			list-style: none;
+
+			&:before {
+				content: ">";
+				margin: .5em;
+			}
+
+			&:first-of-type:before {
+				display: none;
+			}
+
+			a {
+				display: inline-block;
+			}
+		}
+
+		&.italic {
+
+			li:before {
+				content: "/";
+				font-style: italic;
+			}
+		}
+	}
 }

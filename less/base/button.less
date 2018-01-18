@@ -55,7 +55,6 @@
 .btn {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	display: inline-block;
-	margin-right: .10rem;
 	padding: .08rem 1em;
 	background-clip: padding-box;
 	box-sizing: border-box;
@@ -66,8 +65,8 @@
 	font-size: @fontNormal;
 	transition: background-color .3s ease-out, border .3s ease-out, color .3s ease-out;
 
-	&:last-child {
-		margin-right: 0;
+	& + & {
+		margin-left: .10rem;
 	}
 
 	// 椭圆
@@ -169,5 +168,20 @@
 	&.btn-warn {
 		.__btn(@warn);
 		.__white();
+	}
+}
+
+.btn-text:extend(.btn) {
+	padding-left: 0;
+	padding-right: 0;
+
+	&:hover, &:active {
+		text-decoration: none;
+	}
+
+	& + &,
+	button + &,
+	.btn + & {
+		&:extend(.btn+.btn);
 	}
 }

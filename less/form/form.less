@@ -27,6 +27,9 @@ form.form {
 		&[type="password"],
 		&[type="url"],
 		&[type="search"],
+		&[type="datetime-local"],
+		&[type="date"],
+		&[type="time"],
 		&[type="tel"],
 		&[type="number"] {
 			appearance: none;
@@ -37,6 +40,12 @@ form.form {
 			&:focus {
 				border-color: @blue;
 			}
+		}
+
+		&[type="datetime-local"],
+		&[type="date"],
+		&[type="time"] {
+			padding: .04rem .07rem;
 		}
 
 		&[type="checkbox"],
@@ -97,8 +106,8 @@ form.form {
 	button {
 		&:extend(.btn);
 
-		&:last-child {
-			&:extend(.btn:last-child);
+		& + button {
+			&:extend(.btn+.btn);
 		}
 
 		&:active {

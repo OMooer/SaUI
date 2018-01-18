@@ -100,6 +100,10 @@
 			float: left;
 		}
 
+		.nav-right {
+			float: right;
+		}
+
 		& > ul {
 
 			li {
@@ -136,13 +140,13 @@
 					.gender-caret(bottom, true);
 				}
 
+				& > a:last-child:after {
+					display: none;
+				}
+
 				a:link {
 					text-align: center;
 					min-width: .50rem;
-				}
-
-				&.nav-right {
-					float: right;
 				}
 
 				// 三级
@@ -313,8 +317,19 @@
 			}
 		}
 
+		.nav-text {
+			padding: .08rem .10rem;
+			line-height: 2;
+
+			a {
+				display: inline;
+				padding: 0;
+			}
+		}
+
 		.dropdown {
-			margin: .03rem 0;
+			margin: .02rem 0;
+			line-height: 2;
 		}
 
 		&.top-bar {
