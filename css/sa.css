@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.2.4 (https://saui.omooer.com)
+ * SaUI v0.2.5 (https://saui.omooer.com)
  * Copyright 2016-2018 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -2725,6 +2725,9 @@ form.form fieldset input[type="number"]:focus {
   z-index: 1;
 }
 form.form .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   line-height: .20rem;
 }
 form.form .input-group input[type="text"],
