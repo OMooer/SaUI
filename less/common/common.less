@@ -7,20 +7,20 @@
 // 栅格生成
 .gender-grid(@count, @i:1) when (@i=<@count) {
 	.col-@{i} {
-		width: round(100%/12*@i, 3);
+		width: round(100%/12*@i, 4);
 	}
 	.col-offset-@{i} {
-		margin-left: round(100%/12*@i, 3);
+		margin-left: round(100%/12*@i, 4);
 	}
 	.gender-grid(@count, (@i+1));
 }
 
 .gender-grid(@count,@pre, @i:1) when (@i=<@count) {
 	.col-@{pre}@{i} {
-		width: round(100%/12*@i, 3);
+		width: round(100%/12*@i, 4);
 	}
 	.col-@{pre}offset-@{i} {
-		margin-left: round(100%/12*@i, 3);
+		margin-left: round(100%/12*@i, 4);
 	}
 	.gender-grid(@count, @pre, (@i+1));
 }

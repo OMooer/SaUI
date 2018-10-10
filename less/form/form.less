@@ -50,18 +50,37 @@ form.form {
 
 		&[type="checkbox"],
 		&[type="radio"] {
-			//-webkit-appearance: none;
-			margin: 0 .05rem;
-			width: 1em;
-			height: 1em;
+			appearance: none;
+			margin: 0 .05rem 0 .02rem;
+			vertical-align: -.02rem;
+			width: .14rem;
+			height: .14rem;
 
+			&:focus {
+				border-color: @blue;
+			}
+		}
+		&[type="checkbox"] {
 			&:checked {
-				background: @blue;
-				border-color: transparent;
+				appearance: checkbox;
+				vertical-align: .01rem;
+
+				&:focus {
+					box-shadow: 0 .01rem .01rem .01rem darken(@blue, 30%);
+				}
 			}
 		}
 		&[type="radio"] {
 			border-radius: 50%;
+
+			&:checked {
+				appearance: radio;
+				vertical-align: 0;
+
+				&:focus {
+					box-shadow: 0 0 .02rem 0 darken(@blue, 30%);
+				}
+			}
 		}
 
 		&[type="reset"],
@@ -79,6 +98,7 @@ form.form {
 		.__item();
 		padding: .05rem .07rem;
 		vertical-align: top;
+		resize: none;
 		min-width: 2rem;
 		min-height: .60rem;
 
@@ -205,14 +225,15 @@ form.form {
 		}
 	}
 
-	.form-radio {
+	.form-checkbox, .form-radio {
 		display: inline-block;
-		margin-right: .20rem;
+		//margin-right: .10rem;
+		padding-right: .15rem;
+		line-height: .32rem;
 
-		&:last-child {
-			margin-right: 0;
-		}
-
+		//&:last-child {
+		//	margin-right: 0;
+		//}
 	}
 
 	.form-control {
@@ -274,6 +295,10 @@ form.form {
 					border-top-left-radius: @radius;
 					border-bottom-left-radius: @radius;
 				}
+				&:last-child {
+					border-top-right-radius: @radius;
+					border-bottom-right-radius: @radius;
+				}
 			}
 		}
 
@@ -294,6 +319,7 @@ form.form {
 			border: solid .01rem @line;
 			border-right: 0;
 			border-radius: @radius 0 0 @radius;
+			white-space: nowrap;
 			line-height: .20rem;
 
 			&.dropdown {
@@ -319,7 +345,7 @@ form.form {
 	}
 
 	&-stacked {
-		label {
+		.form-group > label:not([class*="form-"]) {
 			display: block;
 			line-height: 2em;
 		}
@@ -340,7 +366,7 @@ form.form {
 	}
 
 	&-horizontal {
-		label {
+		.form-group > label:not([class*="form-"]) {
 			float: left;
 			padding: .05rem .05rem .05rem 0;
 			text-align: right;
