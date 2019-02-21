@@ -15,14 +15,14 @@
 	.gender-grid(@count, (@i+1));
 }
 
-.gender-grid(@count,@pre, @i:1) when (@i=<@count) {
+.gender-grid-fix(@count,@pre, @i:1) when (@i=<@count) {
 	.col-@{pre}@{i} {
 		width: round(100%/12*@i, 4);
 	}
 	.col-@{pre}offset-@{i} {
 		margin-left: round(100%/12*@i, 4);
 	}
-	.gender-grid(@count, @pre, (@i+1));
+	.gender-grid-fix(@count, @pre, (@i+1));
 }
 
 // 背景配色
@@ -40,6 +40,7 @@
 .gender-text(@color) {
 	.text-@{color} {
 		color: darken(@@color, 10%);
+
 		a& {
 			&:link,
 			&:visited {

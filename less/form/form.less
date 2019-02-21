@@ -18,9 +18,9 @@ form.form {
 	input {
 		.__item();
 
-		&:invalid {
-			border-color: @error;
-		}
+		//&:invalid:focus {
+		//	border-color: @error;
+		//}
 
 		&[type="text"],
 		&[type="email"],
@@ -60,6 +60,7 @@ form.form {
 				border-color: @blue;
 			}
 		}
+
 		&[type="checkbox"] {
 			&:checked {
 				appearance: checkbox;
@@ -70,6 +71,7 @@ form.form {
 				}
 			}
 		}
+
 		&[type="radio"] {
 			border-radius: 50%;
 
@@ -136,22 +138,28 @@ form.form {
 
 		&[type="button"] {
 			&:extend(.btn.btn-default all);
+
 			&.btn-primary {
 				&:extend(.btn.btn-primary all);
 			}
+
 			&.btn-success {
 				&:extend(.btn.btn-success all);
 			}
+
 			&.btn-info {
 				&:extend(.btn.btn-info all);
 			}
+
 			&.btn-danger {
 				&:extend(.btn.btn-danger all);
 			}
+
 			&.btn-warn {
 				&:extend(.btn.btn-warn all);
 			}
 		}
+
 		&[type="submit"] {
 			&:extend(.btn.btn-primary all);
 		}
@@ -172,6 +180,7 @@ form.form {
 		&[disabled] {
 			.disabled();
 		}
+
 		&[readonly] {
 			background-color: @separateBg;
 			cursor: default;
@@ -184,6 +193,7 @@ form.form {
 
 		&[disabled] {
 			.disabled();
+
 			&:active {
 				box-shadow: none;
 			}
@@ -278,6 +288,7 @@ form.form {
 		display: flex;
 		line-height: .20rem;
 
+		// 为了 focus 整个 group 有效果，input DOM 默认在第一位
 		input {
 			&[type="text"],
 			&[type="email"],
@@ -286,44 +297,116 @@ form.form {
 			&[type="search"],
 			&[type="tel"],
 			&[type="number"] {
-				float: left;
 				margin: 0;
-				border-radius: 0;
-				//min-width: 1.6rem;
+				padding-left: .10rem;
+				padding-right: .10rem;
 
-				&:first-child {
-					border-top-left-radius: @radius;
-					border-bottom-left-radius: @radius;
+				// input DOM 在中间位置，例外的情况
+				&:nth-last-child(2):not(:first-child) {
+					padding-left: .07rem;
+					padding-right: .07rem;
+					border-radius: 0;
+					z-index: 1;
 				}
+
+				// 实现正常情况下 input 显示在中间的情况
+				&:first-child:nth-last-child(3) {
+					border-radius: 0;
+				}
+
+				// input DOM 在最后的位置，例外的情况
 				&:last-child {
-					border-top-right-radius: @radius;
-					border-bottom-right-radius: @radius;
+					padding-left: .07rem;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+					z-index: 1;
 				}
+
+				// 多个文本框组合
+				&:not(:only-of-type) {
+					border-width: .01rem 0;
+					border-radius: 0;
+
+					&:first-of-type {
+						border-top-left-radius: @radius;
+						border-bottom-left-radius: @radius;
+						border-left-width: .01rem;
+					}
+
+					&:last-of-type {
+						border-top-right-radius: @radius;
+						border-bottom-right-radius: @radius;
+						border-right-width: .01rem;
+					}
+				}
+
+				&:focus {
+					~ .input-addon,
+					~ .input-addon-r,
+					~ button,
+					~ input {
+						border-color: @blue;
+					}
+				}
+
+				//&:invalid:not(:focus) {
+				//	~ .input-addon,
+				//	~ .input-addon-r,
+				//	~ button,
+				//	~ input {
+				//		border-color: @error;
+				//	}
+				//}
 			}
 		}
 
 		button {
-			float: left;
 			padding: .05rem 1em;
 			border-left: 0;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
+			white-space: nowrap;
 			line-height: .20rem;
-			height: auto;
+			box-shadow: -.02rem 0 0 -.01rem @grayLight;
+			z-index: 1;
+		}
+
+		.input-addon,
+		.input-addon-r {
+			padding: .05rem .12rem;
+			background-color: @separateBg;
+			border: solid .01rem @line;
+			white-space: nowrap;
+			line-height: .20rem;
+			transition: border .3s ease-out;
+			z-index: 1;
+
+			&.dropdown {
+				padding: 0 .10rem 0 .12rem;
+			}
 		}
 
 		.input-addon {
-			float: left;
-			padding: .05rem 1em;
-			background-color: @separateBg;
-			border: solid .01rem @line;
 			border-right: 0;
 			border-radius: @radius 0 0 @radius;
-			white-space: nowrap;
-			line-height: .20rem;
+			order: -1;
+			box-shadow: .02rem 0 0 -.01rem @grayLight;
 
-			&.dropdown {
-				padding: 0 .08rem 0 .15rem;
+			&:not(:first-child) {
+				margin-right: -0.03rem;
+			}
+		}
+
+		.input-addon-r {
+			border-left: 0;
+			border-radius: 0 @radius @radius 0;
+			order: 2;
+			box-shadow: -.02rem 0 0 -.01rem @grayLight;
+		}
+
+		.input-addon-r, button {
+			&:nth-child(2) {
+				margin-left: -0.03rem;
 			}
 		}
 	}
@@ -349,6 +432,7 @@ form.form {
 			display: block;
 			line-height: 2em;
 		}
+
 		input {
 			&[type="text"],
 			&[type="email"],
@@ -360,6 +444,7 @@ form.form {
 				display: block;
 			}
 		}
+
 		textarea {
 			display: block;
 		}

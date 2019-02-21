@@ -7,6 +7,22 @@ ul.list {
 	margin: 0;
 	padding: 0;
 
+	ul {
+		margin-left: 1.5em;
+
+		> li {
+			list-style: square;
+		}
+	}
+
+	li > ul > li {
+		list-style: disc;
+
+		> ul > li {
+			list-style: circle;
+		}
+	}
+
 	&.listing {
 		li {
 			padding-left: .10rem;
@@ -27,6 +43,7 @@ ul.list {
 					border: 0;
 					list-style: disc;
 					line-height: 2;
+
 					& > ul > li {
 						list-style: circle;
 					}
@@ -88,6 +105,7 @@ ul.list {
 		li {
 			float: left;
 			list-style: none;
+			line-height: .20rem;
 
 			&:before {
 				content: ">";

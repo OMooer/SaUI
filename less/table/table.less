@@ -14,6 +14,14 @@ table.table {
 			border-bottom: solid .01rem @line;
 			text-align: left;
 			word-break: break-all;
+
+			&.text-center {
+				text-align: center;
+			}
+
+			&.text-right {
+				text-align: right;
+			}
 		}
 	}
 
@@ -32,12 +40,15 @@ table.table {
 		&.table-success {
 			background-color: screen(@success, #ccc);
 		}
+
 		&.table-info {
 			background-color: screen(@info, #ccc);
 		}
+
 		&.table-warn {
 			background-color: screen(@warn, #ccc);
 		}
+
 		&.table-danger {
 			background-color: screen(@error, #ccc);
 		}
@@ -48,6 +59,7 @@ table.table {
 			background: lighten(@separateBg, 1%);
 		}
 	}
+
 	&.table-bordered {
 		border: solid .01rem @line;
 
@@ -59,6 +71,7 @@ table.table {
 			border-bottom-width: .02rem;
 		}
 	}
+
 	&.table-hover {
 		& > tbody > tr:nth-child(n) {
 			background: none;
@@ -68,6 +81,7 @@ table.table {
 			}
 		}
 	}
+
 	&.table-thin {
 		tr {
 			th, td {

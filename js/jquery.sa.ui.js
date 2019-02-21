@@ -316,18 +316,20 @@
 			else if (typeof jConfig === 'object') {
 				// 默认配置
 				jConfig = $.extend({
-					modal    : true,
-					close    : false,
-					animate  : false,
-					maskClose: false,
-					moveable : false,
-					autoShow : true,
-					autoClose: 0,
-					closeType: 'hide',
-					type     : '',
-					title    : '',
-					width    : 300,
-					height   : 100
+					modal     : true,
+					close     : false,
+					animate   : false,
+					maskClose : false,
+					moveable  : false,
+					autoShow  : true,
+					autoClose : 0,
+					closeType : 'hide',
+					type      : '',
+					title     : '',
+					doneText  : '确定',
+					cancelText: '取消',
+					width     : 300,
+					height    : 100
 				}, jConfig);
 
 				var bHasDialog = $Dialog && $Dialog.length;
@@ -348,10 +350,10 @@
 						$Foot = $('<div class="dialog-foot"></div>');
 						switch (jConfig.type) {
 							case 'alert':
-								$Foot.append('<a role="cancel" class="btn btn-primary">确定</a>');
+								$Foot.append('<a role="cancel" class="btn btn-primary">' + jConfig.doneText + '</a>');
 								break;
 							case 'confirm':
-								$Foot.append('<a role="done" class="btn btn-primary">确定</a><a role="cancel" class="btn btn-default">取消</a>');
+								$Foot.append('<a role="done" class="btn btn-primary">' + jConfig.doneText + '</a><a role="cancel" class="btn btn-default">' + jConfig.cancelText + '</a>');
 								break;
 						}
 					}
@@ -530,19 +532,21 @@
 				if (!sString) {
 					return '';
 				}
-				sString = sString.split(' ').join('T');
-				if (sString.length < 16) {
-					sString += ':00';
-				}
-				// 为 Safari 加上当前时区
-				if (this.__check_version() === 'Safari') {
-					// 时差，标准时间-本地时间 得出，单位分钟
-					var nDiffHour = Math.round(new Date().getTimezoneOffset() / 60);
-					if (nDiffHour > 0) {
-						sString += '-' + ('0' + nDiffHour).slice(-2) + ':00';
+				if (sString.indexOf(' ') > 0) {
+					sString = sString.split(' ').join('T');
+					if (sString.length < 16) {
+						sString += ':00';
 					}
-					else {
-						sString += '+' + ('0' + Math.abs(nDiffHour)).slice(-2) + ':00';
+					// 为 Safari 加上当前时区
+					if (this.__check_version() === 'Safari') {
+						// 时差，标准时间-本地时间 得出，单位分钟
+						var nDiffHour = Math.round(new Date().getTimezoneOffset() / 60);
+						if (nDiffHour > 0) {
+							sString += '-' + ('0' + nDiffHour).slice(-2) + ':00';
+						}
+						else {
+							sString += '+' + ('0' + Math.abs(nDiffHour)).slice(-2) + ':00';
+						}
 					}
 				}
 				return sString;
@@ -796,6 +800,7 @@
 						this.$el.html(_start.replace('T', ' '));
 					}
 				}
+				this.$el[0].dispatchEvent(new Event('change'));
 
 				// console.log('update', this.startDate, this.endDate, this.selectStartTime);
 				this.dismiss();
