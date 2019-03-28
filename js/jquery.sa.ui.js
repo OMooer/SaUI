@@ -260,6 +260,9 @@
 							else {
 								_dialog.hide();
 							}
+							if (_dialog.data('config').modal) {
+								$('.dialog-mask').remove();
+							}
 						},
 						dismiss: function () {
 							var _dialog = this;
@@ -280,7 +283,7 @@
 						var _config = _dialog.data('config');
 						_dialog.off('click close.dialog')
 							.on('close.dialog', function (e, sTrigger) {
-								oMask && oMask.remove();
+								// oMask && oMask.remove();
 								$Source.dialog(_config.closeType);
 								if (_config.onClose && typeof _config.onClose === 'function') {
 									_config.onClose(sTrigger);
@@ -800,7 +803,7 @@
 						this.$el.html(_start.replace('T', ' '));
 					}
 				}
-				this.$el[0].dispatchEvent(new Event('change'));
+				this.$el[0].dispatchEvent(new CustomEvent('change', {detail: {start: _start, end: _end}}));
 
 				// console.log('update', this.startDate, this.endDate, this.selectStartTime);
 				this.dismiss();

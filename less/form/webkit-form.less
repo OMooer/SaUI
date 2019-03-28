@@ -8,6 +8,7 @@
 
 		input[type="checkbox"] {
 			@switchWid: .60rem;
+
 			&.form-switch {
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 				appearance: none;
@@ -31,6 +32,7 @@
 					height: 100%;
 					transition: all .2s;
 				}
+
 				&:after {
 					content: "";
 					position: absolute;
@@ -47,7 +49,7 @@
 				}
 
 				&:focus {
-					border-color: @line;
+					border-color: @blue;
 				}
 
 				&:checked {
@@ -56,7 +58,7 @@
 
 					&:focus {
 						box-shadow: none;
-						border-color: @success;
+						border-color: @blue;
 					}
 
 					&:before {
@@ -64,6 +66,7 @@
 						background: none;
 						color: @white;
 					}
+
 					&:after {
 						background: @white;
 						left: @switchWid - .25rem;
@@ -77,6 +80,7 @@
 						cursor: no-drop;
 					}
 				}
+
 				// 镂空
 				&.switch-hollow {
 					border-width: .02rem;
@@ -85,6 +89,7 @@
 						background: none;
 						line-height: .24rem;
 					}
+
 					&:after {
 						background: @grayLight;
 						box-shadow: none;
@@ -93,6 +98,7 @@
 						width: .18rem;
 						height: .18rem;
 					}
+
 					&:checked {
 						background: none;
 						border-color: @success;
@@ -100,12 +106,14 @@
 						&:before {
 							color: @success;
 						}
+
 						&:after {
 							background-color: @success;
 							left: @switchWid - .24rem;
 						}
 					}
 				}
+
 				// 带文字
 				&.switch-text {
 					&:before {
@@ -115,6 +123,7 @@
 						font-size: @fontMini;
 						transition: none;
 					}
+
 					&:checked:before {
 						content: "ON";
 						padding-left: .10rem;
@@ -191,6 +200,7 @@
 							color: @white;
 						}
 					}
+
 					&[disabled] {
 						.disabled(.45);
 

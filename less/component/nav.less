@@ -13,7 +13,7 @@
 		}
 	}
 
-	a {
+	a:not(.btn) {
 		display: block;
 		padding: .08rem .10rem;
 		text-decoration: none;
@@ -46,6 +46,7 @@
 				color: @white;
 			}
 		}
+
 		// 子 li
 		& > li {
 
@@ -76,7 +77,8 @@
 				display: none;
 
 				& > li a {
-					padding-left: .25rem;
+					//padding-left: .25rem;
+					text-indent: .20rem;
 				}
 			}
 
@@ -123,7 +125,7 @@
 				}
 
 				&:hover {
-					&:not(.nav-active) > a {
+					&:not(.nav-active) > a:not(.btn) {
 						background-color: @separateBg;
 					}
 
@@ -242,6 +244,7 @@
 						&:hover {
 							background-color: transparent;
 						}
+
 						&:active {
 							color: inherit;
 						}
@@ -265,10 +268,11 @@
 			line-height: 2;
 		}
 
-		& > ul > li:not(.nav-active) > a:hover {
+		& > ul > li:not(.nav-active) > a:not(.btn):hover {
 			background-color: transparent;
 			color: darken(@link, 10%);
 		}
+
 		& > ul > li {
 			float: left;
 
@@ -276,13 +280,13 @@
 				position: relative;
 				top: -.01rem;
 
-				& > a {
+				& > a:not(.btn) {
 					margin-bottom: -.02rem;
 					border-bottom: solid .02rem @primary;
 				}
 			}
 
-			& > a {
+			& > a:not(.btn) {
 				line-height: 2;
 
 				&:after {

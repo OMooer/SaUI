@@ -20,6 +20,7 @@
 	&:focus {
 		border-color: @blue;
 	}
+
 	& + & {
 		margin-left: .05rem;
 	}
@@ -59,9 +60,11 @@
 
 		input[type="datetime-local"],
 		input[type="date"] {
-			text-align: center;
+			padding: 0;
+			box-shadow: none;
 			border: none;
 			outline: none;
+			text-align: center;
 
 			&::-webkit-clear-button,
 			&::-webkit-inner-spin-button,
@@ -101,14 +104,17 @@
 
 	> .pull-left, > .pull-right {
 		position: absolute;
+
 		a {
 			padding: .03rem .02rem;
 			line-height: 2;
 		}
 	}
+
 	> .pull-left {
 		left: 0;
 	}
+
 	> .pull-right {
 		right: 0;
 	}
@@ -197,6 +203,7 @@
 					&:nth-of-type(7n+1), &.first-of {
 						border-radius: .03rem 0 0 .03rem;
 					}
+
 					&:nth-of-type(7n), &.last-of {
 						border-top-right-radius: .03rem;
 						border-bottom-right-radius: .03rem;
@@ -228,6 +235,7 @@
 		input[type="date"] {
 			width: .94rem;
 		}
+
 		input[type="time"] {
 			width: .86rem;
 		}
