@@ -4,84 +4,93 @@
 @import "../common/common";
 
 .dialog {
-	//overflow: hidden;
-	margin: auto;
-	background: @white;
-	border: solid .01rem @line;
-	border-radius: @radius;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	.pop-shadow();
-	z-index: 200;
-
-	.dialog-head {
-		padding: .10rem;
-		background-color: @separateBg;
-		border-bottom: solid .01rem @line;
-		border-radius: @radius @radius 0 0;
-		cursor: default;
-
-		.close {
-			float: right;
-		}
-
-		h3 {
-			margin: 0;
-			font-size: @fontLarge;
-		}
-	}
-
-	.dialog-content,
-	.dialog-foot {
-		padding: .10rem .20rem;
-	}
-
-	.dialog-content {
-		overflow: auto;
-		//min-width: 3rem;
-		//min-height: 1rem;
-		img {
-			max-width: 100%;
-		}
-	}
-
-	.dialog-foot {
-		background-color: @separateBg;
-		border-top: solid .01rem @line;
-		border-radius: 0 0 @radius @radius;
-		text-align: right;
-	}
-
-	&.dialog-animate {
-		animation: dropDown .4s backwards, fadeIn .6s backwards;
-		transition: top .4s, opacity .3s;
-
-		&.dialog-close {
-			top: -10% !important;
-			opacity: 0 !important;
-		}
-	}
-
-	&.dialog-untitled {
-		.dialog-head {
-			padding: 0;
-			background: none;
-			border: 0;
-
-			.close {
-				position: relative;
-				top: -1em;
-			}
-		}
-	}
-}
-
-.dialog-mask {
 	position: fixed;
-	background: rgba(255, 255, 255, .15);
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 199;
+	z-index: 200;
+
+	.dialog-container {
+		margin: auto;
+		background: @white;
+		border: solid .01rem @line;
+		border-radius: @radius;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		.pop-shadow();
+		z-index: 2;
+
+		.dialog-head {
+			padding: .10rem;
+			background-color: @separateBg;
+			border-bottom: solid .01rem @line;
+			border-radius: @radius @radius 0 0;
+			cursor: default;
+
+			.close {
+				float: right;
+			}
+
+			h3 {
+				margin: 0;
+				font-size: @fontLarge;
+			}
+		}
+
+		.dialog-body,
+		.dialog-foot {
+			padding: .10rem .20rem;
+		}
+
+		.dialog-body {
+			overflow: auto;
+			//min-width: 3rem;
+			//min-height: 1rem;
+			img {
+				max-width: 100%;
+			}
+		}
+
+		.dialog-foot {
+			background-color: @separateBg;
+			border-top: solid .01rem @line;
+			border-radius: 0 0 @radius @radius;
+			text-align: right;
+		}
+
+		&.dialog-animate {
+			animation: dropDown .4s backwards, fadeIn .6s backwards;
+			transition: top .4s, opacity .3s;
+
+			&.dialog-close {
+				top: -10% !important;
+				opacity: 0 !important;
+			}
+		}
+
+		&.dialog-untitled {
+			.dialog-head {
+				padding: 0;
+				background: none;
+				border: 0;
+
+				.close {
+					position: relative;
+					top: -1em;
+				}
+			}
+		}
+	}
+
+	.dialog-mask {
+		position: absolute;
+		background: rgba(255, 255, 255, .15);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+	}
 }

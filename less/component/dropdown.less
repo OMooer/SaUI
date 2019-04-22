@@ -10,6 +10,7 @@
 	background-color: @white;
 	border: solid .01rem @line;
 	border-radius: @radius;
+	cursor: default;
 	line-height: .25rem;
 	transition: box-shadow .2s;
 	font-size: @fontNormal;
@@ -17,13 +18,14 @@
 	.dropdown-text {
 		display: inline-block;
 		padding: .05rem 0;
-		cursor: default;
 		color: @grayDark;
 	}
+
 	.dropdown-icon {
 		.gender-caret(bottom);
 		transition: transform .3s ease-out;
 	}
+
 	.dropdown-menu {
 		display: none;
 		position: absolute;
@@ -39,11 +41,11 @@
 		z-index: 10;
 
 		.dropdown-head {
-			&:extend(.nav a);
+			display: block;
+			padding: .08rem .10rem;
 			cursor: default;
 			line-height: 1em;
 			white-space: nowrap;
-			//letter-spacing: .02rem;
 			font-size: 85%;
 			font-weight: bold;
 			color: @grayness;
@@ -66,12 +68,18 @@
 			}
 
 			a {
-				&:extend(.nav a all);
+				display: block;
 				padding: .06rem .10rem;
+				text-decoration: none;
 				line-height: 1.2em;
 				white-space: nowrap;
 				color: @default;
+
+				&:hover {
+					background-color: @separateBg;
+				}
 			}
+
 			a:link {
 				text-align: left;
 			}

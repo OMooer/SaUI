@@ -222,103 +222,17 @@
 
 			return $This;
 		};
-		$.fn.dialog = function (jConfig) {
+		$.fn.dialog = function (option) {
 			var $Source = this;
 			if (!$Source.length) {
 				throw new Error('Dialog is dismissed');
 			}
 			var $Dialog = $Source.data('dialog');
 
-			if (typeof jConfig === 'string') {
-				if ($Dialog && $Dialog.length) {
-					// 指令
-					var __call = {
-						show   : function () {
-							var $mask;
-							var _dialog = this;
-							if (_dialog.data('config').modal) {
-								$mask = $('.dialog-mask');
-								if (!$mask.length) {
-									$mask = $('<div class="dialog-mask"></div>').appendTo('body');
-								}
-							}
-							_dialog.css({
-								position: 'fixed',
-								left    : document.documentElement.clientWidth / 2 - this.outerWidth() / 2,
-								top     : Math.max(0, document.documentElement.clientHeight / 2 - this.outerHeight() / 2)
-							}).show();
-							__fEvent.call(_dialog, $mask);
-						},
-						hide   : function () {
-							var _dialog = this;
-							if (_dialog.hasClass('dialog-animate')) {
-								_dialog.addClass('dialog-close');
-								setTimeout(function () {
-									_dialog.removeClass('dialog-close').hide();
-								}, 600);
-							}
-							else {
-								_dialog.hide();
-							}
-							if (_dialog.data('config').modal) {
-								$('.dialog-mask').remove();
-							}
-						},
-						dismiss: function () {
-							var _dialog = this;
-							if (_dialog.hasClass('dialog-animate')) {
-								_dialog.addClass('dialog-close');
-								setTimeout(function () {
-									_dialog.removeClass('dialog-close').remove();
-								}, 600);
-							}
-							else {
-								_dialog.remove();
-							}
-						}
-					};
-					// 事件绑定
-					var __fEvent = function (oMask) {
-						var _dialog = this;
-						var _config = _dialog.data('config');
-						_dialog.off('click close.dialog')
-							.on('close.dialog', function (e, sTrigger) {
-								// oMask && oMask.remove();
-								$Source.dialog(_config.closeType);
-								if (_config.onClose && typeof _config.onClose === 'function') {
-									_config.onClose(sTrigger);
-								}
-							})
-							.on('click', '.close', function () {
-								_dialog.trigger('close.dialog', ['close']);
-							})
-							.on('click', 'a.btn[role="done"]', function () {
-								_dialog.trigger('close.dialog', ['done']);
-							})
-							.on('click', 'a.btn[role="cancel"]', function () {
-								_dialog.trigger('close.dialog', ['cancel']);
-							})
-						;
-						if (_config.maskClose) {
-							oMask.on('click', function () {
-								_dialog.trigger('close.dialog', ['mask']);
-							});
-						}
-						if (_config.autoClose) {
-							setTimeout(function () {
-								_dialog.trigger('close.dialog', ['auto']);
-							}, _config.autoClose);
-						}
-					};
-
-					if (typeof __call[jConfig] === 'function') {
-						__call[jConfig].call($Dialog);
-					}
-				}
-			}
-			else if (typeof jConfig === 'object') {
+			// 如果参数是对象则表示这是一个 Dialog 定义
+			if (typeof option === 'object') {
 				// 默认配置
-				jConfig = $.extend({
+				var oConfig = $.extend({
 					modal     : true,
 					close     : false,
 					animate   : false,
@@ -333,52 +247,167 @@
 					cancelText: '取消',
 					width     : 300,
 					height    : 100
-				}, jConfig);
-
+				}, option);
 				var bHasDialog = $Dialog && $Dialog.length;
+				// 如果当前对象没有初始化过 Dialog 则进行初始化
 				if (!bHasDialog) {
-					var _head    = '',
-					    $Content = $('<div class="dialog-content"></div>'),
-					    $Foot;
-					if (jConfig.title || jConfig.close) {
-						_head = '<div class="dialog-head">' +
-							(jConfig.close ? '<a aria-label="Close" class="close"><i aria-hidden="true">&times;</i></a>' : '') +
-							(jConfig.title ? '<h3>' + jConfig.title + '</h3>' : '')
-							+ '</div>';
+					var $Head,
+					    $Body = $('<div class="dialog-body"></div>'),
+					    $Foot,
+					    $Mask;
+					if (oConfig.title || oConfig.close) {
+						$Head = $('<div class="dialog-head"></div>');
+						// 添加右上角关闭
+						oConfig.close && $Head.append('<a aria-label="Close" class="close"><i aria-hidden="true">&times;</i></a>');
+						// 添加标题文字
+						oConfig.title && $Head.append('<h3>' + oConfig.title + '</h3>');
 					}
+					// 将当前对象内容添加到内容容器中
+					$Body.append($Source);
 
-					$Content.append($Source);
-
-					if (jConfig.type) {
+					// 如果是预设类型弹框就增加相应的底栏
+					if (oConfig.type) {
 						$Foot = $('<div class="dialog-foot"></div>');
-						switch (jConfig.type) {
+						switch (oConfig.type) {
 							case 'alert':
-								$Foot.append('<a role="cancel" class="btn btn-primary">' + jConfig.doneText + '</a>');
+								$Foot.append('<a role="cancel" class="btn btn-primary">' + oConfig.doneText + '</a>');
 								break;
 							case 'confirm':
-								$Foot.append('<a role="done" class="btn btn-primary">' + jConfig.doneText + '</a><a role="cancel" class="btn btn-default">' + jConfig.cancelText + '</a>');
+								$Foot.append('<a role="done" class="btn btn-primary">' + oConfig.doneText + '</a>' +
+									'<a role="cancel" class="btn btn-default">' + oConfig.cancelText + '</a>');
 								break;
 						}
 					}
 
-					var $dialog = $('<div></div>').addClass('dialog')
-						.addClass(jConfig.title ? '' : 'dialog-untitled')
-						.addClass(jConfig.animate ? 'dialog-animate' : '')
-						.css({
-							display: 'none',
-							width  : jConfig.width
-						})
-						.data('config', jConfig)
-						.append(_head)
-						.append($Content.css({
-							height: Math.min(jConfig.height, document.documentElement.clientHeight * .9)
-						}))
-						.append($Foot)
-						.appendTo('body');
-					$Source.data('dialog', $dialog);
-				}
+					// 添加遮罩层
+					if (oConfig.modal) {
+						$Mask = $('<div class="dialog-mask"></div>');
+					}
 
-				jConfig.autoShow && $Source.dialog('show');
+					// 初始化构建弹框 UI
+					var $Container = $('<div></div>').addClass('dialog-container')
+						.addClass(oConfig.title ? '' : 'dialog-untitled')
+						.addClass(oConfig.animate ? 'dialog-animate' : '')
+						.css({
+							width: oConfig.width
+						})
+						.append($Head)
+						.append($Body.css({
+							height: Math.min(oConfig.height, document.documentElement.clientHeight * .9)
+						}))
+						.append($Foot);
+
+					var $InitDialog = $('<div></div>')
+						.addClass('dialog')
+						.css({
+							display: 'none'
+						})
+						.data('config', oConfig)
+						.append($Mask)
+						.append($Container)
+						.appendTo('body');
+
+					$Source.data('dialog', $InitDialog);
+
+				}
+				oConfig.autoShow && $Source.dialog('show');
+			}
+			else if (typeof option === 'string') {
+				// 如果不存在定义过的 Dialog 则不反馈任何信息
+				if ($Dialog && $Dialog.length) {
+					var sEvent = option;
+
+					// DOM 事件处理
+					function __BindEvent() {
+						var _config = $Dialog.data('config');
+						$Dialog.off()
+							.on('close.dialog', function (e, triggerOpt) {
+								// 根据 closeType 执行关闭指令
+								$Source.dialog(_config.closeType);
+								// 如果存在关闭事件回调则执行
+								if (_config.onClose && typeof _config.onClose === 'function') {
+									_config.onClose(triggerOpt);
+								}
+							})
+							// 右上角关闭按钮关闭
+							.on('click', '.close', function () {
+								$Dialog.trigger('close.dialog', ['close']);
+							})
+							// 确定按钮关闭
+							.on('click', 'a.btn[role="done"]', function () {
+								$Dialog.trigger('close.dialog', ['done']);
+							})
+							// 取消按钮关闭
+							.on('click', 'a.btn[role="cancel"]', function () {
+								$Dialog.trigger('close.dialog', ['cancel']);
+							})
+							// 遮罩层关闭
+							.on('click', '.dialog-mask', function () {
+								if (_config.maskClose) {
+									$Dialog.trigger('close.dialog', ['mask']);
+								}
+							})
+						;
+						// 自动定时关闭
+						if (_config.autoClose) {
+							setTimeout(function () {
+								$Dialog.trigger('close.dialog', ['auto']);
+							}, _config.autoClose);
+						}
+					}
+
+					// 定义指令事件处理
+					var __Events__ = {
+						show   : function () {
+							var _dialog = this;
+							// 计算位置并显示 Dialog
+							_dialog.show();
+							var $Content = _dialog.children('.dialog-container');
+							// 因为 fixed 会影响容器的实际宽高
+							$Content.css({
+								position: 'fixed'
+							});
+							$Content.css({
+								left: document.documentElement.clientWidth / 2 - $Content.outerWidth() / 2,
+								top : Math.max(0, document.documentElement.clientHeight / 2 - $Content.outerHeight() / 2)
+							});
+							// 绑写事件
+							__BindEvent();
+						},
+						hide   : function () {
+							var _dialog = this;
+							var $Content = _dialog.children('.dialog-container');
+							if ($Content.hasClass('dialog-animate')) {
+								$Content.addClass('dialog-close');
+								// timeout 时间与 css 的动画时间一致
+								setTimeout(function () {
+									$Content.removeClass('dialog-close');
+									_dialog.hide();
+								}, 600);
+							}
+							else {
+								_dialog.hide();
+							}
+						},
+						dismiss: function () {
+							var _dialog = this;
+							var $Content = _dialog.children('.dialog-container');
+							if ($Content.hasClass('dialog-animate')) {
+								$Content.addClass('dialog-close');
+								// timeout 时间与 css 的动画时间一致
+								setTimeout(function () {
+									_dialog.remove();
+								}, 600);
+							}
+							else {
+								_dialog.remove();
+							}
+						}
+					};
+
+					// 触发指令
+					__Events__[sEvent] && __Events__[sEvent].call($Dialog);
+				}
 			}
 
 			return $Source;

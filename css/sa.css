@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.4.9 (https://saui.omooer.com)
+ * SaUI v0.4.12 (https://saui.omooer.com)
  * Copyright 2016-2019 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -795,7 +795,6 @@ form.form button {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.08rem 1em;
-  background-clip: padding-box;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1530,11 +1529,12 @@ form.form .form-select {
   background-color: #fff;
 }
 form.form .form-select:after {
-  content: "\1433";
+  content: "\f105";
   position: absolute;
   margin-top: -0.5em;
   line-height: 1;
-  font-size: 0.14rem;
+  font-family: FontAwesome;
+  font-size: 0.18rem;
   color: #aaa;
   right: 0.07rem;
   top: 50%;
@@ -2264,71 +2264,80 @@ a.card {
  * 弹框
  **/
 .dialog {
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+}
+.dialog .dialog-container {
   margin: auto;
   background: #fff;
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 0.08rem -0.03rem #777;
-  z-index: 200;
+  z-index: 2;
 }
-.dialog .dialog-head {
+.dialog .dialog-container .dialog-head {
   padding: 0.1rem;
   background-color: #f7f7f7;
   border-bottom: solid 0.01rem #ccc;
   border-radius: 0.04rem 0.04rem 0 0;
   cursor: default;
 }
-.dialog .dialog-head .close {
+.dialog .dialog-container .dialog-head .close {
   float: right;
 }
-.dialog .dialog-head h3 {
+.dialog .dialog-container .dialog-head h3 {
   margin: 0;
   font-size: 0.16rem;
 }
-.dialog .dialog-content,
-.dialog .dialog-foot {
+.dialog .dialog-container .dialog-body,
+.dialog .dialog-container .dialog-foot {
   padding: 0.1rem 0.2rem;
 }
-.dialog .dialog-content {
+.dialog .dialog-container .dialog-body {
   overflow: auto;
 }
-.dialog .dialog-content img {
+.dialog .dialog-container .dialog-body img {
   max-width: 100%;
 }
-.dialog .dialog-foot {
+.dialog .dialog-container .dialog-foot {
   background-color: #f7f7f7;
   border-top: solid 0.01rem #ccc;
   border-radius: 0 0 0.04rem 0.04rem;
   text-align: right;
 }
-.dialog.dialog-animate {
+.dialog .dialog-container.dialog-animate {
   -webkit-animation: dropDown 0.4s backwards, fadeIn 0.6s backwards;
           animation: dropDown 0.4s backwards, fadeIn 0.6s backwards;
   transition: top 0.4s, opacity 0.3s;
 }
-.dialog.dialog-animate.dialog-close {
+.dialog .dialog-container.dialog-animate.dialog-close {
   top: -10% !important;
   opacity: 0 !important;
 }
-.dialog.dialog-untitled .dialog-head {
+.dialog .dialog-container.dialog-untitled .dialog-head {
   padding: 0;
   background: none;
   border: 0;
 }
-.dialog.dialog-untitled .dialog-head .close {
+.dialog .dialog-container.dialog-untitled .dialog-head .close {
   position: relative;
   top: -1em;
 }
-.dialog-mask {
-  position: fixed;
+.dialog .dialog-mask {
+  position: absolute;
   background: rgba(255, 255, 255, 0.15);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 199;
+  z-index: 1;
 }
 /**********************
  * 菜单导航
@@ -2340,6 +2349,7 @@ a.card {
   background-color: #fff;
   border: solid 0.01rem #ccc;
   border-radius: 0.04rem;
+  cursor: default;
   line-height: 0.25rem;
   transition: box-shadow 0.2s;
   font-size: 0.14rem;
@@ -2347,7 +2357,6 @@ a.card {
 .dropdown .dropdown-text {
   display: inline-block;
   padding: 0.05rem 0;
-  cursor: default;
   color: #777;
 }
 .dropdown .dropdown-icon {
@@ -2378,6 +2387,8 @@ a.card {
   z-index: 10;
 }
 .dropdown .dropdown-menu .dropdown-head {
+  display: block;
+  padding: 0.08rem 0.1rem;
   cursor: default;
   line-height: 1em;
   white-space: nowrap;
@@ -2398,10 +2409,15 @@ a.card {
   border-top: solid 0.01rem #ccc;
 }
 .dropdown .dropdown-menu .dropdown-item a {
+  display: block;
   padding: 0.06rem 0.1rem;
+  text-decoration: none;
   line-height: 1.2em;
   white-space: nowrap;
   color: #555;
+}
+.dropdown .dropdown-menu .dropdown-item a:hover {
+  background-color: #f7f7f7;
 }
 .dropdown .dropdown-menu .dropdown-item a:link {
   text-align: left;
@@ -2562,14 +2578,12 @@ ul.list.crumbs.italic li:before {
 .nav ul li {
   list-style: none;
 }
-.nav a:not(.btn),
-.dropdown .dropdown-menu .dropdown-item a:not(.btn) {
+.nav a:not(.btn) {
   display: block;
   padding: 0.08rem 0.1rem;
   text-decoration: none;
 }
-.nav a:not(.btn):hover,
-.dropdown .dropdown-menu .dropdown-item a:not(.btn):hover {
+.nav a:not(.btn):hover {
   background-color: #f7f7f7;
 }
 .nav .nav-header {
