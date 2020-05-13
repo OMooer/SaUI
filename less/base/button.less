@@ -80,16 +80,19 @@
 		padding: .16rem 1em;
 		font-size: @fontBigger;
 	}
+
 	// 大尺寸
 	&.btn-lg {
 		padding: .13rem 1em;
 		font-size: @fontBig;
 	}
+
 	// 小尺寸
 	&.btn-sm {
 		padding: .07rem .7em;
 		font-size: @fontSmall;
 	}
+
 	// 细小尺寸
 	&.btn-xs {
 		padding: .04rem .6em;
@@ -111,6 +114,7 @@
 	&[disabled],
 	&.btn-disabled {
 		.disabled();
+
 		&:active {
 			box-shadow: none;
 		}
@@ -133,6 +137,7 @@
 		&[disabled]:hover {
 			border-color: @line;
 		}
+
 		a& {
 			color: @grayDark;
 		}
@@ -142,6 +147,7 @@
 	&.btn-default-o {
 		.__btn(@grayLighter);
 		color: @default;
+
 		a& {
 			color: @default;
 		}
@@ -184,6 +190,7 @@
 
 	&:hover, &:active {
 		text-decoration: none;
+		box-shadow: none;
 	}
 
 	& + &,

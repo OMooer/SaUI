@@ -1,6 +1,6 @@
 /*!**
- * SaUI v0.4.12 (https://saui.omooer.com)
- * Copyright 2016-2019 O'Mooer Works (www.omooer.com)
+ * SaUI v0.5.1 (https://saui.omooer.com)
+ * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -1197,6 +1197,7 @@ aform.form button[type="reset"] {
 .btn-text:hover,
 .btn-text:active {
   text-decoration: none;
+  box-shadow: none;
 }
 /**********************
  * 栅格
@@ -2583,7 +2584,7 @@ ul.list.crumbs.italic li:before {
   padding: 0.08rem 0.1rem;
   text-decoration: none;
 }
-.nav a:not(.btn):hover {
+.nav li:not(.nav-active) a:not(.btn):hover {
   background-color: #f7f7f7;
 }
 .nav .nav-header {
@@ -2636,6 +2637,7 @@ ul.list.crumbs.italic li:before {
   display: none;
 }
 .nav > ul > li a + ul > li a {
+  padding-left: 0.25rem;
   text-indent: 0.2rem;
 }
 .nav > ul > li.nav-open > a:after {
@@ -2669,8 +2671,8 @@ ul.list.crumbs.italic li:before {
 }
 .nav.nav-horizontal > ul li > a + ul > li a,
 .nav.nav-bar > ul li > a + ul > li a {
-  padding-left: 0.1rem;
   text-align: left !important;
+  text-indent: 0;
 }
 .nav.nav-horizontal > ul li:hover:not(.nav-active) > a:not(.btn),
 .nav.nav-bar > ul li:hover:not(.nav-active) > a:not(.btn) {
