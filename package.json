@@ -1,0 +1,35 @@
+{
+  "name": "saui",
+  "version": "0.5.2",
+  "description": "SaUI，一个适用于 Desktop &amp; Mobile 的 CSS 框架",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OMooer/SaUI.git"
+  },
+  "author": "AngusYoung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OMooer/SaUI/issues"
+  },
+  "homepage": "https://saui.omooer.com",
+  "devDependencies": {
+    "console-colors-node": "^1.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-ftp": "^1.1.0",
+    "gulp-header": "^1.8.12",
+    "gulp-jade": "^1.1.0",
+    "gulp-less": "^4.0.1",
+    "gulp-preprocess": "^3.0.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-size": "^2.1.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-zip": "^3.2.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "minimist": "^1.2.5",
+    "pump": "^1.0.3",
+    "vinyl-ftp": "^0.6.1"
+  }
+}

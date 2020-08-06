@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.5.1 (https://saui.omooer.com)
+ * SaUI v0.5.2 (https://saui.omooer.com)
  * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -1414,7 +1414,6 @@ form.form input[type="checkbox"]:checked {
   -webkit-appearance: checkbox;
      -moz-appearance: checkbox;
           appearance: checkbox;
-  vertical-align: 0.01rem;
 }
 form.form input[type="checkbox"]:checked:focus {
   box-shadow: 0 0.01rem 0.01rem 0.01rem #024d9c;
@@ -1426,7 +1425,6 @@ form.form input[type="radio"]:checked {
   -webkit-appearance: radio;
      -moz-appearance: radio;
           appearance: radio;
-  vertical-align: 0;
 }
 form.form input[type="radio"]:checked:focus {
   box-shadow: 0 0 0.02rem 0 #024d9c;
@@ -1557,49 +1555,71 @@ form.form .form-control {
   width: 100%;
 }
 form.form fieldset {
+  margin: 0;
   padding: 0;
   border: none;
 }
-form.form fieldset input[type="text"],
-form.form fieldset input[type="email"],
-form.form fieldset input[type="password"],
-form.form fieldset input[type="url"],
-form.form fieldset input[type="search"],
-form.form fieldset input[type="tel"],
-form.form fieldset input[type="number"] {
+form.form fieldset legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.1rem 0;
+  font-size: 0.16rem;
+  font-weight: bold;
+  width: 100%;
+}
+form.form fieldset legend:before,
+form.form fieldset legend:after {
+  content: "";
+  background: #ccc;
+  height: 0.01rem;
+}
+form.form fieldset legend:before {
+  margin-right: 0.1rem;
+  width: 0.2rem;
+}
+form.form fieldset legend:after {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 0.1rem;
+}
+form.form fieldset input:not([type="radio"]):not([type="checkbox"]) {
   position: relative;
   margin-top: -0.01rem;
   border-radius: 0;
   box-shadow: none;
 }
-form.form fieldset input[type="text"]:first-child,
-form.form fieldset input[type="email"]:first-child,
-form.form fieldset input[type="password"]:first-child,
-form.form fieldset input[type="url"]:first-child,
-form.form fieldset input[type="search"]:first-child,
-form.form fieldset input[type="tel"]:first-child,
-form.form fieldset input[type="number"]:first-child {
+form.form fieldset input:not([type="radio"]):not([type="checkbox"]):first-of-type {
   margin-top: 0;
   border-radius: 0.04rem 0.04rem 0 0;
   box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
 }
-form.form fieldset input[type="text"]:last-child,
-form.form fieldset input[type="email"]:last-child,
-form.form fieldset input[type="password"]:last-child,
-form.form fieldset input[type="url"]:last-child,
-form.form fieldset input[type="search"]:last-child,
-form.form fieldset input[type="tel"]:last-child,
-form.form fieldset input[type="number"]:last-child {
+form.form fieldset input:not([type="radio"]):not([type="checkbox"]):last-of-type {
   border-radius: 0 0 0.04rem 0.04rem;
 }
-form.form fieldset input[type="text"]:focus,
-form.form fieldset input[type="email"]:focus,
-form.form fieldset input[type="password"]:focus,
-form.form fieldset input[type="url"]:focus,
-form.form fieldset input[type="search"]:focus,
-form.form fieldset input[type="tel"]:focus,
-form.form fieldset input[type="number"]:focus {
+form.form fieldset input:not([type="radio"]):not([type="checkbox"]):focus {
   z-index: 1;
+}
+form.form fieldset.horizontal {
+  display: inline-block;
+}
+form.form fieldset.horizontal input:not([type="radio"]):not([type="checkbox"]) {
+  float: left;
+  margin: 0 0 0 -0.01rem;
+}
+form.form fieldset.horizontal input:not([type="radio"]):not([type="checkbox"]):first-of-type {
+  margin: 0;
+  border-radius: 0.04rem 0 0 0.04rem;
+}
+form.form fieldset.horizontal input:not([type="radio"]):not([type="checkbox"]):last-of-type {
+  border-radius: 0 0.04rem 0.04rem 0;
 }
 form.form .input-group {
   display: -webkit-box;
@@ -2748,6 +2768,7 @@ ul.list.crumbs.italic li:before {
   left: 0;
   top: 0;
   bottom: 0;
+  overflow: auto;
 }
 .nav.nav-menu.nav-mini-menu {
   top: 10%;
@@ -2915,8 +2936,7 @@ ul.paging li a:visited {
   background-color: #fff;
   color: #555;
 }
-ul.paging li a:link:hover,
-ul.paging li a:visited:hover {
+ul.paging li a:hover {
   background-color: #f7f7f7;
 }
 ul.paging li.paging-prev a:before,
@@ -3397,6 +3417,8 @@ input[role="calendar"][type="date"] {
 }
 .date-panel .calendar dd ul li.selected {
   background: #5eaeff;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   color: #fff;
 }
 .date-panel .calendar dd ul li.selected ~ .selected {
@@ -3412,6 +3434,10 @@ input[role="calendar"][type="date"] {
 }
 .date-panel .calendar dd ul li.selected:nth-of-type(7n),
 .date-panel .calendar dd ul li.selected.last-of {
+  border-top-right-radius: 0.03rem;
+  border-bottom-right-radius: 0.03rem;
+}
+.date-panel .calendar dd ul li.selected:last-of-type:not(.last-of) {
   border-top-right-radius: 0.03rem;
   border-bottom-right-radius: 0.03rem;
 }

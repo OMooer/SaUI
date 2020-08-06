@@ -27,10 +27,10 @@ ul.paging {
 			&:visited {
 				background-color: @white;
 				color: @default;
+			}
 
-				&:hover {
-					background-color: @separateBg;
-				}
+			&:hover {
+				background-color: @separateBg;
 			}
 		}
 
@@ -39,6 +39,7 @@ ul.paging {
 				.gender-caret(left, true);
 				font-size: 1.3em;
 			}
+
 			> a:empty {
 				&:before {
 					margin: 0;
@@ -51,6 +52,7 @@ ul.paging {
 				.gender-caret(right, true);
 				font-size: 1.3em;
 			}
+
 			> a:empty {
 				&:after {
 					margin: 0;
@@ -87,6 +89,7 @@ ul.paging {
 			a {
 				border-radius: .20rem;
 				border: solid .02rem @blue;
+
 				&:hover {
 					background-color: @separateBg;
 				}
@@ -104,10 +107,12 @@ ul.paging {
 
 			&:first-child {
 				margin-left: 0;
+
 				a {
 					border-radius: .20rem 0 0 .20rem;
 				}
 			}
+
 			&:last-child {
 				a {
 					border-radius: 0 .20rem .20rem 0;
@@ -167,6 +172,7 @@ ul.paging {
 					border-radius: .20rem 0 0 .20rem;
 				}
 			}
+
 			&:last-child:extend(ul.paging li.paging-next all) {
 				a {
 					border-left: 0;
@@ -176,6 +182,7 @@ ul.paging {
 
 			&.paging-prev {
 				float: left;
+
 				a {
 					border-radius: .20rem;
 				}
@@ -183,6 +190,7 @@ ul.paging {
 
 			&.paging-next {
 				float: right;
+
 				a {
 					border: solid .01rem @line;
 					border-radius: .20rem;

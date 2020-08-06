@@ -1,5 +1,5 @@
 # SaUI
-SaUI，一个适用于 Desktop &amp; Mobile 的CSS框架
+SaUI，一个适用于 Desktop &amp; Mobile 的 CSS 框架
 
 ## Usage
 #### NPM

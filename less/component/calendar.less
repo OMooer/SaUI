@@ -190,6 +190,8 @@
 
 				li.selected {
 					background: @blueLight;
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
 					color: @white;
 
 					~ .selected {
@@ -205,6 +207,11 @@
 					}
 
 					&:nth-of-type(7n), &.last-of {
+						border-top-right-radius: .03rem;
+						border-bottom-right-radius: .03rem;
+					}
+
+					&:last-of-type:not(.last-of) {
 						border-top-right-radius: .03rem;
 						border-bottom-right-radius: .03rem;
 					}

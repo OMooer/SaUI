@@ -64,7 +64,7 @@ form.form {
 		&[type="checkbox"] {
 			&:checked {
 				appearance: checkbox;
-				vertical-align: .01rem;
+				//vertical-align: .01rem;
 
 				&:focus {
 					box-shadow: 0 .01rem .01rem .01rem darken(@blue, 30%);
@@ -77,7 +77,7 @@ form.form {
 
 			&:checked {
 				appearance: radio;
-				vertical-align: 0;
+				//vertical-align: 0;
 
 				&:focus {
 					box-shadow: 0 0 .02rem 0 darken(@blue, 30%);
@@ -238,13 +238,8 @@ form.form {
 
 	.form-checkbox, .form-radio {
 		display: inline-block;
-		//margin-right: .10rem;
 		padding-right: .15rem;
 		line-height: .32rem;
-
-		//&:last-child {
-		//	margin-right: 0;
-		//}
 	}
 
 	.form-control {
@@ -252,34 +247,72 @@ form.form {
 	}
 
 	fieldset {
+		margin: 0;
 		padding: 0;
 		border: none;
 
-		input {
-			&[type="text"],
-			&[type="email"],
-			&[type="password"],
-			&[type="url"],
-			&[type="search"],
-			&[type="tel"],
-			&[type="number"] {
-				position: relative;
-				margin-top: -.01rem;
-				border-radius: 0;
-				box-shadow: none;
+		legend {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: .10rem 0;
+			font-size: @fontLarge;
+			font-weight: bold;
+			width: 100%;
 
-				&:first-child {
-					margin-top: 0;
-					border-radius: @radius @radius 0 0;
-					.groove-shadow();
+			&:before,
+			&:after {
+				content: "";
+				background: @line;
+				height: .01rem;
+			}
+
+			&:before {
+				margin-right: .10rem;
+				width: .20rem;
+			}
+
+			&:after {
+				flex-grow: 1;
+				margin-left: .10rem;
+			}
+		}
+
+		input:not([type="radio"]):not([type="checkbox"]) {
+			position: relative;
+			margin-top: -.01rem;
+			border-radius: 0;
+			box-shadow: none;
+
+			&:first-of-type {
+				margin-top: 0;
+				border-radius: @radius @radius 0 0;
+				.groove-shadow();
+			}
+
+			&:last-of-type {
+				border-radius: 0 0 @radius @radius;
+			}
+
+			&:focus {
+				z-index: 1;
+			}
+		}
+
+		&.horizontal {
+			display: inline-block;
+
+			input:not([type="radio"]):not([type="checkbox"]) {
+				float: left;
+				margin: 0 0 0 -.01rem;
+
+				&:first-of-type {
+					margin: 0;
+					border-radius: @radius 0 0 @radius;
 				}
 
-				&:last-child {
-					border-radius: 0 0 @radius @radius;
-				}
-
-				&:focus {
-					z-index: 1;
+				&:last-of-type {
+					border-radius: 0 @radius @radius 0;
 				}
 			}
 		}
