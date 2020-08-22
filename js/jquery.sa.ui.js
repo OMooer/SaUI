@@ -1,4 +1,5 @@
 /**
+ * @License
  * @Author Angus <angusyoung@mrxcool.com>
  * @Description Sa.UI.js for jQuery
  * @Since 16/7/24
@@ -424,12 +425,12 @@
 			var $panel = this.$parent = $(
 				'<div class="date-panel card">' +
 				'  <div class="pull-left">' +
-				'     <a href="#" title="上一年" role-action="prevYear"><i class="sa-icon sa-icon-fw sa-icon-angle-double-left"></i></a>' +
-				'     <a href="#" title="上一月" role-action="prevMonth"><i class="sa-icon sa-icon-fw sa-icon-angle-left"></i></a>' +
+				'     <a href="#" title="' + this.options.prevYear + '" role-action="prevYear"><i class="sa-icon sa-icon-fw sa-icon-angle-double-left"></i></a>' +
+				'     <a href="#" title="' + this.options.prevMonth + '" role-action="prevMonth"><i class="sa-icon sa-icon-fw sa-icon-angle-left"></i></a>' +
 				'  </div>' +
 				'  <div class="pull-right">' +
-				'     <a href="#" title="下一月" role-action="nextMonth"><i class="sa-icon sa-icon-fw sa-icon-angle-right"></i></a>' +
-				'     <a href="#" title="下一年" role-action="nextYear"><i class="sa-icon sa-icon-fw sa-icon-angle-double-right"></i></a>' +
+				'     <a href="#" title="' + this.options.nextMonth + '" role-action="nextMonth"><i class="sa-icon sa-icon-fw sa-icon-angle-right"></i></a>' +
+				'     <a href="#" title="' + this.options.nextYear + '" role-action="nextYear"><i class="sa-icon sa-icon-fw sa-icon-angle-double-right"></i></a>' +
 				'  </div>' +
 				'</div>');
 			this.$container = $('<div class="calendar card-body"></div>');
@@ -471,7 +472,7 @@
 													' value="' + this.endDate + '">'
 												)
 										) +
-										'  <span class="bg-error">日期格式填写错误</span>' +
+										'  <span class="bg-error">' + this.options.errorText + '</span>' +
 										'</div>'
 									)
 									: (this.options.showTime ?
@@ -487,10 +488,10 @@
 					'  <div class="pull-right">' +
 					(
 						this.options.todayBtn ?
-							'<button type="button" role-action="today">今天</button>'
+							'<button type="button" role-action="today">' + this.options.todayText + '</button>'
 							: ''
 					) +
-					'     <button type="button" class="btn btn-primary" role-action="update">确定</button>' +
+					'     <button type="button" class="btn btn-primary" role-action="update">' + this.options.doneText + '</button>' +
 					'  </div>' +
 					'</form>';
 
@@ -640,11 +641,40 @@
 			getOption      : function () {
 				var _option = {
 					weekStart: 0,
+					language : navigator.language || 'en',
 					allowEdit: false,
 					autoClose: false,
 					todayBtn : false,
-					date     : new Date().setHours(8, 0, 0, 0)
+					date     : new Date().setHours(8, 0, 0, 0),
+					todayText: '今天',
+					doneText : '确定',
+					errorText: '日期格式填写错误',
+					prevYear : '上一年',
+					nextYear : '下一年',
+					prevMonth: '上一月',
+					nextMonth: '下一月'
 				};
+				if (this.$el.data('language')) {
+					_option.language = this.$el.data('language');
+				}
+				if (this.$el.data('lang-pack')) {
+					var pack = this.$el.data('lang-pack');
+					if (typeof pack === 'string') {
+						try {
+							eval('(pack=' + pack + ')');
+						}
+						catch (e) {
+							pack = {};
+						}
+					}
+					_option.doneText = pack.doneText || _option.doneText;
+					_option.todayText = pack.todayText || _option.todayText;
+					_option.errorText = pack.errorText || _option.errorText;
+					_option.prevYear = pack.prevYear || _option.prevYear;
+					_option.nextYear = pack.nextYear || _option.nextYear;
+					_option.prevMonth = pack.prevMonth || _option.prevMonth;
+					_option.nextMonth = pack.nextMonth || _option.nextMonth;
+				}
 				// 判断是单选还是范围选择
 				if (this.$el.data('range')) {
 					_option.isRange = true;
@@ -864,6 +894,7 @@
 			refresh        : function () {
 				// 刷新日历列表
 				var sBuild = '';
+				var lang = this.options.language;
 				var _range = this.options.isRange
 					? [this.startDate, this.endDate]
 					: [this.startDate, this.startDate];
@@ -871,13 +902,13 @@
 					this.preMonth = new Date(new Date(this.cenMonth).setDate(0)).setDate(1);
 					sBuild += '\
 							<dl>\
-								<dt>' + new Date(this.preMonth).toLocaleString('nu', {year: 'numeric', month: 'long'}) + '</dt>\
+								<dt>' + new Date(this.preMonth).toLocaleString(lang, {year: 'numeric', month: 'long'}) + '</dt>\
 								<dd>' + this.write(this.preMonth, _range) + '</dd>\
 							</dl>';
 				}
 				sBuild += '\
 						<dl>\
-							<dt>' + new Date(this.cenMonth).toLocaleString('nu', {year: 'numeric', month: 'long'}) + '</dt>\
+							<dt>' + new Date(this.cenMonth).toLocaleString(lang, {year: 'numeric', month: 'long'}) + '</dt>\
 							<dd>' + this.write(this.cenMonth, _range) + '</dd>\
 						</dl>';
 
@@ -901,6 +932,7 @@
 				}
 			},
 			write          : function (nOriginFirstDay, aRangeDate) {
+				var lang = this.options.language;
 				aRangeDate[0] = new Date(aRangeDate[0]).setHours(0, 0, 0, 0);
 				aRangeDate[1] = new Date(aRangeDate[1]).setHours(0, 0, 0, 0);
 				var nMin = new Date(this.options.min).getTime() || 0,
@@ -924,12 +956,12 @@
 				// 定义日历表头
 				var aHead = [];
 				$.each(aWeekOrder, function (nIndex, nPosition) {
-					aHead[nPosition - 1] = new Date(aWeekNumeric[nIndex]).toLocaleString('nu', {weekday: 'short'});
+					aHead[nPosition - 1] = new Date(aWeekNumeric[nIndex]).toLocaleString(lang, {weekday: 'short'});
 				});
 				var nLen = aHead[0].replace(/\w{2}/g, '@').length * 7 + 2;
-				var sCalendar = '<ol style="width:' + nLen + 'em;"><li>' + aHead.join('</li><li>') + '</li></ol>';
+				var sCalendar = '<ol style="width:' + nLen + 'em; min-width: 16em;"><li>' + aHead.join('</li><li>') + '</li></ol>';
 				// 对数组前面的空项进行构造，并在下面 reduce 开始时补上空 DOM 结构
-				sCalendar += '<ul style="width:' + nLen + 'em;">';
+				sCalendar += '<ul style="width:' + nLen + 'em; min-width: 16em;">';
 				for (i = 0; i < aMonth.length; i++) {
 					var nItemDay = aMonth[i];
 					if (!nItemDay) {
@@ -965,7 +997,7 @@
 						}
 
 						_class = _class.length ? ' class="' + _class.join(' ') + '"' : '';
-						_title = dIndexDate.toLocaleString('nu', {
+						_title = dIndexDate.toLocaleString(lang, {
 							year : 'numeric',
 							month: 'long',
 							day  : 'numeric'

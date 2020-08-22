@@ -97,27 +97,25 @@
 }
 
 .gender-caret(@dir, @unicode) {
-	line-height: .7;
+	display: inline-block;
+	margin-right: .05rem;
 	font-family: Arial, "Times New Roman", sans-serif;
-	font-size: 1.8em;
 
 	& when (@dir = top) {
 		content: "\2039"; // ‹
-		margin-left: .07rem;
-		transform: rotate(90deg);
+		transform: scale(1.6) translate(.08rem, 0rem) rotate(90deg);
 	}
 	& when (@dir = bottom) {
 		content: "\203A"; // ›
-		margin: .03rem 0 0 .10rem;
-		transform: rotate(90deg);
+		transform: scale(1.6) translate(.08rem, 0rem) rotate(90deg);
 	}
 	& when (@dir = left) {
 		content: "\2039"; // ‹
-		margin-right: .05rem;
+		transform: scale(1.6) translate(.05rem, -.01rem);
 	}
 	& when (@dir = right) {
 		content: "\203A"; // ›
-		margin-left: .05rem;
+		transform: scale(1.6) translate(.05rem, -.01rem);
 	}
 }
 

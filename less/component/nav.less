@@ -33,28 +33,25 @@
 		min-width: .50rem;
 	}
 
-	& > ul {
+	// 导航菜单项实体容器
+	> ul {
 		.clearfix();
 		// 所有 li
-		& li {
+		li {
 			margin: 0;
 			padding: 0;
 			list-style: none;
 
-			&.nav-active a {
+			&.nav-active > a {
 				background-color: @primary;
 				color: @white;
 			}
-		}
 
-		// 子 li
-		& > li {
-
+			// 所有菜单链接项默认样式
 			a {
 				line-height: .20rem;
 
 				&:after {
-					float: right;
 					.gender-caret(right, true);
 				}
 
@@ -64,33 +61,44 @@
 						display: none;
 					}
 				}
-			}
 
-			// 导航标题项
-			.nav-title {
+				// 次级导航菜单容器
+				& + ul {
+					display: none;
+
+					// 次级导航菜单实体项
+					> li > a {
+						padding-left: .25rem;
+						text-indent: .20rem;
+					}
+				}
+			}
+		}
+
+		// 一级菜单项
+		> li {
+
+			// 导航一级标题项
+			> .nav-title {
 				cursor: pointer;
 				color: @gray;
-			}
 
-			// 二级导航内容
-			a + ul {
-				display: none;
-
-				& > li a {
-					padding-left: .25rem;
-					text-indent: .20rem;
+				&:after {
+					float: right;
+					margin-right: .15rem !important;
 				}
 			}
 
+			// 展开的一级导航
 			&.nav-open {
-				& > a {
+				> a {
 					&:after {
 						.gender-caret(bottom, true);
 					}
-				}
 
-				& > a + ul {
-					display: block;
+					& + ul {
+						display: block;
+					}
 				}
 			}
 		}
@@ -106,55 +114,64 @@
 			float: right;
 		}
 
-		& > ul {
-
+		> ul {
+			// 任意层级位置的菜单项
 			li {
-				// 横向导航的下级菜单
-				& > a + ul {
+				// 横向导航的次级菜单
+				> a + ul {
 					position: absolute;
 					background-color: @white;
 					border: solid .01rem @line;
 					border-radius: @radius;
 					.pop-shadow();
+					white-space: nowrap;
 					z-index: 10;
 
-					& > li a {
-						text-align: left !important;
+					> li > a {
 						text-indent: 0;
+
+						// 下下级导航菜单
+						& + ul {
+							margin: -2.5em 0 0 100%;
+						}
 					}
 				}
 
+				// 居右向左展开的菜单
+				ul.right-align li > ul {
+					transform: translateX(-100%);
+					margin-left: 0;
+				}
+
+				// 鼠标 hover 时显示次级
 				&:hover {
 					&:not(.nav-active) > a:not(.btn) {
 						background-color: @separateBg;
 					}
 
-					& > a + ul {
+					> a + ul {
 						display: block;
 					}
 				}
 			}
 
-			& > li {
+			// 一级默认显示菜单
+			> li {
 				display: inline-block;
 
-				& > a:after {
-					.gender-caret(bottom, true);
-				}
+				> a {
+					&:link {
+						text-align: center;
+						min-width: .50rem;
+					}
 
-				& > a:last-child:after {
-					display: none;
-				}
+					&:after {
+						.gender-caret(bottom, true);
+					}
 
-				a:link {
-					text-align: center;
-					min-width: .50rem;
-				}
-
-				// 三级
-				& > ul > li > ul {
-					margin: -2.5em 0 0 100%;
-					white-space: nowrap;
+					&:last-child:after {
+						display: none;
+					}
 				}
 			}
 		}
@@ -302,7 +319,8 @@
 		}
 
 		.nav-form form.form {
-			margin: .06rem 0;
+			display: flex;
+			align-items: center;
 
 			button {
 				padding-top: .08rem;

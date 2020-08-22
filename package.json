@@ -1,6 +1,6 @@
 {
   "name": "saui",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "SaUI，一个适用于 Desktop &amp; Mobile 的 CSS 框架",
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
   },
   "homepage": "https://saui.omooer.com",
   "devDependencies": {
+    "console-colors-node": "^1.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
