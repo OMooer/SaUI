@@ -654,11 +654,11 @@
 					prevMonth: '上一月',
 					nextMonth: '下一月'
 				};
-				if (this.$el.data('language')) {
-					_option.language = this.$el.data('language');
+				if (this.$el.attr('data-language')) {
+					_option.language = this.$el.attr('data-language');
 				}
-				if (this.$el.data('lang-pack')) {
-					var pack = this.$el.data('lang-pack');
+				if (this.$el.attr('data-lang-pack')) {
+					var pack = this.$el.attr('data-lang-pack');
 					if (typeof pack === 'string') {
 						try {
 							eval('(pack=' + pack + ')');
@@ -676,14 +676,14 @@
 					_option.nextMonth = pack.nextMonth || _option.nextMonth;
 				}
 				// 判断是单选还是范围选择
-				if (this.$el.data('range')) {
+				if (this.$el.attr('data-range')) {
 					_option.isRange = true;
 				}
 				// 判断是否显示时间
 				if (
 					this.$el.is('[type="datetime-local"]')
 					||
-					this.$el.data('show-time')
+					this.$el.attr('data-show-time')
 					||
 					this.$el.find('input[type="datetime-local"]').length === 2
 				) {
@@ -700,19 +700,19 @@
 					_option.showSecond = true;
 				}
 				// 判断是否有最小值限制
-				var sMin = this.$el.prop('min') ? this.$el.prop('min') : this.$el.data('min');
+				var sMin = this.$el.prop('min') ? this.$el.prop('min') : this.$el.attr('data-min');
 				if (sMin) {
 					_option.min = this.__format_string(sMin);
 				}
 				// 判断是否有最大值限制
-				var sMax = this.$el.prop('max') ? this.$el.prop('max') : this.$el.data('max');
+				var sMax = this.$el.prop('max') ? this.$el.prop('max') : this.$el.attr('data-max');
 				if (sMax) {
 					_option.max = this.__format_string(sMax, '23:59:59');
 				}
 				// 是否允许编辑
-				_option.allowEdit = !!this.$el.data('editable');
+				_option.allowEdit = !!this.$el.attr('data-editable');
 				// 判断是否选择完自动关闭，仅在单选日期并且不提供手动输入时生效
-				if (!_option.isRange && !_option.allowEdit && this.$el.data('auto-close')) {
+				if (!_option.isRange && !_option.allowEdit && this.$el.attr('data-auto-close')) {
 					_option.autoClose = true;
 				}
 				// 获取默认的值
@@ -738,8 +738,8 @@
 					_option.date = new Date(this.__prefix(this.$el.val() || this.$el.text())).getTime() || new Date().getTime();
 				}
 				// 获取周起始值
-				if (this.$el.data('week-start')) {
-					_option.weekStart = this.$el.data('week-start');
+				if (this.$el.attr('data-week-start')) {
+					_option.weekStart = this.$el.attr('data-week-start');
 					if (_option.weekStart > 7) {
 						_option.weekStart = 0;
 					}
@@ -747,7 +747,7 @@
 				// 将配置的周起始值转换为符合程序算法的 0-6
 				_option.weekStart = _option.weekStart % 7;
 				// 是否显示跳转到今天按钮
-				_option.todayBtn = !!this.$el.data('today');
+				_option.todayBtn = !!this.$el.attr('data-today');
 
 				return _option;
 			},
