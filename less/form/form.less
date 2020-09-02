@@ -280,22 +280,27 @@ form.form {
 
 		input:not([type="radio"]):not([type="checkbox"]) {
 			position: relative;
-			margin-top: -.01rem;
 			border-radius: 0;
-			box-shadow: none;
-
-			&:first-of-type {
-				margin-top: 0;
-				border-radius: @radius @radius 0 0;
-				.groove-shadow();
-			}
-
-			&:last-of-type {
-				border-radius: 0 0 @radius @radius;
-			}
 
 			&:focus {
 				z-index: 1;
+			}
+		}
+
+		&:not(.horizontal) {
+			input:not([type="radio"]):not([type="checkbox"]) {
+				margin-top: -.01rem;
+				box-shadow: none;
+
+				&:first-of-type {
+					margin: 0;
+					border-radius: @radius @radius 0 0;
+					.groove-shadow();
+				}
+
+				&:last-of-type {
+					border-radius: 0 0 @radius @radius;
+				}
 			}
 		}
 
@@ -382,15 +387,6 @@ form.form {
 						border-color: @blue;
 					}
 				}
-
-				//&:invalid:not(:focus) {
-				//	~ .input-addon,
-				//	~ .input-addon-r,
-				//	~ button,
-				//	~ input {
-				//		border-color: @error;
-				//	}
-				//}
 			}
 		}
 
@@ -509,6 +505,81 @@ form.form {
 
 		.form-control {
 			width: 80%;
+		}
+	}
+
+	// 显示表单错误的样式
+	.form-error {
+		display: none;
+		box-sizing: border-box;
+		font-size: @fontMini;
+		color: @error;
+	}
+
+	&.error {
+		input:not([type="radio"]):not([type="checkbox"]):invalid {
+			border-color: @error;
+		}
+
+		.input-group {
+			input:invalid {
+				border-left-color: @line !important;
+				border-right-color: @line !important;
+
+				~ .input-addon,
+				~ .input-addon-r,
+				~ button,
+				~ input {
+					border-color: @error;
+				}
+			}
+
+			& + .form-error {
+				display: block;
+				padding: .05rem .08rem .08rem;
+				background: @error;
+				border-radius: @radius;
+				box-shadow: 0 -@radius 0 0 @error;
+				color: @white;
+			}
+		}
+
+		input:invalid ~ .form-error {
+			display: inline-block;
+		}
+
+		&.form-stacked,
+		&.form-horizontal {
+			input:invalid {
+				position: relative;
+				z-index: 2;
+
+				~ .form-error {
+					display: block;
+					float: left;
+					padding: .05rem .08rem .08rem;
+					background: @error;
+					border-radius: @radius;
+					box-shadow: 0 -@radius 0 0 @error;
+					color: @white;
+					z-index: 1;
+				}
+			}
+
+			input.form-control:invalid ~ .form-error {
+				float: none;
+			}
+		}
+
+		&.form-horizontal {
+			input:invalid ~ .form-error {
+				clear: left;
+				margin-left: 20%;
+			}
+
+			input.form-control:invalid ~ .form-error {
+				width: 80%;
+			}
 		}
 	}
 }

@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.5.5 (https://saui.omooer.com)
+ * SaUI v0.5.6 (https://saui.omooer.com)
  * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -1571,20 +1571,22 @@ form.form fieldset legend:after {
 }
 form.form fieldset input:not([type="radio"]):not([type="checkbox"]) {
   position: relative;
-  margin-top: -0.01rem;
   border-radius: 0;
-  box-shadow: none;
-}
-form.form fieldset input:not([type="radio"]):not([type="checkbox"]):first-of-type {
-  margin-top: 0;
-  border-radius: 0.04rem 0.04rem 0 0;
-  box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
-}
-form.form fieldset input:not([type="radio"]):not([type="checkbox"]):last-of-type {
-  border-radius: 0 0 0.04rem 0.04rem;
 }
 form.form fieldset input:not([type="radio"]):not([type="checkbox"]):focus {
   z-index: 1;
+}
+form.form fieldset:not(.horizontal) input:not([type="radio"]):not([type="checkbox"]) {
+  margin-top: -0.01rem;
+  box-shadow: none;
+}
+form.form fieldset:not(.horizontal) input:not([type="radio"]):not([type="checkbox"]):first-of-type {
+  margin: 0;
+  border-radius: 0.04rem 0.04rem 0 0;
+  box-shadow: inset 0 0.03rem 0.08rem -0.05rem #ccc;
+}
+form.form fieldset:not(.horizontal) input:not([type="radio"]):not([type="checkbox"]):last-of-type {
+  border-radius: 0 0 0.04rem 0.04rem;
 }
 form.form fieldset.horizontal {
   display: inline-block;
@@ -1799,6 +1801,63 @@ form.form-horizontal .form-select {
   width: 80%;
 }
 form.form-horizontal .form-control {
+  width: 80%;
+}
+form.form .form-error {
+  display: none;
+  box-sizing: border-box;
+  font-size: 0.12rem;
+  color: #e93c20;
+}
+form.form.error input:not([type="radio"]):not([type="checkbox"]):invalid {
+  border-color: #e93c20;
+}
+form.form.error .input-group input:invalid {
+  border-left-color: #ccc !important;
+  border-right-color: #ccc !important;
+}
+form.form.error .input-group input:invalid ~ .input-addon,
+form.form.error .input-group input:invalid ~ .input-addon-r,
+form.form.error .input-group input:invalid ~ button,
+form.form.error .input-group input:invalid ~ input {
+  border-color: #e93c20;
+}
+form.form.error .input-group + .form-error {
+  display: block;
+  padding: 0.05rem 0.08rem 0.08rem;
+  background: #e93c20;
+  border-radius: 0.04rem;
+  box-shadow: 0 -0.04rem 0 0 #e93c20;
+  color: #fff;
+}
+form.form.error input:invalid ~ .form-error {
+  display: inline-block;
+}
+form.form.error.form-stacked input:invalid,
+form.form.error.form-horizontal input:invalid {
+  position: relative;
+  z-index: 2;
+}
+form.form.error.form-stacked input:invalid ~ .form-error,
+form.form.error.form-horizontal input:invalid ~ .form-error {
+  display: block;
+  float: left;
+  padding: 0.05rem 0.08rem 0.08rem;
+  background: #e93c20;
+  border-radius: 0.04rem;
+  box-shadow: 0 -0.04rem 0 0 #e93c20;
+  color: #fff;
+  z-index: 1;
+}
+form.form.error.form-stacked input.form-control:invalid ~ .form-error,
+form.form.error.form-horizontal input.form-control:invalid ~ .form-error {
+  float: none;
+}
+form.form.error.form-horizontal input:invalid ~ .form-error {
+  clear: left;
+  margin-left: 20%;
+}
+form.form.error.form-horizontal input.form-control:invalid ~ .form-error {
   width: 80%;
 }
 /**********************
