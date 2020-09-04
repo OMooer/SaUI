@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.5.6 (https://saui.omooer.com)
+ * SaUI v0.5.7 (https://saui.omooer.com)
  * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -425,7 +425,7 @@ textarea {
 }
 @-webkit-keyframes dropDown {
   0% {
-    margin-top: -20%;
+    margin-top: -0.2rem;
   }
   100% {
     margin-top: 0;
@@ -433,7 +433,7 @@ textarea {
 }
 @keyframes dropDown {
   0% {
-    margin-top: -20%;
+    margin-top: -0.2rem;
   }
   100% {
     margin-top: 0;
@@ -1736,6 +1736,10 @@ form.form .input-group .input-addon.dropdown,
 form.form .input-group .input-addon-r.dropdown {
   padding: 0 0.1rem 0 0.12rem;
 }
+form.form .input-group .input-addon.dropdown .dropdown-menu,
+form.form .input-group .input-addon-r.dropdown .dropdown-menu {
+  top: 0.3rem;
+}
 form.form .input-group .input-addon {
   border-right: 0;
   border-radius: 0.04rem 0 0 0.04rem;
@@ -2863,23 +2867,9 @@ ul.list.crumbs.italic li:before {
 .nav.nav-bar > ul > li > a + ul {
   margin-top: -0.05rem;
 }
-.nav.nav-bar .nav-form form.form {
-  display: flex;
-  align-items: center;
-}
-.nav.nav-bar .nav-form form.form button {
-  padding-top: 0.08rem;
-  padding-bottom: 0.08rem;
-  vertical-align: middle;
-}
-.nav.nav-bar .nav-form form.form .input-group > button {
-  padding-top: 0.05rem;
-  padding-bottom: 0.05rem;
-}
-.nav.nav-bar .nav-form form.form .form-group {
-  display: inline-block;
-  margin-bottom: 0;
-  vertical-align: middle;
+.nav.nav-bar .form-group {
+  margin: 0;
+  padding: 0.06rem 0.02rem;
 }
 .nav.nav-bar .nav-text {
   display: inline-flex;
@@ -2897,7 +2887,11 @@ ul.list.crumbs.italic li:before {
   line-height: 1;
 }
 .nav.nav-bar .dropdown {
-  margin: 0.02rem 0;
+  padding-top: 0.03rem;
+  padding-bottom: 0.03rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   line-height: 2;
 }
 .nav.nav-bar.top-bar {
