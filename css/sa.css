@@ -1,5 +1,5 @@
 /*!**
- * SaUI v0.5.7 (https://saui.omooer.com)
+ * SaUI v0.5.8 (https://saui.omooer.com)
  * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -3308,10 +3308,12 @@ input[role="calendar"][type="date"] {
 [role="calendar"][data-range="true"] input[type="datetime-local"],
 [role="calendar"][data-range="true"] input[type="date"] {
   padding: 0;
+  background: none;
   box-shadow: none;
   border: none;
   outline: none;
   text-align: center;
+  color: inherit;
 }
 [role="calendar"][data-range="true"] input[type="datetime-local"]::-webkit-clear-button,
 [role="calendar"][data-range="true"] input[type="date"]::-webkit-clear-button,
