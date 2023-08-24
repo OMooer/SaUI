@@ -1,6 +1,6 @@
 /*!**
- * SaUI v0.5.10 (https://saui.omooer.com)
- * Copyright 2016-2020 O'Mooer Works (www.omooer.com)
+ * SaUI v0.5.12 (https://saui.omooer.com)
+ * Copyright 2016-2023 O'Mooer Works (www.omooer.com)
  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -375,28 +375,12 @@ textarea {
 /**********************
  * 变量和方法函数
  **/
-@-webkit-keyframes zoomImg {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
-}
 @keyframes zoomImg {
   0% {
     transform: scale(1);
   }
   100% {
     transform: scale(1.2);
-  }
-}
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 @keyframes fadeIn {
@@ -407,14 +391,6 @@ textarea {
     opacity: 1;
   }
 }
-@-webkit-keyframes slideInLeft {
-  0% {
-    left: -50%;
-  }
-  100% {
-    left: 0;
-  }
-}
 @keyframes slideInLeft {
   0% {
     left: -50%;
@@ -423,28 +399,12 @@ textarea {
     left: 0;
   }
 }
-@-webkit-keyframes dropDown {
-  0% {
-    margin-top: -0.2rem;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
 @keyframes dropDown {
   0% {
     margin-top: -0.2rem;
   }
   100% {
     margin-top: 0;
-  }
-}
-@-webkit-keyframes progress-bar-stripes {
-  0% {
-    background-position: 0.4rem 0;
-  }
-  100% {
-    background-position: 0 0;
   }
 }
 @keyframes progress-bar-stripes {
@@ -554,7 +514,7 @@ pre code[lang]:after {
   top: 0.02rem;
   right: 0.04rem;
 }
-@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+@media all and (-webkit-min-device-pixel-ratio: 0) and (-webkit-min-device-pixel-ratio: 0), all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   pre > code[lang]:after {
     font-size: 0.12rem;
     transform: scale(0.834);
@@ -1496,6 +1456,7 @@ form.form button[disabled]:active {
 form.form label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-sizing: border-box;
+  line-height: 1.6;
 }
 form.form .form-group {
   margin-bottom: 0.1rem;
@@ -2367,8 +2328,7 @@ a.card {
   text-align: right;
 }
 .dialog .dialog-container.dialog-animate {
-  -webkit-animation: dropDown 0.4s backwards, fadeIn 0.6s backwards;
-          animation: dropDown 0.4s backwards, fadeIn 0.6s backwards;
+  animation: dropDown 0.4s backwards, fadeIn 0.6s backwards;
   transition: top 0.4s, opacity 0.3s;
 }
 .dialog .dialog-container.dialog-animate.dialog-close {
@@ -2496,8 +2456,7 @@ a.card {
 .dropdown.dropdown-hover:hover .dropdown-menu {
   display: block;
   box-shadow: 0 0 0.08rem -0.03rem #777;
-  -webkit-animation: dropDown 0.3s ease-out backwards, fadeIn 0.8s backwards;
-          animation: dropDown 0.3s ease-out backwards, fadeIn 0.8s backwards;
+  animation: dropDown 0.3s ease-out backwards, fadeIn 0.8s backwards;
 }
 .dropdown.dropdown-right .dropdown-menu {
   left: auto;
@@ -3161,8 +3120,7 @@ progress.progress-text:before {
   background-size: 0.4rem 0.4rem;
 }
 .progress .progress-bar.progress-striped.progress-animate {
-  -webkit-animation: progress-bar-stripes 1s linear infinite;
-          animation: progress-bar-stripes 1s linear infinite;
+  animation: progress-bar-stripes 1s linear infinite;
 }
 /**********************
  * 信息提示
@@ -3187,8 +3145,7 @@ progress.progress-text:before {
 }
 [data-active] + .tooltip {
   display: block;
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
 }
 [data-placement="top"] + .tooltip {
   margin-bottom: 0.04rem;
@@ -3572,20 +3529,10 @@ input[role="calendar"][type="date"] {
   margin-left: 0.3em;
 }
 .sa-icon-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 .sa-icon-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-@-webkit-keyframes fa-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
 }
 @keyframes fa-spin {
   0% {
@@ -3620,8 +3567,7 @@ input[role="calendar"][type="date"] {
 :root .sa-icon-rotate-270,
 :root .sa-icon-flip-horizontal,
 :root .sa-icon-flip-vertical {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 .sa-icon-stack {
   position: relative;
